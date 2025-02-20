@@ -7,35 +7,104 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* Reset básico */
         html, body {
-            height: 100vh;
+            height: 100%;
             margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            overflow-x: hidden; /* Evita scroll horizontal */
         }
+
+        /* Navbar */
+        .navbar {
+            background-color: #ffffff !important;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #333333;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            color: #333333 !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #007bff !important;
+        }
+
+        /* Menu colapsado (mobile) */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background-color: #ffffff;
+                padding: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                margin-top: 10px;
+            }
+        }
+
+        /* Ajuste do conteúdo principal */
         .content {
             flex: 1;
+            padding-top: 10px; /* Menos espaço acima */
+            padding-bottom: 0px; /* Reduzi mais o espaço inferior */
+        }
+
+        /* Centralização da linha */
+        .row.align-items-center {
+            min-height: calc(100vh - 80px); /* Ajuste fino para eliminar espaços extras */
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: calc(100vh - 70px - 60px); /* Ajuste conforme a altura do header e footer */
         }
-        .text-justify-custom {
-            text-align: justify;
-        }
+
+        /* Ajuste da imagem */
         .image-adjust {
-            max-width: 100%;
+            max-width: 90%;
             height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            flex-shrink: 0;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 8px 0; /* Reduzi um pouco o espaço do footer também */
+            width: 100%;
+            margin-top: auto;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 70px;">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <img src="images/ASCENC_lateral.png" alt="ASCENC Logo" height="50">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -51,6 +120,7 @@
         </div>
     </nav>
 
+    <!-- Conteúdo principal -->
     <div class="container content">
         <div class="row align-items-center">
             <div class="col-md-6 text-justify-custom">
@@ -63,7 +133,8 @@
         </div>
     </div>
 
-    <footer class="bg-dark text-light text-center py-3" style="height: 60px;">
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-2">
         <p>&copy; 2025 ASCENC. Igor Catão Martins Vaz. Todos os direitos reservados.</p>
     </footer>
 
