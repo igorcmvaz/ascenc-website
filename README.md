@@ -1,0 +1,2 @@
+# ASCENC WEBSITE
+This is the repository of the project ASCENC (Sustainability Assessment of Cities and Buildings in New Climates in Portuguese). Website is available at https://igorcmvaz.github.io/ascenc-website/
