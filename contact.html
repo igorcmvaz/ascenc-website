@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ASCENC - Entre em Contato</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1; /* Faz o conteúdo crescer e empurrar o footer para baixo */
+        }
+        footer {
+            margin-top: auto; /* Mantém o footer na parte inferior */
+        }
+        .contact-form {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form .form-control {
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+        }
+        .contact-form .form-control:focus {
+            border-color: #80bdff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+        }
+        .contact-form .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .contact-form .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 70px;">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/ASCENC_lateral.png" alt="ASCENC Logo" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="papers.html">Artigos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tools.html">Ferramentas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">Equipe</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 content">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="contact-form">
+                    <h1 class="text-center mb-4">Entre em Contato</h1>
+                    <p class="text-center mb-4">Preencha o formulário abaixo para enviar sua dúvida ou sugestão.</p>
+                    <form action="https://formsubmit.co/igorcmvaz@gmail.com" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="institution" class="form-label">Instituição</label>
+                            <input type="text" class="form-control" id="institution" name="institution" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Dúvida/Sugestão</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light text-center py-3" style="height: 60px;">
+        <p>&copy; 2025 ASCENC. Igor Catão Martins Vaz. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

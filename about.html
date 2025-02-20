@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ASCENC - Sobre</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 70px - 60px); /* Ajuste conforme a altura do header e footer */
+        }
+        .text-justify-custom {
+            text-align: justify;
+        }
+        .image-adjust {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 70px;">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/ASCENC_lateral.png" alt="ASCENC Logo" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="papers.html">Artigos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tools.html">Ferramentas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">Equipe</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1>Sobre o Projeto ASCENC</h1>
+                <p class="mt-4 text-justify-custom">O projeto ASCENC - Avaliação de Sustentabilidade em Cidades e Edificações em Novos Climas - surgiu a partir da junção da tese de doutorado de Igor Catão Martins Vaz com o projeto de pesquisa do professor Enedir Ghisi. O ASCENC faz parte do grupo de pesquisa "Avaliação da sustentabilidade de edificações e centros urbanos" submetido ao CNPQ na chamada CNPq/MCTI No 10/2023, sob coordenação de Enedir Ghisi. Como diferença, inclue-se artigos da tese de Igor Catão, a qual aborda o impacto de mudanças climáticas na avaliação ambiental do ambiente construído.</p>
+                
+                <p class="text-justify-custom">Desse modo, o projeto trabalha três principais eixos temáticos:</p>
+                <ul class="text-start">
+                    <li><strong>Eixos de Climas Futuros:</strong> Discute métodos recentes para compreender o impacto das mudanças climáticas nas cidades brasileiras, incluindo variáveis como temperatura do ar, vento, precipitação e radiação solar.</li>
+                    <li><strong>Eixo das Cidades:</strong> Analisa como as cidades podem ser adaptadas para garantir habitabilidade e resiliência climática, com foco em conforto térmico externo e políticas públicas.</li>
+                    <li><strong>Eixo das Edificações:</strong> Avalia como decisões urbanísticas e a variação de climas futuros impactam os fluxos energéticos, hídricos e de materiais dos edifícios, com ênfase na Avaliação de Ciclo de Vida.</li>
+                </ul>
+                <br></br>
+                <h2>Alinhamento com os ODS</h2>
+                <p class="text-justify-custom">O projeto ASCENC está alinhado com os Objetivos de Desenvolvimento Sustentável (ODS) da ONU, promovendo ações para sustentabilidade e resiliência urbana. São abordados principalmente:</p>
+                
+                <table class="table text-center">
+                    <tr>
+                        <td><h5>ODS 6</h5><img src="images/SDG-6.svg" alt="ODS 6" class="img-fluid" style="max-width: 110px;"></td>
+                        <td><h5>ODS 7</h5><img src="images/SDG-7.svg" alt="ODS 7" class="img-fluid" style="max-width: 110px;"></td>
+                        <td><h5>ODS 11</h5><img src="images/SDG-11.svg" alt="ODS 11" class="img-fluid" style="max-width: 110px;"></td>
+                        <td><h5>ODS 13</h5><img src="images/SDG-13.svg" alt="ODS 13" class="img-fluid" style="max-width: 110px;"></td>
+                    </tr>
+                </table>
+
+                <div class="container mt-5">
+                    <h2 class="mt-4">Universidades com colaboração:</h2>
+                    <div class="row text-center align-items-center">
+                        <div class="col-md-4">
+                            <p class="text-center"><b>Universidade Federal de Santa Catarina (UFSC)</b> Programa de Pós-Graduação em Engenharia Civil (PPGEC)</p>
+                            <img src="images/ufsc.png" alt="UFSC" class="img-fluid" style="max-height: 120px;">
+                        </div>
+                        <div class="col-md-4">
+                            <p class="text-center"><b>Universidade de Coimbra (UC)</b> <br> Faculdade de Ciências e Tecnologia da Universidade de Coimbra (FCTUC)</p>
+                            <img src="images/ftuc_2.png" alt="UC" class="img-fluid" style="max-height: 120px;">
+                        </div>
+                        <div class="col-md-4">
+                            <p class="text-center"><b>Universidade de São Paulo (USP)</b> <br> Escola de Engenharia de <br> São Carlos (EESC)</p>
+                            <img src="images/uspsc.png" alt="EESC - USP" class="img-fluid" style="max-height: 120px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light text-center py-3 mt-5" style="height: 60px;">
+        <p>&copy; 2025 ASCENC. Igor Catão Martins Vaz. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
