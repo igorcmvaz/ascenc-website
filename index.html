@@ -9,14 +9,14 @@
     <style>
         /* Reset básico */
         html, body {
-            height: 100%;
+            height: 100vh;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             font-family: Arial, sans-serif;
             background-color: #ffffff;
-            overflow-x: hidden; /* Evita scroll horizontal */
+            overflow: hidden;
         }
 
         /* Navbar */
@@ -27,62 +27,49 @@
         }
 
         .navbar-brand img {
-            height: 40px;
+            height: 70px;
         }
 
-        .navbar-toggler {
-            border: none;
-            padding: 0.5rem;
-        }
-
-        .navbar-toggler-icon {
-            background-color: #ffffff;
-        }
-
-        .navbar-nav .nav-link {
-            font-size: 1rem;
-            padding: 0.5rem 1rem;
-            color: #333333 !important;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #007bff !important;
-        }
-
-        /* Menu colapsado (mobile) */
         @media (max-width: 991.98px) {
-            .navbar-collapse {
-                background-color: #ffffff;
-                padding: 10px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                margin-top: 10px;
+            .navbar-brand img {
+                height: 50px;
             }
         }
 
-        /* Ajuste do conteúdo principal */
+        /* Conteúdo principal centralizado dinamicamente */
         .content {
             flex: 1;
-            padding-top: 10px; /* Menos espaço acima */
-            padding-bottom: 0px; /* Reduzi mais o espaço inferior */
-        }
-
-        /* Centralização da linha */
-        .row.align-items-center {
-            min-height: calc(100vh - 80px); /* Ajuste fino para eliminar espaços extras */
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
         }
 
-        /* Ajuste da imagem */
+        .content .row {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
         .image-adjust {
-            max-width: 90%;
+            width: 100%;
+            max-width: 500px;
             height: auto;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        }
+
+        @media (max-width: 767.98px) {
+            .content .row {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .image-adjust {
+                max-width: 80%;
+                margin-top: 20px;
+            }
         }
 
         /* Footer */
@@ -91,9 +78,8 @@
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 8px 0; /* Reduzi um pouco o espaço do footer também */
+            padding: 8px 0;
             width: 100%;
-            margin-top: auto;
         }
     </style>
 </head>
@@ -102,7 +88,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="images/ASCENC_lateral.png" alt="ASCENC Logo" height="50">
+                <img src="images/ASCENC_lateral.png" alt="ASCENC Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -122,10 +108,10 @@
 
     <!-- Conteúdo principal -->
     <div class="container content">
-        <div class="row align-items-center">
-            <div class="col-md-6 text-justify-custom">
-                <h1 class="text-center">Bem-vindo ao Projeto ASCENC</h1>
-                <p class="mt-2"><b>ASCENC (Avaliação de Sustentabilidade em Cidades e Edificações em Novos Climas)</b> tem como objetivo pesquisar as interações entre cidades, edificações e climas futuros de modo a diminuir o impacto ambiental da construção civil e adaptar o contexto urbano para garantir habitabilidade e resiliência.</p>
+        <div class="row d-flex align-items-center">
+            <div class="col-md-6">
+                <h1>Bem-vindo ao Projeto ASCENC</h1>
+                <p><b>ASCENC (Avaliação de Sustentabilidade em Cidades e Edificações em Novos Climas)</b> tem como objetivo pesquisar as interações entre cidades, edificações e climas futuros de modo a diminuir o impacto ambiental da construção civil e adaptar o contexto urbano para garantir habitabilidade e resiliência.</p>
             </div>
             <div class="col-md-6 text-center">
                 <img src="images/ascenc.png" alt="ASCENC" class="img-fluid image-adjust">
@@ -134,7 +120,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-light text-center py-2">
+    <footer>
         <p>&copy; 2025 ASCENC. Igor Catão Martins Vaz. Todos os direitos reservados.</p>
     </footer>
 
