@@ -1,42 +1,53 @@
+/* 🔹 Reset básico */
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0;
 }
 
+/* 🔹 Estilo da logo (caso queira manter animação no hover) */
 .logo {
   height: 6em;
-  padding: 1.5em;
+  padding: 1rem;
+  transition: filter 300ms ease;
   will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.logo:hover {
+  filter: drop-shadow(0 0 0.5em rgba(100, 108, 255, 0.7));
+}
+
+/* 🔹 Versão para logo do React */
+.logo.react:hover {
+  filter: drop-shadow(0 0 0.5em rgba(97, 218, 251, 0.7));
+}
+
+/* 🔹 Animação de rotação opcional */
 @keyframes logo-spin {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+    animation: logo-spin 20s linear infinite;
   }
 }
 
+/* 🔹 Cartões */
 .card {
-  padding: 2em;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
+/* 🔹 Texto de documentação */
 .read-the-docs {
-  color: #888;
+  color: #666;
+  font-size: 0.9rem;
 }
