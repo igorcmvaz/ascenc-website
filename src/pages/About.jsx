@@ -3,14 +3,15 @@ import ODSList from "../components/ODSList";
 import UniversityCard from "../components/UniversityCard";
 
 const odsData = [
-  { id: "ODS 6", img: "/images/SDG-6.svg" },
-  { id: "ODS 7", img: "/images/SDG-7.svg" },
-  { id: "ODS 11", img: "/images/SDG-11.svg" },
-  { id: "ODS 13", img: "/images/SDG-13.svg" },
+  { id: "ODS 6", img: "/SDG-6.svg" },
+  { id: "ODS 7", img: "/SDG-7.svg" },
+  { id: "ODS 11", img: "/SDG-11.svg" },
+  { id: "ODS 13", img: "/SDG-13.svg" },
 ];
 
 export default function About() {
   return (
+    <>
     <PageLayout title="Sobre o Projeto ASCENC">
       <p className="text-justify mb-4">
         O projeto ASCENC - Avaliação de Sustentabilidade em Cidades e Edificações em Novos Climas - 
@@ -51,19 +52,20 @@ export default function About() {
         <UniversityCard
           name="Universidade Federal de Santa Catarina (UFSC)"
           description="Programa de Pós-Graduação em Engenharia Civil (PPGEC)"
-          img="/images/ufsc.png"
+          img="/ufsc.png"
         />
         <UniversityCard
           name="Universidade de Coimbra (UC)"
           description="Faculdade de Ciências e Tecnologia da Universidade de Coimbra (FCTUC)"
-          img="/images/ftuc_2.png"
+          img="/ftuc_2.png"
         />
         <UniversityCard
           name="Universidade de São Paulo (USP)"
           description="Escola de Engenharia de São Carlos (EESC)"
-          img="/images/uspsc.png"
+          img="/uspsc.png"
         />
       </div>
     </PageLayout>
+    </>
   );
 }
