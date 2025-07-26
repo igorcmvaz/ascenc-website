@@ -11,7 +11,7 @@ export default function TeamMemberCard({ image, name, role, orcid }) {
       {orcid && (
         <a href={orcid} target="_blank" rel="noopener noreferrer">
           <img
-            src="/images/orcid.png"
+            src="/orcid.png"
             alt="ORCID"
             className="w-9 mx-auto hover:scale-110 transition-transform"
           />
