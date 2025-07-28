@@ -142,3 +142,16 @@ npm run preview
 ```
 
 ---
+
+## 🚀 Deploy no GitHub Pages
+
+1. Configure o campo `homepage` no `package.json` com o endereço do seu repositório:
+   `https://seu-usuario.github.io/ascenc-website`.
+2. Instale as dependências e rode o comando de deploy:
+
+```bash
+npm install
+npm run deploy
+```
+
+O workflow `Deploy to GitHub Pages` também publica automaticamente o conteúdo da pasta `dist/` sempre que houver push na branch `main`.
