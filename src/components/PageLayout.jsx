@@ -6,7 +6,7 @@ export default function PageLayout({ title, children, noPadding = false, centerO
     <div className="flex flex-col min-h-screen">
       <Header />
       <main
-        className={`flex-1 max-w-6xl mx-auto px-4 ${noPadding ? "" : "pt-24 pb-16"} ${
+        className={`flex-1 max-w-6xl mx-auto px-3 ${noPadding ? "" : "pt-24 pb-16"} ${
           centerOnScreen ? "flex flex-col justify-center" : ""
         }`}
       >

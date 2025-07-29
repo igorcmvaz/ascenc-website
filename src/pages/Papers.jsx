@@ -5,7 +5,8 @@ const eixoCidades = [
   {
     year: "2025",
     doi: "http://dx.doi.org/10.1016/j.enbuild.2024.115059",
-    title: "Dashboard for interpreting future climate files used in the simulation of buildings – An outdoor thermal comfort approach",
+    title:
+      "Dashboard for interpreting future climate files used in the simulation of buildings – An outdoor thermal comfort approach",
     authors:
       "Igor Catão Martins Vaz; Enedir Ghisi; Liseane Padilha Thives; Abel Silva Vieira; Ricardo Forgiarini Rupp; Aline Schaefer; Rafael Almeida Flores; Matheus Bruhns Bastos; Deivis Luis Marinoski; Arthur Santos Silva; Max Weeber; Andrea Invidiata.",
   },
@@ -17,7 +18,8 @@ const eixoEdificacoes = [
     doi: "https://doi.org/10.1016/j.scitotenv.2025.179774",
     title:
       "Understanding the environmental impact of residential electricity consumption in Brazil: integrating top-down and bottom-up approaches with Life Cycle Assessment",
-    authors: "Igor Catão Martins Vaz; Taylana Piccinini Scolaro; Enedir Ghisi",
+    authors:
+      "Igor Catão Martins Vaz; Taylana Piccinini Scolaro; Enedir Ghisi",
   },
   {
     year: "2025",
@@ -31,7 +33,8 @@ const eixoEdificacoes = [
     year: "2024",
     doi: "http://dx.doi.org/10.46421/entac.v20i1.5730",
     title: "Energia e carbono em edificações: uso da ferramenta SIDAC",
-    authors: "Igor Catão Martins Vaz; Jéssica Aldrighi Bertinetti; Enedir Ghisi",
+    authors:
+      "Igor Catão Martins Vaz; Jéssica Aldrighi Bertinetti; Enedir Ghisi",
   },
   {
     year: "2024",
@@ -44,9 +47,12 @@ const eixoEdificacoes = [
 
 export default function Papers() {
   return (
-    <PageLayout title="Artigos Publicados">
-      <PaperTable title="Eixo Cidades" papers={eixoCidades} />
-      <PaperTable title="Eixo Edificações" papers={eixoEdificacoes} />
+    <PageLayout title="Artigos Publicados" noPadding>
+      {/* Padding customizado apenas para essa página */}
+      <div className="pt-10 pb-4 space-y-8">
+        <PaperTable title="Eixo Cidades" papers={eixoCidades} />
+        <PaperTable title="Eixo Edificações" papers={eixoEdificacoes} />
+      </div>
     </PageLayout>
   );
 }

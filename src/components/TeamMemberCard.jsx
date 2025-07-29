@@ -1,6 +1,6 @@
 export default function TeamMemberCard({ image, name, role, orcid, researchgate }) {
   return (
-    <div className="bg-gray-100 rounded-xl p-4 text-center shadow-md flex flex-col justify-between h-full">
+    <div className="bg-gray-100 rounded-xl p-1 text-center shadow-md flex flex-col justify-between h-full">
       {/* Parte superior (imagem e texto) */}
       <div>
         <img
