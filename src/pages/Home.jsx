@@ -15,7 +15,7 @@ export default function Home() {
         {/* Imagem */}
         <div className="flex-1 flex justify-center">
           <img
-            src="src/assets/ascenc.png"
+            src="./assets/ascenc.png"
             alt="ASCENC"
             className="max-w-lg md:max-w-xl w-full h-auto"
           />

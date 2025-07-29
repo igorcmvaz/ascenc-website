@@ -27,7 +27,7 @@ export default function PAIMT() {
               className="group bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center p-6 border border-gray-200 w-40"
             >
               <img
-                src="src/assets/zenodo.png"
+                src="./assets/zenodo.png"
                 alt="Zenodo"
                 className="w-14 h-14 object-contain mb-3 transition-transform duration-300 group-hover:scale-110"
               />

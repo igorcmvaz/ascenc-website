@@ -57,7 +57,7 @@ export default function About() {
         <UniversityCard
           name="Universidade de Coimbra (UC)"
           description="Faculdade de Ciências e Tecnologia da Universidade de Coimbra (FCTUC)"
-          img=".src/assets/ftuc_2.png"
+          img="./assets/ftuc_2.png"
         />
         <UniversityCard
           name="Universidade de São Paulo (USP)"

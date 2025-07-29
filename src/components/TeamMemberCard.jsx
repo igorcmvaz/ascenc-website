@@ -17,7 +17,7 @@ export default function TeamMemberCard({ image, name, role, orcid, researchgate 
         {orcid && (
           <a href={orcid} target="_blank" rel="noopener noreferrer">
             <img
-              src="src/assets/orcid.png"
+              src="./assets/orcid.png"
               alt="ORCID"
               className="w-9 hover:scale-110 transition-transform"
             />
@@ -26,7 +26,7 @@ export default function TeamMemberCard({ image, name, role, orcid, researchgate 
         {researchgate && (
           <a href={researchgate} target="_blank" rel="noopener noreferrer">
             <img
-              src="src/assets/ResearchGate_icon.png"
+              src="./assets/ResearchGate_icon.png"
               alt="ResearchGate"
               className="w-9 hover:scale-110 transition-transform"
             />

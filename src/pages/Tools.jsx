@@ -7,12 +7,12 @@ export default function Tools() {
     {
       title: "PAIM-T (Termodinâmica)",
       to: "/paimt",
-      icon: "src/assets/paimt.png",
+      icon: "./assets/paimt.png",
     },
     {
       title: "PAIM-P (Precipitação)",
       to: "/paimp",
-      icon: "src/assets/paimp.png",
+      icon: "./assets/paimp.png",
     },
     {
       title: "Terceira Ferramenta (Em desenvolvimento)",

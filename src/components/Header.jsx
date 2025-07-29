@@ -19,7 +19,7 @@ export default function Header() {
       <div className="w-full max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <img src="src/assets/ASCENC_lateral.png" alt="Logo ASCENC" className="h-10 w-auto" />
+          <img src="./assets/ASCENC_lateral.png" alt="Logo ASCENC" className="h-10 w-auto" />
         </Link>
 
         {/* Menu Desktop */}
