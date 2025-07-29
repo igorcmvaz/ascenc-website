@@ -3,10 +3,10 @@ import ODSList from "../components/ODSList";
 import UniversityCard from "../components/UniversityCard";
 
 const odsData = [
-  { id: "ODS 6", img: "/SDG-6.svg" },
-  { id: "ODS 7", img: "/SDG-7.svg" },
-  { id: "ODS 11", img: "/SDG-11.svg" },
-  { id: "ODS 13", img: "/SDG-13.svg" },
+  { id: "ODS 6", img: "src/assets/SDG-6.svg" },
+  { id: "ODS 7", img: "src/assets/SDG-7.svg" },
+  { id: "ODS 11", img: "src/assets/SDG-11.svg" },
+  { id: "ODS 13", img: "src/assets/SDG-13.svg" },
 ];
 
 export default function About() {
@@ -52,17 +52,17 @@ export default function About() {
         <UniversityCard
           name="Universidade Federal de Santa Catarina (UFSC)"
           description="Programa de Pós-Graduação em Engenharia Civil (PPGEC)"
-          img="/ufsc.png"
+          img="src/assets/ufsc.png"
         />
         <UniversityCard
           name="Universidade de Coimbra (UC)"
           description="Faculdade de Ciências e Tecnologia da Universidade de Coimbra (FCTUC)"
-          img="/ftuc_2.png"
+          img="src/assets/ftuc_2.png"
         />
         <UniversityCard
           name="Universidade de São Paulo (USP)"
           description="Escola de Engenharia de São Carlos (EESC)"
-          img="/uspsc.png"
+          img="src/assets/uspsc.png"
         />
       </div>
     </PageLayout>
