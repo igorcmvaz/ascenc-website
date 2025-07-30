@@ -1,15 +1,15 @@
 export default function TeamMemberCard({ image, name, role, orcid, researchgate }) {
   return (
-    <div className="bg-gray-100 rounded-xl p-1 text-center shadow-md flex flex-col justify-between h-full">
+    <div className="bg-gray-100 dark:bg-zinc-800 rounded-xl p-1 text-center shadow-md flex flex-col justify-between h-full">
       {/* Parte superior (imagem e texto) */}
       <div>
         <img
-          src={image}
+          src={image} // Lembre-se que o caminho agora é /assets/...
           alt={name}
           className="w-28 h-28 object-cover rounded-full mx-auto mb-3"
         />
-        <h5 className="text-lg font-semibold">{name}</h5>
-        <p className="text-gray-700 text-sm mb-2">{role}</p>
+        <h5 className="text-lg font-semibold text-gray-900 dark:text-zinc-100">{name}</h5>
+        <p className="text-gray-700 dark:text-zinc-300 text-sm mb-2">{role}</p>
       </div>
 
       {/* Parte inferior (ORCID e ResearchGate) */}

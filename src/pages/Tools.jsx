@@ -9,35 +9,41 @@ export default function Tools() {
     {
       title: t('tools.paimt'),
       to: "/paimt",
-      icon: "./assets/paimt.png",
+      iconLight: "./assets/paimt.png",
+      iconDark: "./assets/paimt_dark.png",
     },
     {
       title: t('tools.paimp'),
       to: "/paimp",
-      icon: "./assets/paimp.png",
+      iconLight: "./assets/paimp.png",
+      iconDark: "./assets/paimp_dark.png",
     },
     {
       title: `${t('tools.paimdu')} ${t('tools.dev_suffix')}`,
       to: "#",
-      icon: "./assets/paimdu.png",
+      iconLight: "./assets/paimdu.png",
+      iconDark: "./assets/paimdu_dark.png",
       isPlaceholder: true,
     },
     {
       title: `${t('tools.paimaa')} ${t('tools.dev_suffix')}`,
       to: "#",
-      icon: "./assets/paimaa.png",
+      iconLight: "./assets/paimaa.png",
+      iconDark: "./assets/paimaa_dark.png",
       isPlaceholder: true,
     },
     {
       title: `${t('tools.paimacv')} ${t('tools.dev_suffix')}`,
       to: "#",
-      icon: "./assets/paimacv.png",
+      iconLight: "./assets/paimacv.png",
+      iconDark: "./assets/paimacv_dark.png",
       isPlaceholder: true,
     },
     {
       title: `${t('tools.paicacv')} ${t('tools.dev_suffix')}`,
       to: "#",
-      icon: "./assets/paicacv.png",
+      iconLight: "./assets/paicacv.png",
+      iconDark: "./assets/paicacv_dark.png",
       isPlaceholder: true,
     },
   ];
@@ -50,7 +56,8 @@ export default function Tools() {
             key={index}
             title={tool.title}
             to={tool.to}
-            icon={tool.icon}
+            iconLight={tool.iconLight}
+            iconDark={tool.iconDark}
             isPlaceholder={tool.isPlaceholder}
           />
         ))}
