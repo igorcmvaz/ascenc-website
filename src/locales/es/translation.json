@@ -1,7 +1,7 @@
 {
   "header": {
     "home": "Inicio",
-    "about": "Sobre",
+    "about": "Proyecto",
     "papers": "Artículos",
     "tools": "Herramientas",
     "team": "Equipo",
@@ -16,14 +16,14 @@
   },
   "about": {
     "title": "Sobre el Proyecto ASCENC",
-    "p1": "El proyecto ASCENC - Evaluación de Sostenibilidad en Ciudades y Edificaciones en Nuevos Climas - surgió de la unión de la tesis doctoral de Igor Catão Martins Vaz con el proyecto de investigación del profesor Enedir Ghisi. ASCENC forma parte del proyecto de investigación \"Evaluación de la sostenibilidad de edificaciones y centros urbanos\", presentado al CNPQ en la convocatoria CNPq/MCTI No 10/2023, bajo la coordinación de Enedir Ghisi. Como diferencia, se incluyen artículos de la tesis de Igor Catão, que aborda el impacto del cambio climático en la evaluación ambiental del entorno construido.",
-    "p2": "De este modo, el proyecto trabaja en tres ejes temáticos principales:",
+    "p1": "El proyecto ASCENC - Evaluación de Sostenibilidad en Ciudades y Edificaciones en Nuevos Climas - surgió de la unión de la tesis doctoral de Igor Catão Martins Vaz con el proyecto de investigación del profesor Enedir Ghisi. ASCENC forma parte del proyecto de investigación \"Evaluación de la sostenibilidad de edificaciones y centros urbanos\", presentado al CNPQ en la convocatoria CNPq/MCTI No 10/2023, bajo la coordinación de Enedir Ghisi. Como factor diferenciador, se incluyen artículos de la tesis de Igor Catão, que aborda el impacto del cambio climático en la evaluación ambiental del entorno construido.",
+    "p2": "De este modo, el proyecto se desarrolla en tres ejes temáticos principales.:",
     "axis1_title": "Eje de Climas Futuros:",
     "axis1_desc": "Métodos recientes para comprender el impacto del cambio climático en las ciudades brasileñas, incluyendo temperatura del aire, viento, precipitación y radiación solar.",
     "axis2_title": "Eje de las Ciudades:",
     "axis2_desc": "Cómo se pueden adaptar las ciudades para garantizar la habitabilidad y la resiliencia climática, con un enfoque en el confort térmico exterior y las políticas públicas.",
     "axis3_title": "Eje de las Edificaciones:",
-    "axis3_desc": "Evalúa cómo las decisiones urbanísticas y los climas futuros impactan los flujos energéticos, hídricos y de materiales de los edificios, con énfasis en la Evaluación del Ciclo de Vida.",
+    "axis3_desc": "Evalúa cómo las decisiones urbanísticas y los climas futuros impactan los flujos energéticos, hídricos y de materiales de los edificios, con énfasis en la Evaluación del Ciclo de Vida (ACV).",
     "ods_alignment": "Alineación con los ODS",
     "partner_universities": "Universidades colaboradoras",
     "ufsc_desc": "Programa de Posgrado en Ingeniería Civil (PPGEC)",
