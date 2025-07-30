@@ -1,0 +1,79 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "Sobre",
+    "papers": "Artigos",
+    "tools": "Ferramentas",
+    "team": "Equipe",
+    "contact": "Contato"
+  },
+  "footer": {
+    "rights": "© 2025 ASCENC. Igor Catão Martins Vaz. Todos os direitos reservados."
+  },
+  "home": {
+    "title": "Bem-vindo ao Projeto ASCENC",
+    "description": "<strong>ASCENC (Avaliação de Sustentabilidade em Cidades e Edificações em Novos Climas)</strong> tem como objetivo pesquisar as interações entre cidades, edificações e climas futuros de modo a diminuir o impacto ambiental da construção civil e adaptar o contexto urbano para garantir habitabilidade e resiliência."
+  },
+  "about": {
+    "title": "Sobre o Projeto ASCENC",
+    "p1": "O projeto ASCENC - Avaliação de Sustentabilidade em Cidades e Edificações em Novos Climas - surgiu a partir da junção da tese de doutorado de Igor Catão Martins Vaz com o projeto de pesquisa do professor Enedir Ghisi. O ASCENC faz parte do projeto de pesquisa \"Avaliação da sustentabilidade de edificações e centros urbanos\", submetido ao CNPQ na chamada CNPq/MCTI No 10/2023, sob coordenação de Enedir Ghisi. Como diferença, incluem-se artigos da tese de Igor Catão, a qual aborda o impacto de mudanças climáticas na avaliação ambiental do ambiente construído.",
+    "p2": "Desse modo, o projeto trabalha três principais eixos temáticos:",
+    "axis1_title": "Eixos de Climas Futuros:",
+    "axis1_desc": "Métodos recentes para compreender o impacto das mudanças climáticas nas cidades brasileiras, incluindo temperatura do ar, vento, precipitação e radiação solar.",
+    "axis2_title": "Eixo das Cidades:",
+    "axis2_desc": "Como as cidades podem ser adaptadas para garantir habitabilidade e resiliência climática, com foco em conforto térmico externo e políticas públicas.",
+    "axis3_title": "Eixo das Edificações:",
+    "axis3_desc": "Avalia como decisões urbanísticas e climas futuros impactam fluxos energéticos, hídricos e de materiais dos edifícios, com ênfase na Avaliação de Ciclo de Vida.",
+    "ods_alignment": "Alinhamento com os ODS",
+    "partner_universities": "Universidades com colaboração",
+    "ufsc_desc": "Programa de Pós-Graduação em Engenharia Civil (PPGEC)",
+    "uc_desc": "Faculdade de Ciências e Tecnologia da Universidade de Coimbra (FCTUC)",
+    "usp_desc": "Escola de Engenharia de São Carlos (EESC)"
+  },
+  "tools": {
+    "title": "Ferramentas",
+    "paimt": "PAIM-T (Termodinâmica)",
+    "paimp": "PAIM-P (Precipitação)",
+    "paimdu": "PAIM-DU",
+    "paimaa": "PAIM-AA",
+    "paimacv": "PAIM-ACV",
+    "paicacv": "PAIC-ACV",
+    "dev_suffix": "(Em desenvolvimento)"
+  },
+  "team": {
+    "title": "Nossa Equipe",
+    "coordinator": "Coordenador",
+    "lead_researcher": "Pesquisador Líder",
+    "researcher": "Pesquisador",
+    "collaborator": "Colaborador"
+  },
+  "papers": {
+    "title": "Artigos Publicados",
+    "cities_axis": "Eixo Cidades",
+    "buildings_axis": "Eixo Edificações",
+    "date": "Data",
+    "doi": "DOI",
+    "table_title": "Título",
+    "authors": "Autores"
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "description": "Preencha o formulário abaixo para enviar sua dúvida ou sugestão.",
+    "name": "Nome",
+    "institution": "Instituição",
+    "message": "Dúvida / Sugestão",
+    "submit": "Enviar"
+  },
+  "paimt": {
+    "title": "Painel de Avaliação do Impacto de Mudanças Climáticas - Termodinâmica",
+    "description": "<strong class=\"font-semibold\">PAIM-T</strong> é uma ferramenta desenvolvida para interpretar as condições climáticas futuras em cidades brasileiras. O objetivo principal é fornecer a pesquisadores, formuladores de políticas e profissionais uma plataforma abrangente para avaliar e mitigar os impactos das mudanças climáticas, oferecendo dados precisos para modelagem de conforto térmico e eficiência energética. Para mais detalhes, acesse diretamente no Zenodo.",
+    "button": "Acessar",
+    "back": "Voltar"
+  },
+  "paimp": {
+    "title": "Painel de Avaliação do Impacto de Mudanças Climáticas - Precipitação",
+    "description": "<strong class=\"font-semibold\">PAIM-P</strong> é um painel desenvolvido para interpretar padrões futuros de precipitação em cidades brasileiras, baseado em dados do projeto CLIMBra e em 19 modelos climáticos globais. A ferramenta oferece índices de precipitação como RX1day, RX5day, SDII, R20mm, CDD, CWD, R95p, PRCPTOT e SI, permitindo análises detalhadas sobre drenagem urbana, riscos de alagamento, planejamento agrícola, coleta de água de chuva e outras aplicações. O painel é gratuito, de acesso aberto, e foi projetado para facilitar a tomada de decisões em políticas públicas e planejamento urbano, ajudando na construção de ambientes mais resilientes frente às mudanças climáticas. Para mais detalhes, acesse diretamente o repositório Zenodo.",
+    "button": "Acessar",
+    "back": "Voltar"
+  }
+}

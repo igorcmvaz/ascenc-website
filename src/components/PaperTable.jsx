@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 export default function PaperTable({ title, papers }) {
+  const { t } = useTranslation();
+
   return (
     <div className="mb-12">
       <h4 className="text-2xl font-bold mt-6 mb-4 text-center">{title}</h4>
@@ -8,10 +12,10 @@ export default function PaperTable({ title, papers }) {
         <table className="min-w-full border-collapse text-sm bg-white rounded-lg">
           <thead className="bg-gray-100 text-gray-700 sticky top-0">
             <tr>
-              <th className="px-4 py-3 text-left font-semibold border-b">Data</th>
-              <th className="px-4 py-3 text-left font-semibold border-b">DOI</th>
-              <th className="px-4 py-3 text-left font-semibold border-b">Título</th>
-              <th className="px-4 py-3 text-left font-semibold border-b">Autores</th>
+              <th className="px-4 py-3 text-left font-semibold border-b">{t('papers.date')}</th>
+              <th className="px-4 py-3 text-left font-semibold border-b">{t('papers.doi')}</th>
+              <th className="px-4 py-3 text-left font-semibold border-b">{t('papers.table_title')}</th>
+              <th className="px-4 py-3 text-left font-semibold border-b">{t('papers.authors')}</th>
             </tr>
           </thead>
           <tbody>
@@ -48,10 +52,10 @@ export default function PaperTable({ title, papers }) {
             className="border border-gray-200 rounded-lg p-4 shadow-sm bg-white"
           >
             <p className="text-sm mb-1">
-              <span className="font-semibold">Data:</span> {paper.year}
+              <span className="font-semibold">{t('papers.date')}:</span> {paper.year}
             </p>
             <p className="text-sm mb-1">
-              <span className="font-semibold">DOI:</span>{" "}
+              <span className="font-semibold">{t('papers.doi')}:</span>{" "}
               <a
                 href={paper.doi}
                 target="_blank"
@@ -62,10 +66,10 @@ export default function PaperTable({ title, papers }) {
               </a>
             </p>
             <p className="text-sm mb-1">
-              <span className="font-semibold">Título:</span> {paper.title}
+              <span className="font-semibold">{t('papers.table_title')}:</span> {paper.title}
             </p>
             <p className="text-sm">
-              <span className="font-semibold">Autores:</span> {paper.authors}
+              <span className="font-semibold">{t('papers.authors')}:</span> {paper.authors}
             </p>
           </div>
         ))}

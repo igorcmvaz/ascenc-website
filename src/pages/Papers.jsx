@@ -1,5 +1,6 @@
 import PageLayout from "../components/PageLayout";
 import PaperTable from "../components/PaperTable";
+import { useTranslation } from "react-i18next";
 
 const eixoCidades = [
   {
@@ -46,12 +47,14 @@ const eixoEdificacoes = [
 ];
 
 export default function Papers() {
+  const { t } = useTranslation();
+
   return (
-    <PageLayout title="Artigos Publicados" noPadding>
+    <PageLayout title={t('papers.title')} noPadding>
       {/* Padding customizado apenas para essa página */}
       <div className="pt-10 pb-4 space-y-8">
-        <PaperTable title="Eixo Cidades" papers={eixoCidades} />
-        <PaperTable title="Eixo Edificações" papers={eixoEdificacoes} />
+        <PaperTable title={t('papers.cities_axis')} papers={eixoCidades} />
+        <PaperTable title={t('papers.buildings_axis')} papers={eixoEdificacoes} />
       </div>
     </PageLayout>
   );

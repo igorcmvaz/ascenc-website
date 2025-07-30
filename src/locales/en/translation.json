@@ -1,0 +1,79 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "papers": "Papers",
+    "tools": "Tools",
+    "team": "Team",
+    "contact": "Contact"
+  },
+  "footer": {
+    "rights": "© 2025 ASCENC. Igor Catão Martins Vaz. All rights reserved."
+  },
+  "home": {
+    "title": "Welcome to the ASCENC Project",
+    "description": "<strong>ASCENC (Sustainability Assessment in Cities and Buildings in New Climates)</strong> aims to research the interactions between cities, buildings, and future climates to reduce the environmental impact of civil construction and adapt the urban context to ensure habitability and resilience."
+  },
+  "about": {
+    "title": "About the ASCENC Project",
+    "p1": "The ASCENC project - Sustainability Assessment in Cities and Buildings in New Climates - originated from the combination of Igor Catão Martins Vaz's doctoral thesis with Professor Enedir Ghisi's research project. ASCENC is part of the research project \"Sustainability assessment of buildings and urban centers,\" submitted to CNPQ under the call CNPq/MCTI No 10/2023, coordinated by Enedir Ghisi. As a differentiator, it includes articles from Igor Catão's thesis, which addresses the impact of climate change on the environmental assessment of the built environment.",
+    "p2": "Thus, the project works on three main thematic axes:",
+    "axis1_title": "Future Climates Axis:",
+    "axis1_desc": "Recent methods to understand the impact of climate change on Brazilian cities, including air temperature, wind, precipitation, and solar radiation.",
+    "axis2_title": "Cities Axis:",
+    "axis2_desc": "How cities can be adapted to ensure habitability and climate resilience, focusing on outdoor thermal comfort and public policies.",
+    "axis3_title": "Buildings Axis:",
+    "axis3_desc": "Evaluates how urban planning decisions and future climates impact the energy, water, and material flows of buildings, with an emphasis on Life Cycle Assessment.",
+    "ods_alignment": "Alignment with the SDGs",
+    "partner_universities": "Collaborating Universities",
+    "ufsc_desc": "Postgraduate Program in Civil Engineering (PPGEC)",
+    "uc_desc": "Faculty of Science and Technology, University of Coimbra (FCTUC)",
+    "usp_desc": "School of Engineering of São Carlos (EESC)"
+  },
+  "tools": {
+    "title": "Tools",
+    "paimt": "PAIM-T (Thermodynamics)",
+    "paimp": "PAIM-P (Precipitation)",
+    "paimdu": "PAIM-DU",
+    "paimaa": "PAIM-AA",
+    "paimacv": "PAIM-ACV",
+    "paicacv": "PAIC-ACV",
+    "dev_suffix": "(In development)"
+  },
+  "team": {
+    "title": "Our Team",
+    "coordinator": "Coordinator",
+    "lead_researcher": "Lead Researcher",
+    "researcher": "Researcher",
+    "collaborator": "Collaborator"
+  },
+  "papers": {
+    "title": "Published Papers",
+    "cities_axis": "Cities Axis",
+    "buildings_axis": "Buildings Axis",
+    "date": "Date",
+    "doi": "DOI",
+    "table_title": "Title",
+    "authors": "Authors"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Fill out the form below to send your question or suggestion.",
+    "name": "Name",
+    "institution": "Institution",
+    "message": "Question / Suggestion",
+    "submit": "Submit"
+  },
+  "paimt": {
+    "title": "Climate Change Impact Assessment Panel - Thermodynamics",
+    "description": "<strong class=\"font-semibold\">PAIM-T</strong> is a tool developed to interpret future climate conditions in Brazilian cities. The main objective is to provide researchers, policymakers, and professionals with a comprehensive platform to assess and mitigate the impacts of climate change, offering accurate data for thermal comfort and energy efficiency modeling. For more details, access it directly on Zenodo.",
+    "button": "Access",
+    "back": "Back"
+  },
+  "paimp": {
+    "title": "Climate Change Impact Assessment Panel - Precipitation",
+    "description": "<strong class=\"font-semibold\">PAIM-P</strong> is a panel developed to interpret future precipitation patterns in Brazilian cities, based on data from the CLIMBra project and 19 global climate models. The tool offers precipitation indices such as RX1day, RX5day, SDII, R20mm, CDD, CWD, R95p, PRCPTOT, and SI, allowing for detailed analyses on urban drainage, flood risks, agricultural planning, rainwater harvesting, and other applications. The panel is free, open-access, and designed to facilitate decision-making in public policies and urban planning, helping to build more resilient environments in the face of climate change. For more details, access it directly on the Zenodo repository.",
+    "button": "Access",
+    "back": "Back"
+  }
+}

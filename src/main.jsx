@@ -11,6 +11,9 @@ import Contact from "./pages/Contact";
 import PAIMT from "./pages/paimt";
 import PAIMP from "./pages/paimp";
 
+// Importante: inicializar o i18n
+import "./i18n";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <HashRouter>

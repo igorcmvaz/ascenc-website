@@ -1,24 +1,22 @@
 import PageLayout from "../components/PageLayout";
 import { ExternalLink, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function PAIMT() {
+  const { t } = useTranslation();
+
   return (
-    <PageLayout title="Painel de Avaliação do Impacto de Mudanças climáticas - Termodinâmica">
+    <PageLayout title={t('paimt.title')}>
       <div className="space-y-12 text-gray-900">
-        {/* Seção principal com grid 4/5 - 1/5 */}
         <section className="grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
-          {/* Texto - 4/5 */}
           <div className="md:col-span-4 space-y-4">
-            <p className="text-lg leading-relaxed">
-              <strong className="font-semibold">PAIM-T</strong> é uma ferramenta desenvolvida para interpretar as condições climáticas
-              futuras em cidades brasileiras. O objetivo principal é fornecer a pesquisadores, formuladores de políticas e profissionais 
-              uma plataforma abrangente para avaliar e mitigar os impactos das mudanças climáticas, oferecendo dados precisos para modelagem 
-              de conforto térmico e eficiência energética. Para mais detalhes, acesse diretamente no Zenodo.
-            </p>
+            <p
+              className="text-lg leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: t('paimt.description') }}
+            />
           </div>
 
-          {/* Botão Zenodo - 1/5 */}
           <div className="flex justify-center md:justify-end">
             <a
               href="https://zenodo.org/records/12571153"
@@ -32,13 +30,12 @@ export default function PAIMT() {
                 className="w-14 h-14 object-contain mb-3 transition-transform duration-300 group-hover:scale-110"
               />
               <span className="text-sm font-semibold text-gray-800 group-hover:text-blue-600 flex items-center gap-1 text-center">
-                Acessar <ExternalLink className="w-4 h-4" />
+                {t('paimt.button')} <ExternalLink className="w-4 h-4" />
               </span>
             </a>
           </div>
         </section>
 
-        {/* Iframe */}
         <section>
           <div className="rounded-xl overflow-hidden shadow-xl border border-gray-300">
             <iframe
@@ -52,14 +49,13 @@ export default function PAIMT() {
             ></iframe>
           </div>
 
-          {/* Botão Voltar centralizado */}
           <div className="flex justify-center mt-12">
             <Link
               to="/tools"
               className="inline-flex items-center gap-2 px-6 py-2 bg-gray-100 text-gray-800 rounded-lg shadow hover:shadow-md hover:bg-gray-200 transition-all duration-300"
             >
               <ArrowLeft className="w-5 h-5" />
-              Voltar
+              {t('paimt.back')}
             </Link>
           </div>
         </section>

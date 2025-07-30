@@ -1,11 +1,14 @@
 import PageLayout from "../components/PageLayout";
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   return (
-    <PageLayout title="Entre em Contato">
+    <PageLayout title={t('contact.title')}>
       <div className="max-w-xl mx-auto bg-gray-50 shadow-md rounded-xl p-6">
         <p className="text-center mb-4 text-gray-700">
-          Preencha o formulário abaixo para enviar sua dúvida ou sugestão.
+          {t('contact.description')}
         </p>
 
         <form
@@ -15,7 +18,7 @@ export default function Contact() {
         >
           <div>
             <label htmlFor="name" className="block font-medium mb-1">
-              Nome
+              {t('contact.name')}
             </label>
             <input
               type="text"
@@ -28,7 +31,7 @@ export default function Contact() {
 
           <div>
             <label htmlFor="institution" className="block font-medium mb-1">
-              Instituição
+              {t('contact.institution')}
             </label>
             <input
               type="text"
@@ -41,7 +44,7 @@ export default function Contact() {
 
           <div>
             <label htmlFor="message" className="block font-medium mb-1">
-              Dúvida / Sugestão
+              {t('contact.message')}
             </label>
             <textarea
               id="message"
@@ -57,7 +60,7 @@ export default function Contact() {
               type="submit"
               className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition"
             >
-              Enviar
+              {t('contact.submit')}
             </button>
           </div>
         </form>
