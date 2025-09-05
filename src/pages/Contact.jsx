@@ -6,87 +6,73 @@ export default function Contact() {
 
   return (
     <PageLayout title={t("contact.title")}>
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-6">
-        {/* Formulário */}
-        <div className="flex-1 bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 shadow-md rounded-xl p-6">
-          <p className="text-center mb-4 text-gray-700 dark:text-zinc-300">
-            {t("contact.description")}
-          </p>
+      <div className="max-w-xl mx-auto bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 shadow-md rounded-xl p-6">
+        <p className="text-center mb-4 text-gray-700 dark:text-zinc-300">
+          {t("contact.description")}
+        </p>
 
-          <form
-            action="https://formsubmit.co/igorcmvaz@gmail.com"
-            method="POST"
-            className="space-y-4"
-          >
-            <div>
-              <label
-                htmlFor="name"
-                className="block font-medium mb-1 text-gray-800 dark:text-zinc-200"
-              >
-                {t("contact.name")}
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                className="w-full p-2 bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 text-gray-900 dark:text-zinc-100 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500 dark:focus:ring-slate-400"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="institution"
-                className="block font-medium mb-1 text-gray-800 dark:text-zinc-200"
-              >
-                {t("contact.institution")}
-              </label>
-              <input
-                type="text"
-                id="institution"
-                name="institution"
-                required
-                className="w-full p-2 bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 text-gray-900 dark:text-zinc-100 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500 dark:focus:ring-slate-400"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="block font-medium mb-1 text-gray-800 dark:text-zinc-200"
-              >
-                {t("contact.message")}
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                required
-                className="w-full p-2 bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 text-gray-900 dark:text-zinc-100 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500 dark:focus:ring-slate-400"
-              ></textarea>
-            </div>
-
-            <div className="text-center">
-              <button
-                type="submit"
-                className="bg-slate-800 text-white px-6 py-2 rounded-md hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 transition"
-              >
-                {t("contact.submit")}
-              </button>
-            </div>
-          </form>
-        </div>
-
-        {/* FlagCounter */}
-        <div className="w-full md:w-1/3 flex items-center justify-center bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 shadow-md rounded-xl p-6">
-          <a href="https://info.flagcounter.com/phUu">
-            <img
-              src="https://s01.flagcounter.com/count2/phUu/bg_FFFFFF/txt_000000/border_FFFFFF/columns_3/maxflags_12/viewers_3/labels_0/pageviews_0/flags_0/percent_0/"
-              alt="Flag Counter"
-              border="0"
+        <form
+          action="https://formsubmit.co/igorcmvaz@gmail.com"
+          method="POST"
+          className="space-y-4"
+        >
+          <div>
+            <label
+              htmlFor="name"
+              className="block font-medium mb-1 text-gray-800 dark:text-zinc-200"
+            >
+              {t("contact.name")}
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              className="w-full p-2 bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 text-gray-900 dark:text-zinc-100 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500 dark:focus:ring-slate-400"
             />
-          </a>
-        </div>
+          </div>
+
+          <div>
+            <label
+              htmlFor="institution"
+              className="block font-medium mb-1 text-gray-800 dark:text-zinc-200"
+            >
+              {t("contact.institution")}
+            </label>
+            <input
+              type="text"
+              id="institution"
+              name="institution"
+              required
+              className="w-full p-2 bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 text-gray-900 dark:text-zinc-100 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500 dark:focus:ring-slate-400"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="message"
+              className="block font-medium mb-1 text-gray-800 dark:text-zinc-200"
+            >
+              {t("contact.message")}
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              className="w-full p-2 bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 text-gray-900 dark:text-zinc-100 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500 dark:focus:ring-slate-400"
+            ></textarea>
+          </div>
+
+          <div className="text-center">
+            <button
+              type="submit"
+              className="bg-slate-800 text-white px-6 py-2 rounded-md hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 transition"
+            >
+              {t("contact.submit")}
+            </button>
+          </div>
+        </form>
       </div>
     </PageLayout>
   );
