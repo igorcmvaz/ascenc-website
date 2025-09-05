@@ -13,23 +13,20 @@ const odsData = [
 
 export default function About() {
   const { t } = useTranslation();
-
+  const axes = [1, 2, 3, 4, 5, 6];
+  
   return (
     <>
       <PageLayout title={t('about.title')}>
         <p className="text-justify mb-4">{t('about.p1')}</p>
         <p className="text-justify mb-4">{t('about.p2')}</p>
 
-        <ul className="list-disc pl-6 mb-6 text-justify">
-          <li>
-            <strong>{t('about.axis1_title')}</strong> {t('about.axis1_desc')}
-          </li>
-          <li>
-            <strong>{t('about.axis2_title')}</strong> {t('about.axis2_desc')}
-          </li>
-          <li>
-            <strong>{t('about.axis3_title')}</strong> {t('about.axis3_desc')}
-          </li>
+        <ul className="list-disc pl-6 mb-6 text-justify space-y-2">
+          {axes.map((i) => (
+            <li key={i}>
+              <strong>{t(`about.axis${i}_title`)}</strong> {t(`about.axis${i}_desc`)}
+            </li>
+          ))}
         </ul>
 
         <h2 className="text-2xl font-bold text-center mb-6">{t('about.ods_alignment')}</h2>

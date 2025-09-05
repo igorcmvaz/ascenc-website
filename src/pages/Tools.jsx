@@ -33,17 +33,17 @@ export default function Tools() {
       isPlaceholder: true,
     },
     {
-      title: `${t('tools.paimacv')} ${t('tools.dev_suffix')}`,
-      to: "#",
-      iconLight: "./assets/paimacv.png",
-      iconDark: "./assets/paimacv_dark.png",
-      isPlaceholder: true,
-    },
-    {
       title: `${t('tools.paicacv')} ${t('tools.dev_suffix')}`,
       to: "#",
       iconLight: "./assets/paicacv.png",
       iconDark: "./assets/paicacv_dark.png",
+      isPlaceholder: true,
+    },
+    {
+      title: `${t('tools.paimacv')} ${t('tools.dev_suffix')}`,
+      to: "#",
+      iconLight: "./assets/paimacv.png",
+      iconDark: "./assets/paimacv_dark.png",
       isPlaceholder: true,
     },
   ];
