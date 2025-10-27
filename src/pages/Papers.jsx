@@ -6,6 +6,14 @@ import { useTranslation } from "react-i18next";
 const eixoTermodinamica = [
   {
     year: "2025",
+    doi: "https://doi.org/10.1016/j.enbuild.2025.116566",
+    title:
+      "Assessing thermal comfort in naturally ventilated residential buildings under current and projected regional climates in Brazil",
+    authors:
+      "Taylana Piccinini Scolaro, Igor Catão Martins Vaz; Enedir Ghisi",
+  },
+  {
+    year: "2025",
     doi: "http://dx.doi.org/10.1016/j.enbuild.2024.115059",
     title:
       "Dashboard for interpreting future climate files used in the simulation of buildings – An outdoor thermal comfort approach",
