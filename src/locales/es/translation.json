@@ -88,5 +88,11 @@
     "description": "<strong class=\"font-semibold\">PAIM-P</strong> es un panel desarrollado para interpretar patrones futuros de precipitación en ciudades brasileñas, basado en datos del proyecto CLIMBra y en 19 modelos climáticos globales. La herramienta ofrece índices de precipitación como RX1day, RX5day, SDII, R20mm, CDD, CWD, R95p, PRCPTOT y SI, permitiendo análisis detallados sobre drenaje urbano, riesgos de inundación, planificación agrícola, recolección de agua de lluvia y otras aplicaciones. El panel es gratuito, de acceso abierto y fue diseñado para facilitar la toma de decisiones en políticas públicas y planificación urbana, ayudando a construir entornos más resilientes frente al cambio climático. Para más detalles, acceda directamente al repositorio de Zenodo.",
     "button": "Acceder",
     "back": "Volver"
+  },
+  "paimaa": {
+    "title": "Panel de Evaluación del Impacto del Cambio Climático - Calentamiento de Agua",
+    "description": "<strong class=\"font-semibold\">PAIM-AA</strong> es una herramienta desarrollada para apoyar la evaluación y optimización del calentamiento de agua en los hogares. La herramienta evalúa el consumo de electricidad para el calentamiento de agua en diferentes escenarios climáticos y proporciona indicadores y métricas clave para ayudar a los responsables de la toma de decisiones a evaluar y responder rápidamente a los retos relacionados con el clima. Los diseñadores pueden comparar el consumo de electricidad en las duchas eléctricas de diferentes ciudades, modificar los patrones de comportamiento de los usuarios y evaluar el impacto del cambio climático futuro. Se puede obtener más información en el panel de control o analizando la base de datos parquet disponible en el repositorio Zenodo.",
+    "button": "Acceder",
+    "back": "Volver"
   }
 }

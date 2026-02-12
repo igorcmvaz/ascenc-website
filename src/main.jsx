@@ -10,6 +10,7 @@ import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import PAIMT from "./pages/paimt";
 import PAIMP from "./pages/paimp";
+import PAIMAA from "./pages/paimaa";
 
 // Importante: inicializar o i18n
 import "./i18n";
@@ -26,6 +27,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/contact" element={<Contact />} />
         <Route path="/paimt" element={<PAIMT />} />
         <Route path="/paimp" element={<PAIMP />} />
+        <Route path="/paimaa" element={<PAIMAA />} />
       </Routes>
     </HashRouter>
   </React.StrictMode>

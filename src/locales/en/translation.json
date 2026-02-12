@@ -59,7 +59,6 @@
     "doi": "DOI",
     "table_title": "Title",
     "authors": "Authors",
-
     "axis_thermo": "Thermodynamics and Thermal Conditioning",
     "axis_rainwater": "Precipitation and Rainwater Harvesting",
     "axis_drainage": "Urban Drainage and Hydrological Impacts",
@@ -85,6 +84,12 @@
   "paimp": {
     "title": "Climate Change Impact Assessment Panel - Precipitation",
     "description": "<strong class=\"font-semibold\">PAIM-P</strong> is a panel developed to interpret future precipitation patterns in Brazilian cities, based on data from the CLIMBra project and 19 global climate models. The tool offers precipitation indices such as RX1day, RX5day, SDII, R20mm, CDD, CWD, R95p, PRCPTOT, and SI, allowing for detailed analyses on urban drainage, flood risks, agricultural planning, rainwater harvesting, and other applications. The panel is free, open-access, and designed to facilitate decision-making in public policies and urban planning, helping to build more resilient environments in the face of climate change. For more details, access it directly on the Zenodo repository.",
+    "button": "Access",
+    "back": "Back"
+  },
+  "paimaa": {
+    "title": "Climate Change Impact Assessment Panel - Water Heating",
+    "description": "<strong class=\"font-semibold\">PAIM-AA</strong> is a tool developed to support the assessment and optimisation of water heating in households. The tool assesses electricity consumption for water heating in different climate scenarios and provides key indicators and metrics to help decision-makers assess and respond quickly to climate-related challenges. Designers can compare electricity consumption in electric showers in different cities, modify user behaviour patterns, and assess the impact of future climate change. More details can be obtained from the dashboard or by analysing the parquet database available in the Zenodo repository.",
     "button": "Access",
     "back": "Back"
   }

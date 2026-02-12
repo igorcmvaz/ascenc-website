@@ -59,7 +59,6 @@
     "doi": "DOI",
     "table_title": "Título",
     "authors": "Autores",
-
     "axis_thermo": "Termodinâmica e condicionamento térmico",
     "axis_rainwater": "Precipitação e captação de água da chuva",
     "axis_drainage": "Drenagem urbana e impactos hidrológicos",
@@ -85,6 +84,12 @@
   "paimp": {
     "title": "Painel de Avaliação do Impacto de Mudanças Climáticas - Precipitação",
     "description": "<strong class=\"font-semibold\">PAIM-P</strong> é um painel desenvolvido para interpretar padrões futuros de precipitação em cidades brasileiras, baseado em dados do projeto CLIMBra e em 19 modelos climáticos globais. A ferramenta oferece índices de precipitação como RX1day, RX5day, SDII, R20mm, CDD, CWD, R95p, PRCPTOT e SI, permitindo análises detalhadas sobre drenagem urbana, riscos de alagamento, planejamento agrícola, coleta de água de chuva e outras aplicações. O painel é gratuito, de acesso aberto, e foi projetado para facilitar a tomada de decisões em políticas públicas e planejamento urbano, ajudando na construção de ambientes mais resilientes frente às mudanças climáticas. Para mais detalhes, acesse diretamente o repositório Zenodo.",
+    "button": "Acessar",
+    "back": "Voltar"
+  },
+  "paimaa": {
+    "title": "Painel de Avaliação do Impacto de Mudanças Climáticas - Aquecimento de Água",
+    "description": "<strong class=\"font-semibold\">PAIM-AA</strong> é uma ferramenta desenvolvida para apoiar a avaliação e otimização do aquecimento de água em residências. A ferramenta avalia o consumo de eletricidade para o aquecimento de água em diferentes cenários climáticos e fornece indicadores e métricas chave para ajudar tomadores de decisão a avaliar e responder rapidamente a desafios relacionados ao clima. O projetista pode comparar o consumo de eletricidade em chuveiros elétricos em diferentes cidades, modificar o padrão de comportamento do usuário e avaliar o impacto de mudanças climáticas futuras. Mais detalhes podem ser obtidos a partir do dashboard ou na análise do banco de dados parquet disponível no repositório Zenodo.",
     "button": "Acessar",
     "back": "Voltar"
   }

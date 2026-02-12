@@ -26,11 +26,10 @@ export default function Tools() {
       isPlaceholder: true,
     },
     {
-      title: `${t('tools.paimaa')} ${t('tools.dev_suffix')}`,
-      to: "#",
+      title: t('tools.paimaa'),
+      to: "/paimaa",
       iconLight: "./assets/paimaa.png",
       iconDark: "./assets/paimaa_dark.png",
-      isPlaceholder: true,
     },
     {
       title: `${t('tools.paicacv')} ${t('tools.dev_suffix')}`,
