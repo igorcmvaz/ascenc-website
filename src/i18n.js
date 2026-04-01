@@ -5,6 +5,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import translationEN from './locales/en/translation.json';
 import translationPTBR from './locales/pt-BR/translation.json';
 import translationES from './locales/es/translation.json'; // 1. Importar espanhol
+import translationZH from './locales/zh/translation.json';
 
 const resources = {
   en: {
@@ -15,6 +16,9 @@ const resources = {
   },
   es: { // 2. Adicionar o recurso espanhol
     translation: translationES
+  },
+  zh: {
+    translation: translationZH
   }
 };
 

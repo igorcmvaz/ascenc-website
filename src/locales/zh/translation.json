@@ -1,0 +1,96 @@
+{
+  "header": {
+    "home": "首页",
+    "about": "关于项目",
+    "papers": "论文发表",
+    "tools": "分析工具",
+    "team": "研究团队",
+    "contact": "联系我们"
+  },
+  "footer": {
+    "rights": "© 2026 ASCENC. Igor Catão Martins Vaz. 保留所有权利。"
+  },
+  "home": {
+    "title": "欢迎来到 ASCENC 项目",
+    "description": "<strong>ASCENC（新气候下的城市与建筑可持续性评估）</strong> 旨在研究城市、建筑与未来气候之间的相互作用，以减少土木建设对环境的影响，并调整城市环境以确保居住性和韧性。"
+  },
+  "about": {
+    "title": "关于 ASCENC 项目",
+    "p1": "ASCENC 项目（新气候下的城市与建筑可持续性评估）源于 Igor Catão Martins Vaz 的博士论文与 Enedir Ghisi 教授研究项目的结合。ASCENC 是“建筑与城市中心可持续性评估”研究项目的一部分，该项目根据 CNPq/MCTI 第 10/2023 号公告提交给 CNPq，由 Enedir Ghisi 协调。作为特色，它包含了 Igor Catão 博士论文中的文章，该论文探讨了气候变化对建筑环境评估的影响。",
+    "p2": "该项目将其出版物和工具组织为六个综合主题轴。每个轴心都侧重于当前和未来气候下城市和建筑的一套方法、数据和应用：",
+    "axis1_title": "热力学与热调节：",
+    "axis1_desc": "室外和室内热舒适、城市热岛、未来气候文件（变形的 EPW）、UTCI/PMV 等指标，以及热调节和城市设计策略。",
+    "axis2_title": "降水与雨水收集：",
+    "axis2_desc": "降水指数（RX1day, RX5day, SDII, R20mm, CDD, CWD, R95p, PRCPTOT, SI）、雨水收集系统（RWH）的潜力和规模，以及未来情景下的水性能。",
+    "axis3_title": "城市排水与水文影响：",
+    "axis3_desc": "历史和未来 IDF 曲线、地表径流、洪水、滞洪池/蓄洪池，以及城市适应的设计指南。",
+    "axis4_title": "水加热：",
+    "axis4_desc": "系统基准测试和模拟（电淋浴器、燃气、电锅炉、太阳能辅助加热）、INMETRO/INI-R 参数化、初级能源以及对习惯和未来气候的敏感性。",
+    "axis5_title": "碳化：",
+    "axis5_desc": "定量分析混凝土和砂浆中由于碳化产生的 CO₂ 吸收量、A1–A5 边界和使用寿命情景，及其对温室气体排放清单的影响。",
+    "axis6_title": "生命周期评估 (LCA)：",
+    "axis6_desc": "材料、系统和建筑的 LCA；与本地和全球数据库集成（例如 Ecoinvent, SIDAC），边界定义，环境指标和对比研究。",
+    "ods_alignment": "与可持续发展目标 (SDGs) 对齐",
+    "partner_universities": "合作伙伴大学",
+    "ufsc_desc": "土木工程研究生项目 (PPGEC)",
+    "uc_desc": "科英布拉大学科学技术学院 (FCTUC)",
+    "usp_desc": "圣卡洛斯工程学院 (EESC)"
+  },
+  "tools": {
+    "title": "分析工具",
+    "paimt": "PAIM-T (热力学)",
+    "paimp": "PAIM-P (降水)",
+    "paimdu": "PAIM-DU",
+    "paimaa": "PAIM-AA (水加热)",
+    "paimacv": "PAIM-ACV",
+    "paicacv": "PAIC-ACV",
+    "dev_suffix": "（开发中）"
+  },
+  "team": {
+    "title": "我们的团队",
+    "coordinator": "协调人",
+    "lead_researcher": "首席研究员",
+    "researcher": "研究员",
+    "collaborator": "合作者"
+  },
+  "papers": {
+    "title": "已发表论文",
+    "date": "日期",
+    "doi": "DOI",
+    "table_title": "标题",
+    "authors": "作者",
+    "axis_thermo": "热力学与热调节",
+    "axis_rainwater": "降水与雨水收集",
+    "axis_drainage": "城市排水与水文影响",
+    "axis_hotwater": "水加热",
+    "axis_carbonation": "碳化",
+    "axis_lca": "生命周期评估 (LCA)",
+    "in_production": "进行中"
+  },
+  "contact": {
+    "title": "联系我们",
+    "description": "填写下方表格发送您的问题或建议。",
+    "name": "姓名",
+    "institution": "机构",
+    "message": "问题 / 建议",
+    "submit": "提交"
+  },
+  "paimt": {
+    "title": "气候变化影响评估面板 - 热力学",
+    "description": "<strong class=\"font-semibold\">PAIM-T</strong> 是为解释巴西城市未来气候条件而开发的工具。主要目标是为研究人员、政策制定者和专业人士提供一个全面的平台，以评估和减缓气候变化的影响，为热舒适和能源效率建模提供准确的数据。有关更多详细信息，请直接在 Zenodo 访问它。",
+    "button": "访问",
+    "back": "返回"
+  },
+  "paimp": {
+    "title": "气候变化影响评估面板 - 降水",
+    "description": "<strong class=\"font-semibold\">PAIM-P</strong> 是基于 CLIMBra 项目和 19 个全球气候模型的数据开发的一个用于解释巴西城市未来降水模式的面板。该工具提供 RX1day, RX5day, SDII, R20mm, CDD, CWD, R95p, PRCPTOT 和 SI 等降水指数，允许对城市排水、洪水风险、农业规划、雨水收集及其他应用进行详细分析。该面板免费且开放访问，旨在促进公共政策和城市规划中的决策，帮助在气候变化面前建立更具韧性的环境。有关更多详细信息，请在 Zenodo 仓库直接访问。",
+    "button": "访问",
+    "back": "返回"
+  },
+  "paimaa": {
+    "title": "气候变化影响评估面板 - 水加热",
+    "description": "<strong class=\"font-semibold\">PAIM-AA</strong> 是为支持评估和优化家庭水加热而开发的工具。该工具评估了不同气候情景下水加热的电力消耗，并提供关键指标，帮助决策者评估并快速应对气候相关的挑战。设计人员可以比较不同城市电淋浴器的电力消耗，修改用户行为模式，并评估未来气候变化的影响。更多细节可以从仪表板获得，或通过分析 Zenodo 仓库中提供的 Parquet 数据库获得。",
+    "button": "访问",
+    "back": "返回"
+  }
+}

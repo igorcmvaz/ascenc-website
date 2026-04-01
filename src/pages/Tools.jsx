@@ -19,17 +19,17 @@ export default function Tools() {
       iconDark: "./assets/paimp_dark.png",
     },
     {
+      title: t('tools.paimaa'),
+      to: "/paimaa",
+      iconLight: "./assets/paimaa.png",
+      iconDark: "./assets/paimaa_dark.png",
+    },
+    {
       title: `${t('tools.paimdu')} ${t('tools.dev_suffix')}`,
       to: "#",
       iconLight: "./assets/paimdu.png",
       iconDark: "./assets/paimdu_dark.png",
       isPlaceholder: true,
-    },
-    {
-      title: t('tools.paimaa'),
-      to: "/paimaa",
-      iconLight: "./assets/paimaa.png",
-      iconDark: "./assets/paimaa_dark.png",
     },
     {
       title: `${t('tools.paicacv')} ${t('tools.dev_suffix')}`,

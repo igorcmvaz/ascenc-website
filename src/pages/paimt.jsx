@@ -29,7 +29,7 @@ export default function PAIMT() {
                 alt="Zenodo"
                 className="w-14 h-14 object-contain mb-3 transition-transform duration-300 group-hover:scale-110 dark:hidden"
               />
-               <img
+              <img
                 src="./assets/zenodo_dark.png"
                 alt="Zenodo"
                 className="w-14 h-14 object-contain mb-3 transition-transform duration-300 group-hover:scale-110 hidden dark:block"
@@ -45,7 +45,7 @@ export default function PAIMT() {
           <div className="rounded-xl overflow-hidden shadow-xl dark:shadow-md dark:shadow-zinc-700 border border-gray-300 dark:border-zinc-700">
             <iframe
               title="PAIM-T Dashboard"
-              src="https://app.powerbi.com/view?r=eyJrIjoiNWI0ZTk5YjMtZjA5Ny00ZjE3LTk2ZDUtNDA1OThhNWQ3NWYxIiwidCI6ImZhNzk1MzFjLThjZTUtNGJkMy05N2VlLTI0NWU2ZWUyNjZiOCJ9"
+              src="https://app.powerbi.com/view?r=eyJrIjoiYmUxOTE3ZDItMjk4MC00MzVmLWE3MTMtOTMyMGE3NzExZDdkIiwidCI6ImZhNzk1MzFjLThjZTUtNGJkMy05N2VlLTI0NWU2ZWUyNjZiOCJ9&pageName=ReportSection"
               style={{
                 width: "100%",
                 height: "600px",

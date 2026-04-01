@@ -39,6 +39,14 @@ const eixoTermodinamica = [
 // Precipitação e captação de água da chuva
 const eixoPrecipitacao = [
   {
+    year: "2026",
+    doi: "https://doi.org/10.3390/w18070792",
+    title:
+      "Projected Climate Change Impacts on Rainwater Harvesting in Brazilian Single-Family Houses",
+    authors:
+      "Igor Catão Martins Vaz; Andréa Teston; Eugénio Rodrigues; Enedir Ghisi; André Simões Ballarin; Abderraman Róger de Amorim Brandão",
+  },
+  {
     year: "2025",
     doi: "https://www.mdpi.com/3042-5743/32/1/4",
     title:

@@ -58,6 +58,8 @@ export default function Header() {
               <button onClick={() => changeLanguage('en')} className={`text-sm font-medium ${i18n.language === 'en' ? 'text-black dark:text-white' : 'text-gray-500 dark:text-zinc-400 hover:text-black dark:hover:text-white'}`}>EN</button>
               <span className="text-gray-300 dark:text-zinc-600">|</span>
               <button onClick={() => changeLanguage('es')} className={`text-sm font-medium ${i18n.language === 'es' ? 'text-black dark:text-white' : 'text-gray-500 dark:text-zinc-400 hover:text-black dark:hover:text-white'}`}>ES</button>
+              <span className="text-gray-300 dark:text-zinc-600">|</span>
+              <button onClick={() => changeLanguage('zh')} className={`text-sm font-medium ${i18n.language === 'zh' ? 'text-black dark:text-white' : 'text-gray-500 dark:text-zinc-400 hover:text-black dark:hover:text-white'}`}>CN</button>
             </div>
             <ThemeSwitcher />
           </div>
@@ -89,6 +91,7 @@ export default function Header() {
                 <button onClick={() => changeLanguage('pt-BR')} className={`text-base font-medium ${i18n.language.startsWith('pt') ? 'text-black dark:text-white' : 'text-gray-500 dark:text-zinc-400'}`}>Português</button>
                 <button onClick={() => changeLanguage('en')} className={`text-base font-medium ${i18n.language === 'en' ? 'text-black dark:text-white' : 'text-gray-500 dark:text-zinc-400'}`}>English</button>
                 <button onClick={() => changeLanguage('es')} className={`text-base font-medium ${i18n.language === 'es' ? 'text-black dark:text-white' : 'text-gray-500 dark:text-zinc-400'}`}>Español</button>
+                <button onClick={() => changeLanguage('zh')} className={`text-base font-medium ${i18n.language === 'zh' ? 'text-black dark:text-white' : 'text-gray-500 dark:text-zinc-400'}`}>中文</button>
               </div>
           </div>
         </div>
