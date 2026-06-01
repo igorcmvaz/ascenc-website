@@ -1,12 +1,12 @@
 import Header from "./Header";
 import Footer from "./Footer";
 
-export default function PageLayout({ title, children, noPadding = false, centerOnScreen = false }) {
+export default function PageLayout({ title, children, noPadding = false, centerOnScreen = false, fullWidth = false }) {
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-zinc-900 text-gray-800 dark:text-zinc-200 transition-colors duration-300">
       <Header />
       <main
-        className={`flex-1 w-full max-w-6xl mx-auto px-3 ${noPadding ? "" : "pt-24 pb-16"} ${
+        className={`flex-1 w-full ${fullWidth ? "max-w-[1400px] px-6" : "max-w-6xl px-3"} mx-auto ${noPadding ? "" : "pt-24 pb-16"} ${
           centerOnScreen ? "flex flex-col justify-center" : ""
         }`}
       >

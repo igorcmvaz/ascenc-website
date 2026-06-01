@@ -20,14 +20,14 @@
     "p2": "The project organizes its publications and tools into six integrated thematic axes. Each axis focuses on a set of methods, data, and applications in cities and buildings under current and future climates:",
     "axis1_title": "Thermodynamics and Thermal Conditioning:",
     "axis1_desc": "Outdoor and indoor thermal comfort, urban heat islands, future climate files (morphed EPWs), metrics such as UTCI/PMV, and strategies for thermal conditioning and urban design.",
-    "axis2_title": "Precipitation and Rainwater Harvesting:",
-    "axis2_desc": "Precipitation indices (RX1day, RX5day, SDII, R20mm, CDD, CWD, R95p, PRCPTOT, SI), potential and sizing of rainwater harvesting systems (RWH), and water performance under future scenarios.",
-    "axis3_title": "Urban Drainage and Hydrological Impacts:",
-    "axis3_desc": "Historical and future IDF curves, surface runoff, flooding, detention/retention basins, and design guidelines for urban adaptation.",
+    "axis2_title": "Precipitation:",
+    "axis2_desc": "Precipitation indices (RX1day, RX5day, SDII, R20mm, CDD, CWD, R95p, PRCPTOT, SI), analysis of historical and future patterns, flood risks, and applications in urban and agricultural planning.",
+    "axis3_title": "Rainwater Harvesting:",
+    "axis3_desc": "Potential and sizing of rainwater harvesting systems (RWH), water performance under future climate scenarios, and economic and environmental analysis of residential and urban systems.",
     "axis4_title": "Water Heating:",
     "axis4_desc": "Benchmarking and simulation of systems (electric shower, gas, electric boiler, solar with backup), INMETRO/INI-R parameterization, primary energy, and sensitivity to habits and future climate.",
     "axis5_title": "Carbonation:",
-    "axis5_desc": "Quantification of CO₂ absorption by carbonation in concrete and mortars, A1–A5 boundaries and service-life scenarios, with implications for GHG inventories.",
+    "axis5_desc": "Quantification of CO₂ absorption by carbonation in concrete and mortars, A1–5 boundaries and service-life scenarios, with implications for GHG inventories.",
     "axis6_title": "Life Cycle Assessment (LCA):",
     "axis6_desc": "LCA of materials, systems, and buildings; integration with local and global databases (e.g., Ecoinvent, SIDAC), boundary definition, environmental indicators, and comparative studies.",
     "ods_alignment": "Alignment with the SDGs",
@@ -40,10 +40,10 @@
     "title": "Tools",
     "paimt": "PAIM-T (Thermodynamics)",
     "paimp": "PAIM-P (Precipitation)",
-    "paimdu": "PAIM-DU",
     "paimaa": "PAIM-AA (Water Heating)",
     "paimacv": "PAIM-ACV",
-    "paicacv": "PAIC-ACV",
+    "paimrwh": "PAIM-RWH (Rainwater Harvesting)",
+    "paicacv": "PAIC-ACV (Carbonation)",
     "dev_suffix": "(In development)"
   },
   "team": {
@@ -60,8 +60,8 @@
     "table_title": "Title",
     "authors": "Authors",
     "axis_thermo": "Thermodynamics and Thermal Conditioning",
-    "axis_rainwater": "Precipitation and Rainwater Harvesting",
-    "axis_drainage": "Urban Drainage and Hydrological Impacts",
+    "axis_precipitation": "Precipitation",
+    "axis_rainwaterharvesting": "Rainwater Harvesting",
     "axis_hotwater": "Water Heating",
     "axis_carbonation": "Carbonation",
     "axis_lca": "Life Cycle Assessment (LCA)",
@@ -91,6 +91,11 @@
     "title": "Climate Change Impact Assessment Panel - Water Heating",
     "description": "<strong class=\"font-semibold\">PAIM-AA</strong> is a tool developed to support the assessment and optimisation of water heating in households. The tool assesses electricity consumption for water heating in different climate scenarios and provides key indicators and metrics to help decision-makers assess and respond quickly to climate-related challenges. Designers can compare electricity consumption in electric showers in different cities, modify user behaviour patterns, and assess the impact of future climate change. More details can be obtained from the dashboard or by analysing the parquet database available in the Zenodo repository.",
     "button": "Access",
+    "back": "Back"
+  },
+  "paicacv": {
+    "title": "Carbonation and CO₂ Sequestration Calculator for Buildings (PAIC-ACV)",
+    "description": "<strong class=\"font-semibold\">PAIC-ACV</strong> is a tool dedicated to quantifying CO₂ absorption through carbonation in cement-based materials (concrete and mortar), integrating service life and end-of-life (EoL) scenarios. The platform enables analyses from a Whole Building Life Cycle Assessment (LCA) perspective, assisting in the estimation of the net balance of emissions and carbon sequestration over time.",
     "back": "Back"
   }
 }

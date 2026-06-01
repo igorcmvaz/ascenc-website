@@ -39,12 +39,12 @@
 ,
   "tools": {
     "title": "Herramientas",
-    "paimt": "PAIM-T (Termodinámica)",
+    "paimt": "PAIM-T (Termodínamica)",
     "paimp": "PAIM-P (Precipitación)",
-    "paimdu": "PAIM-DU",
     "paimaa": "PAIM-AA (Calentamiento de Agua)",
     "paimacv": "PAIM-ACV",
-    "paicacv": "PAIC-ACV",
+    "paimrwh": "PAIM-RWH (Aprovechamiento de Agua de Lluvia)",
+    "paicacv": "PAIC-ACV (Carbonatación)",
     "dev_suffix": "(En desarrollo)"
   },
   "team": {
@@ -93,6 +93,11 @@
     "title": "Panel de Evaluación del Impacto del Cambio Climático - Calentamiento de Agua",
     "description": "<strong class=\"font-semibold\">PAIM-AA</strong> es una herramienta desarrollada para apoyar la evaluación y optimización del calentamiento de agua en los hogares. La herramienta evalúa el consumo de electricidad para el calentamiento de agua en diferentes escenarios climáticos y proporciona indicadores y métricas clave para ayudar a los responsables de la toma de decisiones a evaluar y responder rápidamente a los retos relacionados con el clima. Los diseñadores pueden comparar el consumo de electricidad en las duchas eléctricas de diferentes ciudades, modificar los patrones de comportamiento de los usuarios y evaluar el impacto del cambio climático futuro. Se puede obtener más información en el panel de control o analizando la base de datos parquet disponible en el repositorio Zenodo.",
     "button": "Acceder",
+    "back": "Volver"
+  },
+  "paicacv": {
+    "title": "Calculadora de Carbonatación y Secuestro de CO₂ de Edificaciones (PAIC-ACV)",
+    "description": "<strong class=\"font-semibold\">PAIC-ACV</strong> es una herramienta dedicada a la cuantificación de la absorción de CO₂ por carbonatación en materiales cementicios (hormigón y mortero), integrando escenarios de vida útil y fin de vida (EoL). La plataforma permite realizar análisis bajo la perspectiva de Evaluación del Ciclo de Vida (ACV) de edificios enteros, ayudando en la estimación del balance neto de emisiones y en el secuestro de carbono a lo largo del tiempo.",
     "back": "Volver"
   }
 }

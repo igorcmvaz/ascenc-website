@@ -25,25 +25,24 @@ export default function Tools() {
       iconDark: "./assets/paimaa_dark.png",
     },
     {
-      title: `${t('tools.paimdu')} ${t('tools.dev_suffix')}`,
+      title: `${t('tools.paimacv')} ${t('tools.dev_suffix')}`,
+      to: "#",
+      iconLight: "./assets/paimacv.png",
+      iconDark: "./assets/paimacv_dark.png",
+      isPlaceholder: true,
+    },
+    {
+      title: `${t('tools.paimrwh')} ${t('tools.dev_suffix')}`,
       to: "#",
       iconLight: "./assets/paimdu.png",
       iconDark: "./assets/paimdu_dark.png",
       isPlaceholder: true,
     },
     {
-      title: `${t('tools.paicacv')} ${t('tools.dev_suffix')}`,
-      to: "#",
+      title: t('tools.paicacv'),
+      to: "/paicacv",
       iconLight: "./assets/paicacv.png",
       iconDark: "./assets/paicacv_dark.png",
-      isPlaceholder: true,
-    },
-    {
-      title: `${t('tools.paimacv')} ${t('tools.dev_suffix')}`,
-      to: "#",
-      iconLight: "./assets/paimacv.png",
-      iconDark: "./assets/paimacv_dark.png",
-      isPlaceholder: true,
     },
   ];
 

@@ -20,10 +20,10 @@
     "p2": "O projeto organiza suas publicações e ferramentas em seis eixos temáticos integrados. Cada eixo foca um conjunto de métodos, dados e aplicações em cidades e edificações sob climas atuais e futuros:",
     "axis1_title": "Termodinâmica e condicionamento térmico:",
     "axis1_desc": "Conforto térmico externo e interno, ilhas de calor urbano, arquivos climáticos futuros (EPW morphed), métricas como UTCI/PMV, e estratégias de condicionamento térmico e desenho urbano.",
-    "axis2_title": "Precipitação e captação de água da chuva:",
-    "axis2_desc": "Índices de precipitação (RX1day, RX5day, SDII, R20mm, CDD, CWD, R95p, PRCPTOT, SI), potencial e dimensionamento de sistemas de captação pluvial (RWH), desempenho hídrico sob cenários futuros.",
-    "axis3_title": "Drenagem urbana e impactos hidrológicos:",
-    "axis3_desc": "Curvas IDF históricas e futuras, escoamento superficial, alagamentos, bacias de detenção/retardo e diretrizes de projeto para adaptação urbana.",
+    "axis2_title": "Precipitação:",
+    "axis2_desc": "Índices de precipitação (RX1day, RX5day, SDII, R20mm, CDD, CWD, R95p, PRCPTOT, SI), análise de padrões históricos e futuros, riscos de alagamento e aplicações em planejamento urbano e agrícola.",
+    "axis3_title": "Captação de água da chuva:",
+    "axis3_desc": "Potencial e dimensionamento de sistemas de captação pluvial (RWH), desempenho hídrico sob cenários climáticos futuros, e análise econômica e ambiental de sistemas residenciais e urbanos.",
     "axis4_title": "Aquecimento de água:",
     "axis4_desc": "Benchmarking e simulação de sistemas (chuveiro elétrico, gás, boiler elétrico, solar com apoio), parametrização INMETRO/INI-R, energia primária e sensibilidade a hábitos e clima futuro.",
     "axis5_title": "Carbonatação:",
@@ -40,10 +40,10 @@
     "title": "Ferramentas",
     "paimt": "PAIM-T (Termodinâmica)",
     "paimp": "PAIM-P (Precipitação)",
-    "paimdu": "PAIM-DU",
     "paimaa": "PAIM-AA (Aquecimento de Água)",
     "paimacv": "PAIM-ACV",
-    "paicacv": "PAIC-ACV",
+    "paimrwh": "PAIM-RWH (Aproveitamento de Água da Chuva)",
+    "paicacv": "PAIC-ACV (Carbonatação)",
     "dev_suffix": "(Em desenvolvimento)"
   },
   "team": {
@@ -60,8 +60,8 @@
     "table_title": "Título",
     "authors": "Autores",
     "axis_thermo": "Termodinâmica e condicionamento térmico",
-    "axis_rainwater": "Precipitação e captação de água da chuva",
-    "axis_drainage": "Drenagem urbana e impactos hidrológicos",
+    "axis_precipitation": "Precipitação",
+    "axis_rainwaterharvesting": "Captação de água da chuva",
     "axis_hotwater": "Aquecimento de água",
     "axis_carbonation": "Carbonatação",
     "axis_lca": "Avaliação do Ciclo de Vida (ACV)",
@@ -91,6 +91,11 @@
     "title": "Painel de Avaliação do Impacto de Mudanças Climáticas - Aquecimento de Água",
     "description": "<strong class=\"font-semibold\">PAIM-AA</strong> é uma ferramenta desenvolvida para apoiar a avaliação e otimização do aquecimento de água em residências. A ferramenta avalia o consumo de eletricidade para o aquecimento de água em diferentes cenários climáticos e fornece indicadores e métricas chave para ajudar tomadores de decisão a avaliar e responder rapidamente a desafios relacionados ao clima. O projetista pode comparar o consumo de eletricidade em chuveiros elétricos em diferentes cidades, modificar o padrão de comportamento do usuário e avaliar o impacto de mudanças climáticas futuras. Mais detalhes podem ser obtidos a partir do dashboard ou na análise do banco de dados parquet disponível no repositório Zenodo.",
     "button": "Acessar",
+    "back": "Voltar"
+  },
+  "paicacv": {
+    "title": "Calculadora de Carbonatação e Sequestro de CO₂ de Edificações (PAIC-ACV)",
+    "description": "<strong class=\"font-semibold\">PAIC-ACV</strong> é uma ferramenta dedicada à quantificação da absorção de CO₂ por carbonatação em materiais cimentícios (concretos e argamassas), integrando cenários de vida útil e fim de vida (EoL). A plataforma permite realizar análises sob a perspectiva de Avaliação de Ciclo de Vida (ACV) de edifícios inteiros, auxiliando na estimativa do balanço líquido de emissões e no sequestro de carbono ao longo do tempo.",
     "back": "Voltar"
   }
 }

@@ -40,10 +40,10 @@
     "title": "分析工具",
     "paimt": "PAIM-T (热力学)",
     "paimp": "PAIM-P (降水)",
-    "paimdu": "PAIM-DU",
     "paimaa": "PAIM-AA (水加热)",
     "paimacv": "PAIM-ACV",
-    "paicacv": "PAIC-ACV",
+    "paimrwh": "PAIM-RWH (雨水收集)",
+    "paicacv": "PAIC-ACV (碳化)",
     "dev_suffix": "（开发中）"
   },
   "team": {
@@ -91,6 +91,11 @@
     "title": "气候变化影响评估面板 - 水加热",
     "description": "<strong class=\"font-semibold\">PAIM-AA</strong> 是为支持评估和优化家庭水加热而开发的工具。该工具评估了不同气候情景下水加热的电力消耗，并提供关键指标，帮助决策者评估并快速应对气候相关的挑战。设计人员可以比较不同城市电淋浴器的电力消耗，修改用户行为模式，并评估未来气候变化的影响。更多细节可以从仪表板获得，或通过分析 Zenodo 仓库中提供的 Parquet 数据库获得。",
     "button": "访问",
+    "back": "返回"
+  },
+  "paicacv": {
+    "title": "建筑物碳化与 CO₂ 封存计算器 (PAIC-ACV)",
+    "description": "<strong class=\"font-semibold\">PAIC-ACV</strong> 是一款致力于定量分析水泥基材料（混凝土和砂浆）中由于碳化产生的 CO₂ 吸收量的工具，集成了使用寿命和生命周期结束（EoL）情景。该平台允许从整栋建筑生命周期评估（LCA）的角度进行分析，协助估算净排放量平衡和随时间推移的碳封存量。",
     "back": "返回"
   }
 }
