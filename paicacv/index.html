@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Carbonatação e Sequestro de CO₂ de Edificações</title>
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- External Libraries from highly reliable CDNs (Zero weight locally) -->
+    <!-- Chart.js for beautiful canvas plots -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
+            integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- chartjs-plugin-datalabels for in-slice percentage labels -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"
+            integrity="sha384-y49Zu59jZHJL/PLKgZPv3k2WI9c0Yp3pWB76V8OBVCb0QBKS8l4Ff3YslzHVX76Y"
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- SheetJS (XLSX) full for client-side Excel handling -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"
+            integrity="sha512-r22gChDnGvBylk90+2e/ycr3RVrDi8DIOkIGNhJlKfuyQM4tIRAI062MaV8sfjQKYVGjOBaZBOA87z+IhZE9DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- Header & Main Navigation Tabs -->
+        <header class="tab-navigation-root">
+            <nav class="main-tab-list">
+                <button class="main-tab-btn active" onclick="switchTab(event, 'main_tab_workspace')">Parâmetros</button>
+                <button class="main-tab-btn" onclick="switchTab(event, 'main_tab_citation')">Citação</button>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-fullscreen-toggle" onclick="toggleFullscreen()" title="Tela cheia">🖥️</button>
+                <button class="btn-theme-toggle" onclick="toggleTheme()" title="Alternar modo claro/escuro">☀️/🌙</button>
+            </div>
+        </header>
+
+        <!-- PANEL 1: Calculations & Workspace -->
+        <main id="main_tab_workspace" class="main-tab-panel workspace-active active">
+            
+            <!-- Left Sidebar settings -->
+            <aside class="sidebar">
+                
+                <div class="panel-header">
+                    <span class="panel-title">Fatores/Modelos</span>
+                </div>
+                
+                <!-- Section 1: Global Parameters -->
+                <div class="form-section">
+                    <h3 class="section-title">Vida Útil & Ambiente</h3>
+                    
+                    <div class="form-group">
+                        <label for="entry_t_use">Tempo de Uso T_uso (anos):</label>
+                        <input type="number" id="entry_t_use" class="form-control" value="50">
+                    </div>
+                    <div class="form-group">
+                        <label for="entry_t_eol">Horizonte EoL T_eol (anos):</label>
+                        <input type="number" id="entry_t_eol" class="form-control" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="entry_co2">Teor de CO₂ (ppm):</label>
+                        <input type="number" id="entry_co2" class="form-control" value="440">
+                    </div>
+                    <div class="form-group">
+                        <label for="entry_ur">Umidade Relativa UR (%):</label>
+                        <input type="number" id="entry_ur" class="form-control" value="65">
+                    </div>
+                    <div class="form-group">
+                        <label for="entry_eol_thick">Brita no EoL (mm):</label>
+                        <input type="number" id="entry_eol_thick" class="form-control" value="5">
+                    </div>
+                </div>
+                
+                <!-- Section 2: Collins Stoichiometry -->
+                <div class="form-section">
+                    <h3 class="section-title">Estequiometria Collins</h3>
+                    
+                    <div class="form-group">
+                        <label for="entry_r">Grau de Carbonatação r:</label>
+                        <input type="number" step="0.01" id="entry_r" class="form-control" value="0.75">
+                    </div>
+                    <div class="form-group">
+                        <label for="entry_cao_cim">Fração CaO Cimento:</label>
+                        <input type="number" step="0.01" id="entry_cao_cim" class="form-control" value="0.65">
+                    </div>
+                    <div class="form-group">
+                        <label for="entry_cao_cal">Fração CaO Cal:</label>
+                        <input type="number" step="0.01" id="entry_cao_cal" class="form-control" value="0.75">
+                    </div>
+                </div>
+                
+                <!-- Section 3: EN Norma Factors -->
+                <div class="form-section">
+                    <h3 class="section-title">Fatores da Norma EN</h3>
+                    
+                    <div class="form-group">
+                        <label for="entry_en_w">Fator w (CaO Carbonatável):</label>
+                        <input type="number" step="0.01" id="entry_en_w" class="form-control" value="0.75">
+                    </div>
+                    <div class="form-group">
+                        <label for="entry_en_cc">Fator Cc (Teor Clínquer):</label>
+                        <input type="number" step="0.01" id="entry_en_cc" class="form-control" value="0.95">
+                    </div>
+                </div>
+                
+                <!-- Advanced Configurations buttons -->
+                <div class="form-section" style="margin-top: 10px; gap: 8px;">
+                    <button class="btn btn-secondary w-full" onclick="openCementModal()">⚙ Coef. Cimento (Possan)</button>
+                    <button class="btn btn-secondary w-full" onclick="openMaterialModal()">🧪 Materiais SIDAC</button>
+                </div>
+                
+            </aside>
+            
+            <!-- Main Workspace content (Elements table + Graphs) -->
+            <div class="main-workspace">
+                
+                <!-- Elements List panel -->
+                <section class="panel-card">
+                    <h2 class="panel-card-title">Materiais e Elementos Estruturais</h2>
+                    
+                    <!-- Table wrapper -->
+                    <div class="table-container">
+                        <table class="element-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 40px" class="text-center">✕</th>
+                                    <th>Nome do Elemento</th>
+                                    <th style="width: 80px" class="text-center">Área (m²)</th>
+                                    <th style="width: 80px" class="text-center">Esp. (m)</th>
+                                    <th style="width: 85px" class="text-center">Vol. (m³)</th>
+                                    <th style="width: 170px">Material SIDAC</th>
+                                    <th style="width: 170px">Classe de Exposição</th>
+                                    <th style="width: 45px" class="text-center">⚙</th>
+                                </tr>
+                            </thead>
+                            <tbody id="element_table_body">
+                                <!-- Appended dynamically via app.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Add/Import Actions -->
+                    <div class="btn-action-container">
+                        <button class="btn btn-success" onclick="addElementRow()">➕ Adicionar Elemento</button>
+                        <button class="btn btn-primary" onclick="document.getElementById('file_import').click()">📥 Importar Planilha</button>
+                        <input type="file" id="file_import" accept=".xlsx, .xls, .csv" style="display: none" onchange="handleFileInput(event)">
+                    </div>
+                </section>
+                
+                <!-- Graphs / Charts Tabbed View -->
+                <section class="panel-card">
+                    <div class="tab-container">
+                        
+                        <!-- Graphs Inner Navigation tabs -->
+                        <nav class="tab-list">
+                            <button class="tab-btn active" onclick="switchChartTab(event, 'tab_content_uptake')">Sequestro CO₂ Cumulativo</button>
+                            <button class="tab-btn" onclick="switchChartTab(event, 'tab_content_depth')">Frente Carbonatação</button>
+                            <button class="tab-btn" onclick="switchChartTab(event, 'tab_content_pie')">Contribuição Elemento</button>
+                            <button class="tab-btn" onclick="switchChartTab(event, 'tab_content_compare')">Comparar Métodos</button>
+                            <button class="tab-btn" onclick="switchChartTab(event, 'tab_content_balance')">Balanço Carbono</button>
+                        </nav>
+                        
+                        <!-- Graph Canvas containers -->
+                        <div id="tab_content_uptake" class="tab-content active">
+                            <canvas id="canvas_uptake"></canvas>
+                        </div>
+                        <div id="tab_content_depth" class="tab-content">
+                            <canvas id="canvas_depth"></canvas>
+                        </div>
+                        <div id="tab_content_pie" class="tab-content">
+                            <canvas id="canvas_pie"></canvas>
+                        </div>
+                        <div id="tab_content_compare" class="tab-content">
+                            <canvas id="canvas_compare"></canvas>
+                        </div>
+                        <div id="tab_content_balance" class="tab-content">
+                            <canvas id="canvas_balance"></canvas>
+                        </div>
+                        
+                    </div>
+                </section>
+                
+            </div>
+            
+            <!-- Bottom Consolidated metric bar -->
+            <footer class="bottom-bar">
+                
+                <!-- Card 1: Use phase CO2 -->
+                <div class="metric-card use">
+                    <span class="metric-card-title">Fase de Uso (T_uso Anos)</span>
+                    <div class="metric-card-values" id="card_use_val">
+                        <span>EN: -- kg</span>
+                        <span>Collins: -- kg</span>
+                    </div>
+                </div>
+                
+                <!-- Card 2: EoL potential CO2 -->
+                <div class="metric-card eol">
+                    <span class="metric-card-title">Fim de Vida (EoL Potencial)</span>
+                    <div class="metric-card-values" id="card_eol_val">
+                        <span>EN: -- kg</span>
+                        <span>Collins: -- kg</span>
+                    </div>
+                </div>
+                
+                <!-- Card 3: Total Sequestration -->
+                <div class="metric-card total">
+                    <span class="metric-card-title">Sequestro Total (Uso + EoL)</span>
+                    <div class="metric-card-values" id="card_total_val">
+                        <span>EN: -- kg</span>
+                        <span>Collins: -- kg</span>
+                    </div>
+                </div>
+                
+                <!-- Action: Export Reports buttons -->
+                <div class="btn-action-container" style="justify-content: flex-end; padding: 10px 0;">
+                    <button class="btn btn-primary" style="padding: 12px 20px" onclick="exportResultsExcel()">📊 Exportar Excel (.xlsx)</button>
+                    <button class="btn btn-secondary" style="padding: 12px 15px" onclick="exportResultsCSV()">📄 Exportar CSV (.csv)</button>
+                </div>
+                
+            </footer>
+            
+        </main>
+
+        <!-- PANEL 2: Citation Info -->
+        <section id="main_tab_citation" class="main-tab-panel">
+            <div class="citation-container">
+                <h2 class="citation-title">Como citar este trabalho / How to cite this work:</h2>
+                <blockquote class="citation-text">
+                    "Carbonation of cement-based materials from a Whole Building Life Cycle Assessment perspective"<br>
+                    Igor Catão Martins Vaz, Taylana Piccinini Scolaro, Eugénio Rodrigues and Enedir Ghisi. Under consideration.
+                </blockquote>
+                
+                <div class="logos-frame">
+                    <button class="logo-button" onclick="window.open('https://cura-lab.adai.pt/', '_blank')" title="CURA Lab Website">
+                        <img src="images/cropped-CURA.png" alt="Logotipo CURA">
+                    </button>
+                    <button class="logo-button" onclick="window.open('https://igorcmvaz.github.io/ascenc-website/', '_blank')" title="ASCENC Project">
+                        <img src="images/ascenc.png" alt="Logotipo ASCENC">
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ============================================================================
+         MODAL DIALOGS (native HTML5 <dialog>)
+         ============================================================================ -->
+         
+    <!-- 1. Cement configuration coefficients dialog -->
+    <dialog id="cement_dialog">
+        <div class="modal-header">
+            <h3 class="modal-title">Coeficientes por Tipo de Cimento (Possan)</h3>
+            <button class="modal-close" onclick="document.getElementById('cement_dialog').close()">✕</button>
+        </div>
+        <div class="modal-body">
+            <!-- Headers -->
+            <div class="coeff-grid" style="font-weight: bold; margin-bottom: 12px; border-bottom: 2px solid var(--border-color); padding-bottom: 5px;">
+                <span>Cimento</span>
+                <span class="text-center coeff-header">kc</span>
+                <span class="text-center coeff-header">k_fc</span>
+                <span class="text-center coeff-header">k_ad</span>
+                <span class="text-center coeff-header">k_co2</span>
+                <span class="text-center coeff-header">k_UR</span>
+            </div>
+            <!-- Rows appended by app.js -->
+            <div id="cement_coeffs_container"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="document.getElementById('cement_dialog').close()">Cancelar</button>
+            <button class="btn btn-success" onclick="saveCementModal()">Salvar</button>
+        </div>
+    </dialog>
+
+    <!-- 2. SIDAC materials properties preset config dialog -->
+    <dialog id="material_dialog">
+        <div class="modal-header">
+            <h3 class="modal-title">Propriedades dos Materiais SIDAC</h3>
+            <button class="modal-close" onclick="document.getElementById('material_dialog').close()">✕</button>
+        </div>
+        <div class="modal-body">
+            <!-- Headers -->
+            <div class="material-props-grid" style="font-weight: bold; margin-bottom: 10px; border-bottom: 2px solid var(--border-color); padding-bottom: 5px;">
+                <span>Material</span>
+                <span class="text-center">fc (MPa)</span>
+                <span class="text-center">Cimento (kg/m³)</span>
+                <span class="text-center">Cal (kg/m³)</span>
+                <span>Tipo principal de cimento</span>
+            </div>
+            <!-- Rows appended by app.js -->
+            <div id="material_props_container"></div>
+        </div>
+        <div class="modal-footer" style="justify-content: space-between;">
+            <button class="btn btn-secondary" onclick="restoreMaterialDefaults()">Restaurar Padrões</button>
+            <div style="display: flex; gap: 8px;">
+                <button class="btn btn-secondary" onclick="document.getElementById('material_dialog').close()">Cancelar</button>
+                <button class="btn btn-success" onclick="saveMaterialModal()">Salvar</button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- 3. Element specific advanced customization dialog -->
+    <dialog id="element_dialog">
+        <div class="modal-header">
+            <div>
+                <h3 class="modal-title">Parâmetros Avançados</h3>
+                <span id="element_modal_subtitle" style="font-size: 0.8rem; color: var(--primary); font-weight: bold;">Nome do Elemento</span>
+            </div>
+            <button class="modal-close" onclick="document.getElementById('element_dialog').close()">✕</button>
+        </div>
+        <div class="modal-body" style="padding-top: 10px;">
+            <!-- Modal internal tabs -->
+            <nav class="modal-tabs">
+                <button class="modal-tab-btn active" onclick="switchModalTab(event, 'elem_tab_materials')">Composição & Resistência</button>
+                <button class="modal-tab-btn" onclick="switchModalTab(event, 'elem_tab_en')">Método EN 16757</button>
+                <button class="modal-tab-btn" onclick="switchModalTab(event, 'elem_tab_possan')">Possan / Collins</button>
+            </nav>
+            
+            <!-- Modal tab contents -->
+            <!-- Tab 1: Basic Composition overrides -->
+            <div id="elem_tab_materials" class="modal-tab-content active">
+                <div class="form-group">
+                    <label for="elem_fc">Resistência Compres. fc (MPa):</label>
+                    <input type="number" step="0.5" id="elem_fc" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="elem_cement_type">Tipo de Cimento:</label>
+                    <select id="elem_cement_type" class="form-control"></select>
+                </div>
+                <div class="form-group">
+                    <label for="elem_cement_content">Consumo de Cimento C (kg/m³):</label>
+                    <input type="number" step="1.0" id="elem_cement_content" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="elem_lime_content">Consumo de Cal (kg/m³):</label>
+                    <input type="number" step="1.0" id="elem_lime_content" class="form-control">
+                </div>
+            </div>
+            
+            <!-- Tab 2: EN Method overrides -->
+            <div id="elem_tab_en" class="modal-tab-content">
+                <!-- Override k -->
+                <div class="form-group">
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <input type="checkbox" id="chk_override_k" onchange="toggleEnFields()">
+                        <label for="chk_override_k" style="cursor: pointer; margin-bottom: 0;">Sobrescrever Taxa k (EN)</label>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center; margin-top: 5px;">
+                        <input type="number" step="0.05" id="elem_k_en" class="form-control" style="width: 100px;">
+                        <span style="font-size: 0.75rem; color: var(--text-muted)">mm/ano⁰·⁵ (Padrão: <span id="ref_en_k">--</span>)</span>
+                    </div>
+                </div>
+                
+                <!-- Override Dc -->
+                <div class="form-group" style="margin-top: 10px;">
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <input type="checkbox" id="chk_override_dc" onchange="toggleEnFields()">
+                        <label for="chk_override_dc" style="cursor: pointer; margin-bottom: 0;">Sobrescrever Grau de Carbonatação Dc (%)</label>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center; margin-top: 5px;">
+                        <input type="number" step="1.0" id="elem_dc_en" class="form-control" style="width: 100px;">
+                        <span style="font-size: 0.75rem; color: var(--text-muted)">% (Padrão: <span id="ref_en_dc">--</span>%)</span>
+                    </div>
+                </div>
+                
+                <!-- Override Utcc -->
+                <div class="form-group" style="margin-top: 10px;">
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <input type="checkbox" id="chk_override_utcc" onchange="toggleEnFields()">
+                        <label for="chk_override_utcc" style="cursor: pointer; margin-bottom: 0;">Sobrescrever Fator Utcc (EN)</label>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center; margin-top: 5px;">
+                        <input type="number" step="0.0001" id="elem_utcc_en" class="form-control" style="width: 100px;">
+                        <span style="font-size: 0.75rem; color: var(--text-muted)">Fator (Auto global base)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tab 3: Possan Method overrides -->
+            <div id="elem_tab_possan" class="modal-tab-content">
+                <!-- Info banner -->
+                <div class="info-banner">
+                    <h4>Valores Padrão da Classe de Exposição atual:</h4>
+                    <span>Fator de exposição Possan kce = <span id="ref_possan_kce">--</span></span>
+                </div>
+                
+                <!-- Override kce -->
+                <div class="form-group">
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <input type="checkbox" id="chk_override_kce" onchange="togglePossanFields()">
+                        <label for="chk_override_kce" style="cursor: pointer; margin-bottom: 0;">Sobrescrever fator de exposição kce (Possan)</label>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center; margin-top: 5px;">
+                        <input type="number" step="0.05" id="elem_kce_possan" class="form-control" style="width: 100px;">
+                        <span style="font-size: 0.75rem; color: var(--text-muted)">Fator kce</span>
+                    </div>
+                </div>
+                
+                <!-- References -->
+                <div style="margin-top: 15px; border-top: 1px solid var(--border-color); padding-top: 10px;">
+                    <span style="font-size: 0.75rem; font-weight: bold; color: var(--text-muted); display: block; margin-bottom: 5px;">Referência kce (Possan):</span>
+                    <div style="font-size: 0.7rem; display: flex; flex-direction: column; gap: 3px;">
+                        <div class="possan-ref-row" data-exp="Ambiente externo desprotegido da chuva">External Desprotegido da chuva (kce = 0.65)</div>
+                        <div class="possan-ref-row" data-exp="Ambiente externo protegido da chuva">External Protegido da chuva (kce = 1.00)</div>
+                        <div class="possan-ref-row" data-exp="Ambiente interno protegido da chuva">Internal Protegido da chuva (kce = 1.30)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="document.getElementById('element_dialog').close()">Cancelar</button>
+            <button class="btn btn-success" onclick="saveElementConfigModal()">Salvar</button>
+        </div>
+    </dialog>
+
+    <!-- JS Application controller -->
+    <script src="app.js"></script>
+</body>
+</html>
