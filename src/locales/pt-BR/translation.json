@@ -97,5 +97,11 @@
     "title": "Calculadora de Carbonatação e Sequestro de CO₂ de Edificações (PAIC-ACV)",
     "description": "<strong class=\"font-semibold\">PAIC-ACV</strong> é uma ferramenta dedicada à quantificação da absorção de CO₂ por carbonatação em materiais cimentícios (concretos e argamassas), integrando cenários de vida útil e fim de vida (EoL). A plataforma permite realizar análises sob a perspectiva de Avaliação de Ciclo de Vida (ACV) de edifícios inteiros, auxiliando na estimativa do balanço líquido de emissões e no sequestro de carbono ao longo do tempo.",
     "back": "Voltar"
+  },
+  "paimrwh": {
+    "title": "Painel de Avaliação de Impacto das Mudanças Climáticas - Aproveitamento de Água de Chuva",
+    "description": "O <strong class=\"font-semibold\">PAIM-RWH</strong> apresenta os impactos projetados das mudanças climáticas nos sistemas de aproveitamento de água de chuva em 652 cidades brasileiras. Ao combinar projeções climáticas multimodelos com um modelo de balanço hídrico diário, avalia-se o potencial de economia de água potável e a confiabilidade do sistema em residências unifamiliares sob condições históricas e cenários futuros (SSP2-4.5 e SSP5-8.5). Explore como as variações regionais nas chuvas e as projeções climáticas afetam o desempenho do aproveitamento de água de chuva, fornecendo informações conscientes das incertezas para o projeto de sistemas baseados no clima.",
+    "button": "Acessar",
+    "back": "Voltar"
   }
 }

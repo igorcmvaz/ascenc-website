@@ -12,6 +12,7 @@ import PAIMT from "./pages/paimt";
 import PAIMP from "./pages/paimp";
 import PAIMAA from "./pages/paimaa";
 import PAICACV from "./pages/paicacv";
+import PAIMRWH from "./pages/paimrwh";
 
 // Importante: inicializar o i18n
 import "./i18n";
@@ -30,6 +31,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/paimp" element={<PAIMP />} />
         <Route path="/paimaa" element={<PAIMAA />} />
         <Route path="/paicacv" element={<PAICACV />} />
+        <Route path="/paimrwh" element={<PAIMRWH />} />
       </Routes>
     </HashRouter>
   </React.StrictMode>

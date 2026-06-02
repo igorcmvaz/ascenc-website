@@ -32,11 +32,10 @@ export default function Tools() {
       isPlaceholder: true,
     },
     {
-      title: `${t('tools.paimrwh')} ${t('tools.dev_suffix')}`,
-      to: "#",
+      title: t('tools.paimrwh'),
+      to: "/paimrwh",
       iconLight: "./assets/paimdu.png",
       iconDark: "./assets/paimdu_dark.png",
-      isPlaceholder: true,
     },
     {
       title: t('tools.paicacv'),
