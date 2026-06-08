@@ -95,7 +95,7 @@
   },
   "paicacv": {
     "title": "建筑物碳化与 CO₂ 封存计算器 (PAIC-ACV)",
-    "description": "<strong class=\"font-semibold\">PAIC-ACV</strong> 是一款致力于定量分析水泥基材料（混凝土和砂浆）中由于碳化产生的 CO₂ 吸收量的工具，集成了使用寿命和生命周期结束（EoL）情景。该平台允许从整栋建筑生命周期评估（LCA）的角度进行分析，协助估算净排放量平衡和随时间推移的碳封存量。",
+    "description": "<strong class=\"font-semibold\">PAIC-ACV</strong> 是一款致力于定量分析水泥基材料（混凝土和砂浆）中由于碳化产生的 CO₂ 吸收量的工具，集成了使用寿命和生命周期结束（EoL）情景。该平台允许从整栋建筑生命周期评估（LCA）的角度进行分析，协助估算净排放量平衡和随时间推移的碳封存量。<br><br><em>注：该计算器的界面目前仅提供葡萄牙语版本。</em>",
     "back": "返回"
   },
   "paimrwh": {

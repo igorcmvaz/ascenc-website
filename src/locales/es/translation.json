@@ -97,7 +97,7 @@
   },
   "paicacv": {
     "title": "Calculadora de Carbonatación y Secuestro de CO₂ de Edificaciones (PAIC-ACV)",
-    "description": "<strong class=\"font-semibold\">PAIC-ACV</strong> es una herramienta dedicada a la cuantificación de la absorción de CO₂ por carbonatación en materiales cementicios (hormigón y mortero), integrando escenarios de vida útil y fin de vida (EoL). La plataforma permite realizar análisis bajo la perspectiva de Evaluación del Ciclo de Vida (ACV) de edificios enteros, ayudando en la estimación del balance neto de emisiones y en el secuestro de carbono a lo largo del tiempo.",
+    "description": "<strong class=\"font-semibold\">PAIC-ACV</strong> es una herramienta dedicada a la cuantificación de la absorción de CO₂ por carbonatación en materiales cementicios (hormigón y mortero), integrando escenarios de vida útil y fin de vida (EoL). La plataforma permite realizar análisis bajo la perspectiva de Evaluación del Ciclo de Vida (ACV) de edificios enteros, ayudando en la estimación del balance neto de emisiones y en el secuestro de carbono a lo largo del tiempo.<br><br><em>Nota: La interfaz de la calculadora está disponible exclusivamente en Portugués.</em>",
     "back": "Volver"
   },
   "paimrwh": {

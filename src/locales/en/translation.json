@@ -95,7 +95,7 @@
   },
   "paicacv": {
     "title": "Carbonation and CO₂ Sequestration Calculator for Buildings (PAIC-ACV)",
-    "description": "<strong class=\"font-semibold\">PAIC-ACV</strong> is a tool dedicated to quantifying CO₂ absorption through carbonation in cement-based materials (concrete and mortar), integrating service life and end-of-life (EoL) scenarios. The platform enables analyses from a Whole Building Life Cycle Assessment (LCA) perspective, assisting in the estimation of the net balance of emissions and carbon sequestration over time.",
+    "description": "<strong class=\"font-semibold\">PAIC-ACV</strong> is a tool dedicated to quantifying CO₂ absorption through carbonation in cement-based materials (concrete and mortar), integrating service life and end-of-life (EoL) scenarios. The platform enables analyses from a Whole Building Life Cycle Assessment (LCA) perspective, assisting in the estimation of the net balance of emissions and carbon sequestration over time.<br><br><em>Note: The calculator interface is exclusively available in Portuguese.</em>",
     "back": "Back"
   },
   "paimrwh": {

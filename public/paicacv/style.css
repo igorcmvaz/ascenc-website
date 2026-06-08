@@ -71,8 +71,9 @@ body {
 /* Main Dashboard Layout */
 .app-container {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .dashboard-content {
@@ -101,6 +102,7 @@ body {
     overflow-y: auto;
     flex-shrink: 0;
     transition: var(--transition);
+    min-height: 0;
 }
 
 @media (max-width: 1024px) {
@@ -213,9 +215,11 @@ body {
     flex: 1;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    grid-template-rows: minmax(0, 1fr);
     gap: 20px;
     padding: 20px;
     overflow-y: hidden;
+    min-height: 0;
 }
 
 @media (max-width: 1024px) {
@@ -257,7 +261,8 @@ body {
 .table-container {
     overflow-x: auto;
     overflow-y: auto;
-    max-height: 530px;
+    flex: 1;
+    min-height: 0;
     margin-bottom: 10px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
@@ -367,6 +372,7 @@ body {
 }
 
 /* Tab Layout for Charts */
+
 .tab-container {
     display: flex;
     flex-direction: column;
@@ -721,15 +727,18 @@ dialog::backdrop {
 
 .main-tab-panel.active {
     display: block;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
 }
 
 .main-tab-panel.workspace-active.active {
     display: grid;
     grid-template-columns: 300px 1fr;
-    grid-template-rows: 1fr auto;
-    height: calc(100vh - 55px);
+    grid-template-rows: minmax(0, 1fr) auto;
     overflow: hidden;
     flex: 1;
+    min-height: 0;
 }
 
 @media (max-width: 1024px) {

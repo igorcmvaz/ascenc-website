@@ -32,6 +32,7 @@
             <nav class="main-tab-list">
                 <button class="main-tab-btn active" onclick="switchTab(event, 'main_tab_workspace')">Parâmetros</button>
                 <button class="main-tab-btn" onclick="switchTab(event, 'main_tab_citation')">Citação</button>
+                <button class="main-tab-btn" onclick="switchTab(event, 'main_tab_glossary')">Glossário / Referências</button>
             </nav>
             <div class="header-actions">
                 <button class="btn-fullscreen-toggle" onclick="toggleFullscreen()" title="Tela cheia">🖥️</button>
@@ -243,6 +244,70 @@
                         <img src="images/ascenc.png" alt="Logotipo ASCENC">
                     </button>
                 </div>
+            </div>
+        </section>
+
+        <section id="main_tab_glossary" class="main-tab-panel">
+            <div class="citation-container" style="display: block; padding: 40px; max-width: 1000px; margin: 0 auto; overflow-y: auto; height: 100%; text-align: justify;">
+                
+                <h2 class="citation-title" style="margin-bottom: 25px; font-size: 1.6rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">Glossário de Variáveis e Parâmetros</h2>
+                
+                <div class="glossary-section" style="margin-bottom: 30px;">
+                    <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">⏳ Parâmetros de Tempo e Vida Útil</h3>
+                    <ul style="line-height: 1.7; color: var(--text-color); padding-left: 20px;">
+                        <li><strong>T_uso (Tempo de Uso):</strong> <code>[Anos]</code> Período em que o elemento estrutural cimentício permanece exposto às condições operacionais (fase de uso da edificação) antes da demolição.</li>
+                        <li><strong>T_eol (Horizonte Fim de Vida - EoL):</strong> <code>[Anos]</code> Período após a demolição e trituração do concreto, durante o qual os fragmentos secundários continuam expostos ao ar (tipicamente em aterro ou reciclagem base), permitindo uma absorção acelerada de CO₂ devido ao drástico aumento da área de superfície exposta.</li>
+                    </ul>
+                </div>
+                
+                <div class="glossary-section" style="margin-bottom: 30px;">
+                    <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">🌍 Condições Ambientais de Exposição</h3>
+                    <ul style="line-height: 1.7; color: var(--text-color); padding-left: 20px;">
+                        <li><strong>CO₂ (Concentração de Dióxido de Carbono):</strong> <code>[ppm]</code> Representa o teor de carbono no ar ambiente. Níveis elevados aceleram a difusão do CO₂ nos poros capilares do concreto.</li>
+                        <li><strong>UR (Umidade Relativa):</strong> <code>[%]</code> Umidade do ar local. A carbonatação atinge seu pico de eficiência cinética em níveis intermediários de umidade (geralmente entre 50-70%). Se muito seco, falta água para dissolver o CO₂ e iniciar a reação aquosa; se muito úmido, os poros bloqueados por água impedem a rápida difusão gasosa.</li>
+                        <li><strong>Classe de Exposição (EN 16757):</strong> <code>[Categoria]</code> Classificação padrão que determina o quão exposta a estrutura de concreto está ao ambiente externo e a agentes agressivos (ex: interna, externa, coberta, exposta à chuva), o que influencia diretamente a velocidade da frente de carbonatação normatizada.</li>
+                    </ul>
+                </div>
+                
+                <div class="glossary-section" style="margin-bottom: 30px;">
+                    <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">🧱 Propriedades dos Materiais (Físico-Químicas)</h3>
+                    <ul style="line-height: 1.7; color: var(--text-color); padding-left: 20px;">
+                        <li><strong>fc (Resistência à Compressão):</strong> <code>[MPa]</code> Reflete indiretamente a densidade e o fator a/c da matriz cimentícia. Concretos de maior resistência geralmente apresentam menor porosidade permeável, o que retarda fortemente o avanço da frente de carbonatação.</li>
+                        <li><strong>Consumo de Cimento / Cal:</strong> <code>[kg/m³]</code> Massa de cimento Portland ou cal hidratada utilizada por metro cúbico de mistura estrutural. É a fonte primária dos hidróxidos de cálcio (Portlandita e C-S-H) que irão carbonatar.</li>
+                        <li><strong>Fração CaO (Óxido de Cálcio):</strong> <code>[%]</code> Proporção mássica de cálcio reativo presente na composição química intrínseca do aglomerante. É a substância que efetivamente reage com o ácido carbônico para formar o carbonato de cálcio (CaCO₃) insolúvel.</li>
+                        <li><strong>Espessura do Elemento:</strong> <code>[m]</code> Profundidade total do elemento. Essencial para o cálculo de volume total e para estabelecer o limite físico da carbonatação (quando a frente atinge o centro do elemento, ocorre a "carbonatação total").</li>
+                        <li><strong>Área de Exposição:</strong> <code>[m²]</code> Superfície do material exposta diretamente ao ar ambiente. Funciona como a janela de entrada gasosa primária para a captura de carbono.</li>
+                    </ul>
+                </div>
+                
+                <div class="glossary-section" style="margin-bottom: 30px;">
+                    <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">📊 Parâmetros do Método Europeu (EN 16757)</h3>
+                    <ul style="line-height: 1.7; color: var(--text-color); padding-left: 20px;">
+                        <li><strong>k (Taxa de Carbonatação EN):</strong> <code>[mm/ano<sup>0.5</sup>]</code> Coeficiente constante de difusão de CO₂ padronizado de forma simplificada pela norma europeia, estimado empiricamente com base na resistência (fc) e na classe de exposição da estrutura.</li>
+                        <li><strong>Dc (Grau de Carbonatação da Norma):</strong> <code>[%]</code> Fator prescritivo de conversão estequiométrica adotado pela norma, indicando o limite máximo conservador de reatividade da matriz cimentícia para dadas condições.</li>
+                        <li><strong>Utcc (Maximum Theoretical Uptake):</strong> <code>[kg CO₂/kg Cimento]</code> Fração teórica máxima absoluta de dióxido de carbono que a composição do cimento poderia absorver se todos os seus compostos reativos (CaO e SO₃) fossem integralmente carbonatados ao longo de um tempo infinito.</li>
+                    </ul>
+                </div>
+                
+                <div class="glossary-section" style="margin-bottom: 40px;">
+                    <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">📈 Modelo Paramétrico de Carbonatação (Possan / Collins)</h3>
+                    <ul style="line-height: 1.7; color: var(--text-color); padding-left: 20px;">
+                        <li><strong>r (Grau de Carbonatação de Collins):</strong> <code>[%]</code> Proporção efetiva e validada do CaO que realmente participa da reação ao longo do tempo, refinada de acordo com o tipo de cimento e mistura, oferecendo uma predição mais realista do que a métrica linear da norma.</li>
+                        <li><strong>k_ce (Fator do Tipo de Cimento):</strong> <code>[Adim.]</code> Coeficiente que penaliza ou favorece a taxa de penetração dependendo do teor de adições minerais (como escória em CP III ou pozolana em CP IV), afetando a reserva alcalina natural da pasta.</li>
+                        <li><strong>k_c (Fator de Consumo):</strong> <code>[Adim.]</code> Avalia como a alta ou baixa disponibilidade de cimento por metro cúbico altera a barreira física à frente de carbonatação.</li>
+                        <li><strong>k_fc (Fator de Resistência):</strong> <code>[Adim.]</code> Demonstra o amortecimento não-linear na velocidade de avanço do carbono imposto por concretos estruturais de alta performance.</li>
+                        <li><strong>k_ad (Fator de Adições Ativas):</strong> <code>[Adim.]</code> Modela a interferência de adições cimentícias suplementares no consumo prévio da Portlandita pela reação pozolânica.</li>
+                        <li><strong>k_co2 (Fator de Concentração):</strong> <code>[Adim.]</code> Coeficiente de aceleração que corrige a taxa difusiva baseada no aumento contínuo ou extremo do teor de CO₂ ambiente.</li>
+                        <li><strong>k_ur (Fator Cinético de Umidade):</strong> <code>[Adim.]</code> Modificador estatístico que molda a "curva de sino" de reatividade aquosa (sendo baixa nos extremos e alta no meio), essencial para o progresso do gás nos capilares do material.</li>
+                    </ul>
+                </div>
+
+                <h2 class="citation-title" style="margin-bottom: 20px; font-size: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 30px;">Referências Bibliográficas</h2>
+                <ul style="line-height: 1.8; color: var(--text-color); padding-left: 20px;">
+                    <li><strong>Norma EN 16757:</strong> Sustentabilidade das obras de construção — Declarações ambientais de produto — Regras de categoria de produto para concreto e elementos de concreto. <a href="https://standards.iteh.ai/catalog/standards/cen/50f0d48d-b47c-4efd-8e44-80b114f50c63/pren-16757?srsltid=AfmBOoqwrlXpACXTBCXCeKqjBSIYdm227Q4qEXgA59tHSQNfe9fHoyiT" target="_blank" style="color: var(--primary); text-decoration: underline;">Acessar</a>.</li>
+                    <li><strong>Tese de Possan:</strong> Metodologia para modelagem da carbonatação e estimativa da captura de CO₂ em concretos. <a href="https://lume.ufrgs.br/handle/10183/28923" target="_blank" style="color: var(--primary); text-decoration: underline;">Acessar</a>.</li>
+                    <li><strong>Artigo de Collins:</strong> Avaliação do ciclo de vida de materiais cimentícios e considerações de EoL. <a href="https://link.springer.com/article/10.1007/s11367-010-0191-4" target="_blank" style="color: var(--primary); text-decoration: underline;">Acessar</a>.</li>
+                </ul>
             </div>
         </section>
 
