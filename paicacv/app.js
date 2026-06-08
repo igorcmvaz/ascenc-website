@@ -433,33 +433,47 @@ function drawPlots() {
                             return label;
                         }
                     }
-                },
-                // Custom line drawing annotation for EoL separation
-                afterDraw: (chart) => {
-                    const ctx = chart.ctx;
-                    const xAxis = chart.scales.x;
-                    const yAxis = chart.scales.y;
-                    const xVal = xAxis.getPixelForValue(T_use);
-                    
-                    if (xVal >= xAxis.left && xVal <= xAxis.right) {
-                        ctx.save();
-                        ctx.beginPath();
-                        ctx.setLineDash([6, 6]);
-                        ctx.strokeStyle = "orange";
-                        ctx.lineWidth = 1.5;
-                        ctx.moveTo(xVal, yAxis.top);
-                        ctx.lineTo(xVal, yAxis.bottom);
-                        ctx.stroke();
-                        
-                        // Text label
-                        ctx.fillStyle = "orange";
-                        ctx.font = "10px sans-serif";
-                        ctx.fillText("Início EoL", xVal + 5, yAxis.top + 15);
-                        ctx.restore();
-                    }
                 }
             }
-        }
+        },
+        plugins: [{
+            id: 'eolLine',
+            beforeDatasetsDraw: (chart) => {
+                const ctx = chart.ctx;
+                const xAxis = chart.scales.x;
+                const yAxis = chart.scales.y;
+                const xVal = xAxis.getPixelForValue(T_use);
+                
+                if (xVal >= xAxis.left && xVal <= xAxis.right) {
+                    ctx.save();
+                    
+                    // Overlay cinza para a área de EoL
+                    ctx.fillStyle = isDark ? "rgba(255, 255, 255, 0.05)" : "rgba(0, 0, 0, 0.04)";
+                    ctx.fillRect(xVal, yAxis.top, xAxis.right - xVal, yAxis.bottom - yAxis.top);
+                    
+                    ctx.beginPath();
+                    ctx.setLineDash([6, 6]);
+                    ctx.strokeStyle = "#dc2626";
+                    ctx.lineWidth = 1.5;
+                    ctx.moveTo(xVal, yAxis.top);
+                    ctx.lineTo(xVal, yAxis.bottom);
+                    ctx.stroke();
+                    
+                    // Text label
+                    ctx.fillStyle = "#dc2626";
+                    ctx.font = "bold 11px sans-serif";
+                    ctx.textBaseline = "bottom";
+                    
+                    ctx.textAlign = "right";
+                    ctx.fillText("Fase de uso", xVal - 8, yAxis.bottom - 5);
+                    
+                    ctx.textAlign = "left";
+                    ctx.fillText("Início EoL", xVal + 8, yAxis.bottom - 5);
+                    
+                    ctx.restore();
+                }
+            }
+        }]
     });
 
     // --- 2. Carbonation Depth Chart ---
@@ -680,16 +694,51 @@ function drawPlots() {
     });
     
     const totalUptakeEn = en_tot_use + en_tot_eol;
-    const netBalance = Math.max(0, totalInitialEmissions - totalUptakeEn);
+    const netBalanceEn = Math.max(0, totalInitialEmissions - totalUptakeEn);
+    
+    const totalUptakeCollins = co_tot_use + co_tot_eol;
+    const netBalanceCollins = Math.max(0, totalInitialEmissions - totalUptakeCollins);
+
+    // Create Hatch Patterns for Collins
+    function createHatch(colorStr) {
+        const canvas = document.createElement('canvas');
+        canvas.width = 8;
+        canvas.height = 8;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = isDark ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.4)';
+        ctx.fillRect(0, 0, 8, 8);
+        ctx.strokeStyle = colorStr;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(-2, 10);
+        ctx.lineTo(10, -2);
+        ctx.stroke();
+        return ctx.createPattern(canvas, 'repeat');
+    }
+
+    const colors = ['#dc2626', '#16a34a', '#3a7ebf'];
+    const hatchedColors = colors.map(c => createHatch(c));
 
     charts.balance = new Chart(ctxBal, {
         type: 'bar',
         data: {
-            labels: ['Emissão Inicial (Prod/Transp)', 'Captura Total (EN)', 'Balanço Líquido'],
-            datasets: [{
-                data: [totalInitialEmissions, totalUptakeEn, netBalance],
-                backgroundColor: ['#dc2626', '#16a34a', '#3a7ebf']
-            }]
+            labels: ['Emissão Inicial', 'Captura Total', 'Balanço Líquido'],
+            datasets: [
+                {
+                    label: 'EN 16757',
+                    data: [totalInitialEmissions, totalUptakeEn, netBalanceEn],
+                    backgroundColor: colors,
+                    borderColor: colors,
+                    borderWidth: 1
+                },
+                {
+                    label: 'Possan/Collins',
+                    data: [totalInitialEmissions, totalUptakeCollins, netBalanceCollins],
+                    backgroundColor: hatchedColors,
+                    borderColor: colors,
+                    borderWidth: 1
+                }
+            ]
         },
         options: {
             responsive: true,
@@ -703,11 +752,11 @@ function drawPlots() {
                 }
             },
             plugins: {
-                legend: { display: false },
+                legend: { display: true, labels: { color: textColor } },
                 tooltip: {
                     callbacks: {
                         label: function(context) {
-                            let label = context.label || '';
+                            let label = context.dataset.label || '';
                             if (label) {
                                 label += ': ';
                             }
@@ -1752,6 +1801,14 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
     
+    // Handle fullscreen aspect ratio correction
+    document.addEventListener("fullscreenchange", () => {
+        setTimeout(() => {
+            window.dispatchEvent(new Event('resize'));
+            if(typeof drawPlots === 'function') drawPlots();
+        }, 150);
+    });
+
     // Render initially
     renderElementTable();
     recalculate();
