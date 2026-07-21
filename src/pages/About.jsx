@@ -36,8 +36,8 @@ export default function About() {
           {t('about.partner_universities')}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-white dark:bg-slate-100 border border-emerald-200 dark:border-slate-300 p-6 rounded-3xl shadow-md">
-          <div className="bg-slate-50 dark:bg-white p-4 rounded-2xl border border-slate-200 dark:border-slate-300 shadow-sm flex flex-col items-center justify-between">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-slate-100 dark:bg-slate-200 border border-emerald-200 dark:border-slate-300 p-6 rounded-3xl shadow-md">
+          <div className="bg-white dark:bg-slate-100 p-4 rounded-2xl border border-slate-200 dark:border-slate-300 shadow-sm flex flex-col items-center justify-between">
             <UniversityCard
               name="Universidade Federal de Santa Catarina (UFSC)"
               description={t('about.ufsc_desc')}
@@ -45,7 +45,7 @@ export default function About() {
               url="https://ppgec.posgrad.ufsc.br/"
             />
           </div>
-          <div className="bg-slate-50 dark:bg-white p-4 rounded-2xl border border-slate-200 dark:border-slate-300 shadow-sm flex flex-col items-center justify-between">
+          <div className="bg-white dark:bg-slate-100 p-4 rounded-2xl border border-slate-200 dark:border-slate-300 shadow-sm flex flex-col items-center justify-between">
             <UniversityCard
               name="Universidade de Coimbra (UC)"
               description={t('about.uc_desc')}
@@ -53,7 +53,7 @@ export default function About() {
               url="https://www.uc.pt/fctuc"
             />
           </div>
-          <div className="bg-slate-50 dark:bg-white p-4 rounded-2xl border border-slate-200 dark:border-slate-300 shadow-sm flex flex-col items-center justify-between">
+          <div className="bg-white dark:bg-slate-100 p-4 rounded-2xl border border-slate-200 dark:border-slate-300 shadow-sm flex flex-col items-center justify-between">
             <UniversityCard
               name="Universidade de São Paulo (USP)"
               description={t('about.usp_desc')}

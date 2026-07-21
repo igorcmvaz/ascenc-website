@@ -1,6 +1,6 @@
 export default function TeamMemberCard({ image, name, role, orcid, researchgate, lattes }) {
   return (
-    <div className="bg-white dark:bg-slate-100 p-4 rounded-xl border border-slate-200 dark:border-slate-300 flex items-center gap-4 shadow-md hover:shadow-lg transition-shadow duration-300 h-full text-left">
+    <div className="bg-slate-100 dark:bg-slate-100 p-4 rounded-xl border border-slate-300 dark:border-slate-300 flex items-center gap-4 shadow-md hover:shadow-lg transition-shadow duration-300 h-full text-left">
       <img
         src={image}
         alt={name}

@@ -34,7 +34,7 @@ export default function GESHome() {
               {/* Card 1: ASCENC */}
               <Link
                 to="/ascenc"
-                className="group flex items-start gap-4 p-5 bg-white dark:bg-slate-100 backdrop-blur-md rounded-2xl border border-emerald-200 dark:border-slate-300 hover:border-emerald-500 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-left"
+                className="group flex items-start gap-4 p-5 bg-slate-100 dark:bg-slate-200 backdrop-blur-md rounded-2xl border border-emerald-200 dark:border-slate-300 hover:border-emerald-500 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-left"
               >
                 <div className="p-2.5 bg-emerald-100 rounded-xl shrink-0 flex items-center justify-center w-12 h-12 group-hover:scale-105 transition-transform duration-300 border border-emerald-300">
                   <img src="./assets/logos/ascenc.png" alt="ASCENC" className="w-7 h-7 object-contain" />
@@ -53,7 +53,7 @@ export default function GESHome() {
               {/* Card 2: Netuno */}
               <Link
                 to="/netuno"
-                className="group flex items-start gap-4 p-5 bg-white dark:bg-slate-100 backdrop-blur-md rounded-2xl border border-emerald-200 dark:border-slate-300 hover:border-emerald-500 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-left"
+                className="group flex items-start gap-4 p-5 bg-slate-100 dark:bg-slate-200 backdrop-blur-md rounded-2xl border border-emerald-200 dark:border-slate-300 hover:border-emerald-500 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-left"
               >
                 <div className="p-2.5 bg-blue-100 rounded-xl shrink-0 flex items-center justify-center w-12 h-12 group-hover:scale-105 transition-transform duration-300 border border-blue-300">
                   <img src="./assets/icons/netuno.ico" alt="Netuno" className="w-7 h-7 object-contain" />
@@ -85,7 +85,7 @@ export default function GESHome() {
           </div>
           
           <div className="lg:col-span-5 grid grid-cols-2 gap-4">
-            <div className="bg-white dark:bg-slate-100 p-6 rounded-2xl border border-emerald-200 dark:border-slate-300 shadow-md flex flex-col items-center text-center space-y-3">
+            <div className="bg-slate-100 dark:bg-slate-200 p-6 rounded-2xl border border-emerald-200 dark:border-slate-300 shadow-md flex flex-col items-center text-center space-y-3">
               <div className="p-3 bg-emerald-100 text-emerald-900 rounded-xl border border-emerald-300">
                 <GraduationCap className="w-6 h-6" />
               </div>
@@ -93,7 +93,7 @@ export default function GESHome() {
               <span className="text-xs text-slate-800 font-extrabold">Universidade Federal de Santa Catarina</span>
             </div>
             
-            <div className="bg-white dark:bg-slate-100 p-6 rounded-2xl border border-emerald-200 dark:border-slate-300 shadow-md flex flex-col items-center text-center space-y-3">
+            <div className="bg-slate-100 dark:bg-slate-200 p-6 rounded-2xl border border-emerald-200 dark:border-slate-300 shadow-md flex flex-col items-center text-center space-y-3">
               <div className="p-3 bg-teal-100 text-teal-900 rounded-xl border border-teal-300">
                 <Globe2 className="w-6 h-6" />
               </div>
@@ -116,7 +116,7 @@ export default function GESHome() {
             {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
               <div
                 key={i}
-                className="flex items-center gap-3 bg-white dark:bg-slate-100 p-4 rounded-xl border border-emerald-200 dark:border-slate-300 hover:border-emerald-500 shadow-sm transition duration-300"
+                className="flex items-center gap-3 bg-slate-100 dark:bg-slate-200 p-4 rounded-xl border border-emerald-200 dark:border-slate-300 hover:border-emerald-500 shadow-sm transition duration-300"
               >
                 <div className="p-1.5 bg-emerald-600/10 text-emerald-800 rounded-lg shrink-0">
                   <CheckCircle2 className="w-5 h-5" />
@@ -133,7 +133,7 @@ export default function GESHome() {
         <section className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* CARD 1: ASCENC */}
-            <div className="group bg-white dark:bg-slate-100 p-8 rounded-3xl border border-emerald-200 dark:border-slate-300 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1 hover:border-emerald-500">
+            <div className="group bg-slate-100 dark:bg-slate-200 p-8 rounded-3xl border border-emerald-200 dark:border-slate-300 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1 hover:border-emerald-500">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center border border-emerald-300 group-hover:scale-105 transition-transform duration-300">
                   <img src="./assets/logos/ascenc.png" alt="ASCENC" className="w-7 h-7 object-contain" />
@@ -155,7 +155,7 @@ export default function GESHome() {
             </div>
 
             {/* CARD 2: EQUIPE */}
-            <div className="group bg-white dark:bg-slate-100 p-8 rounded-3xl border border-emerald-200 dark:border-slate-300 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1 hover:border-teal-500">
+            <div className="group bg-slate-100 dark:bg-slate-200 p-8 rounded-3xl border border-emerald-200 dark:border-slate-300 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1 hover:border-teal-500">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-2xl bg-teal-100 text-teal-900 flex items-center justify-center font-bold border border-teal-300">
                   <Users className="w-6 h-6" />
@@ -177,7 +177,7 @@ export default function GESHome() {
             </div>
 
             {/* CARD 3: CONTATO */}
-            <div className="group bg-white dark:bg-slate-100 p-8 rounded-3xl border border-emerald-200 dark:border-slate-300 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1 hover:border-indigo-500">
+            <div className="group bg-slate-100 dark:bg-slate-200 p-8 rounded-3xl border border-emerald-200 dark:border-slate-300 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1 hover:border-indigo-500">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-900 flex items-center justify-center font-bold border border-indigo-300">
                   <Mail className="w-6 h-6" />

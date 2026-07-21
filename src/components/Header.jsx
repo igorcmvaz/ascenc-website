@@ -142,7 +142,7 @@ export default function Header() {
                 {/* Divider + tools label */}
                 <div className="my-1.5 mx-3 border-t border-emerald-100 dark:border-zinc-700" />
                 <p className="px-4 pb-1 text-[10px] font-bold uppercase tracking-widest text-slate-700 dark:text-zinc-300">
-                  Ferramentas
+                  {t("header.tools", "Ferramentas")}
                 </p>
 
                 {/* Tool links */}
@@ -250,7 +250,7 @@ export default function Header() {
 
                 <div className="mx-4 my-1 border-t border-gray-200 dark:border-zinc-700" />
                 <p className="pl-10 py-1 text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-zinc-500">
-                  Ferramentas
+                  {t("header.tools", "Ferramentas")}
                 </p>
 
                 {ascencTools.map((tool) =>

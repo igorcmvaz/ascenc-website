@@ -110,9 +110,9 @@ export default function Team() {
       <div className="space-y-10 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Coluna 1: Professores (Estreita) */}
-          <div className="lg:col-span-4 bg-white dark:bg-slate-100 border border-emerald-200 dark:border-slate-300 p-6 sm:p-8 rounded-3xl shadow-md space-y-6 flex flex-col justify-between">
+          <div className="lg:col-span-4 bg-slate-100 dark:bg-slate-100 border border-slate-300 dark:border-slate-300 p-6 sm:p-8 rounded-3xl shadow-md space-y-6 flex flex-col justify-between">
             <div>
-              <h2 className="text-xl sm:text-2xl font-black text-slate-900 border-b border-slate-200 dark:border-slate-300 pb-3 mb-6">
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 border-b border-slate-300 pb-3 mb-6">
                 {t('team.professors')}
               </h2>
               <div className="grid grid-cols-1 gap-6">
@@ -132,9 +132,9 @@ export default function Team() {
           </div>
 
           {/* Coluna 2: Pesquisadores (Larga) */}
-          <div className="lg:col-span-8 bg-white dark:bg-slate-100 border border-emerald-200 dark:border-slate-300 p-6 sm:p-8 rounded-3xl shadow-md space-y-8 flex flex-col justify-between">
+          <div className="lg:col-span-8 bg-slate-100 dark:bg-slate-100 border border-slate-300 dark:border-slate-300 p-6 sm:p-8 rounded-3xl shadow-md space-y-8 flex flex-col justify-between">
             <div>
-              <h2 className="text-xl sm:text-2xl font-black text-slate-900 border-b border-slate-200 dark:border-slate-300 pb-3 mb-6">
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 border-b border-slate-300 pb-3 mb-6">
                 {t('team.researchers', 'Pesquisadores')}
               </h2>
               
@@ -156,13 +156,13 @@ export default function Team() {
         </div>
 
         {/* Grupo 3: Ex-membros (Sem Imagem, com Lattes) */}
-        <div className="bg-white dark:bg-slate-100 border border-emerald-200 dark:border-slate-300 p-6 sm:p-8 rounded-3xl shadow-md space-y-6">
-          <h2 className="text-xl sm:text-2xl font-black text-slate-900 border-b border-slate-200 dark:border-slate-300 pb-3">
+        <div className="bg-slate-100 dark:bg-slate-100 border border-slate-300 dark:border-slate-300 p-6 sm:p-8 rounded-3xl shadow-md space-y-6">
+          <h2 className="text-xl sm:text-2xl font-black text-slate-900 border-b border-slate-300 pb-3">
             {t('team.ex_members')}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {formerMembers.map((member, index) => (
-              <div key={index} className="bg-slate-50 dark:bg-white p-3.5 rounded-xl border border-slate-200 dark:border-slate-300 flex items-center justify-between gap-4 shadow-sm hover:shadow-md transition-shadow">
+              <div key={index} className="bg-white dark:bg-white p-3.5 rounded-xl border border-slate-300 flex items-center justify-between gap-4 shadow-sm hover:shadow-md transition-shadow">
                 <span className="font-extrabold text-slate-900 text-sm truncate">{member.name}</span>
                 {member.lattes ? (
                   <a

@@ -24,7 +24,7 @@ function ProjectCard({ proj, isOngoing, getLocalizedField, t, titleMinHeightClas
     : "bg-slate-200 text-slate-800 border-slate-300";
 
   return (
-    <div className={`group bg-white dark:bg-slate-100 p-6 rounded-3xl border ${borderClass} shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between`}>
+    <div className={`group bg-slate-100 dark:bg-slate-200 p-6 rounded-3xl border ${borderClass} shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between`}>
       <div className="space-y-4">
         {/* Status Badge + Period */}
         <div className="flex items-center justify-between gap-2">

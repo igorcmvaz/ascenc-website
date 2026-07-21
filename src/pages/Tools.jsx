@@ -56,8 +56,8 @@ export default function Tools() {
     <PageLayout title={t('tools.title')}>
       <div className="max-w-4xl mx-auto space-y-8 mt-4">
         {/* Introductory Explanation */}
-        <div className="bg-white dark:bg-zinc-900/50 border border-emerald-100 dark:border-zinc-800 rounded-2xl p-6 shadow-sm">
-          <p className="text-gray-700 dark:text-zinc-300 leading-relaxed text-base sm:text-lg font-medium text-justify">
+        <div className="bg-slate-100 dark:bg-slate-200 border border-emerald-100 dark:border-slate-300 rounded-2xl p-6 shadow-sm">
+          <p className="text-slate-800 dark:text-slate-800 leading-relaxed text-base sm:text-lg font-bold text-justify">
             {t('tools.intro')}
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function Tools() {
             const content = (
               <div className="flex items-start gap-4 p-5 h-full">
                 {/* Small icon */}
-                <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-50 shadow-sm border border-slate-200 dark:border-slate-200 flex items-center justify-center shrink-0">
+                <div className="w-14 h-14 rounded-2xl bg-white dark:bg-white shadow-sm border border-slate-200 dark:border-slate-200 flex items-center justify-center shrink-0">
                   <img
                     src={tool.iconLight}
                     alt={tool.title}
@@ -107,7 +107,7 @@ export default function Tools() {
               return (
                 <div
                   key={index}
-                  className="border border-slate-300 bg-slate-100 dark:bg-slate-100 rounded-3xl opacity-60 cursor-not-allowed select-none"
+                  className="border border-slate-300 bg-slate-100 dark:bg-slate-200 rounded-3xl opacity-60 cursor-not-allowed select-none"
                 >
                   {content}
                 </div>
@@ -118,7 +118,7 @@ export default function Tools() {
               <Link
                 key={index}
                 to={tool.to}
-                className="group border border-emerald-200 dark:border-slate-300 hover:border-emerald-500 bg-white dark:bg-slate-50 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="group border border-emerald-200 dark:border-slate-300 hover:border-emerald-500 bg-slate-100 dark:bg-slate-200 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 {content}
               </Link>
