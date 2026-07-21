@@ -322,6 +322,52 @@
     "Pesquisadora mestrado": "Investigadora de Maestría",
     "Pesquisadora Mestrado": "Investigadora de Maestría",
     "Pesquisador graduação": "Investigador de Grado",
-    "Pesquisadora graduação": "Investigadora de Grado"
+    "Pesquisadora graduação": "Investigadora de Grado",
+    "Pesquisador Colaborador": "Investigador Colaborador",
+    "Pesquisadora Colaboradora": "Investigadora Colaboradora"
+  },
+  "partners": {
+    "title": "Alianzas y Colaboraciones",
+    "collaborators_title": "Investigadores Colaboradores",
+    "collaborators_subtitle": "Colaboradores integrados con áreas de investigación y universidades asociadas.",
+    "view_grid": "Cuadrícula 3 Columnas",
+    "view_rows": "Filas en 3 Columnas",
+    "areas_label": "Áreas de Investigación",
+    "university_label": "Universidad Asociada",
+    "university_short_label": "Universidad",
+    "view_university": "Ver",
+    "visit_university": "Visitar Universidad"
+  },
+  "areas": {
+    "Otimização de Edificações": "Optimización de Edificaciones",
+    "Algoritmos Genéticos": "Algoritmos Genéticos",
+    "Eficiência Energética": "Eficiencia Energética",
+    "Água da Chuva": "Agua de Lluvia",
+    "Hidrologia": "Hidrología",
+    "Hidráulica": "Hidráulica",
+    "Análise de Qualidade": "Análisis de Calidad",
+    "Programação": "Programación",
+    "Arquitetura de Software": "Arquitectura de Software",
+    "Água": "Recursos Hídricos",
+    "Mudanças Climáticas": "Cambio Climático",
+    "Drenagem": "Drenaje Urbano"
+  },
+  "universities": {
+    "uc": {
+      "name": "Universidad de Coímbra (UC)",
+      "dept": "Facultad de Ciencias y Tecnología (FCTUC)"
+    },
+    "udesc": {
+      "name": "Universidad del Estado de Santa Catarina (UDESC)",
+      "dept": "Departamento de Arquitectura y Urbanismo (DAU)"
+    },
+    "ufsc": {
+      "name": "Universidad Federal de Santa Catarina (UFSC)",
+      "dept": "Departamento de Ingeniería de Control y Automatización"
+    },
+    "usp": {
+      "name": "Universidad de São Paulo (USP)",
+      "dept": "Escuela de Ingeniería de São Carlos (EESC)"
+    }
   }
 }

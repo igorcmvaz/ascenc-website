@@ -37,8 +37,7 @@ export default function GESHome() {
                 className="group flex items-start gap-4 p-5 bg-white dark:bg-slate-100 backdrop-blur-md rounded-2xl border border-emerald-200 dark:border-slate-300 hover:border-emerald-500 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-left"
               >
                 <div className="p-2.5 bg-emerald-100 rounded-xl shrink-0 flex items-center justify-center w-12 h-12 group-hover:scale-105 transition-transform duration-300 border border-emerald-300">
-                  <img src="./assets/logos/ascenc.png" alt="ASCENC" className="w-7 h-7 object-contain dark:hidden" />
-                  <img src="./assets/logos/ascenc_escuro.png" alt="ASCENC" className="w-7 h-7 object-contain hidden dark:block" />
+                  <img src="./assets/logos/ascenc.png" alt="ASCENC" className="w-7 h-7 object-contain" />
                 </div>
                 <div className="space-y-1">
                   <h3 className="font-extrabold text-slate-900 group-hover:text-emerald-800 transition-colors flex items-center gap-1">
@@ -137,8 +136,7 @@ export default function GESHome() {
             <div className="group bg-white dark:bg-slate-100 p-8 rounded-3xl border border-emerald-200 dark:border-slate-300 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1 hover:border-emerald-500">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center border border-emerald-300 group-hover:scale-105 transition-transform duration-300">
-                  <img src="./assets/logos/ascenc.png" alt="ASCENC" className="w-7 h-7 object-contain dark:hidden" />
-                  <img src="./assets/logos/ascenc_escuro.png" alt="ASCENC" className="w-7 h-7 object-contain hidden dark:block" />
+                  <img src="./assets/logos/ascenc.png" alt="ASCENC" className="w-7 h-7 object-contain" />
                 </div>
                 <h3 className="text-xl font-black text-slate-900">{t("ges_home.ascenc_card_title")}</h3>
                 <p className="text-sm text-slate-800 leading-relaxed font-bold">

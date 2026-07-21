@@ -322,6 +322,52 @@
     "Pesquisadora mestrado": "Master's Researcher",
     "Pesquisadora Mestrado": "Master's Researcher",
     "Pesquisador graduação": "Undergraduate Researcher",
-    "Pesquisadora graduação": "Undergraduate Researcher"
+    "Pesquisadora graduação": "Undergraduate Researcher",
+    "Pesquisador Colaborador": "Collaborating Researcher",
+    "Pesquisadora Colaboradora": "Collaborating Researcher"
+  },
+  "partners": {
+    "title": "Partnerships",
+    "collaborators_title": "Collaborating Researchers",
+    "collaborators_subtitle": "Collaborators integrated with research areas and associated universities.",
+    "view_grid": "3-Column Grid",
+    "view_rows": "3-Column Rows",
+    "areas_label": "Research Areas",
+    "university_label": "Associated University",
+    "university_short_label": "University",
+    "view_university": "View",
+    "visit_university": "Visit University"
+  },
+  "areas": {
+    "Otimização de Edificações": "Building Optimization",
+    "Algoritmos Genéticos": "Genetic Algorithms",
+    "Eficiência Energética": "Energy Efficiency",
+    "Água da Chuva": "Rainwater Harvesting",
+    "Hidrologia": "Hydrology",
+    "Hidráulica": "Hydraulics",
+    "Análise de Qualidade": "Quality Analysis",
+    "Programação": "Programming",
+    "Arquitetura de Software": "Software Architecture",
+    "Água": "Water Resources",
+    "Mudanças Climáticas": "Climate Change",
+    "Drenagem": "Urban Drainage"
+  },
+  "universities": {
+    "uc": {
+      "name": "University of Coimbra (UC)",
+      "dept": "Faculty of Sciences and Technology (FCTUC)"
+    },
+    "udesc": {
+      "name": "Santa Catarina State University (UDESC)",
+      "dept": "Department of Architecture and Urbanism (DAU)"
+    },
+    "ufsc": {
+      "name": "Federal University of Santa Catarina (UFSC)",
+      "dept": "Department of Automation and Systems Engineering"
+    },
+    "usp": {
+      "name": "University of São Paulo (USP)",
+      "dept": "São Carlos School of Engineering (EESC)"
+    }
   }
 }

@@ -320,6 +320,52 @@
     "Pesquisadora mestrado": "硕士研究员",
     "Pesquisadora Mestrado": "硕士研究员",
     "Pesquisador graduação": "本科生研究员",
-    "Pesquisadora graduação": "本科生研究员"
+    "Pesquisadora graduação": "本科生研究员",
+    "Pesquisador Colaborador": "合作研究员",
+    "Pesquisadora Colaboradora": "合作研究员"
+  },
+  "partners": {
+    "title": "合作伙伴",
+    "collaborators_title": "合作研究员",
+    "collaborators_subtitle": "包含研究领域和关联大学的合作人员信息。",
+    "view_grid": "3列网格",
+    "view_rows": "3列行视图",
+    "areas_label": "研究领域",
+    "university_label": "关联大学",
+    "university_short_label": "大学",
+    "view_university": "查看",
+    "visit_university": "访问大学"
+  },
+  "areas": {
+    "Otimização de Edificações": "建筑优化",
+    "Algoritmos Genéticos": "遗传算法",
+    "Eficiência Energética": "建筑能效",
+    "Água da Chuva": "雨水利用",
+    "Hidrologia": "水文学",
+    "Hidráulica": "水力学",
+    "Análise de Qualidade": "质量分析",
+    "Programação": "软件编程",
+    "Arquitetura de Software": "软件架构",
+    "Água": "水资源",
+    "Mudanças Climáticas": "气候变化",
+    "Drenagem": "城市排水"
+  },
+  "universities": {
+    "uc": {
+      "name": "科英布拉大学 (UC)",
+      "dept": "科技学院 (FCTUC)"
+    },
+    "udesc": {
+      "name": "圣卡塔琳娜州立大学 (UDESC)",
+      "dept": "建筑与城市规划系 (DAU)"
+    },
+    "ufsc": {
+      "name": "圣卡塔琳娜联邦大学 (UFSC)",
+      "dept": "自动化与系统工程系"
+    },
+    "usp": {
+      "name": "圣保罗大学 (USP)",
+      "dept": "圣卡洛斯工程学院 (EESC)"
+    }
   }
 }

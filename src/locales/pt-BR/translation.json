@@ -322,6 +322,52 @@
     "Pesquisadora mestrado": "Pesquisadora mestrado",
     "Pesquisadora Mestrado": "Pesquisadora mestrado",
     "Pesquisador graduação": "Pesquisador graduação",
-    "Pesquisadora graduação": "Pesquisadora graduação"
+    "Pesquisadora graduação": "Pesquisadora graduação",
+    "Pesquisador Colaborador": "Pesquisador Colaborador",
+    "Pesquisadora Colaboradora": "Pesquisadora Colaboradora"
+  },
+  "partners": {
+    "title": "Parcerias",
+    "collaborators_title": "Pesquisadores Colaboradores",
+    "collaborators_subtitle": "Colaboradores com Áreas de Atuação e Universidade Associada integradas.",
+    "view_grid": "Grade 3 Colunas",
+    "view_rows": "Linhas em 3 Colunas",
+    "areas_label": "Áreas de Atuação",
+    "university_label": "Universidade Associada",
+    "university_short_label": "Universidade",
+    "view_university": "Ver",
+    "visit_university": "Visitar Universidade"
+  },
+  "areas": {
+    "Otimização de Edificações": "Otimização de Edificações",
+    "Algoritmos Genéticos": "Algoritmos Genéticos",
+    "Eficiência Energética": "Eficiência Energética",
+    "Água da Chuva": "Água da Chuva",
+    "Hidrologia": "Hidrologia",
+    "Hidráulica": "Hidráulica",
+    "Análise de Qualidade": "Análise de Qualidade",
+    "Programação": "Programação",
+    "Arquitetura de Software": "Arquitetura de Software",
+    "Água": "Água",
+    "Mudanças Climáticas": "Mudanças Climáticas",
+    "Drenagem": "Drenagem"
+  },
+  "universities": {
+    "uc": {
+      "name": "Universidade de Coimbra (UC)",
+      "dept": "Faculdade de Ciências e Tecnologia (FCTUC)"
+    },
+    "udesc": {
+      "name": "Universidade do Estado de Santa Catarina (UDESC)",
+      "dept": "Departamento de Arquitetura e Urbanismo (DAU)"
+    },
+    "ufsc": {
+      "name": "Universidade Federal de Santa Catarina (UFSC)",
+      "dept": "Departamento de Engenharia de Controle e Automação"
+    },
+    "usp": {
+      "name": "Universidade de São Paulo (USP)",
+      "dept": "Escola de Engenharia de São Carlos (EESC)"
+    }
   }
 }
