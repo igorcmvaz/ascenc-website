@@ -6,7 +6,7 @@ export default function GESContact() {
 
   return (
     <PageLayout title={t("ges_contact.title")}>
-      <div className="max-w-xl mx-auto bg-slate-100 dark:bg-slate-200 border border-emerald-200 dark:border-slate-300 shadow-md rounded-2xl p-6 sm:p-8">
+      <div className="max-w-xl mx-auto bg-white dark:bg-slate-200 border border-emerald-200 dark:border-slate-300 shadow-md rounded-2xl p-6 sm:p-8">
         <p className="text-center mb-6 text-slate-800 font-bold">
           {t("ges_contact.description")}
         </p>

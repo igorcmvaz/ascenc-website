@@ -56,7 +56,7 @@ export default function Tools() {
     <PageLayout title={t('tools.title')}>
       <div className="max-w-4xl mx-auto space-y-8 mt-4">
         {/* Introductory Explanation */}
-        <div className="bg-slate-100 dark:bg-slate-200 border border-emerald-100 dark:border-slate-300 rounded-2xl p-6 shadow-sm">
+        <div className="bg-white dark:bg-slate-200 border border-emerald-100 dark:border-slate-300 rounded-2xl p-6 shadow-sm">
           <p className="text-slate-800 dark:text-slate-800 leading-relaxed text-base sm:text-lg font-bold text-justify">
             {t('tools.intro')}
           </p>
@@ -107,7 +107,7 @@ export default function Tools() {
               return (
                 <div
                   key={index}
-                  className="border border-slate-300 bg-slate-100 dark:bg-slate-200 rounded-3xl opacity-60 cursor-not-allowed select-none"
+                  className="border border-slate-300 bg-white dark:bg-slate-200 rounded-3xl opacity-60 cursor-not-allowed select-none"
                 >
                   {content}
                 </div>
@@ -118,7 +118,7 @@ export default function Tools() {
               <Link
                 key={index}
                 to={tool.to}
-                className="group border border-emerald-200 dark:border-slate-300 hover:border-emerald-500 bg-slate-100 dark:bg-slate-200 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="group border border-emerald-200 dark:border-slate-300 hover:border-emerald-500 bg-white dark:bg-slate-200 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 {content}
               </Link>

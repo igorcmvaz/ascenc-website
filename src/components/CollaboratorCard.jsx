@@ -32,7 +32,7 @@ export default function CollaboratorCard({ collaborator }) {
   };
 
   return (
-    <div className="bg-slate-100 dark:bg-slate-100 border border-slate-300 dark:border-slate-300 rounded-xl p-3.5 shadow-md hover:shadow-lg transition-all duration-200 flex flex-col justify-between space-y-2.5 h-full group">
+    <div className="bg-white dark:bg-slate-200 border border-slate-300 dark:border-slate-300 rounded-xl p-3.5 shadow-md hover:shadow-lg transition-all duration-200 flex flex-col justify-between space-y-2.5 h-full group">
       {/* Topo: Avatar + Nome/Cargo/Links + Logo da Universidade */}
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-2.5 min-w-0">
