@@ -63,6 +63,263 @@ const SIDAC_EMISSIONS = {
 };
 
 // ============================================================================
+// I18N DICTIONARY & LANGUAGE CONTROLLER
+// ============================================================================
+
+const PAIC_TRANSLATIONS = {
+  pt: {
+    tab_workspace: "Parâmetros",
+    tab_citation: "Citação",
+    tab_glossary: "Glossário / Referências",
+    panel_factors: "Fatores/Modelos",
+    sec_lifetime: "Vida Útil & Ambiente",
+    label_t_use: "Tempo de Uso T_uso (anos):",
+    label_t_eol: "Horizonte EoL T_eol (anos):",
+    label_co2: "Teor de CO₂ (ppm):",
+    label_ur: "Umidade Relativa UR (%):",
+    label_eol_thick: "Brita no EoL (mm):",
+    sec_collins: "Estequiometria Collins",
+    label_r: "Grau de Carbonatação r:",
+    label_cao_cim: "Fração CaO Cimento:",
+    label_cao_cal: "Fração CaO Cal:",
+    sec_en: "Fatores da Norma EN",
+    label_en_w: "Fator w (CaO Carbonatável):",
+    label_en_cc: "Fator Cc (Teor Clínquer):",
+    btn_cement_coeff: "⚙ Coef. Cimento (Possan)",
+    btn_sidac_mat: "🧪 Materiais SIDAC",
+    title_elements: "Materiais e Elementos Estruturais",
+    th_name: "Nome do Elemento",
+    th_area: "Área (m²)",
+    th_thick: "Esp. (m)",
+    th_vol: "Vol. (m³)",
+    th_material: "Material SIDAC",
+    th_exposure: "Classe de Exposição",
+    btn_add_elem: "➕ Adicionar Elemento",
+    btn_import: "📥 Importar Planilha",
+    chart_tab_uptake: "Sequestro CO₂ Cumulativo",
+    chart_tab_depth: "Frente Carbonatação",
+    chart_tab_pie: "Contribuição Elemento",
+    chart_tab_compare: "Comparar Métodos",
+    chart_tab_balance: "Balanço Carbono",
+    metric_use: "Fase de Uso (T_uso Anos)",
+    metric_eol: "Fim de Vida (EoL Potencial)",
+    metric_total: "Sequestro Total (Uso + EoL)",
+    btn_export_excel: "📊 Exportar Excel (.xlsx)",
+    btn_export_csv: "📄 Exportar CSV (.csv)",
+    citation_head: "Como citar este trabalho / How to cite this work:",
+    glossary_head: "Glossário de Variáveis e Parâmetros",
+    ref_head: "Referências Bibliográficas",
+    chart_lbl_time: "Tempo (Anos)",
+    chart_lbl_uptake_kg: "Captura de CO₂ (kg)",
+    chart_lbl_depth_mm: "Profundidade Capped (mm)",
+    chart_lbl_en_conc: "EN (Concreto)",
+    chart_lbl_col_conc: "Collins (Concreto)",
+    chart_lbl_en_mort: "EN (Argamassa)",
+    chart_lbl_col_mort: "Collins (Argamassa)",
+    chart_lbl_use_phase: "Fase de uso",
+    chart_lbl_start_eol: "Início EoL",
+    chart_lbl_pie_title: "Contribuição por Elemento (EN 16757)",
+    chart_lbl_initial_emissions: "Emissão Inicial",
+    chart_lbl_total_uptake: "Captura Total",
+    chart_lbl_net_balance: "Balanço Líquido"
+  },
+  en: {
+    tab_workspace: "Parameters",
+    tab_citation: "Citation",
+    tab_glossary: "Glossary / References",
+    panel_factors: "Factors/Models",
+    sec_lifetime: "Service Life & Environment",
+    label_t_use: "Use Time T_use (years):",
+    label_t_eol: "EoL Horizon T_eol (years):",
+    label_co2: "CO₂ Level (ppm):",
+    label_ur: "Relative Humidity RH (%):",
+    label_eol_thick: "Crushed Aggregate EoL (mm):",
+    sec_collins: "Collins Stoichiometry",
+    label_r: "Carbonation Degree r:",
+    label_cao_cim: "CaO Fraction Cement:",
+    label_cao_cal: "CaO Fraction Lime:",
+    sec_en: "EN Standard Factors",
+    label_en_w: "Factor w (Carbonatable CaO):",
+    label_en_cc: "Factor Cc (Clinker Content):",
+    btn_cement_coeff: "⚙ Cement Coeffs (Possan)",
+    btn_sidac_mat: "🧪 SIDAC Materials",
+    title_elements: "Materials and Structural Elements",
+    th_name: "Element Name",
+    th_area: "Area (m²)",
+    th_thick: "Thick. (m)",
+    th_vol: "Vol. (m³)",
+    th_material: "SIDAC Material",
+    th_exposure: "Exposure Class",
+    btn_add_elem: "➕ Add Element",
+    btn_import: "📥 Import Spreadsheet",
+    chart_tab_uptake: "Cumulative CO₂ Sequestration",
+    chart_tab_depth: "Carbonation Front",
+    chart_tab_pie: "Element Contribution",
+    chart_tab_compare: "Compare Methods",
+    chart_tab_balance: "Carbon Balance",
+    metric_use: "Use Phase (T_use Years)",
+    metric_eol: "End of Life (EoL Potential)",
+    metric_total: "Total Sequestration (Use + EoL)",
+    btn_export_excel: "📊 Export Excel (.xlsx)",
+    btn_export_csv: "📄 Export CSV (.csv)",
+    citation_head: "How to cite this work:",
+    glossary_head: "Glossary of Variables and Parameters",
+    ref_head: "Bibliographic References",
+    chart_lbl_time: "Time (Years)",
+    chart_lbl_uptake_kg: "CO₂ Capture (kg)",
+    chart_lbl_depth_mm: "Capped Depth (mm)",
+    chart_lbl_en_conc: "EN (Concrete)",
+    chart_lbl_col_conc: "Collins (Concrete)",
+    chart_lbl_en_mort: "EN (Mortar)",
+    chart_lbl_col_mort: "Collins (Mortar)",
+    chart_lbl_use_phase: "Use Phase",
+    chart_lbl_start_eol: "EoL Start",
+    chart_lbl_pie_title: "Contribution by Element (EN 16757)",
+    chart_lbl_initial_emissions: "Initial Emissions",
+    chart_lbl_total_uptake: "Total Capture",
+    chart_lbl_net_balance: "Net Balance"
+  },
+  es: {
+    tab_workspace: "Parámetros",
+    tab_citation: "Citación",
+    tab_glossary: "Glosario / Referencias",
+    panel_factors: "Factores/Modelos",
+    sec_lifetime: "Vida Útil y Entorno",
+    label_t_use: "Tiempo de Uso T_uso (años):",
+    label_t_eol: "Horizonte EoL T_eol (años):",
+    label_co2: "Nivel de CO₂ (ppm):",
+    label_ur: "Humedad Relativa HR (%):",
+    label_eol_thick: "Grava en EoL (mm):",
+    sec_collins: "Estequiometría Collins",
+    label_r: "Grado de Carbonatación r:",
+    label_cao_cim: "Fracción CaO Cemento:",
+    label_cao_cal: "Fracción CaO Cal:",
+    sec_en: "Factores de Norma EN",
+    label_en_w: "Factor w (CaO Carbonatable):",
+    label_en_cc: "Factor Cc (Contenido Clínker):",
+    btn_cement_coeff: "⚙ Coef. Cemento (Possan)",
+    btn_sidac_mat: "🧪 Materiales SIDAC",
+    title_elements: "Materiales y Elementos Estructurales",
+    th_name: "Nombre del Elemento",
+    th_area: "Área (m²)",
+    th_thick: "Esp. (m)",
+    th_vol: "Vol. (m³)",
+    th_material: "Material SIDAC",
+    th_exposure: "Clase de Exposición",
+    btn_add_elem: "➕ Agregar Elemento",
+    btn_import: "📥 Importar Planilla",
+    chart_tab_uptake: "Secuestro CO₂ Acumulado",
+    chart_tab_depth: "Frente Carbonatación",
+    chart_tab_pie: "Contribución Elemento",
+    chart_tab_compare: "Comparar Métodos",
+    chart_tab_balance: "Balance Carbono",
+    metric_use: "Fase de Uso (T_uso Años)",
+    metric_eol: "Fin de Vida (EoL Potencial)",
+    metric_total: "Secuestro Total (Uso + EoL)",
+    btn_export_excel: "📊 Exportar Excel (.xlsx)",
+    btn_export_csv: "📄 Exportar CSV (.csv)",
+    citation_head: "Cómo citar este trabajo:",
+    glossary_head: "Glosario de Variables y Parámetros",
+    ref_head: "Referencias Bibliográficas",
+    chart_lbl_time: "Tiempo (Años)",
+    chart_lbl_uptake_kg: "Captura de CO₂ (kg)",
+    chart_lbl_depth_mm: "Profundidad Capped (mm)",
+    chart_lbl_en_conc: "EN (Hormigón)",
+    chart_lbl_col_conc: "Collins (Hormigón)",
+    chart_lbl_en_mort: "EN (Mortero)",
+    chart_lbl_col_mort: "Collins (Mortero)",
+    chart_lbl_use_phase: "Fase de uso",
+    chart_lbl_start_eol: "Inicio EoL",
+    chart_lbl_pie_title: "Contribución por Elemento (EN 16757)",
+    chart_lbl_initial_emissions: "Emisión Inicial",
+    chart_lbl_total_uptake: "Captura Total",
+    chart_lbl_net_balance: "Balance Neto"
+  },
+  zh: {
+    tab_workspace: "参数设置",
+    tab_citation: "引用说明",
+    tab_glossary: "术语表 / 参考文献",
+    panel_factors: "模型与系数",
+    sec_lifetime: "使用寿命与环境",
+    label_t_use: "使用时间 T_use (年):",
+    label_t_eol: "废弃阶段 T_eol (年):",
+    label_co2: "CO₂ 浓度 (ppm):",
+    label_ur: "相对湿度 RH (%):",
+    label_eol_thick: "废弃破碎碎石 (mm):",
+    sec_collins: "Collins 化学计量",
+    label_r: "碳化程度 r:",
+    label_cao_cim: "水泥 CaO 比例:",
+    label_cao_cal: "石灰 CaO 比例:",
+    sec_en: "EN 标准系数",
+    label_en_w: "系数 w (可碳化 CaO):",
+    label_en_cc: "系数 Cc (熟料含量):",
+    btn_cement_coeff: "⚙ 水泥系数 (Possan)",
+    btn_sidac_mat: "🧪 SIDAC 材料",
+    title_elements: "材料与结构构件",
+    th_name: "构件名称",
+    th_area: "面积 (m²)",
+    th_thick: "厚度 (m)",
+    th_vol: "体积 (m³)",
+    th_material: "SIDAC 材料",
+    th_exposure: "暴露等级",
+    btn_add_elem: "➕ 添加构件",
+    btn_import: "📥 导入表格",
+    chart_tab_uptake: "累计 CO₂ 吸收量",
+    chart_tab_depth: "碳化深度前沿",
+    chart_tab_pie: "构件贡献占比",
+    chart_tab_compare: "方法对比",
+    chart_tab_balance: "碳平衡分析",
+    metric_use: "使用阶段 (T_use 年)",
+    metric_eol: "生命周期结束 (EoL 潜力)",
+    metric_total: "总碳吸收 (使用 + EoL)",
+    btn_export_excel: "📊 导出 Excel (.xlsx)",
+    btn_export_csv: "📄 导出 CSV (.csv)",
+    citation_head: "如何引用本工作：",
+    glossary_head: "变量与参数术语表",
+    ref_head: "参考文献",
+    chart_lbl_time: "时间 (年)",
+    chart_lbl_uptake_kg: "CO₂ 捕集量 (kg)",
+    chart_lbl_depth_mm: "碳化深度限制 (mm)",
+    chart_lbl_en_conc: "EN (混凝土)",
+    chart_lbl_col_conc: "Collins (混凝土)",
+    chart_lbl_en_mort: "EN (砂浆)",
+    chart_lbl_col_mort: "Collins (砂浆)",
+    chart_lbl_use_phase: "使用阶段",
+    chart_lbl_start_eol: "EoL 开始",
+    chart_lbl_pie_title: "构件贡献占比 (EN 16757)",
+    chart_lbl_initial_emissions: "初始排放",
+    chart_lbl_total_uptake: "总捕集量",
+    chart_lbl_net_balance: "净排放"
+  }
+};
+
+let currentPaicLang = 'pt';
+
+function changePaicLanguage(lang) {
+    if (!lang || !PAIC_TRANSLATIONS[lang]) lang = 'pt';
+    currentPaicLang = lang;
+    const tDict = PAIC_TRANSLATIONS[lang];
+    
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (tDict[key]) {
+            el.textContent = tDict[key];
+        }
+    });
+
+    const langSelect = document.getElementById('lang_select');
+    if (langSelect && langSelect.value !== lang) {
+        langSelect.value = lang;
+    }
+    
+    localStorage.setItem('paicacv_lang', lang);
+    
+    if (typeof recalculate === 'function' && elements.length > 0) {
+        recalculate();
+    }
+}
+
+// ============================================================================
 // APPLICATION STATE
 // ============================================================================
 
@@ -381,6 +638,7 @@ function recalculate() {
 
 function drawPlots() {
     const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    const tDict = PAIC_TRANSLATIONS[currentPaicLang] || PAIC_TRANSLATIONS['pt'];
     
     // Style settings
     const textColor = isDark ? "#e2e8f0" : "#2c3e50";
@@ -395,10 +653,10 @@ function drawPlots() {
         data: {
             labels: timelineYears,
             datasets: [
-                { label: "EN (Concreto)", data: agg_en_concreto, borderColor: "#3a7ebf", borderWidth: 2.5, fill: false, pointRadius: 0 },
-                { label: "Collins (Concreto)", data: agg_co_concreto, borderColor: "#2b8c50", borderWidth: 2.5, fill: false, pointRadius: 0 },
-                { label: "EN (Argamassa)", data: agg_en_argamassa, borderColor: "#82bbf0", borderWidth: 2.5, borderDash: [5, 5], fill: false, pointRadius: 0 },
-                { label: "Collins (Argamassa)", data: agg_co_argamassa, borderColor: "#66c98c", borderWidth: 2.5, borderDash: [5, 5], fill: false, pointRadius: 0 }
+                { label: tDict.chart_lbl_en_conc, data: agg_en_concreto, borderColor: "#3a7ebf", borderWidth: 2.5, fill: false, pointRadius: 0 },
+                { label: tDict.chart_lbl_col_conc, data: agg_co_concreto, borderColor: "#2b8c50", borderWidth: 2.5, fill: false, pointRadius: 0 },
+                { label: tDict.chart_lbl_en_mort, data: agg_en_argamassa, borderColor: "#82bbf0", borderWidth: 2.5, borderDash: [5, 5], fill: false, pointRadius: 0 },
+                { label: tDict.chart_lbl_col_mort, data: agg_co_argamassa, borderColor: "#66c98c", borderWidth: 2.5, borderDash: [5, 5], fill: false, pointRadius: 0 }
             ]
         },
         options: {
@@ -406,12 +664,12 @@ function drawPlots() {
             maintainAspectRatio: false,
             scales: {
                 x: {
-                    title: { display: true, text: 'Tempo (Anos)', color: textColor },
+                    title: { display: true, text: tDict.chart_lbl_time, color: textColor },
                     ticks: { color: textColor },
                     grid: { color: gridColor }
                 },
                 y: {
-                    title: { display: true, text: 'Captura de CO₂ (kg)', color: textColor },
+                    title: { display: true, text: tDict.chart_lbl_uptake_kg, color: textColor },
                     ticks: { color: textColor },
                     grid: { color: gridColor }
                 }
@@ -1738,6 +1996,36 @@ function toggleFullscreen() {
 
 // Initialize application on load
 window.addEventListener("DOMContentLoaded", () => {
+    // Sync language with parent site if embedded in an iframe
+    const syncLanguage = () => {
+        let parentLang = 'pt';
+        try {
+            if (window.parent && window.parent.i18next && window.parent.i18next.language) {
+                parentLang = window.parent.i18next.language;
+            } else if (window.parent && window.parent.localStorage) {
+                parentLang = window.parent.localStorage.getItem('i18nextLng') || 'pt';
+            }
+        } catch(e) {
+            parentLang = localStorage.getItem('paicacv_lang') || 'pt';
+        }
+        
+        let code = 'pt';
+        if (parentLang.startsWith('es')) code = 'es';
+        else if (parentLang.startsWith('zh')) code = 'zh';
+        else if (parentLang.startsWith('en')) code = 'en';
+        
+        changePaicLanguage(code);
+    };
+
+    syncLanguage();
+
+    try {
+        if (window.self !== window.top && window.parent) {
+            const langCheckInterval = setInterval(syncLanguage, 1000);
+            window.addEventListener('beforeunload', () => clearInterval(langCheckInterval));
+        }
+    } catch(e) {}
+
     // Sync theme with parent site if embedded in an iframe
     try {
         if (window.self !== window.top) {

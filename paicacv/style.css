@@ -178,11 +178,24 @@ body {
     box-shadow: 0 0 0 3px rgba(58, 126, 191, 0.15);
 }
 
-/* Header Actions (Theme & Fullscreen) */
+/* Header Actions (Theme & Fullscreen & Language) */
 .header-actions {
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+.lang-select {
+    background-color: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    outline: none;
+    font-family: var(--font-primary);
+    cursor: pointer;
+    font-weight: 600;
 }
 
 /* Theme & Fullscreen Buttons */
