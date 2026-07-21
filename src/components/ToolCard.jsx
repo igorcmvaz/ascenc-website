@@ -1,4 +1,4 @@
-export default function ToolCard({ icon, title, description, iframe }) {
+﻿export default function ToolCard({ icon, title, description, iframe }) {
   return (
     <div className="bg-gray-50 dark:bg-zinc-800 p-6 rounded-xl shadow-md mb-6 border border-gray-200 dark:border-zinc-700">
       <div className="flex items-center gap-3 mb-3">

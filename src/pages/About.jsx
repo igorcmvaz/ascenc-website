@@ -5,10 +5,10 @@ import { useTranslation } from "react-i18next";
 
 // Caminhos atualizados para a pasta public
 const odsData = [
-  { id: "ODS 6", img: "./assets/SDG-6.svg" },
-  { id: "ODS 7", img: "./assets/SDG-7.svg" },
-  { id: "ODS 11", img: "./assets/SDG-11.svg" },
-  { id: "ODS 13", img: "./assets/SDG-13.svg" },
+  { id: "ODS 6", img: "./assets/icons/SDG-6.svg" },
+  { id: "ODS 7", img: "./assets/icons/SDG-7.svg" },
+  { id: "ODS 11", img: "./assets/icons/SDG-11.svg" },
+  { id: "ODS 13", img: "./assets/icons/SDG-13.svg" },
 ];
 
 export default function About() {
@@ -36,22 +36,31 @@ export default function About() {
           {t('about.partner_universities')}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <UniversityCard
-            name="Universidade Federal de Santa Catarina (UFSC)"
-            description={t('about.ufsc_desc')}
-            img="./assets/ufsc.png" // Caminho corrigido
-          />
-          <UniversityCard
-            name="Universidade de Coimbra (UC)"
-            description={t('about.uc_desc')}
-            img="./assets/ftuc_2.png" // Caminho corrigido
-          />
-          <UniversityCard
-            name="Universidade de São Paulo (USP)"
-            description={t('about.usp_desc')}
-            img="./assets/uspsc.png" // Caminho corrigido
-          />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-white dark:bg-slate-100 border border-emerald-200 dark:border-slate-300 p-6 rounded-3xl shadow-md">
+          <div className="bg-slate-50 dark:bg-white p-4 rounded-2xl border border-slate-200 dark:border-slate-300 shadow-sm flex flex-col items-center justify-between">
+            <UniversityCard
+              name="Universidade Federal de Santa Catarina (UFSC)"
+              description={t('about.ufsc_desc')}
+              img="./assets/logos/ufsc.png"
+              url="https://ppgec.posgrad.ufsc.br/"
+            />
+          </div>
+          <div className="bg-slate-50 dark:bg-white p-4 rounded-2xl border border-slate-200 dark:border-slate-300 shadow-sm flex flex-col items-center justify-between">
+            <UniversityCard
+              name="Universidade de Coimbra (UC)"
+              description={t('about.uc_desc')}
+              img="./assets/logos/ftuc.png"
+              url="https://www.uc.pt/fctuc"
+            />
+          </div>
+          <div className="bg-slate-50 dark:bg-white p-4 rounded-2xl border border-slate-200 dark:border-slate-300 shadow-sm flex flex-col items-center justify-between">
+            <UniversityCard
+              name="Universidade de São Paulo (USP)"
+              description={t('about.usp_desc')}
+              img="./assets/logos/uspsc.png"
+              url="https://eesc.usp.br/"
+            />
+          </div>
         </div>
       </PageLayout>
     </>

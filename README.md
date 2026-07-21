@@ -1,157 +1,116 @@
 # ASCENC Website
 
-Este é o site oficial do projeto **ASCENC (Avaliação de Sustentabilidade em Cidades e Edificações em Novos Climas)**, desenvolvido em **React + Vite + TailwindCSS**.
+Este é o site oficial do projeto **ASCENC (Avaliação de Sustentabilidade em Cidades e Edificações em Novos Climas)**, desenvolvido com o framework moderno **React + Vite + TailwindCSS**.
 
-✅ **Páginas incluídas:**
-- **Home** – Apresentação do projeto
-- **Sobre** – Informações detalhadas sobre o ASCENC
-- **Artigos** – Lista de publicações científicas
-- **Ferramentas** – Acesso às ferramentas desenvolvidas
-- **Equipe** – Apresentação dos membros e colaboradores
-- **Contato** – Formulário para envio de dúvidas e sugestões
+O site é projetado com suporte multi-idioma (i18n), layout escuro/claro integrado e uma robusta pipeline automatizada para exibição de publicações científicas com gráficos interativos.
 
 ---
 
-## 🚀 Tecnologias
+## 🚀 Tecnologias principais
 
-- ⚛ **React 18**
-- ⚡ **Vite**
-- 🎨 **TailwindCSS**
-- 🔗 **React Router DOM** (para roteamento)
+* ⚛ **React 19**
+* ⚡ **Vite**
+* 🎨 **TailwindCSS**
+* 🌐 **React Router DOM** (com HashRouter para compatibilidade perfeita com GitHub Pages e redirecionamentos)
+* 📖 **i18next** (Suporte à tradução dinâmica PT/EN)
+* 📊 **Gráficos SVG Nativos** (Zero dependências e 100% de suporte a interatividade no React 19)
 
 ---
 
-## 📂 Estrutura de Pastas
+## 📂 Estrutura do Projeto
 
-```
-src/
- ├─ assets/            # Imagens e arquivos estáticos
- ├─ components/        # Componentes reutilizáveis (Header, Footer, Cards, etc.)
- │   ├─ Footer.jsx
- │   ├─ Header.jsx
- │   ├─ PageLayout.jsx
- │   ├─ PaperTable.jsx
- │   ├─ TeamMemberCard.jsx
- │   └─ ToolCard.jsx
- ├─ pages/             # Páginas principais
- │   ├─ Home.jsx
- │   ├─ About.jsx
- │   ├─ Papers.jsx
- │   ├─ Tools.jsx
- │   ├─ Team.jsx
- │   └─ Contact.jsx
- ├─ index.css          # Estilos globais
- ├─ main.jsx           # Ponto de entrada do React
- └─ App.jsx            # (Pode ser usado como base, mas as rotas já estão no main.jsx)
+```text
+ascenc-website/
+ ├─ scripts/                 # Pipeline de processamento das publicações
+ │   ├─ parse_lattes_html.py # Extrator do currículo Lattes (HTML)
+ │   ├─ parse_artigos.py     # Parser de citações, DOIs e tags
+ │   ├─ build_pages.py       # Gerador dinâmico do componente Papers.jsx
+ │   ├─ update_papers.py     # Script unificador da pipeline
+ │   ├─ artigos.txt          # Banco de dados textual dos artigos
+ │   ├─ artigos-tags.txt     # Tags vinculadas por número identificador
+ │   └─ enedir.html          # Export do Currículo Lattes do Prof. Enedir
+ ├─ public/                  # Arquivos estáticos copiados na compilação
+ │   └─ CNAME                # Configuração do domínio próprio (sustainability.ufsc.br)
+ ├─ src/
+ │   ├─ assets/              # Imagens e logotipos do portal e subgrupos
+ │   ├─ components/          # Componentes globais (Layout, Header, Footer)
+ │   ├─ pages/               # Páginas do site (Home, About, Tools, Team, Contact)
+ │   │   └─ Papers.jsx       # Página de Artigos Científicos (gerada dinamicamente)
+ │   ├─ i18n/                # Dicionários de localização (PT/EN)
+ │   ├─ index.css            # Estilos globais e tokens Tailwind
+ │   └─ main.jsx             # Roteamento e inicialização da aplicação React
+ └─ UFSC-DNS-GUIDE.md        # Guia de configuração de apontamento de DNS UFSC
 ```
 
 ---
 
-## ⚙️ Instalação
+## 📄 Página de Artigos & Pipeline de Publicações
 
-### 1️⃣ Clonar o repositório
+A página de publicações cientificas (`src/pages/Papers.jsx`) é completamente dinâmica. Para atualizar as publicações a partir do currículo Lattes:
 
-```bash
-git clone https://github.com/seuusuario/ascenc-website.git
-cd ascenc-website
-```
+### 1️⃣ Como atualizar as publicações:
+1. Exporte a lista de artigos completos do Currículo Lattes em formato HTML.
+2. Salve o arquivo com o nome `enedir.html` dentro da pasta `scripts/`.
+3. Rode o comando unificado:
+   ```bash
+   npm run update-papers
+   ```
+O script irá:
+* Extrair todos os artigos e trabalhos de congresso do HTML.
+* Limpar citações, abreviações e encontrar os links de DOI correspondentes.
+* Associar os temas corretos a partir do arquivo `artigos-tags.txt`.
+* Gerar de forma automatizada o componente React [Papers.jsx](src/pages/Papers.jsx).
 
-### 2️⃣ Instalar as dependências
+---
 
+## 📊 Recursos da Página de Artigos
+
+A página de artigos conta com recursos avançados de usabilidade:
+
+* **Visualização Compacta/Expandida**: Por padrão, exibe apenas os artigos publicados nos últimos 5 anos. Clicando no banner *"Ver artigos anteriores (2021 e anteriores)"*, a página se expande exibindo o histórico de todos os 23 anos (de 2004 a 2026) inline.
+* **Painel de Busca & Tags**: Permite pesquisar em tempo real por termos no título, autores ou nome dos temas das tags. A busca sempre vasculha **todo o histórico** de artigos.
+* **Gráficos SVG Interativos**:
+  * **Produção Anual**: Gráfico de barras indicando a quantidade de publicações por ano.
+  * **Produção Acumulada**: Gráfico de área que ilustra o crescimento histórico das publicações.
+  * *Ambos os gráficos contam com tooltips flutuantes interativos ao passar o mouse, e foram criados usando SVG nativo para evitar lentidão e conflito de pacotes no React 19.*
+
+---
+
+## ⚙️ Instalação e Execução Local
+
+### 1️⃣ Instalar dependências
 ```bash
 npm install
 ```
 
-### 3️⃣ Rodar em modo desenvolvimento
-
+### 2️⃣ Executar servidor de desenvolvimento
 ```bash
 npm run dev
 ```
+Acesse no seu navegador: `http://localhost:5173/`
 
-### 4️⃣ Acessar pelo navegador
-
-```
-http://localhost:5173
-```
-
----
-
-## 🌐 Testar em outros dispositivos
-
-Para acessar pelo celular na mesma rede:
-
+### 3️⃣ Executar em rede local (para testes em celulares/tablets)
 ```bash
 npm run dev -- --host
 ```
 
-Será exibido algo como:
-
-```
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: http://192.168.1.100:5173/
-```
-
-Use o endereço **Network** no navegador do celular.
-
 ---
 
-## 🛠️ Adicionando Novas Páginas
+## 📦 Compilação e Deploy no GitHub Pages
 
-1. Criar um novo arquivo em `src/pages/NovaPagina.jsx`:
-
-```jsx
-import PageLayout from "../components/PageLayout";
-
-export default function NovaPagina() {
-  return (
-    <PageLayout title="Nova Página">
-      <p>Conteúdo da nova página aqui!</p>
-    </PageLayout>
-  );
-}
-```
-
-2. Adicionar no roteamento (`src/main.jsx`):
-
-```jsx
-import NovaPagina from "./pages/NovaPagina";
-
-<Route path="/nova-pagina" element={<NovaPagina />} />
-```
-
-3. Adicionar o link no `Header.jsx`:
-
-```jsx
-{ name: "Nova Página", path: "/nova-pagina" },
-```
-
----
-
-## 📦 Build para Produção
-
+### Para compilar o projeto (gerar pasta `dist/`):
 ```bash
 npm run build
 ```
 
-Os arquivos finais estarão na pasta `dist/`.
-
-Para testar localmente:
-
+### Para publicar no GitHub Pages:
 ```bash
-npm run preview
+npm run deploy
 ```
+*Nota: A pipeline automática de publicação também está integrada com o GitHub Actions sempre que alterações forem enviadas à branch `main`.*
 
 ---
 
-## 🚀 Deploy no GitHub Pages
+## 🌐 Configuração do Domínio UFSC (`sustainability.ufsc.br`)
 
-1. Configure o campo `homepage` no `package.json` com o endereço do seu repositório:
-   `https://seu-usuario.github.io/ascenc-website`.
-2. Instale as dependências e rode o comando de deploy:
-
-```bash
-npm install
-npm run deploy
-```
-
-O workflow `Deploy to GitHub Pages` também publica automaticamente o conteúdo da pasta `dist/` sempre que houver push na branch `main`.
+O site está preparado para ser transferido para o domínio próprio da UFSC. Os detalhes de configuração técnica de CNAME do DNS estão descritos no arquivo [UFSC-DNS-GUIDE.md](UFSC-DNS-GUIDE.md). O arquivo [CNAME](public/CNAME) na pasta `public` garante que novas compilações não quebrem o direcionamento configurado no GitHub Pages.

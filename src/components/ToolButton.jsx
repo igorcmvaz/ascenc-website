@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { HelpCircle } from "lucide-react";
 
 // Modificado para aceitar iconLight e iconDark

@@ -1,4 +1,4 @@
-import PageLayout from "../components/PageLayout";
+﻿import PageLayout from "../components/PageLayout";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -35,7 +35,7 @@ export default function PAICACV() {
 
           <div className="flex justify-center mt-8">
             <Link
-              to="/tools"
+              to="/ascenc/tools"
               className="inline-flex items-center gap-2 px-6 py-2 bg-gray-100 dark:bg-zinc-800 text-gray-800 dark:text-zinc-200 rounded-lg shadow hover:shadow-md hover:bg-gray-200 dark:hover:bg-zinc-700 transition-all duration-300 border border-gray-200 dark:border-zinc-700"
             >
               <ArrowLeft className="w-5 h-5" />

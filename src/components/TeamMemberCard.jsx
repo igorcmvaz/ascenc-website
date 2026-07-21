@@ -1,37 +1,45 @@
-export default function TeamMemberCard({ image, name, role, orcid, researchgate }) {
+export default function TeamMemberCard({ image, name, role, orcid, researchgate, lattes }) {
   return (
-    <div className="bg-gray-100 dark:bg-zinc-800 rounded-xl p-1 text-center shadow-md flex flex-col justify-between h-full">
-      {/* Parte superior (imagem e texto) */}
-      <div>
-        <img
-          src={image} // Lembre-se que o caminho agora é /assets/...
-          alt={name}
-          className="w-28 h-28 object-cover rounded-full mx-auto mb-3"
-        />
-        <h5 className="text-lg font-semibold text-gray-900 dark:text-zinc-100">{name}</h5>
-        <p className="text-gray-700 dark:text-zinc-300 text-sm mb-2">{role}</p>
-      </div>
-
-      {/* Parte inferior (ORCID e ResearchGate) */}
-      <div className="mt-3 flex items-center justify-center gap-4">
-        {orcid && (
-          <a href={orcid} target="_blank" rel="noopener noreferrer">
-            <img
-              src="./assets/orcid.png"
-              alt="ORCID"
-              className="w-9 hover:scale-110 transition-transform"
-            />
-          </a>
-        )}
-        {researchgate && (
-          <a href={researchgate} target="_blank" rel="noopener noreferrer">
-            <img
-              src="./assets/ResearchGate_icon.png"
-              alt="ResearchGate"
-              className="w-9 hover:scale-110 transition-transform"
-            />
-          </a>
-        )}
+    <div className="bg-white dark:bg-slate-100 p-4 rounded-xl border border-slate-200 dark:border-slate-300 flex items-center gap-4 shadow-md hover:shadow-lg transition-shadow duration-300 h-full text-left">
+      <img
+        src={image}
+        alt={name}
+        className="w-16 h-16 object-cover rounded-full shrink-0 border border-slate-300"
+      />
+      <div className="flex-1 min-w-0">
+        <h5 className="text-base font-extrabold text-slate-900 truncate leading-snug">{name}</h5>
+        <p className="text-slate-700 text-xs font-bold mt-0.5 mb-1.5 truncate">{role}</p>
+        
+        {/* Links */}
+        <div className="flex items-center gap-2">
+          {orcid && (
+            <a href={orcid} target="_blank" rel="noopener noreferrer" className="shrink-0">
+              <img
+                src="./assets/icons/orcid.png"
+                alt="ORCID"
+                className="w-7 h-7 hover:scale-110 transition-transform"
+              />
+            </a>
+          )}
+          {researchgate && (
+            <a href={researchgate} target="_blank" rel="noopener noreferrer" className="shrink-0">
+              <img
+                src="./assets/icons/ResearchGate_icon.png"
+                alt="ResearchGate"
+                className="w-7 h-7 hover:scale-110 transition-transform"
+              />
+            </a>
+          )}
+          {lattes && (
+            <a href={lattes} target="_blank" rel="noopener noreferrer" className="shrink-0">
+              <img
+                src="./assets/icons/lattes.png"
+                alt="Lattes"
+                className="w-7 h-7 hover:scale-110 transition-transform"
+              />
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

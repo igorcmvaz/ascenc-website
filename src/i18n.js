@@ -27,12 +27,13 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'pt-BR',
+    fallbackLng: 'en',
+    lng: localStorage.getItem('i18nextLng') || 'en',
     interpolation: {
       escapeValue: false 
     },
     detection: {
-      order: ['localStorage', 'navigator'],
+      order: ['localStorage'],
       caches: ['localStorage'],
     }
   });

@@ -6,20 +6,20 @@ export default function Contact() {
 
   return (
     <PageLayout title={t("contact.title")}>
-      <div className="max-w-xl mx-auto bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 shadow-md rounded-xl p-6">
-        <p className="text-center mb-4 text-gray-700 dark:text-zinc-300">
+      <div className="max-w-xl mx-auto bg-white dark:bg-slate-100 border border-emerald-200 dark:border-slate-300 shadow-md rounded-2xl p-6 sm:p-8">
+        <p className="text-center mb-6 text-slate-800 font-bold">
           {t("contact.description")}
         </p>
 
         <form
           action="https://formsubmit.co/igorcmvaz@gmail.com"
           method="POST"
-          className="space-y-4"
+          className="space-y-5"
         >
           <div>
             <label
               htmlFor="name"
-              className="block font-medium mb-1 text-gray-800 dark:text-zinc-200"
+              className="block font-extrabold mb-1.5 text-slate-900"
             >
               {t("contact.name")}
             </label>
@@ -28,14 +28,14 @@ export default function Contact() {
               id="name"
               name="name"
               required
-              className="w-full p-2 bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 text-gray-900 dark:text-zinc-100 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500 dark:focus:ring-slate-400"
+              className="w-full p-2.5 bg-slate-50 dark:bg-white border border-slate-300 text-slate-900 font-bold rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
           <div>
             <label
               htmlFor="institution"
-              className="block font-medium mb-1 text-gray-800 dark:text-zinc-200"
+              className="block font-extrabold mb-1.5 text-slate-900"
             >
               {t("contact.institution")}
             </label>
@@ -44,14 +44,14 @@ export default function Contact() {
               id="institution"
               name="institution"
               required
-              className="w-full p-2 bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 text-gray-900 dark:text-zinc-100 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500 dark:focus:ring-slate-400"
+              className="w-full p-2.5 bg-slate-50 dark:bg-white border border-slate-300 text-slate-900 font-bold rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
           <div>
             <label
               htmlFor="message"
-              className="block font-medium mb-1 text-gray-800 dark:text-zinc-200"
+              className="block font-extrabold mb-1.5 text-slate-900"
             >
               {t("contact.message")}
             </label>
@@ -60,14 +60,14 @@ export default function Contact() {
               name="message"
               rows="4"
               required
-              className="w-full p-2 bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 text-gray-900 dark:text-zinc-100 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500 dark:focus:ring-slate-400"
+              className="w-full p-2.5 bg-slate-50 dark:bg-white border border-slate-300 text-slate-900 font-bold rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
             ></textarea>
           </div>
 
-          <div className="text-center">
+          <div className="text-center pt-2">
             <button
               type="submit"
-              className="bg-slate-800 text-white px-6 py-2 rounded-md hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 transition"
+              className="bg-emerald-700 hover:bg-emerald-800 text-white font-black px-8 py-3 rounded-xl shadow-md transition"
             >
               {t("contact.submit")}
             </button>

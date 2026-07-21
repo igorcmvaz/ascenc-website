@@ -30,11 +30,17 @@
         <!-- Header & Main Navigation Tabs -->
         <header class="tab-navigation-root">
             <nav class="main-tab-list">
-                <button class="main-tab-btn active" onclick="switchTab(event, 'main_tab_workspace')">Parâmetros</button>
-                <button class="main-tab-btn" onclick="switchTab(event, 'main_tab_citation')">Citação</button>
-                <button class="main-tab-btn" onclick="switchTab(event, 'main_tab_glossary')">Glossário / Referências</button>
+                <button class="main-tab-btn active" onclick="switchTab(event, 'main_tab_workspace')" data-i18n="tab_workspace">Parâmetros</button>
+                <button class="main-tab-btn" onclick="switchTab(event, 'main_tab_citation')" data-i18n="tab_citation">Citação</button>
+                <button class="main-tab-btn" onclick="switchTab(event, 'main_tab_glossary')" data-i18n="tab_glossary">Glossário / Referências</button>
             </nav>
             <div class="header-actions">
+                <select id="lang_select" onchange="changePaicLanguage(this.value)" class="lang-select" title="Idioma / Language">
+                    <option value="pt">PT 🇧🇷</option>
+                    <option value="en">EN 🇺🇸</option>
+                    <option value="es">ES 🇪🇸</option>
+                    <option value="zh">ZH 🇨🇳</option>
+                </select>
                 <button class="btn-fullscreen-toggle" onclick="toggleFullscreen()" title="Tela cheia">🖥️</button>
                 <button class="btn-theme-toggle" onclick="toggleTheme()" title="Alternar modo claro/escuro">☀️/🌙</button>
             </div>
@@ -47,71 +53,71 @@
             <aside class="sidebar">
                 
                 <div class="panel-header">
-                    <span class="panel-title">Fatores/Modelos</span>
+                    <span class="panel-title" data-i18n="panel_factors">Fatores/Modelos</span>
                 </div>
                 
                 <!-- Section 1: Global Parameters -->
                 <div class="form-section">
-                    <h3 class="section-title">Vida Útil & Ambiente</h3>
+                    <h3 class="section-title" data-i18n="sec_lifetime">Vida Útil & Ambiente</h3>
                     
                     <div class="form-group">
-                        <label for="entry_t_use">Tempo de Uso T_uso (anos):</label>
+                        <label for="entry_t_use" data-i18n="label_t_use">Tempo de Uso T_uso (anos):</label>
                         <input type="number" id="entry_t_use" class="form-control" value="50">
                     </div>
                     <div class="form-group">
-                        <label for="entry_t_eol">Horizonte EoL T_eol (anos):</label>
+                        <label for="entry_t_eol" data-i18n="label_t_eol">Horizonte EoL T_eol (anos):</label>
                         <input type="number" id="entry_t_eol" class="form-control" value="10">
                     </div>
                     <div class="form-group">
-                        <label for="entry_co2">Teor de CO₂ (ppm):</label>
+                        <label for="entry_co2" data-i18n="label_co2">Teor de CO₂ (ppm):</label>
                         <input type="number" id="entry_co2" class="form-control" value="440">
                     </div>
                     <div class="form-group">
-                        <label for="entry_ur">Umidade Relativa UR (%):</label>
+                        <label for="entry_ur" data-i18n="label_ur">Umidade Relativa UR (%):</label>
                         <input type="number" id="entry_ur" class="form-control" value="65">
                     </div>
                     <div class="form-group">
-                        <label for="entry_eol_thick">Brita no EoL (mm):</label>
+                        <label for="entry_eol_thick" data-i18n="label_eol_thick">Brita no EoL (mm):</label>
                         <input type="number" id="entry_eol_thick" class="form-control" value="5">
                     </div>
                 </div>
                 
                 <!-- Section 2: Collins Stoichiometry -->
                 <div class="form-section">
-                    <h3 class="section-title">Estequiometria Collins</h3>
+                    <h3 class="section-title" data-i18n="sec_collins">Estequiometria Collins</h3>
                     
                     <div class="form-group">
-                        <label for="entry_r">Grau de Carbonatação r:</label>
+                        <label for="entry_r" data-i18n="label_r">Grau de Carbonatação r:</label>
                         <input type="number" step="0.01" id="entry_r" class="form-control" value="0.75">
                     </div>
                     <div class="form-group">
-                        <label for="entry_cao_cim">Fração CaO Cimento:</label>
+                        <label for="entry_cao_cim" data-i18n="label_cao_cim">Fração CaO Cimento:</label>
                         <input type="number" step="0.01" id="entry_cao_cim" class="form-control" value="0.65">
                     </div>
                     <div class="form-group">
-                        <label for="entry_cao_cal">Fração CaO Cal:</label>
+                        <label for="entry_cao_cal" data-i18n="label_cao_cal">Fração CaO Cal:</label>
                         <input type="number" step="0.01" id="entry_cao_cal" class="form-control" value="0.75">
                     </div>
                 </div>
                 
                 <!-- Section 3: EN Norma Factors -->
                 <div class="form-section">
-                    <h3 class="section-title">Fatores da Norma EN</h3>
+                    <h3 class="section-title" data-i18n="sec_en">Fatores da Norma EN</h3>
                     
                     <div class="form-group">
-                        <label for="entry_en_w">Fator w (CaO Carbonatável):</label>
+                        <label for="entry_en_w" data-i18n="label_en_w">Fator w (CaO Carbonatável):</label>
                         <input type="number" step="0.01" id="entry_en_w" class="form-control" value="0.75">
                     </div>
                     <div class="form-group">
-                        <label for="entry_en_cc">Fator Cc (Teor Clínquer):</label>
+                        <label for="entry_en_cc" data-i18n="label_en_cc">Fator Cc (Teor Clínquer):</label>
                         <input type="number" step="0.01" id="entry_en_cc" class="form-control" value="0.95">
                     </div>
                 </div>
                 
                 <!-- Advanced Configurations buttons -->
                 <div class="form-section" style="margin-top: 10px; gap: 8px;">
-                    <button class="btn btn-secondary w-full" onclick="openCementModal()">⚙ Coef. Cimento (Possan)</button>
-                    <button class="btn btn-secondary w-full" onclick="openMaterialModal()">🧪 Materiais SIDAC</button>
+                    <button class="btn btn-secondary w-full" onclick="openCementModal()" data-i18n="btn_cement_coeff">⚙ Coef. Cimento (Possan)</button>
+                    <button class="btn btn-secondary w-full" onclick="openMaterialModal()" data-i18n="btn_sidac_mat">🧪 Materiais SIDAC</button>
                 </div>
                 
             </aside>
@@ -121,7 +127,7 @@
                 
                 <!-- Elements List panel -->
                 <section class="panel-card">
-                    <h2 class="panel-card-title">Materiais e Elementos Estruturais</h2>
+                    <h2 class="panel-card-title" data-i18n="title_elements">Materiais e Elementos Estruturais</h2>
                     
                     <!-- Table wrapper -->
                     <div class="table-container">
@@ -129,12 +135,12 @@
                             <thead>
                                 <tr>
                                     <th style="width: 40px" class="text-center">✕</th>
-                                    <th>Nome do Elemento</th>
-                                    <th style="width: 80px" class="text-center">Área (m²)</th>
-                                    <th style="width: 80px" class="text-center">Esp. (m)</th>
-                                    <th style="width: 85px" class="text-center">Vol. (m³)</th>
-                                    <th style="width: 170px">Material SIDAC</th>
-                                    <th style="width: 170px">Classe de Exposição</th>
+                                    <th data-i18n="th_name">Nome do Elemento</th>
+                                    <th style="width: 80px" class="text-center" data-i18n="th_area">Área (m²)</th>
+                                    <th style="width: 80px" class="text-center" data-i18n="th_thick">Esp. (m)</th>
+                                    <th style="width: 85px" class="text-center" data-i18n="th_vol">Vol. (m³)</th>
+                                    <th style="width: 170px" data-i18n="th_material">Material SIDAC</th>
+                                    <th style="width: 170px" data-i18n="th_exposure">Classe de Exposição</th>
                                     <th style="width: 45px" class="text-center">⚙</th>
                                 </tr>
                             </thead>
@@ -146,8 +152,8 @@
                     
                     <!-- Add/Import Actions -->
                     <div class="btn-action-container">
-                        <button class="btn btn-success" onclick="addElementRow()">➕ Adicionar Elemento</button>
-                        <button class="btn btn-primary" onclick="document.getElementById('file_import').click()">📥 Importar Planilha</button>
+                        <button class="btn btn-success" onclick="addElementRow()" data-i18n="btn_add_elem">➕ Adicionar Elemento</button>
+                        <button class="btn btn-primary" onclick="document.getElementById('file_import').click()" data-i18n="btn_import">📥 Importar Planilha</button>
                         <input type="file" id="file_import" accept=".xlsx, .xls, .csv" style="display: none" onchange="handleFileInput(event)">
                     </div>
                 </section>
@@ -158,11 +164,11 @@
                         
                         <!-- Graphs Inner Navigation tabs -->
                         <nav class="tab-list">
-                            <button class="tab-btn active" onclick="switchChartTab(event, 'tab_content_uptake')">Sequestro CO₂ Cumulativo</button>
-                            <button class="tab-btn" onclick="switchChartTab(event, 'tab_content_depth')">Frente Carbonatação</button>
-                            <button class="tab-btn" onclick="switchChartTab(event, 'tab_content_pie')">Contribuição Elemento</button>
-                            <button class="tab-btn" onclick="switchChartTab(event, 'tab_content_compare')">Comparar Métodos</button>
-                            <button class="tab-btn" onclick="switchChartTab(event, 'tab_content_balance')">Balanço Carbono</button>
+                            <button class="tab-btn active" onclick="switchChartTab(event, 'tab_content_uptake')" data-i18n="chart_tab_uptake">Sequestro CO₂ Cumulativo</button>
+                            <button class="tab-btn" onclick="switchChartTab(event, 'tab_content_depth')" data-i18n="chart_tab_depth">Frente Carbonatação</button>
+                            <button class="tab-btn" onclick="switchChartTab(event, 'tab_content_pie')" data-i18n="chart_tab_pie">Contribuição Elemento</button>
+                            <button class="tab-btn" onclick="switchChartTab(event, 'tab_content_compare')" data-i18n="chart_tab_compare">Comparar Métodos</button>
+                            <button class="tab-btn" onclick="switchChartTab(event, 'tab_content_balance')" data-i18n="chart_tab_balance">Balanço Carbono</button>
                         </nav>
                         
                         <!-- Graph Canvas containers -->
@@ -192,7 +198,7 @@
                 
                 <!-- Card 1: Use phase CO2 -->
                 <div class="metric-card use">
-                    <span class="metric-card-title">Fase de Uso (T_uso Anos)</span>
+                    <span class="metric-card-title" data-i18n="metric_use">Fase de Uso (T_uso Anos)</span>
                     <div class="metric-card-values" id="card_use_val">
                         <span>EN: -- kg</span>
                         <span>Collins: -- kg</span>
@@ -201,7 +207,7 @@
                 
                 <!-- Card 2: EoL potential CO2 -->
                 <div class="metric-card eol">
-                    <span class="metric-card-title">Fim de Vida (EoL Potencial)</span>
+                    <span class="metric-card-title" data-i18n="metric_eol">Fim de Vida (EoL Potencial)</span>
                     <div class="metric-card-values" id="card_eol_val">
                         <span>EN: -- kg</span>
                         <span>Collins: -- kg</span>
@@ -210,7 +216,7 @@
                 
                 <!-- Card 3: Total Sequestration -->
                 <div class="metric-card total">
-                    <span class="metric-card-title">Sequestro Total (Uso + EoL)</span>
+                    <span class="metric-card-title" data-i18n="metric_total">Sequestro Total (Uso + EoL)</span>
                     <div class="metric-card-values" id="card_total_val">
                         <span>EN: -- kg</span>
                         <span>Collins: -- kg</span>
@@ -219,8 +225,8 @@
                 
                 <!-- Action: Export Reports buttons -->
                 <div class="btn-action-container" style="justify-content: flex-end; padding: 10px 0;">
-                    <button class="btn btn-primary" style="padding: 12px 20px" onclick="exportResultsExcel()">📊 Exportar Excel (.xlsx)</button>
-                    <button class="btn btn-secondary" style="padding: 12px 15px" onclick="exportResultsCSV()">📄 Exportar CSV (.csv)</button>
+                    <button class="btn btn-primary" style="padding: 12px 20px" onclick="exportResultsExcel()" data-i18n="btn_export_excel">📊 Exportar Excel (.xlsx)</button>
+                    <button class="btn btn-secondary" style="padding: 12px 15px" onclick="exportResultsCSV()" data-i18n="btn_export_csv">📄 Exportar CSV (.csv)</button>
                 </div>
                 
             </footer>

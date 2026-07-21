@@ -1,4 +1,4 @@
-export default function ODSList({ ods }) {
+﻿export default function ODSList({ ods }) {
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
       {ods.map((o) => (
