@@ -7,13 +7,13 @@
     "contact": "Contact",
     "papers": "Papers",
     "partners": "Partners",
-    "back_to_ges": "Back to Research Group on Management of Sustainable Environments"
+    "back_to_ges": "Back to Home"
   },
   "ges_home": {
     "title": "Sustainable Environments",
     "subtitle": "Sustainability and resilience portal in the built environment",
     "about_title": "About the Group",
-    "about_desc": "The Research Group on Management of Sustainable Environments at UFSC is dedicated to researching and developing methods, tools, and strategies to evaluate and promote urban and building sustainability. Our studies integrate thermal comfort, energy efficiency, water resource management, and life cycle assessments in the face of future climate transformations and scenarios.",
+    "about_desc": "The UFSC research team is dedicated to research and development of methods, tools, and strategies to evaluate and promote urban and building sustainability. Our studies integrate thermal comfort, energy efficiency, water resources management, and life cycle assessments in light of future climate transformations.",
     "ascenc_card_title": "ASCENC Project",
     "ascenc_card_desc": "Sustainability Assessment in Cities and Buildings in New Climates. Explore the project's interactive tools and publications.",
     "team_card_title": "Our Team",
@@ -25,8 +25,8 @@
     "axes_title": "Thematic Research Axes"
   },
   "ges_contact": {
-    "title": "Contact - Research Group on Management of Sustainable Environments",
-    "description": "Use the form below to send your question or message directly to the Research Group on Management of Sustainable Environments."
+    "title": "Contact - ASCENC",
+    "description": "Use the form below to send your question or message directly to our team."
   },
   "header": {
     "home": "Home",
@@ -37,7 +37,7 @@
     "contact": "Contact"
   },
   "footer": {
-    "rights": "© 2026 Research Group on Management of Sustainable Environments (UFSC). All rights reserved."
+    "rights": "© 2026 ASCENC (UFSC). All rights reserved."
   },
   "home": {
     "title": "Welcome to the ASCENC Project",
@@ -82,9 +82,9 @@
     "paimacv": "PAIM-ACV",
     "desc_paimacv": "Will integrate life cycle assessment with future climate scenarios. Under development.",
     "paicacv": "PAIC-ACV",
-    "desc_paicacv": "Quantifies CO\u2082 absorption by carbonation in cementitious materials throughout the building life cycle.",
+    "desc_paicacv": "Quantifies CO₂ absorption by carbonation in cementitious materials throughout the building life cycle.",
     "dev_suffix": "(In development)",
-    "access": "Access \u2192"
+    "access": "Access →"
   },
   "team": {
     "title": "Our Team",
@@ -193,7 +193,14 @@
     "chart_cum_sub": "Total cumulative evolution of articles",
     "cum_theme": "Topic Cumulative: {{count}} (+{{yearCount}} in year)",
     "cum_total": "Total Cumulative: {{count}}",
-    "in_year": "(+{{count}} in year)"
+    "in_year": "(+{{count}} in year)",
+    "chart_lollipop_title": "Theme Frequency (Tags)",
+    "search_filter_active": "Filtered by search",
+    "lollipop_sub_search": "Themes present in articles found in search",
+    "no_tags_found": "No themes found for search.",
+    "clear_filter": "Clear filter",
+    "lollipop_sub_selected": "Click again to unselect theme",
+    "lollipop_sub": "Click a theme to highlight in the annual chart"
   },
   "contact": {
     "title": "Contact",
@@ -307,24 +314,19 @@
     "placeholder_completed_3_desc": "Placeholder text for a completed research initiative analyzing rainwater potential across urban centers."
   },
   "roles": {
-    "Coordenador": "Coordinator",
-    "Coordenadora": "Coordinator",
-    "Sub-coordenador": "Sub-coordinator",
-    "Sub-coordenadora": "Sub-coordinator",
-    "Sub-Coordenadora": "Sub-coordinator",
-    "Pesquisador Pós-Doc": "Postdoctoral Researcher",
+    "Pesquisadora": "Researcher",
+    "Pesquisador Doutorando": "PhD Student",
+    "Pesquisadora Doutoranda": "PhD Student",
+    "Doutorando": "PhD Student",
+    "Doutoranda": "PhD Student",
+    "Pesquisador Mestrando": "Master's Student",
+    "Pesquisadora Mestranda": "Master's Student",
+    "Mestrando": "Master's Student",
+    "Mestranda": "Master's Student",
     "Pesquisadora Pós-Doc": "Postdoctoral Researcher",
-    "Pesquisador doutorado": "PhD Researcher",
-    "Pesquisadora doutorado": "PhD Researcher",
-    "Pesquisador Doutorando": "PhD Researcher",
-    "Pesquisadora Doutoranda": "PhD Researcher",
-    "Pesquisador mestrado": "Master's Researcher",
-    "Pesquisadora mestrado": "Master's Researcher",
-    "Pesquisadora Mestrado": "Master's Researcher",
-    "Pesquisador graduação": "Undergraduate Researcher",
-    "Pesquisadora graduação": "Undergraduate Researcher",
     "Pesquisador Colaborador": "Collaborating Researcher",
-    "Pesquisadora Colaboradora": "Collaborating Researcher"
+    "Pesquisadora Colaboradora": "Collaborating Researcher",
+    "Coordenador": "Coordinator"
   },
   "partners": {
     "title": "Partnerships",
@@ -357,17 +359,90 @@
       "name": "University of Coimbra (UC)",
       "dept": "Faculty of Sciences and Technology (FCTUC)"
     },
+    "cura-lab": {
+      "name": "CURA Lab (ADAI / UC)",
+      "dept": "Climate and Urbanism Research Laboratory (ADAI / UC)"
+    },
     "udesc": {
       "name": "Santa Catarina State University (UDESC)",
       "dept": "Department of Architecture and Urbanism (DAU)"
     },
     "ufsc": {
       "name": "Federal University of Santa Catarina (UFSC)",
+      "dept": "Graduate Program in Civil Engineering (PPGEC)"
+    },
+    "ufsc-automacao": {
+      "name": "Federal University of Santa Catarina (UFSC)",
       "dept": "Department of Automation and Systems Engineering"
     },
     "usp": {
       "name": "University of São Paulo (USP)",
       "dept": "São Carlos School of Engineering (EESC)"
+    },
+    "utfpr": {
+      "name": "Federal Technological University of Paraná (UTFPR)",
+      "dept": "Department of Civil Engineering"
+    },
+    "ufms": {
+      "name": "Federal University of Mato Grosso do Sul (UFMS)",
+      "dept": "Faculty of Engineering, Architecture and Urbanism, and Geography (FAENG)"
     }
+  },
+  "tags": {
+    "ACV": "LCA (Life Cycle Assessment)",
+    "Agua-Cinza": "Greywater",
+    "Agua-Pluvial": "Rainwater",
+    "Agua-Potavel": "Potable Water",
+    "Analise-Agrupamento": "Cluster Analysis",
+    "Analise-Incerteza": "Uncertainty Analysis",
+    "Analise-Sensibilidade": "Sensitivity Analysis",
+    "Aproveitamento-agua-chuva": "Rainwater Harvesting",
+    "Aquecimento-Agua": "Water Heating",
+    "Benchmarking": "Benchmarking",
+    "CCV": "LCC (Life Cycle Costing)",
+    "Certificacao-Ambiental": "Environmental Certification",
+    "Comercial-Escritorio": "Commercial & Office",
+    "Comportamento-Usuario": "Occupant Behaviour",
+    "Conforto-Termico": "Thermal Comfort",
+    "Demografia-Usuario": "Occupant Demographics",
+    "Desempenho-Termico": "Thermal Performance",
+    "Eficiencia-Energetica": "Energy Efficiency",
+    "Eletricidade": "Electricity",
+    "Emissoes-Carbono": "Carbon Emissions",
+    "Energia-Solar": "Solar Energy",
+    "Energia-embutida": "Embodied Energy",
+    "Envoltoria": "Building Envelope",
+    "Equipamento-Hidrossanitario": "Plumbing Fixtures",
+    "Escala-Urbana": "Urban Scale",
+    "Escola-Universidade": "School & University",
+    "Estudo-Campo": "Field Study",
+    "First-Flush": "First Flush",
+    "Habitacao-Interesse-Social": "Social Housing",
+    "Hidraulica": "Hydraulics",
+    "Iluminacao": "Lighting",
+    "Industrial-Servicos": "Industrial & Services",
+    "Mudancas-Climaticas": "Climate Change",
+    "Pavimento-Permeavel": "Permeable Pavement",
+    "Pneu": "Recycled Tires",
+    "Precipitacao": "Precipitation",
+    "Preventivo-Incendio": "Fire Prevention",
+    "Produtividade": "Productivity",
+    "Qualidade-Agua": "Water Quality",
+    "Qualidade-Ar": "Indoor Air Quality",
+    "Radiacao-solar": "Solar Radiation",
+    "Reservatorio": "Water Tank",
+    "Residencial-Multifamiliar": "Multi-Family Residential",
+    "Residencial-Unifamiliar": "Single-Family Residential",
+    "Resíduo": "Waste Management",
+    "Retrofit": "Retrofit",
+    "Revisao-Literatura": "Literature Review",
+    "Simulacao-Computacional": "Computer Simulation",
+    "Sombreamento": "Shading",
+    "Telhado-Frio": "Cool Roof",
+    "Telhado-Verde": "Green Roof",
+    "Transporte": "Transport",
+    "Usos-Finais": "End Uses",
+    "Ventilacao": "Ventilation",
+    "Vidros-E-Janelas": "Windows & Glazing"
   }
 }

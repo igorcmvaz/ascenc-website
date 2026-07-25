@@ -7,7 +7,7 @@
     "contact": "联系我们",
     "papers": "学术论文",
     "partners": "合作伙伴",
-    "back_to_ges": "返回可持续环境管理研究小组"
+    "back_to_ges": "返回首页"
   },
   "ges_home": {
     "title": "可持续环境",
@@ -37,7 +37,7 @@
     "contact": "联系我们"
   },
   "footer": {
-    "rights": "© 2026 可持续空间管理 (UFSC). 保留所有权利。"
+    "rights": "© 2026 ASCENC (UFSC)。保留所有权利。"
   },
   "home": {
     "title": "欢迎来到 ASCENC 项目",
@@ -193,7 +193,14 @@
     "chart_cum_sub": "论文总累计演变",
     "cum_theme": "主题累计：{{count}} （当年 +{{yearCount}}）",
     "cum_total": "总累计：{{count}}",
-    "in_year": "（当年 +{{count}}）"
+    "in_year": "（当年 +{{count}}）",
+    "chart_lollipop_title": "主题频率（标签）",
+    "search_filter_active": "按搜索筛选",
+    "lollipop_sub_search": "搜索到的文章中出现的主题",
+    "no_tags_found": "未找到符合搜索的主题。",
+    "clear_filter": "清除筛选",
+    "lollipop_sub_selected": "再次点击取消选择主题",
+    "lollipop_sub": "点击主题在年度图表中突出显示"
   },
   "contact": {
     "title": "联系我们",
@@ -305,24 +312,19 @@
     "placeholder_completed_3_desc": "分析城市中心水资源潜力的已完成研究项目占位描述。"
   },
   "roles": {
-    "Coordenador": "协调员",
-    "Coordenadora": "协调员",
-    "Sub-coordenador": "副协调员",
-    "Sub-coordenadora": "副协调员",
-    "Sub-Coordenadora": "副协调员",
-    "Pesquisador Pós-Doc": "博士后研究员",
+    "Pesquisadora": "研究员",
+    "Pesquisador Doutorando": "博士研究生",
+    "Pesquisadora Doutoranda": "博士研究生",
+    "Doutorando": "博士研究生",
+    "Doutoranda": "博士研究生",
+    "Pesquisador Mestrando": "硕士研究生",
+    "Pesquisadora Mestranda": "硕士研究生",
+    "Mestrando": "硕士研究生",
+    "Mestranda": "硕士研究生",
     "Pesquisadora Pós-Doc": "博士后研究员",
-    "Pesquisador doutorado": "博士研究员",
-    "Pesquisadora doutorado": "博士研究员",
-    "Pesquisador Doutorando": "博士研究员",
-    "Pesquisadora Doutoranda": "博士研究员",
-    "Pesquisador mestrado": "硕士研究员",
-    "Pesquisadora mestrado": "硕士研究员",
-    "Pesquisadora Mestrado": "硕士研究员",
-    "Pesquisador graduação": "本科生研究员",
-    "Pesquisadora graduação": "本科生研究员",
     "Pesquisador Colaborador": "合作研究员",
-    "Pesquisadora Colaboradora": "合作研究员"
+    "Pesquisadora Colaboradora": "合作研究员",
+    "Coordenador": "协调人"
   },
   "partners": {
     "title": "合作伙伴",
@@ -355,17 +357,90 @@
       "name": "科英布拉大学 (UC)",
       "dept": "科技学院 (FCTUC)"
     },
+    "cura-lab": {
+      "name": "CURA 实验室 (ADAI / UC)",
+      "dept": "气候与城市规划实验室 (ADAI / UC)"
+    },
     "udesc": {
       "name": "圣卡塔琳娜州立大学 (UDESC)",
       "dept": "建筑与城市规划系 (DAU)"
     },
     "ufsc": {
       "name": "圣卡塔琳娜联邦大学 (UFSC)",
-      "dept": "自动化与系统工程系"
+      "dept": "土木工程研究生项目 (PPGEC)"
+    },
+    "ufsc-automacao": {
+      "name": "圣卡塔琳娜联邦大学 (UFSC)",
+      "dept": "控制与自动化工程系"
     },
     "usp": {
       "name": "圣保罗大学 (USP)",
       "dept": "圣卡洛斯工程学院 (EESC)"
+    },
+    "utfpr": {
+      "name": "巴拉那联邦科技大学 (UTFPR)",
+      "dept": "土木工程系"
+    },
+    "ufms": {
+      "name": "南马托格罗索联邦大学 (UFMS)",
+      "dept": "工程、建筑与地理学院 (FAENG)"
     }
+  },
+  "tags": {
+    "ACV": "生命周期评估 (LCA)",
+    "Agua-Cinza": "灰水重用",
+    "Agua-Pluvial": "雨水",
+    "Agua-Potavel": "饮用水",
+    "Analise-Agrupamento": "聚类分析",
+    "Analise-Incerteza": "不确定性分析",
+    "Analise-Sensibilidade": "敏感性分析",
+    "Aproveitamento-agua-chuva": "雨水收集利用",
+    "Aquecimento-Agua": "水加热",
+    "Benchmarking": "标杆管理",
+    "CCV": "生命周期成本 (LCC)",
+    "Certificacao-Ambiental": "环境认证",
+    "Comercial-Escritorio": "商业与办公建筑",
+    "Comportamento-Usuario": "使用者行为",
+    "Conforto-Termico": "热舒适",
+    "Demografia-Usuario": "用户人口特征",
+    "Desempenho-Termico": "热性能",
+    "Eficiencia-Energetica": "能效",
+    "Eletricidade": "电力",
+    "Emissoes-Carbono": "碳排放",
+    "Energia-Solar": "太阳能",
+    "Energia-embutida": "隐含能",
+    "Envoltoria": "建筑围护结构",
+    "Equipamento-Hidrossanitario": "给排水设备",
+    "Escala-Urbana": "城市尺度",
+    "Escola-Universidade": "学校与大学",
+    "Estudo-Campo": "现场研究",
+    "First-Flush": "初期雨水弃流",
+    "Habitacao-Interesse-Social": "保障性住房",
+    "Hidraulica": "水力学",
+    "Iluminacao": "照明",
+    "Industrial-Servicos": "工业与服务",
+    "Mudancas-Climaticas": "气候变化",
+    "Pavimento-Permeavel": "透水路面",
+    "Pneu": "回收轮胎",
+    "Precipitacao": "降水",
+    "Preventivo-Incendio": "消防",
+    "Produtividade": "生产力与健康",
+    "Qualidade-Agua": "水质",
+    "Qualidade-Ar": "室内空气质量",
+    "Radiacao-solar": "太阳辐射",
+    "Reservatorio": "蓄水池",
+    "Residencial-Multifamiliar": "多户住宅",
+    "Residencial-Unifamiliar": "单户住宅",
+    "Resíduo": "废弃物管理",
+    "Retrofit": "改造",
+    "Revisao-Literatura": "文献综述",
+    "Simulacao-Computacional": "计算机模拟",
+    "Sombreamento": "遮阳",
+    "Telhado-Frio": "冷屋顶",
+    "Telhado-Verde": "绿色屋顶",
+    "Transporte": "交通",
+    "Usos-Finais": "终端利用",
+    "Ventilacao": "通风",
+    "Vidros-E-Janelas": "门窗与玻璃"
   }
 }

@@ -7,13 +7,13 @@
     "contact": "Contato",
     "papers": "Artigos",
     "partners": "Parcerias",
-    "back_to_ges": "Voltar ao Grupo de Pesquisa Gestão do Espaço Sustentável"
+    "back_to_ges": "Voltar à Página Inicial"
   },
   "ges_home": {
     "title": "Espaço Sustentável",
     "subtitle": "Portal de sustentabilidade e resiliência no ambiente construído",
     "about_title": "Sobre o Grupo",
-    "about_desc": "O Grupo de Pesquisa Gestão do Espaço Sustentável da UFSC dedica-se à pesquisa e ao desenvolvimento de métodos, ferramentas e estratégias para a avaliação e promoção da sustentabilidade urbana e predial. Nossos estudos integram conforto térmico, eficiência energética, gestão de recursos hídricos e análises de ciclo de vida face às transformações e cenários climáticos futuros.",
+    "about_desc": "A equipe de pesquisa da UFSC dedica-se à pesquisa e ao desenvolvimento de métodos, ferramentas e estratégias para a avaliação e promoção da sustentabilidade urbana e predial. Nossos estudos integram conforto térmico, eficiência energética, gestão de recursos hídricos e análises de ciclo de vida face às transformações e cenários climáticos futuros.",
     "ascenc_card_title": "Projeto ASCENC",
     "ascenc_card_desc": "Avaliação de Sustentabilidade em Cidades e Edificações em Novos Climas. Explore ferramentas interativas e publicações do projeto.",
     "team_card_title": "Nossa Equipe",
@@ -25,8 +25,8 @@
     "axes_title": "Eixos Temáticos de Pesquisa"
   },
   "ges_contact": {
-    "title": "Contato - Grupo de Pesquisa Gestão do Espaço Sustentável",
-    "description": "Utilize o formulário abaixo para enviar sua dúvida ou mensagem diretamente para o Grupo de Pesquisa Gestão do Espaço Sustentável."
+    "title": "Contato - ASCENC",
+    "description": "Utilize o formulário abaixo para enviar sua dúvida ou mensagem diretamente para nossa equipe."
   },
   "header": {
     "home": "Home",
@@ -37,7 +37,7 @@
     "contact": "Contato"
   },
   "footer": {
-    "rights": "© 2026 Grupo de Pesquisa Gestão do Espaço Sustentável (UFSC). Todos os direitos reservados."
+    "rights": "© 2026 ASCENC (UFSC). Todos os direitos reservados."
   },
   "home": {
     "title": "Bem-vindo ao Projeto ASCENC",
@@ -193,7 +193,14 @@
     "chart_cum_sub": "Evolução acumulada total de artigos",
     "cum_theme": "Acumulado Tema: {{count}} (+{{yearCount}} no ano)",
     "cum_total": "Acumulado Total: {{count}}",
-    "in_year": "(+{{count}} no ano)"
+    "in_year": "(+{{count}} no ano)",
+    "chart_lollipop_title": "Frequência de Temas (Tags)",
+    "search_filter_active": "Filtrado por busca",
+    "lollipop_sub_search": "Temas presentes nos artigos encontrados na busca",
+    "no_tags_found": "Nenhum tema encontrado para a busca.",
+    "clear_filter": "Limpar filtro",
+    "lollipop_sub_selected": "Clique novamente para desmarcar o tema",
+    "lollipop_sub": "Clique em um tema para destacar no gráfico anual"
   },
   "contact": {
     "title": "Entre em Contato",
@@ -307,24 +314,19 @@
     "placeholder_completed_3_desc": "Texto placeholder para uma iniciativa de pesquisa concluída sobre potencial hídrico em centros urbanos."
   },
   "roles": {
-    "Coordenador": "Coordenador",
-    "Coordenadora": "Coordenadora",
-    "Sub-coordenador": "Sub-coordenador",
-    "Sub-coordenadora": "Sub-coordenadora",
-    "Sub-Coordenadora": "Sub-coordenadora",
-    "Pesquisador Pós-Doc": "Pesquisador Pós-Doc",
+    "Pesquisadora": "Pesquisadora",
+    "Pesquisador Doutorando": "Doutorando",
+    "Pesquisadora Doutoranda": "Doutoranda",
+    "Doutorando": "Doutorando",
+    "Doutoranda": "Doutoranda",
+    "Pesquisador Mestrando": "Mestrando",
+    "Pesquisadora Mestranda": "Mestranda",
+    "Mestrando": "Mestrando",
+    "Mestranda": "Mestranda",
     "Pesquisadora Pós-Doc": "Pesquisadora Pós-Doc",
-    "Pesquisador doutorado": "Pesquisador doutorado",
-    "Pesquisadora doutorado": "Pesquisadora doutorado",
-    "Pesquisador Doutorando": "Pesquisador doutorado",
-    "Pesquisadora Doutoranda": "Pesquisadora doutorado",
-    "Pesquisador mestrado": "Pesquisador mestrado",
-    "Pesquisadora mestrado": "Pesquisadora mestrado",
-    "Pesquisadora Mestrado": "Pesquisadora mestrado",
-    "Pesquisador graduação": "Pesquisador graduação",
-    "Pesquisadora graduação": "Pesquisadora graduação",
     "Pesquisador Colaborador": "Pesquisador Colaborador",
-    "Pesquisadora Colaboradora": "Pesquisadora Colaboradora"
+    "Pesquisadora Colaboradora": "Pesquisadora Colaboradora",
+    "Coordenador": "Coordenador"
   },
   "partners": {
     "title": "Parcerias",
@@ -357,17 +359,90 @@
       "name": "Universidade de Coimbra (UC)",
       "dept": "Faculdade de Ciências e Tecnologia (FCTUC)"
     },
+    "cura-lab": {
+      "name": "CURA Lab (ADAI / UC)",
+      "dept": "Laboratório de Pesquisa em Clima e Urbanismo (ADAI / UC)"
+    },
     "udesc": {
       "name": "Universidade do Estado de Santa Catarina (UDESC)",
       "dept": "Departamento de Arquitetura e Urbanismo (DAU)"
     },
     "ufsc": {
       "name": "Universidade Federal de Santa Catarina (UFSC)",
+      "dept": "Programa de Pós-Graduação em Engenharia Civil (PPGEC)"
+    },
+    "ufsc-automacao": {
+      "name": "Universidade Federal de Santa Catarina (UFSC)",
       "dept": "Departamento de Engenharia de Controle e Automação"
     },
     "usp": {
       "name": "Universidade de São Paulo (USP)",
       "dept": "Escola de Engenharia de São Carlos (EESC)"
+    },
+    "utfpr": {
+      "name": "Universidade Tecnológica Federal do Paraná (UTFPR)",
+      "dept": "Departamento de Engenharia Civil"
+    },
+    "ufms": {
+      "name": "Universidade Federal de Mato Grosso do Sul (UFMS)",
+      "dept": "Faculdade de Engenharias, Arquitetura e Urbanismo e Geografia (FAENG)"
     }
+  },
+  "tags": {
+    "ACV": "ACV (Avaliação do Ciclo de Vida)",
+    "Agua-Cinza": "Água Cinza",
+    "Agua-Pluvial": "Água Pluvial",
+    "Agua-Potavel": "Água Potável",
+    "Analise-Agrupamento": "Análise de Agrupamento",
+    "Analise-Incerteza": "Análise de Incerteza",
+    "Analise-Sensibilidade": "Análise de Sensibilidade",
+    "Aproveitamento-agua-chuva": "Aproveitamento de Água de Chuva",
+    "Aquecimento-Agua": "Aquecimento de Água",
+    "Benchmarking": "Benchmarking",
+    "CCV": "CCV (Custo do Ciclo de Vida)",
+    "Certificacao-Ambiental": "Certificação Ambiental",
+    "Comercial-Escritorio": "Comercial e Escritórios",
+    "Comportamento-Usuario": "Comportamento do Usuário",
+    "Conforto-Termico": "Conforto Térmico",
+    "Demografia-Usuario": "Demografia do Usuário",
+    "Desempenho-Termico": "Desempenho Térmico",
+    "Eficiencia-Energetica": "Eficiência Energética",
+    "Eletricidade": "Eletricidade",
+    "Emissoes-Carbono": "Emissões de Carbono",
+    "Energia-Solar": "Energia Solar",
+    "Energia-embutida": "Energia Embutida",
+    "Envoltoria": "Envoltória",
+    "Equipamento-Hidrossanitario": "Equipamentos Hidrossanitários",
+    "Escala-Urbana": "Escala Urbana",
+    "Escola-Universidade": "Escola e Universidade",
+    "Estudo-Campo": "Estudo de Campo",
+    "First-Flush": "First Flush",
+    "Habitacao-Interesse-Social": "Habitação de Interesse Social",
+    "Hidraulica": "Hidráulica",
+    "Iluminacao": "Iluminação",
+    "Industrial-Servicos": "Industrial e Serviços",
+    "Mudancas-Climaticas": "Mudanças Climáticas",
+    "Pavimento-Permeavel": "Pavimento Permeável",
+    "Pneu": "Uso de Pneus Reciclados",
+    "Precipitacao": "Precipitação",
+    "Preventivo-Incendio": "Preventivo de Incêndio",
+    "Produtividade": "Produtividade",
+    "Qualidade-Agua": "Qualidade da Água",
+    "Qualidade-Ar": "Qualidade do Ar Interior",
+    "Radiacao-solar": "Radiação Solar",
+    "Reservatorio": "Reservatório",
+    "Residencial-Multifamiliar": "Residencial Multifamiliar",
+    "Residencial-Unifamiliar": "Residencial Unifamiliar",
+    "Resíduo": "Gestão de Resíduos",
+    "Retrofit": "Retrofit",
+    "Revisao-Literatura": "Revisão de Literatura",
+    "Simulacao-Computacional": "Simulação Computacional",
+    "Sombreamento": "Sombreamento",
+    "Telhado-Frio": "Telhado Frio",
+    "Telhado-Verde": "Telhado Verde",
+    "Transporte": "Transporte",
+    "Usos-Finais": "Usos Finais",
+    "Ventilacao": "Ventilação",
+    "Vidros-E-Janelas": "Vidros e Janelas"
   }
 }

@@ -7,13 +7,13 @@
     "contact": "Contacto",
     "papers": "Artículos",
     "partners": "Asociaciones",
-    "back_to_ges": "Volver al Grupo de Investigación en Gestión del Espacio Sostenible"
+    "back_to_ges": "Volver al Inicio"
   },
   "ges_home": {
     "title": "Espacio Sostenible",
     "subtitle": "Portal de sostenibilidad y resiliencia en el entorno construido",
     "about_title": "Sobre el Grupo",
-    "about_desc": "El Grupo de Investigación en Gestión del Espacio Sostenible de la UFSC se dedica a la investigación y desarrollo de métodos, herramientas y estrategias para evaluar y promover la sostenibilidad urbana y edilicia. Nuestros estudios integran confort térmico, eficiencia energética, gestión de recursos hídricos y análisis de ciclo de vida frente a futuras transformaciones y escenarios climáticos.",
+    "about_desc": "El equipo de investigación de la UFSC se dedica a la investigación y desarrollo de métodos, herramientas y estrategias para evaluar y promover la sostenibilidad urbana y edilicia. Nuestros estudios integran confort térmico, eficiencia energética, gestión de recursos hídricos y análisis de ciclo de vida frente a futuras transformaciones y escenarios climáticos.",
     "ascenc_card_title": "Proyecto ASCENC",
     "ascenc_card_desc": "Evaluación de Sostenibilidad en Ciudades y Edificaciones en Nuevos Climas. Explore herramientas interactivas y publicaciones del proyecto.",
     "team_card_title": "Nuestro Equipo",
@@ -25,8 +25,8 @@
     "axes_title": "Ejes Temáticos de Investigación"
   },
   "ges_contact": {
-    "title": "Contacto - Grupo de Investigación en Gestión del Espacio Sostenible",
-    "description": "Utilice el siguiente formulario para enviar su consulta o mensaje directamente al Grupo de Investigación en Gestión del Espacio Sostenible."
+    "title": "Contacto - ASCENC",
+    "description": "Utilice el siguiente formulario para enviar su consulta o mensaje directamente a nuestro equipo."
   },
   "header": {
     "home": "Inicio",
@@ -37,7 +37,7 @@
     "contact": "Contacto"
   },
   "footer": {
-    "rights": "© 2026 Grupo de Investigación en Gestión del Espacio Sostenible (UFSC). Todos los derechos reservados."
+    "rights": "© 2026 ASCENC (UFSC). Todos los derechos reservados."
   },
   "home": {
     "title": "Bienvenido al Proyecto ASCENC",
@@ -82,9 +82,9 @@
     "paimacv": "PAIM-ACV",
     "desc_paimacv": "Integrará la evaluación del ciclo de vida con escenarios climáticos futuros. En desarrollo.",
     "paicacv": "PAIC-ACV",
-    "desc_paicacv": "Cuantifica la absorción de CO\u2082 por carbonatación en materiales cementosos a lo largo del ciclo de vida del edificio.",
+    "desc_paicacv": "Cuantifica la absorción de CO₂ por carbonatación en materiales cementosos a lo largo del ciclo de vida del edificio.",
     "dev_suffix": "(En desarrollo)",
-    "access": "Acceder \u2192"
+    "access": "Acceder →"
   },
   "team": {
     "title": "Nuestro Equipo",
@@ -193,7 +193,14 @@
     "chart_cum_sub": "Evolución acumulada total de artículos",
     "cum_theme": "Acumulado Tema: {{count}} (+{{yearCount}} en el año)",
     "cum_total": "Acumulado Total: {{count}}",
-    "in_year": "(+{{count}} en el año)"
+    "in_year": "(+{{count}} en el año)",
+    "chart_lollipop_title": "Frecuencia de Temas (Etiquetas)",
+    "search_filter_active": "Filtrado por búsqueda",
+    "lollipop_sub_search": "Temas presentes en los artículos encontrados en la búsqueda",
+    "no_tags_found": "No se encontraron temas para la búsqueda.",
+    "clear_filter": "Limpiar filtro",
+    "lollipop_sub_selected": "Haga clic de nuevo para desmarcar el tema",
+    "lollipop_sub": "Haga clic en un tema para destacarlo en el gráfico anual"
   },
   "contact": {
     "title": "Contacto",
@@ -307,24 +314,19 @@
     "placeholder_completed_3_desc": "Texto marcador de posición para una iniciativa de investigación concluida sobre potencial hídrico en centros urbanos."
   },
   "roles": {
-    "Coordenador": "Coordinador",
-    "Coordenadora": "Coordinadora",
-    "Sub-coordenador": "Subcoordinador",
-    "Sub-coordenadora": "Subcoordinadora",
-    "Sub-Coordenadora": "Subcoordinadora",
-    "Pesquisador Pós-Doc": "Investigador Postdoctoral",
-    "Pesquisadora Pós-Doc": "Investigadora Postdoctoral",
-    "Pesquisador doutorado": "Investigador de Doctorado",
-    "Pesquisadora doutorado": "Investigadora de Doctorado",
-    "Pesquisador Doutorando": "Investigador de Doctorado",
-    "Pesquisadora Doutoranda": "Investigadora de Doctorado",
-    "Pesquisador mestrado": "Investigador de Maestría",
-    "Pesquisadora mestrado": "Investigadora de Maestría",
-    "Pesquisadora Mestrado": "Investigadora de Maestría",
-    "Pesquisador graduação": "Investigador de Grado",
-    "Pesquisadora graduação": "Investigadora de Grado",
+    "Pesquisadora": "Investigadora",
+    "Pesquisador Doutorando": "Estudiante de Doctorado",
+    "Pesquisadora Doutoranda": "Estudiante de Doctorado",
+    "Doutorando": "Estudiante de Doctorado",
+    "Doutoranda": "Estudiante de Doctorado",
+    "Pesquisador Mestrando": "Estudiante de Maestría",
+    "Pesquisadora Mestranda": "Estudiante de Maestría",
+    "Mestrando": "Estudiante de Maestría",
+    "Mestranda": "Estudiante de Maestría",
+    "Pesquisadora Pós-Doc": "Investigadora Posdoctoral",
     "Pesquisador Colaborador": "Investigador Colaborador",
-    "Pesquisadora Colaboradora": "Investigadora Colaboradora"
+    "Pesquisadora Colaboradora": "Investigadora Colaboradora",
+    "Coordenador": "Coordinador"
   },
   "partners": {
     "title": "Alianzas y Colaboraciones",
@@ -357,17 +359,90 @@
       "name": "Universidad de Coímbra (UC)",
       "dept": "Facultad de Ciencias y Tecnología (FCTUC)"
     },
+    "cura-lab": {
+      "name": "CURA Lab (ADAI / UC)",
+      "dept": "Laboratorio de Investigación en Clima y Urbanismo (ADAI / UC)"
+    },
     "udesc": {
       "name": "Universidad del Estado de Santa Catarina (UDESC)",
       "dept": "Departamento de Arquitectura y Urbanismo (DAU)"
     },
     "ufsc": {
       "name": "Universidad Federal de Santa Catarina (UFSC)",
+      "dept": "Programa de Posgrado en Ingeniería Civil (PPGEC)"
+    },
+    "ufsc-automacao": {
+      "name": "Universidad Federal de Santa Catarina (UFSC)",
       "dept": "Departamento de Ingeniería de Control y Automatización"
     },
     "usp": {
       "name": "Universidad de São Paulo (USP)",
       "dept": "Escuela de Ingeniería de São Carlos (EESC)"
+    },
+    "utfpr": {
+      "name": "Universidad Tecnológica Federal de Paraná (UTFPR)",
+      "dept": "Departamento de Ingeniería Civil"
+    },
+    "ufms": {
+      "name": "Universidad Federal de Mato Grosso del Sur (UFMS)",
+      "dept": "Facultad de Ingenierías, Arquitectura y Urbanismo y Geografía (FAENG)"
     }
+  },
+  "tags": {
+    "ACV": "ACV (Evaluación del Ciclo de Vida)",
+    "Agua-Cinza": "Agua Gris",
+    "Agua-Pluvial": "Agua Pluvial",
+    "Agua-Potavel": "Agua Potable",
+    "Analise-Agrupamento": "Análisis de Conglomerados",
+    "Analise-Incerteza": "Análisis de Incertidumbre",
+    "Analise-Sensibilidade": "Análisis de Sensibilidad",
+    "Aproveitamento-agua-chuva": "Aprovechamiento de Agua de Lluvia",
+    "Aquecimento-Agua": "Calentamiento de Agua",
+    "Benchmarking": "Benchmarking",
+    "CCV": "CCV (Costo del Ciclo de Vida)",
+    "Certificacao-Ambiental": "Certificación Ambiental",
+    "Comercial-Escritorio": "Comercial y Oficinas",
+    "Comportamento-Usuario": "Comportamiento del Usuario",
+    "Conforto-Termico": "Confort Térmico",
+    "Demografia-Usuario": "Demografía del Usuario",
+    "Desempenho-Termico": "Desempeño Térmico",
+    "Eficiencia-Energetica": "Eficiencia Energética",
+    "Eletricidade": "Electricidad",
+    "Emissoes-Carbono": "Emisiones de Carbono",
+    "Energia-Solar": "Energía Solar",
+    "Energia-embutida": "Energía Incorporada",
+    "Envoltoria": "Envolvente del Edificio",
+    "Equipamento-Hidrossanitario": "Equipos Hidrosanitarios",
+    "Escala-Urbana": "Escala Urbana",
+    "Escola-Universidade": "Escuela y Universidad",
+    "Estudo-Campo": "Estudio de Campo",
+    "First-Flush": "First Flush",
+    "Habitacao-Interesse-Social": "Vivienda de Interés Social",
+    "Hidraulica": "Hidráulica",
+    "Iluminacao": "Iluminación",
+    "Industrial-Servicos": "Industrial y Servicios",
+    "Mudancas-Climaticas": "Cambio Climático",
+    "Pavimento-Permeavel": "Pavimento Permeable",
+    "Pneu": "Neumáticos Reciclados",
+    "Precipitacao": "Precipitación",
+    "Preventivo-Incendio": "Prevención de Incendios",
+    "Produtividade": "Productividad",
+    "Qualidade-Agua": "Calidad del Agua",
+    "Qualidade-Ar": "Calidad del Aire Interior",
+    "Radiacao-solar": "Radiación Solar",
+    "Reservatorio": "Depósito de Agua",
+    "Residencial-Multifamiliar": "Residencial Multifamiliar",
+    "Residencial-Unifamiliar": "Residencial Unifamiliar",
+    "Resíduo": "Gestión de Residuos",
+    "Retrofit": "Retrofit",
+    "Revisao-Literatura": "Revisión de la Literatura",
+    "Simulacao-Computacional": "Simulación Computacional",
+    "Sombreamento": "Sombreado",
+    "Telhado-Frio": "Techo Frío",
+    "Telhado-Verde": "Techo Verde",
+    "Transporte": "Transporte",
+    "Usos-Finais": "Usos Finales",
+    "Ventilacao": "Ventilación",
+    "Vidros-E-Janelas": "Vidrios y Ventanas"
   }
 }

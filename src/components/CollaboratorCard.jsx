@@ -1,9 +1,15 @@
-import { Building2, ExternalLink } from "lucide-react";
+import { Building2, ExternalLink, GraduationCap } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function CollaboratorCard({ collaborator }) {
   const { t } = useTranslation();
-  const { name, role, image, orcid, researchgate, lattes, areas = [], university } = collaborator;
+  const { name, role, image, orcid, researchgate, lattes, scholar, areas = [] } = collaborator;
+
+  const uniList = collaborator.universities && collaborator.universities.length > 0
+    ? collaborator.universities
+    : collaborator.university
+    ? [collaborator.university]
+    : [];
 
   const getTranslatedRole = (r) => {
     if (!r) return "";
@@ -16,9 +22,11 @@ export default function CollaboratorCard({ collaborator }) {
   const getTranslatedArea = (area) => {
     if (!area) return "";
     const cleanArea = area.trim();
-    const translationKey = `areas.${cleanArea}`;
-    const translated = t(translationKey);
-    return translated !== translationKey ? translated : cleanArea;
+    const tagTranslated = t(`tags.${cleanArea}`);
+    if (tagTranslated !== `tags.${cleanArea}`) return tagTranslated;
+    const areaTranslated = t(`areas.${cleanArea}`);
+    if (areaTranslated !== `areas.${cleanArea}`) return areaTranslated;
+    return cleanArea;
   };
 
   const getTranslatedUniName = (uni) => {
@@ -33,17 +41,17 @@ export default function CollaboratorCard({ collaborator }) {
 
   return (
     <div className="bg-white dark:bg-slate-200 border border-slate-300 dark:border-slate-300 rounded-xl p-3.5 shadow-md hover:shadow-lg transition-all duration-200 flex flex-col justify-between space-y-2.5 h-full group">
-      {/* Topo: Avatar + Nome/Cargo/Links + Logo da Universidade */}
+      {/* Topo: Avatar + Nome/Cargo/Links + Logos das Universidades */}
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-2.5 min-w-0">
           {image ? (
             <img
               src={image}
               alt={name}
-              className="w-11 h-11 object-cover rounded-full border border-slate-300 shrink-0 group-hover:border-emerald-600 transition-colors"
+              className="w-14 h-14 object-cover rounded-full border border-slate-300 shrink-0 group-hover:border-emerald-600 transition-colors shadow-sm"
             />
           ) : (
-            <div className="w-11 h-11 rounded-full bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-900 font-extrabold text-sm shrink-0">
+            <div className="w-14 h-14 rounded-full bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-900 font-extrabold text-base shrink-0 shadow-sm">
               {name ? name.charAt(0) : "?"}
             </div>
           )}
@@ -94,26 +102,42 @@ export default function CollaboratorCard({ collaborator }) {
                   <img src="./assets/icons/lattes.png" alt="Lattes" className="w-5.5 h-5.5" />
                 </a>
               )}
+              {scholar && (
+                <a
+                  href={scholar}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:scale-115 transition-transform shrink-0 flex items-center justify-center w-5.5 h-5.5 rounded-full bg-blue-100 text-blue-900 border border-blue-300 font-bold"
+                  title="Google Scholar"
+                >
+                  <GraduationCap className="w-3.5 h-3.5 text-blue-800" />
+                </a>
+              )}
             </div>
           </div>
         </div>
 
-        {/* Logo da Universidade */}
-        {university?.img && (
-          <a
-            href={university.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-1 bg-white rounded-lg border border-slate-300 shrink-0 hover:scale-105 transition-transform"
-            title={getTranslatedUniName(university)}
-          >
-            <img
-              src={university.img}
-              alt={getTranslatedUniName(university)}
-              className="h-7 w-8 object-contain"
-            />
-          </a>
-        )}
+        {/* Logos das Universidades / Instituições */}
+        <div className="flex items-center gap-1 shrink-0">
+          {uniList.map((uni, idx) => (
+            uni.img ? (
+              <a
+                key={idx}
+                href={uni.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1 bg-white rounded-lg border border-slate-300 shrink-0 hover:scale-105 transition-transform"
+                title={getTranslatedUniName(uni)}
+              >
+                <img
+                  src={uni.img}
+                  alt={getTranslatedUniName(uni)}
+                  className="h-9 w-10 object-contain"
+                />
+              </a>
+            ) : null
+          ))}
+        </div>
       </div>
 
       {/* Meio: Áreas de Atuação (Badges Compactas) */}
@@ -130,17 +154,17 @@ export default function CollaboratorCard({ collaborator }) {
         </div>
       </div>
 
-      {/* Rodapé: Universidade Associada */}
+      {/* Rodapé: Universidades Associadas */}
       <div className="pt-2 border-t border-slate-300 flex items-center justify-between gap-1 text-[11px]">
-        <div className="flex items-center gap-1.5 min-w-0">
+        <div className="flex items-center gap-1.5 min-w-0 flex-1">
           <Building2 className="w-3.5 h-3.5 text-emerald-800 shrink-0" />
           <span className="font-extrabold text-slate-900 truncate">
-            {getTranslatedUniName(university)}
+            {uniList.map(u => getTranslatedUniName(u)).join(" / ")}
           </span>
         </div>
-        {university?.url && (
+        {uniList.length === 1 && uniList[0]?.url && (
           <a
-            href={university.url}
+            href={uniList[0].url}
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-600 hover:text-emerald-800 transition-colors shrink-0"

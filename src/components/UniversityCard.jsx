@@ -7,10 +7,10 @@ export default function UniversityCard({ name, description, img, url }) {
       </div>
       {url ? (
         <a href={url} target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-200 block shrink-0">
-          <img src={img} alt={name} className="max-h-20 md:max-h-24 object-contain cursor-pointer" />
+          <img src={img} alt={name} className="max-h-24 md:max-h-28 object-contain cursor-pointer" />
         </a>
       ) : (
-        <img src={img} alt={name} className="max-h-20 md:max-h-24 object-contain shrink-0" />
+        <img src={img} alt={name} className="max-h-24 md:max-h-28 object-contain shrink-0" />
       )}
     </div>
   );

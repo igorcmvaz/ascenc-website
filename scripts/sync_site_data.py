@@ -40,14 +40,16 @@ if os.path.exists(membros_file):
         orcid = str(orcid or "").strip()
         lattes = str(lattes or "").strip()
         rg = str(rg or "").strip()
+        email = str(row[9] if len(row) > 9 and row[9] else "").strip()
         
         member_obj = {
             "name": nome,
             "role": cargo,
-            "image": caminho_foto,
-            "orcid": orcid if orcid != "—" else "",
-            "lattes": lattes if lattes != "—" else "",
-            "researchgate": rg if rg != "—" else ""
+            "image": caminho_foto if caminho_foto and caminho_foto.lower() != "none" and caminho_foto != "—" else None,
+            "orcid": orcid if orcid and orcid != "—" and orcid.lower() != "none" else "",
+            "lattes": lattes if lattes and lattes != "—" and lattes.lower() != "none" else "",
+            "researchgate": rg if rg and rg != "—" and rg.lower() != "none" else "",
+            "email": email if email and email != "—" and email.lower() != "none" else ""
         }
         # Clean empty keys
         member_obj = {k: v for k, v in member_obj.items() if v}
@@ -74,30 +76,52 @@ if os.path.exists(colab_file):
     collaborators = []
     universities = []
     
+    uni_map = {
+        "uc": {"key": "uc", "name": "Universidade de Coimbra (UC)", "img": "./assets/logos/ftuc.png", "url": "https://www.uc.pt/fctuc"},
+        "cura-lab": {"key": "cura-lab", "name": "CURA Lab (ADAI)", "img": "./assets/logos/curalab.png", "url": "https://cura-lab.adai.pt/"},
+        "udesc": {"key": "udesc", "name": "Universidade do Estado de Santa Catarina (UDESC)", "img": "./assets/logos/udesc.png", "url": "https://www.udesc.br/cct/dau"},
+        "usp": {"key": "usp", "name": "Universidade de São Paulo (USP)", "img": "./assets/logos/uspsc.png", "url": "https://eesc.usp.br/"},
+        "utfpr": {"key": "utfpr", "name": "Universidade Tecnológica Federal do Paraná (UTFPR)", "img": "./assets/logos/UTFPR.png", "url": "https://www.utfpr.edu.br/"},
+        "ufsc": {"key": "ufsc", "name": "Universidade Federal de Santa Catarina (UFSC)", "img": "./assets/logos/ufsc.png", "url": "https://ppgec.posgrad.ufsc.br/"},
+        "ufsc-automacao": {"key": "ufsc-automacao", "name": "Universidade Federal de Santa Catarina (UFSC)", "img": "./assets/logos/ufsc.png", "url": "https://automacao.ufsc.br/"},
+        "ufms": {"key": "ufms", "name": "Universidade Federal de Mato Grosso do Sul (UFMS)", "img": "./assets/logos/UFMS.png", "url": "https://faeng.ufms.br/"}
+    }
+
     for row in ws.iter_rows(min_row=5, values_only=True):
         if not row or not row[2]:
             continue
             
-        row_id, tipo, nome, cargo, foto_logo, caminho, url_site, orcid, lattes, rg = row[:10]
-        tipo = str(tipo or "").strip()
-        nome = str(nome or "").strip()
+        row_id = row[0]
+        tipo = str(row[1] or "").strip()
+        nome = str(row[2] or "").strip()
         if nome.lower() in ["nome", "name"] or str(row_id).strip().lower() in ["id", "id_colaborador"]:
             continue
-        cargo = str(cargo or "").strip()
-        caminho = str(caminho or "").strip()
-        url_site = str(url_site or "").strip()
-        orcid = str(orcid or "").strip()
-        lattes = str(lattes or "").strip()
-        rg = str(rg or "").strip()
+        cargo = str(row[3] or "").strip()
+        caminho = str(row[5] or "").strip()
+        url_site = str(row[6] or "").strip()
+        orcid = str(row[7] or "").strip()
+        lattes = str(row[8] or "").strip()
+        rg = str(row[9] or "").strip()
+        scholar = str(row[10] if len(row) > 10 and row[10] else "").strip()
+        areas_raw = str(row[11] if len(row) > 11 and row[11] else "").strip()
+        uni_key = str(row[12] if len(row) > 12 and row[12] else "").strip()
         
         if tipo == "Colaborador":
+            areas_list = [a.strip() for a in areas_raw.split(",") if a.strip()] if areas_raw else []
+            uni_keys = [k.strip().lower() for k in uni_key.split(",") if k.strip()] if uni_key else []
+            uni_list = [uni_map[k] for k in uni_keys if k in uni_map]
+            
             colab_obj = {
                 "name": nome,
                 "role": cargo,
-                "image": caminho,
-                "orcid": orcid if orcid != "—" else "",
-                "lattes": lattes if lattes != "—" else "",
-                "researchgate": rg if rg != "—" else ""
+                "image": caminho if caminho and caminho.lower() != "none" else None,
+                "orcid": orcid if orcid and orcid != "—" and orcid.lower() != "none" else "",
+                "lattes": lattes if lattes and lattes != "—" and lattes.lower() != "none" else "",
+                "researchgate": rg if rg and rg != "—" and rg.lower() != "none" else "",
+                "scholar": scholar if scholar and scholar != "—" and scholar.lower() != "none" else "",
+                "areas": areas_list,
+                "universities": uni_list if len(uni_list) > 1 else None,
+                "university": uni_list[0] if len(uni_list) == 1 else None
             }
             colab_obj = {k: v for k, v in colab_obj.items() if v}
             collaborators.append(colab_obj)
@@ -116,37 +140,45 @@ if os.path.exists(colab_file):
 # 3. SINCRONIZAR ARTIGOS (artigos.xlsx -> Papers.jsx)
 artigos_file = os.path.join(DADOS_DIR, "artigos.xlsx")
 if os.path.exists(artigos_file):
-    wb = openpyxl.load_workbook(artigos_file)
+    wb = openpyxl.load_workbook(artigos_file, data_only=True)
     ws = wb.active
     
     all_papers = {}
     
-    for row in ws.iter_rows(min_row=5, values_only=True):
-        if not row or not row[2]:
+    for row in ws.iter_rows(min_row=7, values_only=True):
+        if not row or len(row) < 3 or row[2] is None:
             continue
             
-        row_id, ano, titulo, autores, detalhes, doi, tags_str, citacoes = row[:8]
-        ano = str(ano or "").strip()
-        titulo = str(titulo or "").strip()
-        autores = str(autores or "").strip()
-        detalhes = str(detalhes or "").strip()
+        row_id = row[2]
+        try:
+            pid = int(float(str(row_id).strip()))
+        except (ValueError, TypeError):
+            continue
+            
+        ano = str(row[3] or "").strip()
+        titulo = str(row[4] or "").strip()
+        autores = str(row[5] or "").strip()
+        detalhes = str(row[6] or "").strip()
         detalhes = re.sub(r"\.\s*DOI\s*$", "", detalhes, flags=re.IGNORECASE).strip()
         detalhes = re.sub(r"\s+DOI\s*$", "", detalhes, flags=re.IGNORECASE).strip()
-        doi = str(doi or "").strip()
+        doi = str(row[7] or "").strip()
         if doi and doi != "—" and not doi.startswith("http://") and not doi.startswith("https://"):
             if doi.startswith("10."):
                 doi = f"https://doi.org/{doi}"
             else:
                 doi = f"https://{doi}"
-        tags_str = str(tags_str or "").strip()
-        citacoes = str(citacoes or "").strip()
-        
-        tags = [t.strip() for t in tags_str.split(",") if t.strip()]
-        
-        try:
-            pid = int(row_id)
-        except (ValueError, TypeError):
-            continue
+                
+        tags = []
+        for col_idx in range(9, 18):
+            if col_idx < len(row) and row[col_idx]:
+                t = str(row[col_idx]).strip()
+                if t and t.lower() != "none" and t not in tags:
+                    tags.append(t)
+                    
+        if not tags and len(row) > 8 and row[8]:
+            raw_i = str(row[8]).strip()
+            if raw_i and not raw_i.startswith("="):
+                tags = [t.strip() for t in raw_i.split(",") if t.strip()]
 
         paper_obj = {
             "id": pid,
@@ -154,7 +186,7 @@ if os.path.exists(artigos_file):
             "title": titulo,
             "details": detalhes,
             "year": ano,
-            "citations": citacoes,
+            "citations": "",
             "doi": doi,
             "tags": tags
         }
