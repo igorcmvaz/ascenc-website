@@ -1,0 +1,7 @@
+stages:
+  - build
+
+build-job:
+  stage: build
+  script:
+    - echo "Projeto pronto para a esteira da SeTIC."
