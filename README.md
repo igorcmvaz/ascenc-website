@@ -1,6 +1,6 @@
-# ASCENC Website
+# Sustainability Website
 
-Este é o site oficial do projeto **ASCENC (Avaliação de Sustentabilidade em Cidades e Edificações em Novos Climas)**, desenvolvido com o framework moderno **React + Vite + TailwindCSS**.
+Este é o site oficial do grupo **Sustainable Environments**, desenvolvido com o framework moderno **React + Vite + TailwindCSS**.
 
 O site é projetado com suporte multi-idioma (i18n), layout escuro/claro integrado e uma robusta pipeline automatizada para exibição de publicações científicas com gráficos interativos.
 
@@ -20,7 +20,7 @@ O site é projetado com suporte multi-idioma (i18n), layout escuro/claro integra
 ## 📂 Estrutura do Projeto
 
 ```text
-ascenc-website/
+sustainability-website/
  ├─ scripts/                 # Pipeline de processamento das publicações
  │   ├─ parse_lattes_html.py # Extrator do currículo Lattes (HTML)
  │   ├─ parse_artigos.py     # Parser de citações, DOIs e tags
