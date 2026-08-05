@@ -7,6 +7,7 @@
     "contact": "Contato",
     "papers": "Artigos",
     "partners": "Parcerias",
+    "awards": "Prêmios",
     "back_to_ges": "Voltar à Página Inicial"
   },
   "ges_home": {
@@ -247,8 +248,6 @@
     "nature": "Natureza",
     "nature_research": "Pesquisa",
     "present": "Atual",
-    "students": "Alunos envolvidos",
-    "members": "Integrantes",
     "line1": "Desempenho térmico de edificações",
     "line2": "Eficiência energética em edificações",
     "line3": "Iluminação natural e artificial",
@@ -260,18 +259,12 @@
     "line9": "Aproveitamento de água pluvial em edificações",
     "project1_title": "Avaliação da sustentabilidade de edificações e centros urbanos",
     "project1_desc": "Esta pesquisa investiga o impacto ambiental, social e econômico de intervenções sustentáveis no ambiente construído através da Avaliação do Ciclo de Vida (ACV). O objetivo principal é modelar a sinergia de decisões sustentáveis em escala individual e analisar seus benefícios integrados na escala urbana.",
-    "project1_students": "Graduação: (2) / Doutorado: (3)",
-    "project1_members": "Enedir Ghisi - Coordenador / Deivis L Marinoski - Integrante / Abel Silva Vieira - Integrante / Rupp, Ricardo Forgiarini - Integrante / Aline Schaefer - Integrante / Liseane Padilha Thives - Integrante / Arthur Santos Silva - Integrante / Max Weeber - Integrante / Andrea Teston - Integrante / Andrea Invidiata - Integrante / Igor Catão Martins Vaz - Integrante / Taylana Piccinini Scolaro - Integrante / Rafael Almeida Flores - Integrante",
-    "project2_title": "Conforto térmico e comportamento de usuários em ambientes de trabalho compartilhados no clima subtropical",
-    "project2_desc": "O projeto estuda a dimensão humana no consumo de energia de edifícios de escritórios, associando o conforto térmico ao comportamento dos ocupantes. Através do monitoramento contínuo de variáveis ambientais e questionários subjetivos, busca-se desenvolver modelos de simulação mais fiéis à realidade.",
-    "project2_students": "Graduação: (1) / Doutorado: (2)",
-    "project2_members": "Enedir Ghisi - Coordenador / Ricardo Forgiarini Rupp - Integrante / Mateus Vinícius Bavaresco - Integrante / Candi Citadini de Oliveira - Integrante",
-    "project3_title": "Transforming Street Water into a Water Resource through Biotechnology and Infrastructure Innovation",
-    "project3_desc": "Esta pesquisa visa transformar estradas e pavimentos urbanos em sistemas biotecnologicamente aprimorados para a filtragem e o armazenamento de água pluvial. O sistema busca fornecer água tratada de fontes pluviais para demandas residenciais e comerciais, combatendo a escassez hídrica urbana.",
-    "project3_students": "Graduação: (1) / Mestrado acadêmico: (2) / Doutorado: (1)",
-    "project3_members": "Enedir Ghisi - Coordenador / Liseane Padilha Thives - Integrante / Vernon Phoenix - Integrante",
+    "project2_title": "Infraestrutura Verde Urbana para Tratamento e Reúso Seguro de Água Cinza",
+    "project2_desc": "O projeto visa aumentar a circularidade da água urbana por meio de soluções descentralizadas de infraestrutura verde para a gestão de água não convencional. Desenvolve um Modelo de Informação da Cidade (CIM) espacialmente explícito e sistemas dinâmicos de monitoramento e controle baseados em IoT para otimizar o tratamento de água cinza e o reúso de água pluvial.",
+    "project3_title": "Soluções sustentáveis para melhorar a segurança hídrica de cidades localizadas em Santa Catarina",
+    "project3_desc": "O projeto visa identificar soluções sustentáveis para melhorar a segurança hídrica em cidades de Santa Catarina, com foco no uso de telhados verdes e pavimentos permeáveis para filtragem e aproveitamento de água de chuva em edificações.",
     "project4_title": "Adequação Climática e Uso Racional de Água em Edificações",
-    "project4_desc": "Este projeto atua na adequação climática e eficiência termo-energética de edifícios residenciais, comerciais e de escritórios no Brasil por meio de simulações computacionais e medições de propriedades de materiais. Também engloba a caracterização dos usos finais de energia e água nas edificações, visando subsidiar a formulação de normas técnicas de desempenho e sustentabilidade."
+    "project4_desc": "Este projeto atua na adequação climática e eficiência termo-energética de edifícios residenciais, comerciais e de escritórios no Brasil por meio de simulações computacionais e medições de propriedades de materiais."
   },
   "netuno": {
     "title": "Netuno",
@@ -282,7 +275,15 @@
     "manual": "Manual do usuário",
     "support_files": "Arquivos de apoio",
     "setup": "Setup Netuno 4",
-    "back": "Voltar"
+    "back": "Voltar",
+    "legacy_title": "Versões Legadas (Excel)",
+    "legacy_desc": "Eram versões iniciais em Excel para estudos anteriores a 2014, sendo essa versão depreciada a partir do lançamento do Netuno 4.",
+    "excel_based": "Modelagem Baseada em Planilhas",
+    "legacy_warning": "Essas planilhas históricas serviram como base para os primeiros algoritmos de aproveitamento de água de chuva desenvolvidos pelo grupo.",
+    "use_v4": "Ir para a versão estável (Netuno 4)",
+    "status_dev": "Em desenvolvimento",
+    "dev_desc": "A próxima geração do software Netuno está sendo projetada com novos modelos de simulação climática, interface moderna e ferramentas de análise de ciclo de vida integradas.",
+    "back_to_v4": "Voltar para o Netuno 4"
   },
   "projects": {
     "title": "Projetos de Pesquisa",
@@ -290,7 +291,6 @@
     "ongoing": "Projetos em Andamento",
     "completed": "Projetos Finalizados",
     "coordinator": "Coordenador",
-    "members": "Integrantes",
     "funding": "Financiamento",
     "keywords": "Palavras-chave",
     "period": "Período",
@@ -299,19 +299,47 @@
     "show_more": "Ler mais",
     "show_less": "Mostrar menos",
     "ascenc_title": "ASCENCEE",
-    "ascenc_subtitle": "Avaliação de Sustentabilidade em Cidades e Edificações em Novos Climas",
-    "ascenc_desc": "Investiga as interações entre cidades, edificações e climas futuros de modo a diminuir o impacto ambiental da construção civil e adaptar o contexto urbano para garantir habitabilidade e resiliência.",
-    "water4all_title": "Water4all",
-    "water4all_subtitle": "Transforming Street Water into a Water Resource through Biotechnology and Infrastructure Innovation",
-    "water4all_desc": "Visa transformar estradas e pavimentos urbanos em sistemas biotecnologicamente aprimorados para a filtragem e armazenamento de água pluvial para demandas residenciais e comerciais.",
-    "placeholder_ongoing_title": "Nova Iniciativa de Pesquisa",
-    "placeholder_ongoing_desc": "Texto placeholder para um projeto de pesquisa em andamento desenvolvido por membros do grupo.",
-    "placeholder_completed_1_title": "Estudo Concluído sobre Conforto Térmico",
-    "placeholder_completed_1_desc": "Texto placeholder para um projeto de pesquisa finalizado investigando modelos de conforto térmico em clima subtropical.",
-    "placeholder_completed_2_title": "Projeto Concluído de Avaliação do Ciclo de Vida",
-    "placeholder_completed_2_desc": "Texto placeholder para um estudo finalizado avaliando os impactos ambientais do ambiente construído.",
-    "placeholder_completed_3_title": "Benchmarking Concluído de Aproveitamento de Água Pluvial",
-    "placeholder_completed_3_desc": "Texto placeholder para uma iniciativa de pesquisa concluída sobre potencial hídrico em centros urbanos."
+    "ascenc_subtitle": "Avaliação de Sustentabilidade de Edificações e Centros Urbanos",
+    "ascenc_desc": "O projeto investiga os impactos ambientais, sociais e econômicos de intervenções sustentáveis no ambiente construído frente às mudanças climáticas e novas dinâmicas como o teletrabalho. Utiliza a metodologia de Avaliação do Ciclo de Vida (ACV) para comparar edifícios com medidas de sustentabilidade aos modelos construtivos tradicionais do país. O objetivo é modelar a inserção de soluções individuais em escala urbana, otimizando sinergias entre edificações para promover cidades mais resilientes.",
+    "ascenc_coordinator": "Enedir Ghisi",
+    "ascenc_funding": "CNPq / CAPES",
+    "ascenc_period": "2023 - Atual",
+    "ascenc_keywords": "#ASCENC #ACV #Escala Urbana #Sustentabilidade",
+    "green4grey_title": "Green4Grey",
+    "green4grey_subtitle": "Infraestrutura Verde Urbana para Tratamento e Reúso Seguro de Água Cinza",
+    "green4grey_desc": "O projeto visa aumentar a circularidade da água urbana por meio de soluções descentralizadas de infraestrutura verde para a gestão de água não convencional. Desenvolve um Modelo de Informação da Cidade (CIM) espacialmente explícito e sistemas dinâmicos de monitoramento e controle baseados em IoT para otimizar o tratamento de água cinza e o reúso de água pluvial. Ao integrar soluções baseadas na natureza com estruturas de avaliação de risco, o estudo aborda a conformidade ambiental e de saúde em diversos contextos urbanos e climáticos de pilotos.",
+    "green4grey_coordinator": "Ioannis Daliakopoulos (Coordenador na UFSC: Enedir Ghisi)",
+    "green4grey_funding": "Water4All Partnership / Horizon Europe",
+    "green4grey_period": "2024 - Atual",
+    "green4grey_keywords": "#Green4Grey #Water4All #Reúso de Água Cinza #Infraestrutura Verde #Circularidade da Água Urbana",
+    "rainwater4all_title": "Rainwater4All",
+    "rainwater4all_subtitle": "Soluções sustentáveis para melhorar a segurança hídrica de cidades localizadas em Santa Catarina",
+    "rainwater4all_desc": "O projeto visa identificar soluções sustentáveis para melhorar a segurança hídrica em cidades de Santa Catarina, com foco no uso de telhados verdes e pavimentos permeáveis para filtragem e aproveitamento de água de chuva em edificações. A pesquisa abrange revisões do estado da arte sobre soluções baseadas na natureza (NbS), simulações computacionais para avaliar os impactos das mudanças climáticas no abastecimento hídrico e ensaios com modelos físicos de pavimentos permeáveis.",
+    "rainwater4all_coordinator": "Enedir Ghisi",
+    "rainwater4all_funding": "FEESC",
+    "rainwater4all_period": "2024 - Atual",
+    "rainwater4all_keywords": "#Aproveitamento de Água de Chuva #Pavimentos Permeáveis #Telhados Verdes #Mudanças Climáticas #Segurança Hídrica",
+    "climate_adaptation_title": "Adequação Climática e Uso Racional de Água em Edificações",
+    "climate_adaptation_subtitle": "",
+    "climate_adaptation_desc": "Esta pesquisa avalia o desempenho termo-energético e os usos finais de energia e água em edificações residenciais, comerciais e públicas no Brasil. Por meio de simulações computacionais e medições de materiais, busca estabelecer diretrizes de projeto adequadas às diferentes zonas bioclimáticas brasileiras. Os resultados subsidiam a formulação de normas técnicas de sustentabilidade, eficiência energética e conservação de recursos hídricos.",
+    "climate_adaptation_coordinator": "Enedir Ghisi",
+    "climate_adaptation_funding": "CNPq / Finep",
+    "climate_adaptation_period": "2004 - Atual",
+    "climate_adaptation_keywords": "#Adequação Climática #Usos Finais #Simulação Computacional #Eficiência Energética",
+    "completed_1_title": "Conforto térmico e comportamento de usuários em ambientes de trabalho compartilhados no clima subtropical",
+    "completed_1_subtitle": "Dimensão humana do consumo energético e monitoramento IoT",
+    "completed_1_desc": "O estudo avaliou a influência da dimensão humana no consumo de energia de escritórios de ventilação híbrida no clima subtropical. Foram aplicados questionários de conforto térmico e utilizados dispositivos IoT para monitorar as interações dos usuários com ar-condicionado, janelas e iluminação. Os dados permitiram criar modelos de simulação computacional mais fiéis ao comportamento real das pessoas em ambientes corporativos compartilhados.",
+    "completed_1_coordinator": "Enedir Ghisi",
+    "completed_1_funding": "CNPq / CAPES",
+    "completed_1_period": "2019 - 2024",
+    "completed_1_keywords": "#Conforto Térmico #Comportamento do Usuário #IoT #Ventilação Híbrida",
+    "completed_2_title": "Conforto térmico em edifícios comerciais com ventilação híbrida, localizados em clima subtropical",
+    "completed_2_subtitle": "Métodos experimental e subjetivo de avaliação de conforto",
+    "completed_2_desc": "O projeto desenvolveu um método para avaliar o conforto térmico em edifícios comerciais que alternam ventilação natural e climatização mecânica. Realizou medições de variáveis microclimáticas simultaneamente à aplicação de questionários de percepção e testes experimentais de metabolismo. A pesquisa contribuiu para estabelecer critérios de aceitabilidade térmica e subsidiar bancos de dados nacionais sobre edificações com ventilação híbrida.",
+    "completed_2_coordinator": "Enedir Ghisi",
+    "completed_2_funding": "CNPq",
+    "completed_2_period": "2015 - 2018",
+    "completed_2_keywords": "#Ventilação Híbrida #Conforto Térmico #Clima Subtropical #Edifícios Comerciais"
   },
   "roles": {
     "Pesquisadora": "Pesquisadora",
@@ -323,6 +351,7 @@
     "Pesquisadora Mestranda": "Mestranda",
     "Mestrando": "Mestrando",
     "Mestranda": "Mestranda",
+    "Pesquisador Pós-Doc": "Pesquisador Pós-Doc",
     "Pesquisadora Pós-Doc": "Pesquisadora Pós-Doc",
     "Pesquisador Colaborador": "Pesquisador Colaborador",
     "Pesquisadora Colaboradora": "Pesquisadora Colaboradora",
@@ -386,6 +415,14 @@
     "ufms": {
       "name": "Universidade Federal de Mato Grosso do Sul (UFMS)",
       "dept": "Faculdade de Engenharias, Arquitetura e Urbanismo e Geografia (FAENG)"
+    },
+    "ufrn": {
+      "name": "Universidade Federal do Rio Grande do Norte (UFRN)",
+      "dept": "Departamento de Arquitetura"
+    },
+    "denmark": {
+      "name": "Dinamarca",
+      "dept": ""
     }
   },
   "tags": {
@@ -444,5 +481,12 @@
     "Usos-Finais": "Usos Finais",
     "Ventilacao": "Ventilação",
     "Vidros-E-Janelas": "Vidros e Janelas"
+  },
+  "awards": {
+    "title": "Prêmios e Reconhecimentos",
+    "subtitle": "Reconhecimentos e premiações concedidos aos pesquisadores do nosso grupo de pesquisa",
+    "count_label": "prêmios e reconhecimentos",
+    "no_awards": "Nenhum prêmio registrado.",
+    "view_source": "Ver link / fonte"
   }
 }

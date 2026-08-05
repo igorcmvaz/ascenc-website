@@ -7,6 +7,7 @@
     "contact": "联系我们",
     "papers": "学术论文",
     "partners": "合作伙伴",
+    "awards": "荣誉奖项",
     "back_to_ges": "返回首页"
   },
   "ges_home": {
@@ -247,8 +248,6 @@
     "nature": "研究性质",
     "nature_research": "研究",
     "present": "至今",
-    "students": "参与学生",
-    "members": "项目成员",
     "line1": "建筑热性能",
     "line2": "建筑能效",
     "line3": "天然与人工照明",
@@ -259,19 +258,13 @@
     "line8": "建筑水资源合理利用",
     "line9": "建筑雨水收集利用",
     "project1_title": "建筑与城市中心可持续性评估",
-    "project1_desc": "本研究通过生命周期评估（LCA）来调查建筑环境中可持续干预措施的环保、社会和经济影响。其主要目标是模拟单体建筑层面可持续决策的协同效应，并分析其在城市尺度上的综合效益。",
-    "project1_students": "本科生: (2) / 博士生: (3)",
-    "project1_members": "Enedir Ghisi - 协调员 / Deivis L Marinoski - 成员 / Abel Silva Vieira - 成员 / Rupp, Ricardo Forgiarini - 成员 / Aline Schaefer - 成员 / Liseane Padilha Thives - 成员 / Arthur Santos Silva - 成员 / Max Weeber - 成员 / Andrea Teston - 成员 / Andrea Invidiata - 成员 / Igor Catão Martins Vaz - 成员 / Taylana Piccinini Scolaro - 成员 / Rafael Almeida Flores - 成员",
-    "project2_title": "副热带气候下共享工作环境中的热舒适与用户行为",
-    "project2_desc": "该项目研究写字楼能源消耗的人文维度，将热舒适与占用者行为联系起来。通过对环境变量的持续监测和主观问卷调查，旨在开发更符合实际情况的模拟模型。",
-    "project2_students": "本科生: (1) / 博士生: (2)",
-    "project2_members": "Enedir Ghisi - 协调员 / Ricardo Forgiarini Rupp - 成员 / Mateus Vinícius Bavaresco - 成员 / Candi Citadini de Oliveira - 成员",
-    "project3_title": "Transforming Street Water into a Water Resource through Biotechnology and Infrastructure Innovation",
-    "project3_desc": "本研究旨在将道路和城市路面转化为利用生物技术增强的雨水过滤与储存系统。该系统力求将收集到的雨水处理后用于居民和商业需求，从而应对城市水资源短缺问题。",
-    "project3_students": "本科生: (1) / 硕士生: (2) / 博士生: (1)",
-    "project3_members": "Enedir Ghisi - 协调员 / Liseane Padilha Thives - 成员 / Vernon Phoenix - 成员",
-    "project4_title": "建筑气候适应性与水资源合理利用",
-    "project4_desc": "该项目致力于通过计算机模拟和材料性能测量，促进住宅、商业和办公建筑的气候适应性与热能效。它还包括建筑中能源和水最终用途的特征分析，旨在支持性能和可持续性标准的发展。"
+    "project1_desc": "本研究通过生命周期评估（LCA）来调查建筑环境中可持续干预措施的环保、社会和经济影响。其主要目标是模拟单体建筑层面可持续决策 of 协同效应，并分析其在城市尺度上的综合效益。",
+    "project2_title": "用于安全灰水处理与回用的城市绿色基础设施",
+    "project2_desc": "该项目旨在通过用于非常规水管理的分布式绿色基础设施解决方案，提高城市水循环利用率。开发空间显式的城市信息模型（CIM）以及基于物联网（IoT）的动态监测和控制系统，以优化灰水处理和雨水回用。",
+    "project3_title": "提高圣卡塔琳娜州城市水安全的可持续解决方案",
+    "project3_desc": "该项目旨在确定提高圣卡塔琳娜州城市水安全的可持续解决方案，重点是利用绿色屋顶和透水铺装对建筑物中的雨水进行过滤和收集。",
+    "project4_title": "建筑气候适应与合理用水",
+    "project4_desc": "该项目致力于通过计算机模拟和材料性能测量，促进巴西住宅、商业和办公建筑的气候适应性与热能效。"
   },
   "netuno": {
     "title": "Netuno",
@@ -282,7 +275,15 @@
     "manual": "用户手册",
     "support_files": "配套文件",
     "setup": "Setup Netuno 4",
-    "back": "返回"
+    "back": "返回",
+    "legacy_title": "历史版本 (Excel)",
+    "legacy_desc": "2014 年之前研究的初始 Excel 版本，自 Netuno 4 发布后已弃用。",
+    "excel_based": "基于电子表格建模",
+    "legacy_warning": "这些历史电子表格为该小组开发的第一个雨水收集算法奠定了基础。",
+    "use_v4": "前往稳定版本 (Netuno 4)",
+    "status_dev": "开发中",
+    "dev_desc": "新一代 Netuno 软件正在设计中，具有全新的气候模拟模型、现代化的界面以及集成的生命周期评估工具。",
+    "back_to_v4": "返回 Netuno 4"
   },
   "projects": {
     "title": "研究项目",
@@ -290,7 +291,8 @@
     "ongoing": "进行中的项目",
     "completed": "已完成的项目",
     "coordinator": "协调员",
-    "members": "项目成员",
+    "funding": "资助机构",
+    "keywords": "关键词",
     "period": "研究周期",
     "nature": "研究性质",
     "view_more": "了解更多",
@@ -298,18 +300,46 @@
     "show_less": "收起",
     "ascenc_title": "ASCENCEE",
     "ascenc_subtitle": "新气候下的城市与建筑可持续性评估",
-    "ascenc_desc": "研究城市、建筑与未来气候之间的相互作用，以减少土木建设对环境的影响，并调整城市环境以确保居住性和韧性。",
-    "water4all_title": "Water4all",
-    "water4all_subtitle": "Transforming Street Water into a Water Resource through Biotechnology and Infrastructure Innovation",
-    "water4all_desc": "旨在将道路和城市路面转化为利用生物技术增强的雨水过滤与储存系统，以满足住宅和商业水资源需求。",
-    "placeholder_ongoing_title": "新研究项目",
-    "placeholder_ongoing_desc": "由小组成员开发中的进行中研究项目占位描述。",
-    "placeholder_completed_1_title": "热舒适度已完成研究",
-    "placeholder_completed_1_desc": "探讨副热带气候下热舒适度模型的已完成项目占位描述。",
-    "placeholder_completed_2_title": "全生命周期评估已完成项目",
-    "placeholder_completed_2_desc": "评估建筑环境环境影响的已完成研究占位描述。",
-    "placeholder_completed_3_title": "雨水利用基准测试已完成项目",
-    "placeholder_completed_3_desc": "分析城市中心水资源潜力的已完成研究项目占位描述。"
+    "ascenc_desc": "该项目研究了在气候变化和远程办公等新社会动态下，建筑环境中可持续干预措施对环境、社会和经济的影响。利用生命周期评估（LCA）方法，将采取可持续措施 of 建筑与国家传统建筑模式进行对比。其目标是建立城市尺度下个体建筑解决方案的集成模型，优化建筑间的协同效应，以促进更具韧性的城市建设。",
+    "ascenc_coordinator": "Enedir Ghisi",
+    "ascenc_funding": "CNPq / CAPES",
+    "ascenc_period": "2023 - 至今",
+    "ascenc_keywords": "#ASCENC #LCA #城市尺度 #可持续性",
+    "green4grey_title": "Green4Grey",
+    "green4grey_subtitle": "用于安全灰水处理与回用的城市绿色基础设施",
+    "green4grey_desc": "该项目旨在通过用于非常规水管理的分布式绿色基础设施解决方案，提高城市水循环利用率。开发了空间显式的城市信息模型（CIM）以及基于物联网（IoT）的动态监测和控制系统，以优化灰水处理和雨水回用。通过将基于自然解决方案与风险评估框架相结合，该研究解决了不同城市和气候试点背景下的环境和健康合规性问题。",
+    "green4grey_coordinator": "Ioannis Daliakopoulos (UFSC负责人: Enedir Ghisi)",
+    "green4grey_funding": "Water4All Partnership / Horizon Europe",
+    "green4grey_period": "2024 - 至今",
+    "green4grey_keywords": "#Green4Grey #Water4All #灰水回用 #绿色基础设施 #城市水循环",
+    "rainwater4all_title": "Rainwater4All",
+    "rainwater4all_subtitle": "提高圣卡塔琳娜州城市水安全的可持续解决方案",
+    "rainwater4all_desc": "该项目旨在确定提高圣卡塔琳娜州城市水安全的可持续解决方案，重点是利用绿色屋顶和透水铺装对建筑物中的雨水进行过滤和收集。研究内容包括基于自然解决方案（NbS）的最新综述、评估气候变化对水资源供应影响的计算机模拟，以及透水铺装物理模型的试验。",
+    "rainwater4all_coordinator": "Enedir Ghisi",
+    "rainwater4all_funding": "FEESC",
+    "rainwater4all_period": "2024 - 至今",
+    "rainwater4all_keywords": "#雨水收集 #透水铺装 #绿色屋顶 #气候变化 #水安全",
+    "climate_adaptation_title": "建筑气候适应与合理用水",
+    "climate_adaptation_subtitle": "",
+    "climate_adaptation_desc": "该研究评估了巴西住宅、商业和公共建筑的热能性能以及水与能源的末端用途。通过计算机模拟和材料性能测量，旨在建立适应巴西不同生物气候区的建筑设计指南。研究结果为制定可持续性、能源效率和水资源保护的技术标准提供了数据支撑。",
+    "climate_adaptation_coordinator": "Enedir Ghisi",
+    "climate_adaptation_funding": "CNPq / Finep",
+    "climate_adaptation_period": "2004 - 至今",
+    "climate_adaptation_keywords": "#气候适应 #末端用能 #计算机模拟 #能源效率",
+    "completed_1_title": "副热带气候下共享办公环境中热舒适与用户行为研究",
+    "completed_1_subtitle": "能源消耗的人类维度与物联网（IoT）监测",
+    "completed_1_desc": "该研究评估了副热带气候下混合通风办公室中“人的因素”对能源消耗的影响。通过发放热舒适问卷并部署物联网（IoT）设备，监测用户与空调、窗户和照明系统的交互行为。收集的数据为创建更符合共享办公环境中人员实际行为的计算机模拟模型提供了支持。",
+    "completed_1_coordinator": "Enedir Ghisi",
+    "completed_1_funding": "CNPq / CAPES",
+    "completed_1_period": "2019 - 2024",
+    "completed_1_keywords": "#热舒适 #用户行为 #物联网 #混合通风",
+    "completed_2_title": "副热带气候下采用混合通风的商业建筑热舒适研究",
+    "completed_2_subtitle": "热舒适度评估的实验与主观调查方法",
+    "completed_2_desc": "该项目开发了一种评估自然通风与机械制冷交替运行的商业建筑热舒适度的方法。在开展微气候参数测量的同时，实施了主观感知问卷调查和新陈代谢率实验测试。该研究有助于确立热可接受性标准，并为混合通风建筑的国家数据库建设提供支撑。",
+    "completed_2_coordinator": "Enedir Ghisi",
+    "completed_2_funding": "CNPq",
+    "completed_2_period": "2015 - 2018",
+    "completed_2_keywords": "#混合通风 #热舒适 #副热带气候 #商业建筑"
   },
   "roles": {
     "Pesquisadora": "研究员",
@@ -384,6 +414,14 @@
     "ufms": {
       "name": "南马托格罗索联邦大学 (UFMS)",
       "dept": "工程、建筑与地理学院 (FAENG)"
+    },
+    "ufrn": {
+      "name": "北里奥格兰德联邦大学 (UFRN)",
+      "dept": "建筑系"
+    },
+    "denmark": {
+      "name": "丹麦",
+      "dept": ""
     }
   },
   "tags": {
@@ -442,5 +480,12 @@
     "Usos-Finais": "终端利用",
     "Ventilacao": "通风",
     "Vidros-E-Janelas": "门窗与玻璃"
+  },
+  "awards": {
+    "title": "荣誉与奖项",
+    "subtitle": "授予我们研究小组研究人员的认可和奖项",
+    "count_label": "项荣誉与奖项",
+    "no_awards": "暂无记录。",
+    "view_source": "查看来源链接"
   }
 }

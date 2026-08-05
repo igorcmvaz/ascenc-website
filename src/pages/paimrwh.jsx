@@ -1,4 +1,4 @@
-﻿import PageLayout from "../components/PageLayout";
+import PageLayout from "../components/PageLayout";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -34,10 +34,10 @@ export default function PAIMRWH() {
           <div className="flex justify-center mt-12">
             <Link
               to="/ascenc/tools"
-              className="inline-flex items-center gap-2 px-6 py-2 bg-gray-100 dark:bg-zinc-700 text-gray-800 dark:text-zinc-200 rounded-lg shadow hover:shadow-md hover:bg-gray-200 dark:hover:bg-zinc-600 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-2 bg-gray-100 dark:bg-zinc-700 text-gray-800 dark:text-zinc-200 rounded-lg shadow hover:shadow-md hover:bg-gray-200 dark:hover:bg-zinc-600 transition-all duration-300 font-extrabold text-sm"
             >
               <ArrowLeft className="w-5 h-5" />
-              {t('paimrwh.back')}
+              <span>{t('paimrwh.back', 'Voltar')} - ASCENC</span>
             </Link>
           </div>
         </section>

@@ -56,13 +56,53 @@ if os.path.exists(membros_file):
         
         if cat == "Docente":
             professors.append(member_obj)
-        elif cat == "Ex-Membro":
+        elif "ex-membro" in cat.lower():
             former_obj = {"name": nome}
-            if lattes and lattes != "—":
+            if lattes and lattes != "—" and lattes.lower() != "none":
                 former_obj["lattes"] = lattes
+            
+            # Identify subcategory
+            sub_cat = "Graduação"
+            if "pós" in cat.lower() or "pos" in cat.lower():
+                sub_cat = "Pós-Doutorado"
+            elif "doutor" in cat.lower() or "phd" in cat.lower():
+                sub_cat = "Doutorado"
+            elif "mestr" in cat.lower() or "msc" in cat.lower():
+                sub_cat = "Mestrado"
+            
+            former_obj["category"] = sub_cat
             former_members.append(former_obj)
         else:
+            member_obj["_category"] = cat
             researchers.append(member_obj)
+            
+    # Sort researchers: Pós-docs, Doutorandos, Mestrandos
+    def get_cat_rank(m):
+        c = str(m.get("_category", "")).lower()
+        if "pós" in c or "pos" in c:
+            return 1
+        elif "doutor" in c:
+            return 2
+        elif "mestrand" in c:
+            return 3
+        return 4
+
+    researchers.sort(key=lambda x: get_cat_rank(x))
+    for r in researchers:
+        r.pop("_category", None)
+
+    # Sort former members: Pós-Doutores, Doutores, Mestres, IC
+    def get_former_cat_rank(m):
+        c = m.get("category", "")
+        if c == "Pós-Doutorado":
+            return 1
+        elif c == "Doutorado":
+            return 2
+        elif c == "Mestrado":
+            return 3
+        return 4
+
+    former_members.sort(key=lambda x: (get_former_cat_rank(x), x.get("name", "").lower()))
             
     print(f"Membros carregados: {len(professors)} professores, {len(researchers)} pesquisadores, {len(former_members)} ex-membros.")
 

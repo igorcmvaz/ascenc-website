@@ -1,13 +1,13 @@
 # Guia de Configuração de Domínio Próprio (sustainability.ufsc.br)
 
-Este guia orienta sobre como configurar o domínio próprio `sustainability.ufsc.br` no site hospedado pelo GitHub Pages, garantindo que nenhum link citado em artigos (como `igorcmvaz.github.io/ascenc-website/`) seja quebrado.
+Este guia orienta sobre como configurar o domínio próprio `sustainability.ufsc.br` no site hospedado pelo GitHub Pages, garantindo que nenhum link citado em artigos (como `igorcmvaz.github.io/sustainability-website/`) seja quebrado.
 
 ---
 
 ## 1. Como Funciona o Redirecionamento
 
 O GitHub Pages gerencia de forma transparente a transição do domínio antigo para o novo:
-* **Redirecionamento Automático (HTTP 301)**: Qualquer acesso a `https://igorcmvaz.github.io/ascenc-website/` será automaticamente redirecionado de forma permanente para `https://sustainability.ufsc.br/`.
+* **Redirecionamento Automático (HTTP 301)**: Qualquer acesso a `https://igorcmvaz.github.io/sustainability-website/` será automaticamente redirecionado de forma permanente para `https://sustainability.ufsc.br/`.
 * **Preservação de Rotas (`#`)**: Como o site utiliza o `HashRouter` do React, o navegador preserva todo o caminho após a hashtag (ex: `#/paimaa`). O redirecionamento manterá a rota, levando o usuário diretamente à página correta.
 
 ---

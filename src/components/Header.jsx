@@ -17,9 +17,12 @@ export default function Header() {
   const [menuOpen,        setMenuOpen]        = useState(false);
   const [ascencOpen,      setAscencOpen]      = useState(false);
   const [ascencMobOpen,   setAscencMobOpen]   = useState(false);
+  const [netunoOpen,      setNetunoOpen]      = useState(false);
+  const [netunoMobOpen,   setNetunoMobOpen]   = useState(false);
   const { t, i18n } = useTranslation();
   const location     = useLocation();
   const dropdownRef  = useRef(null);
+  const netunoDropdownRef = useRef(null);
 
   const changeLanguage = (lng) => { i18n.changeLanguage(lng); setMenuOpen(false); };
 
@@ -28,6 +31,8 @@ export default function Header() {
     const handler = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target))
         setAscencOpen(false);
+      if (netunoDropdownRef.current && !netunoDropdownRef.current.contains(e.target))
+        setNetunoOpen(false);
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
@@ -36,6 +41,7 @@ export default function Header() {
   // Close everything on route change
   useEffect(() => {
     setAscencOpen(false);
+    setNetunoOpen(false);
     setMenuOpen(false);
   }, [location.pathname]);
 
@@ -47,6 +53,7 @@ export default function Header() {
     { name: t("ges_header.papers"),   path: "/papers" },
     { name: t("ges_header.partners"), path: "/partners" },
     { name: t("ges_header.team"),     path: "/team" },
+    { name: t("ges_header.awards"),   path: "/awards" },
     { name: t("ges_header.contact"),  path: "/contact" },
   ];
 
@@ -97,92 +104,120 @@ export default function Header() {
             </Link>
           ))}
 
-          {/* Netuno button */}
-          <Link
-            to="/netuno"
-            className={`flex items-center gap-1.5 text-sm font-semibold px-3 py-1.5 rounded-lg border transition-all duration-200
-              ${location.pathname === "/netuno"
-                ? "bg-blue-50 dark:bg-blue-950/40 text-blue-800 dark:text-blue-300 border-blue-300/80 dark:border-blue-700/50"
-                : "text-blue-800 dark:text-blue-300 border-transparent hover:bg-blue-50/70 dark:hover:bg-blue-950/30"
-              }`}
-          >
-            <Droplet className="w-3.5 h-3.5" />
-            Netuno
-          </Link>
+          {/* Grouped interactive dropdowns and translations with tighter gap */}
+          <div className="flex items-center gap-3">
+            {/* Netuno dropdown */}
+            <div className="relative" ref={netunoDropdownRef}>
+              <button
+                onClick={() => setNetunoOpen((v) => !v)}
+                className={`flex items-center gap-1.5 text-sm font-semibold px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer
+                  ${location.pathname.startsWith("/netuno") || netunoOpen
+                    ? "bg-blue-50 dark:bg-blue-950/40 text-blue-800 dark:text-blue-300 border-blue-300/80 dark:border-blue-700/50"
+                    : "text-blue-800 dark:text-blue-300 border-transparent hover:bg-blue-50/70 dark:hover:bg-blue-950/30"
+                  }`}
+              >
+                <Droplet className="w-3.5 h-3.5" />
+                Netuno
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${netunoOpen ? "rotate-180" : ""}`} />
+              </button>
 
-          {/* ASCENC dropdown */}
-          <div className="relative" ref={dropdownRef}>
-            <button
-              onClick={() => setAscencOpen((v) => !v)}
-              className={`flex items-center gap-1.5 text-sm font-semibold px-3 py-1.5 rounded-lg border transition-all duration-200
-                ${isAscencActive || ascencOpen
-                  ? "bg-emerald-100/60 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border-emerald-300/80 dark:border-emerald-800/60"
-                  : "text-emerald-800 dark:text-emerald-400 border-transparent hover:bg-emerald-50 dark:hover:bg-emerald-950/30"
-                }`}
-            >
-              <Leaf className="w-3.5 h-3.5" />
-              ASCENC
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${ascencOpen ? "rotate-180" : ""}`} />
-            </button>
-
-            {ascencOpen && (
-              <div className="absolute right-0 top-full mt-2 w-52 bg-white dark:bg-[#1c231f] rounded-xl shadow-xl border border-emerald-100 dark:border-[#2f3d37] py-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-
-                {/* Pages */}
-                {ascencPages.map((p) => (
+              {netunoOpen && (
+                <div className="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-[#161b18] rounded-xl shadow-xl border border-blue-100 dark:border-zinc-800 py-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
                   <Link
-                    key={p.path}
-                    to={p.path}
-                    className="flex items-center px-4 py-2 text-sm font-semibold text-slate-800 dark:text-zinc-200 hover:bg-emerald-50 dark:hover:bg-zinc-700 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
+                    to="/netuno/v123"
+                    className="flex items-center px-4 py-2 text-sm font-semibold text-slate-800 dark:text-zinc-200 hover:bg-blue-50 dark:hover:bg-zinc-700 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
                   >
-                    {p.name}
+                    Netuno 1, 2 & 3
                   </Link>
-                ))}
-
-                {/* Divider + tools label */}
-                <div className="my-1.5 mx-3 border-t border-emerald-100 dark:border-zinc-700" />
-                <p className="px-4 pb-1 text-[10px] font-bold uppercase tracking-widest text-slate-700 dark:text-zinc-300">
-                  {t("header.tools", "Ferramentas")}
-                </p>
-
-                {/* Tool links */}
-                {ascencTools.map((tool) =>
-                  tool.active ? (
-                    <Link
-                      key={tool.name}
-                      to={tool.path}
-                      className="flex items-center px-4 py-2 text-sm font-semibold text-slate-800 dark:text-zinc-200 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
-                    >
-                      {tool.name}
-                    </Link>
-                  ) : (
-                    <span
-                      key={tool.name}
-                      className="flex items-center justify-between px-4 py-2 text-sm font-medium text-slate-400 dark:text-zinc-500 cursor-not-allowed select-none"
-                    >
-                      {tool.name}
-                      <span className="text-[9px] font-semibold bg-slate-100 dark:bg-zinc-700 text-slate-500 dark:text-zinc-400 rounded px-1.5 py-0.5 uppercase tracking-wide">
-                        dev
-                      </span>
+                  <Link
+                    to="/netuno"
+                    className="flex items-center px-4 py-2 text-sm font-semibold text-slate-800 dark:text-zinc-200 hover:bg-blue-50 dark:hover:bg-zinc-700 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                  >
+                    Netuno 4
+                  </Link>
+                  <Link
+                    to="/netuno/v5"
+                    className="flex items-center justify-between px-4 py-2 text-sm font-semibold text-slate-800 dark:text-zinc-200 hover:bg-blue-50 dark:hover:bg-zinc-700 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                  >
+                    <span>Netuno 5</span>
+                    <span className="text-[9px] font-semibold bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-300 rounded px-1.5 py-0.5 uppercase tracking-wide">
+                      dev
                     </span>
-                  )
-                )}
-              </div>
-            )}
-          </div>
-
-          {/* Lang + Theme */}
-          <div className="flex items-center gap-4 ml-2">
-            <div className="flex gap-2.5 items-center">
-              {langBtn("en", "EN")}
-              <span className="text-slate-300 dark:text-zinc-600">|</span>
-              {langBtn("pt-BR", "PT")}
-              <span className="text-slate-300 dark:text-zinc-600">|</span>
-              {langBtn("es", "ES")}
-              <span className="text-slate-300 dark:text-zinc-600">|</span>
-              {langBtn("zh", "CN")}
+                  </Link>
+                </div>
+              )}
             </div>
-            <ThemeSwitcher />
+
+            {/* ASCENC dropdown */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setAscencOpen((v) => !v)}
+                className={`flex items-center gap-1.5 text-sm font-semibold px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer
+                  ${isAscencActive || ascencOpen
+                    ? "bg-emerald-100/60 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border-emerald-300/80 dark:border-emerald-800/60"
+                    : "text-emerald-800 dark:text-emerald-400 border-transparent hover:bg-emerald-50 dark:hover:bg-emerald-950/30"
+                  }`}
+              >
+                <Leaf className="w-3.5 h-3.5" />
+                ASCENC
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${ascencOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {ascencOpen && (
+                <div className="absolute right-0 top-full mt-2 w-52 bg-white dark:bg-[#1c231f] rounded-xl shadow-xl border border-emerald-100 dark:border-[#2f3d37] py-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+                  {ascencPages.map((p) => (
+                    <Link
+                      key={p.path}
+                      to={p.path}
+                      className="flex items-center px-4 py-2 text-sm font-semibold text-slate-800 dark:text-zinc-200 hover:bg-emerald-50 dark:hover:bg-zinc-700 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
+                    >
+                      {p.name}
+                    </Link>
+                  ))}
+
+                  <div className="my-1.5 mx-3 border-t border-emerald-100 dark:border-zinc-700" />
+                  <p className="px-4 pb-1 text-[10px] font-bold uppercase tracking-widest text-slate-700 dark:text-zinc-300">
+                    {t("header.tools", "Ferramentas")}
+                  </p>
+
+                  {ascencTools.map((tool) =>
+                    tool.active ? (
+                      <Link
+                        key={tool.name}
+                        to={tool.path}
+                        className="flex items-center px-4 py-2 text-sm font-semibold text-slate-800 dark:text-zinc-200 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
+                      >
+                        {tool.name}
+                      </Link>
+                    ) : (
+                      <span
+                        key={tool.name}
+                        className="flex items-center justify-between px-4 py-2 text-sm font-medium text-slate-400 dark:text-zinc-500 cursor-not-allowed select-none"
+                      >
+                        {tool.name}
+                        <span className="text-[9px] font-semibold bg-slate-100 dark:bg-zinc-700 text-slate-500 dark:text-zinc-400 rounded px-1.5 py-0.5 uppercase tracking-wide">
+                          dev
+                        </span>
+                      </span>
+                    )
+                  )}
+                </div>
+              )}
+            </div>
+
+            {/* Lang + Theme */}
+            <div className="flex items-center gap-4 ml-1">
+              <div className="flex gap-2 items-center">
+                {langBtn("en", "EN")}
+                <span className="text-slate-300 dark:text-zinc-600">|</span>
+                {langBtn("pt-BR", "PT")}
+                <span className="text-slate-300 dark:text-zinc-600">|</span>
+                {langBtn("es", "ES")}
+                <span className="text-slate-300 dark:text-zinc-600">|</span>
+                {langBtn("zh", "CN")}
+              </div>
+              <ThemeSwitcher />
+            </div>
           </div>
         </nav>
 
@@ -210,16 +245,47 @@ export default function Header() {
             </Link>
           ))}
 
-          {/* Netuno mobile button */}
+          {/* Netuno mobile accordion */}
           <div className="border-b border-gray-50 dark:border-zinc-700/50">
-            <Link
-              to="/netuno"
-              className="w-full flex items-center gap-2 px-4 py-3 text-blue-700 dark:text-blue-400 font-semibold hover:bg-blue-50 dark:hover:bg-blue-950/20 transition-colors"
-              onClick={() => setMenuOpen(false)}
+            <button
+              onClick={() => setNetunoMobOpen((v) => !v)}
+              className="w-full flex items-center justify-between px-4 py-3 text-blue-700 dark:text-blue-400 font-semibold hover:bg-blue-50 dark:hover:bg-blue-950/20 transition-colors cursor-pointer"
             >
-              <Droplet className="w-4 h-4" />
-              Netuno
-            </Link>
+              <span className="flex items-center gap-2">
+                <Droplet className="w-4 h-4" />
+                Netuno
+              </span>
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${netunoMobOpen ? "rotate-180" : ""}`} />
+            </button>
+
+            {netunoMobOpen && (
+              <div className="bg-gray-50 dark:bg-zinc-900/50">
+                <Link
+                  to="/netuno/v123"
+                  className="block pl-10 pr-4 py-2.5 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Netuno 1, 2 & 3
+                </Link>
+                <Link
+                  to="/netuno"
+                  className="block pl-10 pr-4 py-2.5 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Netuno 4
+                </Link>
+                <Link
+                  to="/netuno/v5"
+                  className="flex items-center justify-between pl-10 pr-4 py-2.5 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <span>Netuno 5</span>
+                  <span className="text-[9px] font-semibold bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-300 rounded px-1.5 py-0.5 uppercase tracking-wide mr-4">
+                    dev
+                  </span>
+                </Link>
+              </div>
+            )}
           </div>
 
           {/* ASCENC accordion */}

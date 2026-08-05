@@ -7,7 +7,7 @@ export default function Netuno() {
   const { t } = useTranslation();
 
   return (
-    <PageLayout title={t("netuno.title")}>
+    <PageLayout title="Netuno 4">
       <div className="space-y-12 max-w-4xl mx-auto">
         
         <section className="bg-white dark:bg-slate-100 p-8 rounded-3xl border border-blue-200 dark:border-slate-300 shadow-md flex flex-col md:flex-row items-center gap-8">

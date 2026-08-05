@@ -12,12 +12,15 @@ import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Partners from "./pages/Partners";
 import Projects from "./pages/Projects";
+import Awards from "./pages/Awards";
 import PAIMT from "./pages/paimt";
 import PAIMP from "./pages/paimp";
 import PAIMAA from "./pages/paimaa";
 import PAICACV from "./pages/paicacv";
 import PAIMRWH from "./pages/paimrwh";
 import Netuno from "./pages/Netuno";
+import NetunoV123 from "./pages/NetunoV123";
+import NetunoV5 from "./pages/NetunoV5";
 import ScrollToTop from "./components/ScrollToTop";
 
 // Importante: inicializar o i18n
@@ -31,9 +34,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         {/* 🏢 Portal routes */}
         <Route path="/" element={<GESHome />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/awards" element={<Awards />} />
         <Route path="/team" element={<Team />} />
         <Route path="/contact" element={<GESContact />} />
         <Route path="/netuno" element={<Netuno />} />
+        <Route path="/netuno/v123" element={<NetunoV123 />} />
+        <Route path="/netuno/v5" element={<NetunoV5 />} />
         <Route path="/papers" element={<Papers />} />
         <Route path="/partners" element={<Partners />} />
 

@@ -79,7 +79,7 @@ export default function GESHome() {
               <span className="w-8 h-1 bg-emerald-600 rounded-full inline-block" />
               {t("ges_home.about_title")}
             </h2>
-            <p className="text-lg text-slate-800 dark:text-zinc-200 leading-relaxed text-justify font-bold">
+            <p className="text-sm text-slate-800 dark:text-zinc-200 leading-relaxed text-justify font-bold">
               {t("ges_home.about_desc")}
             </p>
           </div>

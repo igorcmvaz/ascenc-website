@@ -7,6 +7,7 @@
     "contact": "Contact",
     "papers": "Papers",
     "partners": "Partners",
+    "awards": "Awards",
     "back_to_ges": "Back to Home"
   },
   "ges_home": {
@@ -247,8 +248,6 @@
     "nature": "Nature",
     "nature_research": "Research",
     "present": "Present",
-    "students": "Students involved",
-    "members": "Members",
     "line1": "Thermal performance of buildings",
     "line2": "Energy efficiency in buildings",
     "line3": "Natural and artificial lighting",
@@ -260,18 +259,20 @@
     "line9": "Rainwater harvesting in buildings",
     "project1_title": "Sustainability assessment of buildings and urban centers",
     "project1_desc": "This research investigates the environmental, social, and economic impact of sustainable interventions in the built environment through Life Cycle Assessment (LCA). The main objective is to model the synergy of sustainable decisions at the building level and analyze their integrated benefits on an urban scale.",
-    "project1_students": "Undergraduate: (2) / PhD: (3)",
-    "project1_members": "Enedir Ghisi - Coordinator / Deivis L Marinoski - Member / Abel Silva Vieira - Member / Rupp, Ricardo Forgiarini - Member / Aline Schaefer - Member / Liseane Padilha Thives - Member / Arthur Santos Silva - Member / Max Weeber - Member / Andrea Teston - Member / Andrea Invidiata - Member / Igor Catão Martins Vaz - Member / Taylana Piccinini Scolaro - Member / Rafael Almeida Flores - Member",
-    "project2_title": "Thermal comfort and user behavior in shared work environments in a subtropical climate",
-    "project2_desc": "The project studies the human dimension of energy consumption in office buildings, linking thermal comfort to occupant behavior. Through continuous monitoring of environmental variables and subjective questionnaires, it aims to develop simulation models that are more faithful to reality.",
-    "project2_students": "Undergraduate: (1) / PhD: (2)",
-    "project2_members": "Enedir Ghisi - Coordinator / Ricardo Forgiarini Rupp - Member / Mateus Vinícius Bavaresco - Member / Candi Citadini de Oliveira - Member",
-    "project3_title": "Transforming Street Water into a Water Resource through Biotechnology and Infrastructure Innovation",
-    "project3_desc": "This research aims to transform roads and urban pavements into biotechnologically enhanced systems for filtering and storing rainwater. The system seeks to provide treated water from pluvial sources for residential and commercial demands, combating urban water scarcity.",
-    "project3_students": "Undergraduate: (1) / Master's: (2) / PhD: (1)",
-    "project3_members": "Enedir Ghisi - Coordinator / Liseane Padilha Thives - Member / Vernon Phoenix - Member",
+    "project1_coordinator": "Enedir Ghisi",
+    "project1_funding": "CNPq / CAPES",
+    "project2_title": "Urban Green Infrastructure for Safe Greywater Treatment and Reuse",
+    "project2_desc": "The project aims to enhance urban water circularity through decentralized green infrastructure solutions for non-conventional water management. It develops a spatially explicit City Information Model (CIM) and dynamic IoT-based monitoring and control systems to optimize greywater treatment and rainwater reuse.",
+    "project2_coordinator": "Ioannis Daliakopoulos (UFSC Lead: Enedir Ghisi)",
+    "project2_funding": "Water4All Partnership / Horizon Europe",
+    "project3_title": "Soluções sustentáveis para melhorar a segurança hídrica de cidades localizadas em Santa Catarina",
+    "project3_desc": "O projeto visa identificar soluções sustentáveis para melhorar a segurança hídrica em cidades de Santa Catarina, com foco no uso de telhados verdes e pavimentos permeáveis para filtragem e aproveitamento de água de chuva em edificações.",
+    "project3_coordinator": "Enedir Ghisi",
+    "project3_funding": "FEESC",
     "project4_title": "Climate Adaptation and Rational Use of Water in Buildings",
-    "project4_desc": "This project focuses on the climate adaptation and thermo-energetic efficiency of residential, commercial, and office buildings in Brazil through computer simulations and material properties measurement. It also includes the characterization of end-uses of energy and water in buildings, aiming to support the development of performance and sustainability standards."
+    "project4_desc": "This project focuses on the climate adaptation and thermo-energetic efficiency of residential, commercial, and office buildings in Brazil through computer simulations and material properties measurement.",
+    "project4_coordinator": "Enedir Ghisi",
+    "project4_funding": "CNPq / Finep"
   },
   "netuno": {
     "title": "Netuno",
@@ -282,7 +283,15 @@
     "manual": "User manual",
     "support_files": "Support files",
     "setup": "Setup Netuno 4",
-    "back": "Back"
+    "back": "Back",
+    "legacy_title": "Legacy Versions (Excel)",
+    "legacy_desc": "Initial Excel versions for studies prior to 2014, deprecated starting with the release of Netuno 4.",
+    "excel_based": "Spreadsheet-Based Modeling",
+    "legacy_warning": "These historical spreadsheets served as the basis for the first rainwater harvesting algorithms developed by the group.",
+    "use_v4": "Go to the stable version (Netuno 4)",
+    "status_dev": "In development",
+    "dev_desc": "The next generation of the Netuno software is being designed with new climate simulation models, a modern interface, and integrated life cycle assessment tools.",
+    "back_to_v4": "Back to Netuno 4"
   },
   "projects": {
     "title": "Research Projects",
@@ -290,7 +299,6 @@
     "ongoing": "Projects in Progress",
     "completed": "Completed Projects",
     "coordinator": "Coordinator",
-    "members": "Members",
     "funding": "Funding",
     "keywords": "Keywords",
     "period": "Period",
@@ -299,19 +307,47 @@
     "show_more": "Show more",
     "show_less": "Show less",
     "ascenc_title": "ASCENCEE",
-    "ascenc_subtitle": "Sustainability Assessment in Cities and Buildings in New Climates",
-    "ascenc_desc": "Investigates the interactions between cities, buildings, and future climates to reduce environmental impacts and adapt urban contexts for habitability and resilience.",
-    "water4all_title": "Water4all",
-    "water4all_subtitle": "Transforming Street Water into a Water Resource through Biotechnology and Infrastructure Innovation",
-    "water4all_desc": "Aims to transform roads and urban pavements into biotechnologically enhanced systems for filtering and storing rainwater for residential and commercial demands.",
-    "placeholder_ongoing_title": "Upcoming Research Initiative",
-    "placeholder_ongoing_desc": "Placeholder description for an upcoming research project currently in development by our group members.",
-    "placeholder_completed_1_title": "Completed Study on Thermal Comfort",
-    "placeholder_completed_1_desc": "Placeholder text for a completed research project investigating thermal comfort models in subtropical climates.",
-    "placeholder_completed_2_title": "Completed Life Cycle Assessment Project",
-    "placeholder_completed_2_desc": "Placeholder text for a finalized study assessing whole building environmental impacts.",
-    "placeholder_completed_3_title": "Completed Rainwater Harvesting Benchmark",
-    "placeholder_completed_3_desc": "Placeholder text for a completed research initiative analyzing rainwater potential across urban centers."
+    "ascenc_subtitle": "Sustainability Assessment of Buildings and Urban Centers",
+    "ascenc_desc": "The project investigates the environmental, social, and economic impacts of sustainable interventions in the built environment under climate change and new social dynamics such as remote work. It uses Life Cycle Assessment (LCA) methodology to compare buildings with sustainability measures against traditional construction models in the country. The goal is to model the integration of individual building solutions at the urban scale, optimizing synergies to foster more resilient cities.",
+    "ascenc_coordinator": "Enedir Ghisi",
+    "ascenc_funding": "CNPq / CAPES",
+    "ascenc_period": "2023 - Present",
+    "ascenc_keywords": "#ASCENC #LCA #Urban Scale #Sustainability",
+    "green4grey_title": "Green4Grey",
+    "green4grey_subtitle": "Urban Green Infrastructure for Safe Greywater Treatment and Reuse",
+    "green4grey_desc": "The project aims to enhance urban water circularity through decentralized green infrastructure solutions for non-conventional water management. It develops a spatially explicit City Information Model (CIM) and dynamic IoT-based monitoring and control systems to optimize greywater treatment and rainwater reuse. By integrating nature-based solutions with risk assessment frameworks, the study addresses environmental and health compliance across diverse urban and climatic pilot contexts.",
+    "green4grey_coordinator": "Ioannis Daliakopoulos (UFSC Lead: Enedir Ghisi)",
+    "green4grey_funding": "Water4All Partnership / Horizon Europe",
+    "green4grey_period": "2024 - Present",
+    "green4grey_keywords": "#Green4Grey #Water4All #Greywater Reuse #Green Infrastructure #Urban Water Circularity",
+    "rainwater4all_title": "Rainwater4All",
+    "rainwater4all_subtitle": "Sustainable solutions to improve water security in cities located in Santa Catarina",
+    "rainwater4all_desc": "The project aims to identify sustainable solutions to improve water security in cities in Santa Catarina, focusing on the use of green roofs and permeable pavements for filtering and harvesting rainwater in buildings. The research covers state-of-the-art reviews on nature-based solutions (NbS), computer simulations to assess the impacts of climate change on water supply, and tests with physical models of permeable pavements.",
+    "rainwater4all_coordinator": "Enedir Ghisi",
+    "rainwater4all_funding": "FEESC",
+    "rainwater4all_period": "2024 - Present",
+    "rainwater4all_keywords": "#Rainwater Harvesting #Permeable Pavements #Green Roofs #Climate Change #Water Security",
+    "climate_adaptation_title": "Climate Adaptation and Rational Use of Water in Buildings",
+    "climate_adaptation_subtitle": "",
+    "climate_adaptation_desc": "This research evaluates thermo-energetic performance and water and energy end-uses in residential, commercial, and public buildings in Brazil. Through computer simulations and material testing, it aims to establish design guidelines tailored to different Brazilian bioclimatic zones. The findings support the development of technical standards for sustainability, energy efficiency, and water conservation.",
+    "climate_adaptation_coordinator": "Enedir Ghisi",
+    "climate_adaptation_funding": "CNPq / Finep",
+    "climate_adaptation_period": "2004 - Present",
+    "climate_adaptation_keywords": "#Climate Adaptation #End-Use #Computer Simulation #Energy Efficiency",
+    "completed_1_title": "Thermal Comfort and User Behaviour in Shared Workspaces in a Subtropical Climate",
+    "completed_1_subtitle": "Human dimension of energy consumption and IoT monitoring",
+    "completed_1_desc": "The study evaluated the influence of the human dimension on energy consumption in hybrid-ventilated offices in a subtropical climate. Thermal comfort questionnaires and IoT devices were deployed to monitor user interactions with air conditioning, windows, and lighting. The collected data enabled the creation of computer simulation models that better reflect occupant behavior in shared corporate environments.",
+    "completed_1_coordinator": "Enedir Ghisi",
+    "completed_1_funding": "CNPq / CAPES",
+    "completed_1_period": "2019 - 2024",
+    "completed_1_keywords": "#Thermal Comfort #User Behaviour #IoT #Hybrid Ventilation",
+    "completed_2_title": "Thermal Comfort in Commercial Buildings with Hybrid Ventilation in a Subtropical Climate",
+    "completed_2_subtitle": "Experimental and subjective comfort evaluation methods",
+    "completed_2_desc": "The project developed a method to evaluate thermal comfort in commercial buildings alternating between natural ventilation and mechanical cooling. It performed microclimate measurements alongside perception questionnaires and experimental metabolism assessments. The research contributed to establishing thermal acceptability criteria and supporting national databases on hybrid-ventilated buildings.",
+    "completed_2_coordinator": "Enedir Ghisi",
+    "completed_2_funding": "CNPq",
+    "completed_2_period": "2015 - 2018",
+    "completed_2_keywords": "#Hybrid Ventilation #Thermal Comfort #Subtropical Climate #Commercial Buildings"
   },
   "roles": {
     "Pesquisadora": "Researcher",
@@ -323,6 +359,7 @@
     "Pesquisadora Mestranda": "Master's Student",
     "Mestrando": "Master's Student",
     "Mestranda": "Master's Student",
+    "Pesquisador Pós-Doc": "Postdoctoral Researcher",
     "Pesquisadora Pós-Doc": "Postdoctoral Researcher",
     "Pesquisador Colaborador": "Collaborating Researcher",
     "Pesquisadora Colaboradora": "Collaborating Researcher",
@@ -351,7 +388,7 @@
     "Programação": "Programming",
     "Arquitetura de Software": "Software Architecture",
     "Água": "Water Resources",
-    "Mudanças Climáticas": "Climate Change",
+    "Mudancas Climáticas": "Climate Change",
     "Drenagem": "Urban Drainage"
   },
   "universities": {
@@ -386,6 +423,14 @@
     "ufms": {
       "name": "Federal University of Mato Grosso do Sul (UFMS)",
       "dept": "Faculty of Engineering, Architecture and Urbanism, and Geography (FAENG)"
+    },
+    "ufrn": {
+      "name": "Federal University of Rio Grande do Norte (UFRN)",
+      "dept": "Department of Architecture"
+    },
+    "denmark": {
+      "name": "Denmark",
+      "dept": ""
     }
   },
   "tags": {
@@ -444,5 +489,12 @@
     "Usos-Finais": "End Uses",
     "Ventilacao": "Ventilation",
     "Vidros-E-Janelas": "Windows & Glazing"
+  },
+  "awards": {
+    "title": "Awards & Recognition",
+    "subtitle": "Recognitions and awards granted to researchers in our research group",
+    "count_label": "awards and recognitions",
+    "no_awards": "No awards registered.",
+    "view_source": "View source link"
   }
 }

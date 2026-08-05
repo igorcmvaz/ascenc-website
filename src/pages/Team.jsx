@@ -35,20 +35,28 @@ export default function Team() {
 
   const researchers = [
     {
-        "name": "Igor Catão Martins Vaz",
-        "role": "Doutorando",
-        "image": "./assets/team/igorcmvaz.png",
-        "orcid": "https://orcid.org/0000-0003-2433-223X",
-        "lattes": "http://lattes.cnpq.br/3846201039408286",
-        "researchgate": "https://www.researchgate.net/profile/Igor-Vaz-3"
-    },
-    {
         "name": "Aline Schaefer",
         "role": "Pesquisadora Pós-Doc",
         "image": "./assets/team/alineschaefer.png",
         "orcid": "https://orcid.org/0000-0001-8870-9863",
         "lattes": "http://lattes.cnpq.br/8826147751184750",
         "researchgate": "https://www.researchgate.net/profile/Aline-Schaefer"
+    },
+    {
+        "name": "Rafael Almeida Flores",
+        "role": "Pesquisador Pós-Doc",
+        "image": "./assets/team/rafaelflores.jpeg",
+        "orcid": "https://orcid.org/0000-0002-9374-1865",
+        "lattes": "https://lattes.cnpq.br/3476347525352024",
+        "researchgate": "https://www.researchgate.net/profile/Rafael-Flores-21?ev=prf_overview"
+    },
+    {
+        "name": "Igor Catão Martins Vaz",
+        "role": "Doutorando",
+        "image": "./assets/team/igorcmvaz.png",
+        "orcid": "https://orcid.org/0000-0003-2433-223X",
+        "lattes": "http://lattes.cnpq.br/3846201039408286",
+        "researchgate": "https://www.researchgate.net/profile/Igor-Vaz-3"
     },
     {
         "name": "Joelia Silva Cavalcante",
@@ -86,7 +94,11 @@ export default function Team() {
     },
     {
         "name": "Matheus Do Nascimento Martins",
-        "role": "Mestrando"
+        "role": "Mestrando",
+        "image": "./assets/team/matheusmartins.JPG",
+        "orcid": "https://orcid.org/0009-0007-5434-8693",
+        "lattes": "https://lattes.cnpq.br/8801886077639414",
+        "researchgate": "https://www.researchgate.net/profile/Matheus-Martins-57"
     },
     {
         "name": "Rita Carolina Aimi",
@@ -96,39 +108,697 @@ export default function Team() {
 
   const formerMembers = [
     {
-        "name": "Mirela Moreira Ribeiro",
-        "lattes": "http://lattes.cnpq.br/6997171456515468"
+        "name": "Andrea Teston",
+        "category": "Pós-Doutorado"
     },
     {
-        "name": "Deivis Luis Marinoski",
-        "lattes": "http://lattes.cnpq.br/3425265765339888"
+        "name": "Celimar Azambuja Teixeira",
+        "lattes": "http://lattes.cnpq.br/6702681725561460",
+        "category": "Pós-Doutorado"
+    },
+    {
+        "name": "Cláudia Donald Pereira",
+        "category": "Pós-Doutorado"
     },
     {
         "name": "Ricardo Forgiarini Rupp",
-        "lattes": "http://lattes.cnpq.br/0355666000210770"
+        "lattes": "http://lattes.cnpq.br/0355666000210770",
+        "category": "Pós-Doutorado"
     },
     {
-        "name": "Arthur Santos Silva",
-        "lattes": "http://lattes.cnpq.br/7017962493418481"
+        "name": "Taylana Piccinini Scolaro",
+        "lattes": "http://lattes.cnpq.br/7183244717269690",
+        "category": "Pós-Doutorado"
     },
     {
-        "name": "Abel Silva Vieira",
-        "lattes": "http://lattes.cnpq.br/6438763922605609"
-    },
-    {
-        "name": "Mateus Vinícius Bavaresco",
-        "lattes": "http://lattes.cnpq.br/1682595069602838"
+        "name": "Ana Kelly Marinoski Ribeiro",
+        "category": "Doutorado"
     },
     {
         "name": "Andrea Invidiata",
-        "lattes": "http://lattes.cnpq.br/0578767852356933"
+        "lattes": "http://lattes.cnpq.br/0578767852356933",
+        "category": "Doutorado"
     },
     {
-        "name": "Max Weeber"
+        "name": "Andreza Kalbusch",
+        "category": "Doutorado"
     },
     {
-        "name": "Rafael Almeida Flores",
-        "lattes": "http://lattes.cnpq.br/3476347525352024"
+        "name": "Arthur Santos Silva",
+        "lattes": "http://lattes.cnpq.br/7017962493418481",
+        "category": "Doutorado"
+    },
+    {
+        "name": "Bruna Faitão Balvedi",
+        "category": "Doutorado"
+    },
+    {
+        "name": "Bruna Just Meller",
+        "category": "Doutorado"
+    },
+    {
+        "name": "Deivis Luis Marinoski",
+        "lattes": "http://lattes.cnpq.br/3425265765339888",
+        "category": "Doutorado"
+    },
+    {
+        "name": "Diego Antônio Custódio",
+        "category": "Doutorado"
+    },
+    {
+        "name": "Igor Schnaider de Souza",
+        "category": "Doutorado"
+    },
+    {
+        "name": "Isabel Kroeff Braz",
+        "category": "Doutorado"
+    },
+    {
+        "name": "Lucas Niehuns Antunes",
+        "category": "Doutorado"
+    },
+    {
+        "name": "Luiz Solon Souza Barreto",
+        "category": "Doutorado"
+    },
+    {
+        "name": "Marina Ribeiro Viana",
+        "category": "Doutorado"
+    },
+    {
+        "name": "Mateus Vinícius Bavaresco",
+        "lattes": "http://lattes.cnpq.br/1682595069602838",
+        "category": "Doutorado"
+    },
+    {
+        "name": "Matheus Soares Geraldi",
+        "category": "Doutorado"
+    },
+    {
+        "name": "Talita Flores Dias",
+        "category": "Doutorado"
+    },
+    {
+        "name": "Thayane Lodete Bilésimo",
+        "category": "Doutorado"
+    },
+    {
+        "name": "Tânia Mara Sebben Oneda",
+        "category": "Doutorado"
+    },
+    {
+        "name": "Ulisses Munarim",
+        "category": "Doutorado"
+    },
+    {
+        "name": "Abel Silva Vieira",
+        "lattes": "http://lattes.cnpq.br/6438763922605609",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Aline Eloize Borgert",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Andrigo Demetrio da Silva",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Ariadne Marques de Mendonça",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Augusto Martins Marques",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Cláudia Morishita",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Douglas Ancelmo Freitas",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Eduardo Pierozan",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Eldenir Guedes Teodoro",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Epaminondas de Souza Lage",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Fabrícia de Oliveira Grando",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Greici Ramos",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Gustavo Coutinho Rosa",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Joana Anny Mafalda de Oliveira",
+        "category": "Mestrado"
+    },
+    {
+        "name": "José Francisco Campos Moreira",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Julia Beatriz Saugo Milani",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Juliana May Sangoi",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Jéssica Kuntz Maykot",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Kácia Henderson Barbosa",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Laiane Susan S. Almeida",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Lais de Bortoli Klein",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Laura Michelle Leite Ribeiro",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Leticia Dalpaz de Azevedo",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Luís Fernando Kidinho Araújo dos Santos",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Marcelo Dalmédico Ioris",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Marina Vasconcelos Santana",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Marlon Eduardo Rodrigues",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Mauricio Dias da Conceição Neto",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Max Weeber",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Roberta Jacoby Cureau",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Rodrigo Novais Istchuk",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Tiago Arent Longo",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Tiago Diehl de Souza",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Vinicius Luis Rocha",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Wagner Isidoro Simioni",
+        "category": "Mestrado"
+    },
+    {
+        "name": "Acácio Gomes Corrêa Silvestre",
+        "category": "Graduação"
+    },
+    {
+        "name": "Alef Pereira",
+        "category": "Graduação"
+    },
+    {
+        "name": "Alexandre Maestri",
+        "category": "Graduação"
+    },
+    {
+        "name": "Amanda Geraldo Andrighi",
+        "category": "Graduação"
+    },
+    {
+        "name": "Ana Gabriela S A Cardoso",
+        "category": "Graduação"
+    },
+    {
+        "name": "Ana Júlia Deffaci Deresz",
+        "category": "Graduação"
+    },
+    {
+        "name": "Ana Júlia Heisler de Oliveira",
+        "category": "Graduação"
+    },
+    {
+        "name": "Andreza Montibeller",
+        "category": "Graduação"
+    },
+    {
+        "name": "André Castellani Lopes",
+        "category": "Graduação"
+    },
+    {
+        "name": "André Neis Botelho",
+        "category": "Graduação"
+    },
+    {
+        "name": "Anna Luiza Schiefler Wallner",
+        "category": "Graduação"
+    },
+    {
+        "name": "Anthony Midori Fugi",
+        "category": "Graduação"
+    },
+    {
+        "name": "Beatriz Bayestorff Muller",
+        "category": "Graduação"
+    },
+    {
+        "name": "Bernardo Farias Asmus",
+        "category": "Graduação"
+    },
+    {
+        "name": "Bruno Ariosa de Souza",
+        "category": "Graduação"
+    },
+    {
+        "name": "Caio Morelli Figueroba",
+        "category": "Graduação"
+    },
+    {
+        "name": "Caio Wolf Klein",
+        "category": "Graduação"
+    },
+    {
+        "name": "Candi Citadini de Oliveira",
+        "category": "Graduação"
+    },
+    {
+        "name": "Carolina Cannella Peña",
+        "category": "Graduação"
+    },
+    {
+        "name": "Cecília Soares Faco",
+        "category": "Graduação"
+    },
+    {
+        "name": "Daniel Fabricio Ferreira",
+        "category": "Graduação"
+    },
+    {
+        "name": "Dario Menegasso Pires",
+        "category": "Graduação"
+    },
+    {
+        "name": "Davi da Fonseca Tavares",
+        "category": "Graduação"
+    },
+    {
+        "name": "David Junior Gonçalves da Silva",
+        "category": "Graduação"
+    },
+    {
+        "name": "Diego Bressan",
+        "category": "Graduação"
+    },
+    {
+        "name": "Douglas Gherardt Brecht",
+        "category": "Graduação"
+    },
+    {
+        "name": "Douglas Leandro Meincheim",
+        "category": "Graduação"
+    },
+    {
+        "name": "Douglas Vigarani Scalco",
+        "category": "Graduação"
+    },
+    {
+        "name": "Débora Casasola",
+        "category": "Graduação"
+    },
+    {
+        "name": "Eduardo Bald",
+        "category": "Graduação"
+    },
+    {
+        "name": "Eduardo Leite Souza",
+        "category": "Graduação"
+    },
+    {
+        "name": "Eric Serafim Franco",
+        "category": "Graduação"
+    },
+    {
+        "name": "Felipe Cidade Soares",
+        "category": "Graduação"
+    },
+    {
+        "name": "Felipe Martini",
+        "category": "Graduação"
+    },
+    {
+        "name": "Felipe Scotti Alves Tonin Simoni",
+        "category": "Graduação"
+    },
+    {
+        "name": "Fernanda Anselmo",
+        "category": "Graduação"
+    },
+    {
+        "name": "Gabriel Balparda Fasola",
+        "category": "Graduação"
+    },
+    {
+        "name": "Gabriel de Abreu Burgos Gonçalves",
+        "category": "Graduação"
+    },
+    {
+        "name": "Gabriel Marcon Coelho",
+        "category": "Graduação"
+    },
+    {
+        "name": "Gabriel Silveira da Silva",
+        "category": "Graduação"
+    },
+    {
+        "name": "Gabriel Testoni Schmidt",
+        "category": "Graduação"
+    },
+    {
+        "name": "Gabriela Hammes",
+        "category": "Graduação"
+    },
+    {
+        "name": "Gianfranco Longo",
+        "category": "Graduação"
+    },
+    {
+        "name": "Giovanna Kiehn Bertuzzi",
+        "category": "Graduação"
+    },
+    {
+        "name": "Gladson Hoffmann da Silva",
+        "category": "Graduação"
+    },
+    {
+        "name": "Graziella Mendez Cardoso Bridi",
+        "category": "Graduação"
+    },
+    {
+        "name": "Guilherme Gonçalves",
+        "category": "Graduação"
+    },
+    {
+        "name": "Gustavo Husadel Poyer",
+        "category": "Graduação"
+    },
+    {
+        "name": "Helen Berwanger",
+        "category": "Graduação"
+    },
+    {
+        "name": "Higino Ilson da Silva",
+        "category": "Graduação"
+    },
+    {
+        "name": "Isabela Warmling Bezerra",
+        "category": "Graduação"
+    },
+    {
+        "name": "Isabelle Melo de Souza",
+        "category": "Graduação"
+    },
+    {
+        "name": "Isabelle Yasmin Trombetta",
+        "category": "Graduação"
+    },
+    {
+        "name": "Isis Soares Pereira do Nascimento",
+        "category": "Graduação"
+    },
+    {
+        "name": "Jacqueline Alves Ramos",
+        "category": "Graduação"
+    },
+    {
+        "name": "Jailson Osni Godinho",
+        "category": "Graduação"
+    },
+    {
+        "name": "Jean Francesco Arsego",
+        "category": "Graduação"
+    },
+    {
+        "name": "João Lorenço Novaes Pessoa",
+        "category": "Graduação"
+    },
+    {
+        "name": "João Vítor Eccel",
+        "category": "Graduação"
+    },
+    {
+        "name": "Julia Rataichesck Fiates",
+        "category": "Graduação"
+    },
+    {
+        "name": "Julia Teresa Bruch",
+        "category": "Graduação"
+    },
+    {
+        "name": "Juliana Dutra Miranda",
+        "category": "Graduação"
+    },
+    {
+        "name": "Karla Albino Cardoso",
+        "category": "Graduação"
+    },
+    {
+        "name": "Leonardo Barbosa Pacheco",
+        "category": "Graduação"
+    },
+    {
+        "name": "Leonardo Mazzaferro",
+        "category": "Graduação"
+    },
+    {
+        "name": "Leticia Silveira Moy",
+        "category": "Graduação"
+    },
+    {
+        "name": "Lucas Born Passoni",
+        "category": "Graduação"
+    },
+    {
+        "name": "Lucas Carvalho Delowski",
+        "category": "Graduação"
+    },
+    {
+        "name": "Lúcio Costa Proença",
+        "category": "Graduação"
+    },
+    {
+        "name": "Marcel Vechi",
+        "category": "Graduação"
+    },
+    {
+        "name": "Marcela Nettuzzi Faorlin",
+        "category": "Graduação"
+    },
+    {
+        "name": "Marcelo Marcel Cordova",
+        "category": "Graduação"
+    },
+    {
+        "name": "Maria Amália Marcon",
+        "category": "Graduação"
+    },
+    {
+        "name": "Maria Clara Sampaio Rosa e Silva",
+        "category": "Graduação"
+    },
+    {
+        "name": "Maria Paula Silveira",
+        "category": "Graduação"
+    },
+    {
+        "name": "Mariana Minati de Pinho",
+        "category": "Graduação"
+    },
+    {
+        "name": "Marta Elisa Vettori Dalsenter",
+        "category": "Graduação"
+    },
+    {
+        "name": "Matheus de Cezaro Menegatti",
+        "category": "Graduação"
+    },
+    {
+        "name": "Matheus Rosado Vill",
+        "category": "Graduação"
+    },
+    {
+        "name": "Maurício Martini",
+        "category": "Graduação"
+    },
+    {
+        "name": "Mirela Moreira Ribeiro",
+        "lattes": "http://lattes.cnpq.br/6997171456515468",
+        "category": "Graduação"
+    },
+    {
+        "name": "Natália Castro de Oliveira",
+        "category": "Graduação"
+    },
+    {
+        "name": "Natália Mattos da Silva",
+        "category": "Graduação"
+    },
+    {
+        "name": "Natália Sens Fedrigo",
+        "category": "Graduação"
+    },
+    {
+        "name": "Osman Jose Reyes Alberto",
+        "category": "Graduação"
+    },
+    {
+        "name": "Pauline Cristiane Kammers",
+        "category": "Graduação"
+    },
+    {
+        "name": "Paulo Jorge Ramos",
+        "category": "Graduação"
+    },
+    {
+        "name": "Paulo Lucas",
+        "category": "Graduação"
+    },
+    {
+        "name": "Pedro Augusto Pinho Assi",
+        "category": "Graduação"
+    },
+    {
+        "name": "Pedro Schondermark",
+        "category": "Graduação"
+    },
+    {
+        "name": "Priscila Mei Minku",
+        "category": "Graduação"
+    },
+    {
+        "name": "Rachel Sarreta",
+        "category": "Graduação"
+    },
+    {
+        "name": "Rafael C de Oliveira",
+        "category": "Graduação"
+    },
+    {
+        "name": "Ramon Felipe Wasch Paes",
+        "category": "Graduação"
+    },
+    {
+        "name": "Renato B C Coelho",
+        "category": "Graduação"
+    },
+    {
+        "name": "Ricardo Danilo Rosa",
+        "category": "Graduação"
+    },
+    {
+        "name": "Ricardo Massignani",
+        "category": "Graduação"
+    },
+    {
+        "name": "Richard Williann Schmidt",
+        "category": "Graduação"
+    },
+    {
+        "name": "Roberto Holanda Campelo",
+        "category": "Graduação"
+    },
+    {
+        "name": "Sulayre Mengotti Oliveira",
+        "category": "Graduação"
+    },
+    {
+        "name": "Thaiane Cristina Stahnke Manorov",
+        "category": "Graduação"
+    },
+    {
+        "name": "Thiago Belotto",
+        "category": "Graduação"
+    },
+    {
+        "name": "Thiago Filippon Xavier",
+        "category": "Graduação"
+    },
+    {
+        "name": "Tiago Tamanini Junior",
+        "category": "Graduação"
+    },
+    {
+        "name": "Uther Zanin Baldissera",
+        "category": "Graduação"
+    },
+    {
+        "name": "Victor Corrêa Canto",
+        "category": "Graduação"
+    },
+    {
+        "name": "Vinicius Bubniak",
+        "category": "Graduação"
+    },
+    {
+        "name": "Vinicius Marcos Figueiredo",
+        "category": "Graduação"
+    },
+    {
+        "name": "Viviane Ciupka",
+        "category": "Graduação"
+    },
+    {
+        "name": "Vlademir Senger",
+        "category": "Graduação"
+    },
+    {
+        "name": "Yuri Triska",
+        "category": "Graduação"
+    },
+    {
+        "name": "Ícaro Rocha de Matos",
+        "category": "Graduação"
     }
 ];
 
@@ -195,31 +865,85 @@ export default function Team() {
             </div>
             <ChevronDown className="w-4.5 h-4.5 text-slate-500 transition-transform duration-300 group-open:rotate-180" />
           </summary>
-          <div className="p-3.5 pt-2 border-t border-slate-200 dark:border-slate-300">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
-              {formerMembers.map((member, index) => (
-                <div key={index} className="bg-white dark:bg-slate-100 px-2.5 py-1.5 rounded-lg border border-slate-300 flex items-center justify-between gap-1.5 shadow-2xs hover:border-emerald-400 transition-colors">
-                  <span className="font-bold text-slate-900 text-[11px] truncate" title={member.name}>{member.name}</span>
-                  {member.lattes ? (
-                    <a
-                      href={member.lattes}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="shrink-0"
-                      title="Lattes"
-                    >
-                      <img
-                        src="./assets/icons/lattes.png"
-                        alt="Lattes"
-                        className="w-4 h-4 hover:scale-110 transition-transform"
-                      />
-                    </a>
-                  ) : (
-                    <span className="text-[9px] text-slate-400 italic shrink-0">—</span>
-                  )}
+          <div className="p-4 pt-2 border-t border-slate-200 dark:border-slate-300 space-y-4">
+            {/* Pós-Doutorado */}
+            {formerMembers.some(m => m.category === "Pós-Doutorado") && (
+              <div>
+                <h3 className="text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-2">Pós-Doutores</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+                  {formerMembers.filter(m => m.category === "Pós-Doutorado").map((member, index) => (
+                    <div key={index} className="bg-white dark:bg-slate-100 px-2.5 py-1.5 rounded-lg border border-slate-300 flex items-center justify-between gap-1.5 shadow-2xs hover:border-emerald-400 transition-colors">
+                      <span className="font-bold text-slate-900 text-[11px] truncate" title={member.name}>{member.name}</span>
+                      {member.lattes ? (
+                        <a href={member.lattes} target="_blank" rel="noopener noreferrer" className="shrink-0" title="Lattes">
+                          <img src="./assets/icons/lattes.png" alt="Lattes" className="w-4 h-4 hover:scale-110 transition-transform" />
+                        </a>
+                      ) : <span className="text-[9px] text-slate-400 italic shrink-0">—</span>}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
+            
+            {/* Doutorado */}
+            {formerMembers.some(m => m.category === "Doutorado") && (
+              <div>
+                <h3 className="text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-2 mt-2">Doutores</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+                  {formerMembers.filter(m => m.category === "Doutorado").map((member, index) => (
+                    <div key={index} className="bg-white dark:bg-slate-100 px-2.5 py-1.5 rounded-lg border border-slate-300 flex items-center justify-between gap-1.5 shadow-2xs hover:border-emerald-400 transition-colors">
+                      <span className="font-bold text-slate-900 text-[11px] truncate" title={member.name}>{member.name}</span>
+                      {member.lattes ? (
+                        <a href={member.lattes} target="_blank" rel="noopener noreferrer" className="shrink-0" title="Lattes">
+                          <img src="./assets/icons/lattes.png" alt="Lattes" className="w-4 h-4 hover:scale-110 transition-transform" />
+                        </a>
+                      ) : <span className="text-[9px] text-slate-400 italic shrink-0">—</span>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Mestrado */}
+            {formerMembers.some(m => m.category === "Mestrado") && (
+              <div>
+                <h3 className="text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-2 mt-2">Mestres</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+                  {formerMembers.filter(m => m.category === "Mestrado").map((member, index) => (
+                    <div key={index} className="bg-white dark:bg-slate-100 px-2.5 py-1.5 rounded-lg border border-slate-300 flex items-center justify-between gap-1.5 shadow-2xs hover:border-emerald-400 transition-colors">
+                      <span className="font-bold text-slate-900 text-[11px] truncate" title={member.name}>{member.name}</span>
+                      {member.lattes ? (
+                        <a href={member.lattes} target="_blank" rel="noopener noreferrer" className="shrink-0" title="Lattes">
+                          <img src="./assets/icons/lattes.png" alt="Lattes" className="w-4 h-4 hover:scale-110 transition-transform" />
+                        </a>
+                      ) : <span className="text-[9px] text-slate-400 italic shrink-0">—</span>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Graduação e Iniciação Científica */}
+            {formerMembers.some(m => m.category === "Graduação") && (
+              <div>
+                <h3 className="text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-2 mt-2">Graduação e Iniciação Científica (TCC / PIBIC)</h3>
+                <div className="bg-white dark:bg-slate-100 p-3 rounded-lg border border-slate-300 shadow-2xs">
+                  <div className="text-slate-700 dark:text-slate-800 text-[11px] leading-relaxed">
+                    {formerMembers.filter(m => m.category === "Graduação").map((member, index, arr) => (
+                      <span key={index}>
+                        <span className="font-bold text-slate-900">{member.name}</span>
+                        {member.lattes && (
+                          <a href={member.lattes} target="_blank" rel="noopener noreferrer" className="inline-block align-middle ml-1" title="Lattes">
+                            <img src="./assets/icons/lattes.png" alt="Lattes" className="w-3 h-3 hover:scale-110 transition-transform" />
+                          </a>
+                        )}
+                        {index < arr.length - 1 ? ", " : ""}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </details>
       </div>
