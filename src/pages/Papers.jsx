@@ -561,6 +561,25 @@ export default function Papers() {
                 "Comportamento-Usuario",
                 "Habitacao-Interesse-Social"
             ]
+        },
+        {
+            "id": 12,
+            "authors": "DALPAZ, L.; ZAMPIER, P.; GHISI, E.",
+            "title": "Life cycle assessment of building envelope for social housing: Balancing embodied impacts and operational energy",
+            "details": "Energy and Buildings, v. 369, 118060, 2026",
+            "year": "2026",
+            "citations": "",
+            "doi": "https://doi.org/10.1016/j.enbuild.2026.118060",
+            "tags": [
+                "ACV",
+                "Habitacao-Interesse-Social",
+                "Envoltoria",
+                "Energia-embutida",
+                "Eficiencia-Energetica",
+                "Emissoes-Carbono",
+                "Residencial-Unifamiliar",
+                "Simulacao-Computacional"
+            ]
         }
     ],
     "2025": [
