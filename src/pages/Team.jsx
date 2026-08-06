@@ -103,6 +103,14 @@ export default function Team() {
     {
         "name": "Rita Carolina Aimi",
         "role": "Mestranda"
+    },
+    {
+        "name": "Vitória Vicente Coltri",
+        "role": "Mestranda",
+        "image": "./assets/team/vitoriacoltri.jpeg",
+        "orcid": "https://orcid.org/0009-0001-5724-9208",
+        "lattes": "http://lattes.cnpq.br/8663301891731042",
+        "researchgate": "https://www.researchgate.net/profile/Vitoria-Coltri?ev=hdr_xprf"
     }
 ];
 
