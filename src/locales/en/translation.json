@@ -1,6 +1,7 @@
 {
   "ges_header": {
     "home": "Home",
+    "about": "About",
     "projects": "Projects",
     "ascenc": "ASCENC",
     "team": "Team",
@@ -23,7 +24,32 @@
     "contact_card_desc": "Send your questions, suggestions, or collaboration proposals directly to our management team.",
     "netuno_card_desc": "Application to simulate rainwater harvesting systems for different tank volumes and rainfall conditions.",
     "access_button": "Access",
-    "axes_title": "Thematic Research Axes"
+    "axes_title": "Thematic Research Axes",
+    "featured_badge": "Featured New Manuscript",
+    "featured_journal": "Energy and Buildings (2026)",
+    "featured_title": "Life cycle environmental impacts of building envelope construction systems in social housing",
+    "featured_desc": "This study evaluates operational energy versus embodied environmental impacts of wall and roofing systems in Brazilian social housing through LCA. Findings reveal that light steel framing paired with a timber ceiling achieved the lowest global warming potential, highlighting the critical balance between material selection, thermal comfort, and embodied carbon.",
+    "featured_cta": "Check it out!",
+    "about_badge": "Research Group & Laboratory",
+    "coordinator_title": "General Coordination - Prof. Enedir Ghisi",
+    "coordinator_subtitle": "Full Professor at the Civil Engineering Department of UFSC & CNPq Research Productivity Fellow (Level 1A).",
+    "coordinator_desc": "Prof. Enedir Ghisi leads pioneering research focused on sustainability and resilience in the built environment. Our research encompasses water conservation and rational use in buildings, rainwater harvesting, energy efficiency, thermal performance, life cycle assessment (LCA), and building adaptation to climate change.",
+    "authors": "Authors:",
+    "civil_eng": "Civil Engineering",
+    "productivity": "Research Productivity",
+    "axes_count": "6+ Thematic Axes",
+    "publications": "Publications",
+    "coordinator_role": "Research Group Coordinator",
+    "scientific_leadership": "Scientific Leadership",
+    "tag_energy": "Energy Efficiency",
+    "tag_rainwater": "Rainwater Harvesting",
+    "tag_lca": "Life Cycle Assessment (LCA)",
+    "tag_thermal": "Thermal Comfort & Climate",
+    "lines_subtitle": "Integrated research fronts in the built environment:",
+    "banner_title": "Explore our publications and projects",
+    "banner_desc": "Access our full repository of scientific articles, interactive climate change panels, and computational tools.",
+    "view_papers": "View Papers",
+    "view_projects": "View Projects"
   },
   "ges_contact": {
     "title": "Contact - ASCENC",
@@ -38,7 +64,7 @@
     "contact": "Contact"
   },
   "footer": {
-    "rights": "© 2026 ASCENC (UFSC). All rights reserved."
+    "rights": "© 2026 Sustainable Environments Research Group (UFSC). All rights reserved."
   },
   "home": {
     "title": "Welcome to the ASCENC Project",

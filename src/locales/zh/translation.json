@@ -1,6 +1,7 @@
 {
   "ges_header": {
     "home": "首页",
+    "about": "关于",
     "projects": "研究项目",
     "ascenc": "ASCENC",
     "team": "团队",
@@ -22,8 +23,33 @@
     "contact_card_title": "联系我们",
     "contact_card_desc": "直接向我们的管理团队发送您提议的问题、建议或合作提案。",
     "netuno_card_desc": "通过雨水收集来估算节约饮用水的潜力。",
-    "access_button": "进入",
-    "axes_title": "主题研究轴"
+    "access_button": "访问",
+    "axes_title": "主要研究方向",
+    "featured_badge": "最新精选论文",
+    "featured_journal": "Energy and Buildings (2026)",
+    "featured_title": "Life cycle environmental impacts of building envelope construction systems in social housing",
+    "featured_desc": "本研究通过生命周期评价（LCA）评估了巴西保障性住房中建筑外围护结构系统的运行能耗与隐含环境影响。研究表明轻钢结构结合木天花板实现了最低的全球变暖潜值，强调了在热舒适度与隐含碳之间进行整体材料选择的重要性。",
+    "featured_cta": "Check it out!",
+    "about_badge": "研究小组与实验室",
+    "coordinator_title": "总协调人 - Enedir Ghisi 教授",
+    "coordinator_subtitle": "UFSC 土木工程系正教授 & CNPq 1A 级科研津贴学者。",
+    "coordinator_desc": "Enedir Ghisi 教授开创性地领导了关于建筑环境可持续性与韧性的研究。研究涵盖建筑节水与合理用水、雨水利用、建筑能效、热舒适度、生命周期评价（LCA）以及建筑对气候变化的适应。",
+    "authors": "作者:",
+    "civil_eng": "土木工程",
+    "productivity": "科研资助",
+    "axes_count": "6+ 主题轴",
+    "publications": "论文发表",
+    "coordinator_role": "研究小组协调员",
+    "scientific_leadership": "学术带头人",
+    "tag_energy": "建筑能效",
+    "tag_rainwater": "雨水收集",
+    "tag_lca": "生命周期评价 (LCA)",
+    "tag_thermal": "热舒适与气候",
+    "lines_subtitle": "建筑环境中的综合研究方向：",
+    "banner_title": "探索我们的论文与项目",
+    "banner_desc": "访问包含科研论文、互动气候面板和计算工具的完整资源库。",
+    "view_papers": "查看论文",
+    "view_projects": "查看项目"
   },
   "ges_contact": {
     "title": "联系我们 - 可持续环境管理研究小组",
@@ -38,7 +64,7 @@
     "contact": "联系我们"
   },
   "footer": {
-    "rights": "© 2026 ASCENC (UFSC)。保留所有权利。"
+    "rights": "© 2026 可持续环境研究小组 (UFSC). 保留所有权利。"
   },
   "home": {
     "title": "欢迎来到 ASCENC 项目",

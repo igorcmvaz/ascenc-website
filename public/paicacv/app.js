@@ -297,7 +297,9 @@ let currentPaicLang = 'pt';
 
 function changePaicLanguage(lang) {
     if (!lang || !PAIC_TRANSLATIONS[lang]) lang = 'pt';
+    if (currentPaicLang === lang && document.documentElement.getAttribute('data-paic-lang') === lang) return;
     currentPaicLang = lang;
+    document.documentElement.setAttribute('data-paic-lang', lang);
     const tDict = PAIC_TRANSLATIONS[lang];
     
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -2014,7 +2016,9 @@ window.addEventListener("DOMContentLoaded", () => {
         else if (parentLang.startsWith('zh')) code = 'zh';
         else if (parentLang.startsWith('en')) code = 'en';
         
-        changePaicLanguage(code);
+        if (currentPaicLang !== code) {
+            changePaicLanguage(code);
+        }
     };
 
     syncLanguage();
@@ -2032,8 +2036,11 @@ window.addEventListener("DOMContentLoaded", () => {
             if (window.parent && window.parent.document && window.parent.document.documentElement) {
                 const syncTheme = () => {
                     const isParentDark = window.parent.document.documentElement.classList.contains("dark");
-                    document.documentElement.setAttribute("data-theme", isParentDark ? "dark" : "light");
-                    recalculate();
+                    const targetTheme = isParentDark ? "dark" : "light";
+                    if (document.documentElement.getAttribute("data-theme") !== targetTheme) {
+                        document.documentElement.setAttribute("data-theme", targetTheme);
+                        recalculate();
+                    }
                 };
                 
                 // Sync initially

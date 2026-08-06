@@ -1,6 +1,7 @@
 {
   "ges_header": {
     "home": "Início",
+    "about": "Sobre",
     "projects": "Projetos",
     "ascenc": "ASCENC",
     "team": "Equipe",
@@ -23,7 +24,32 @@
     "contact_card_desc": "Envie suas dúvidas, sugestões ou propostas de colaboração para a nossa equipe de gestão.",
     "netuno_card_desc": "Aplicativo para simular sistemas de aproveitamento de água pluvial para diferentes volumes de reservatório e condições pluviométricas.",
     "access_button": "Acessar",
-    "axes_title": "Eixos Temáticos de Pesquisa"
+    "axes_title": "Eixos Temáticos de Pesquisa",
+    "featured_badge": "Novo Artigo em Destaque",
+    "featured_journal": "Energy and Buildings (2026)",
+    "featured_title": "Impactos ambientais no ciclo de vida de sistemas construtivos de envoltória em habitações de interesse social",
+    "featured_desc": "Este estudo avalia o balanço entre energia operacional e impactos ambientais incorporados em diferentes sistemas construtivos de habitações sociais no Brasil via ACV. Os resultados mostram que o light steel framing com forro de madeira obteve o menor potencial de aquecimento global, evidenciando a necessidade de seleção holística de materiais frente ao desempenho térmico.",
+    "featured_cta": "Check it out!",
+    "about_badge": "Grupo de Pesquisa & Laboratório",
+    "coordinator_title": "Coordenação Geral - Prof. Enedir Ghisi",
+    "coordinator_subtitle": "Professor Titular do Departamento de Engenharia Civil da UFSC & Bolsista de Produtividade em Pesquisa do CNPq (Nível 1A).",
+    "coordinator_desc": "O Prof. Enedir Ghisi lidera pesquisas pioneiras voltadas à sustentabilidade e resiliência no ambiente construído. Nossas investigações englobam a conservação e uso racional de água em edificações, aproveitamento de água de chuva, eficiência energética, desempenho térmico, avaliação do ciclo de vida (ACV) e adaptação de edifícios às mudanças climáticas.",
+    "authors": "Autores:",
+    "civil_eng": "Eng. Civil",
+    "productivity": "Produtividade",
+    "axes_count": "6+ Eixos Temáticos",
+    "publications": "Publicações",
+    "coordinator_role": "Coordenador do Grupo de Pesquisa",
+    "scientific_leadership": "Liderança Científica",
+    "tag_energy": "Eficiência Energética",
+    "tag_rainwater": "Água de Chuva",
+    "tag_lca": "Avaliação de Ciclo de Vida (ACV)",
+    "tag_thermal": "Conforto Térmico & Clima",
+    "lines_subtitle": "Frentes de investigação integradas no ambiente construído:",
+    "banner_title": "Explore nossas publicações e projetos",
+    "banner_desc": "Acesse o repositório completo com artigos científicos, painéis interativos e ferramentas computacionais.",
+    "view_papers": "Ver Artigos",
+    "view_projects": "Ver Projetos"
   },
   "ges_contact": {
     "title": "Contato - ASCENC",
@@ -38,7 +64,7 @@
     "contact": "Contato"
   },
   "footer": {
-    "rights": "© 2026 ASCENC (UFSC). Todos os direitos reservados."
+    "rights": "© 2026 Grupo de Pesquisa Espaço Sustentável (UFSC). Todos os direitos reservados."
   },
   "home": {
     "title": "Bem-vindo ao Projeto ASCENC",

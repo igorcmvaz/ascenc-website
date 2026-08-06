@@ -49,6 +49,7 @@ export default function Header() {
 
   const gesLinks = [
     { name: t("ges_header.home"),     path: "/" },
+    { name: t("ges_header.about"),    path: "/about" },
     { name: t("ges_header.projects"), path: "/projects" },
     { name: t("ges_header.papers"),   path: "/papers" },
     { name: t("ges_header.partners"), path: "/partners" },
@@ -92,25 +93,25 @@ export default function Header() {
         </Link>
 
         {/* ── Desktop nav ── */}
-        <nav className="hidden md:flex items-center gap-6 ml-auto">
+        <nav className="hidden md:flex items-center gap-2.5 lg:gap-3.5 xl:gap-4 ml-auto">
 
           {gesLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className="text-slate-800 dark:text-zinc-200 hover:text-emerald-700 dark:hover:text-emerald-400 transition font-semibold text-sm"
+              className="text-slate-800 dark:text-zinc-200 hover:text-emerald-700 dark:hover:text-emerald-400 transition font-semibold text-xs lg:text-sm px-1 py-1"
             >
               {link.name}
             </Link>
           ))}
 
           {/* Grouped interactive dropdowns and translations with tighter gap */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             {/* Netuno dropdown */}
             <div className="relative" ref={netunoDropdownRef}>
               <button
                 onClick={() => setNetunoOpen((v) => !v)}
-                className={`flex items-center gap-1.5 text-sm font-semibold px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer
+                className={`flex items-center gap-1 text-xs lg:text-sm font-semibold px-2.5 py-1 rounded-lg border transition-all duration-200 cursor-pointer
                   ${location.pathname.startsWith("/netuno") || netunoOpen
                     ? "bg-blue-50 dark:bg-blue-950/40 text-blue-800 dark:text-blue-300 border-blue-300/80 dark:border-blue-700/50"
                     : "text-blue-800 dark:text-blue-300 border-transparent hover:bg-blue-50/70 dark:hover:bg-blue-950/30"
@@ -152,7 +153,7 @@ export default function Header() {
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setAscencOpen((v) => !v)}
-                className={`flex items-center gap-1.5 text-sm font-semibold px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer
+                className={`flex items-center gap-1 text-xs lg:text-sm font-semibold px-2.5 py-1 rounded-lg border transition-all duration-200 cursor-pointer
                   ${isAscencActive || ascencOpen
                     ? "bg-emerald-100/60 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border-emerald-300/80 dark:border-emerald-800/60"
                     : "text-emerald-800 dark:text-emerald-400 border-transparent hover:bg-emerald-50 dark:hover:bg-emerald-950/30"
@@ -177,7 +178,7 @@ export default function Header() {
 
                   <div className="my-1.5 mx-3 border-t border-emerald-100 dark:border-zinc-700" />
                   <p className="px-4 pb-1 text-[10px] font-bold uppercase tracking-widest text-slate-700 dark:text-zinc-300">
-                    {t("header.tools", "Ferramentas")}
+                    {t("ges_header.ascenc_tools")}
                   </p>
 
                   {ascencTools.map((tool) =>
@@ -185,7 +186,7 @@ export default function Header() {
                       <Link
                         key={tool.name}
                         to={tool.path}
-                        className="flex items-center px-4 py-2 text-sm font-semibold text-slate-800 dark:text-zinc-200 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
+                        className="flex items-center px-4 py-1.5 text-sm font-semibold text-emerald-800 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-zinc-700 transition-colors"
                       >
                         {tool.name}
                       </Link>
@@ -206,14 +207,14 @@ export default function Header() {
             </div>
 
             {/* Lang + Theme */}
-            <div className="flex items-center gap-4 ml-1">
-              <div className="flex gap-2 items-center">
+            <div className="flex items-center gap-2 ml-1">
+              <div className="flex gap-1 items-center">
                 {langBtn("en", "EN")}
-                <span className="text-slate-300 dark:text-zinc-600">|</span>
+                <span className="text-slate-300 dark:text-zinc-600 text-xs">|</span>
                 {langBtn("pt-BR", "PT")}
-                <span className="text-slate-300 dark:text-zinc-600">|</span>
+                <span className="text-slate-300 dark:text-zinc-600 text-xs">|</span>
                 {langBtn("es", "ES")}
-                <span className="text-slate-300 dark:text-zinc-600">|</span>
+                <span className="text-slate-300 dark:text-zinc-600 text-xs">|</span>
                 {langBtn("zh", "CN")}
               </div>
               <ThemeSwitcher />

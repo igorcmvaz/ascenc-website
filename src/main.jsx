@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { HashRouter, Routes, Route } from "react-router-dom"; // Usando HashRouter
 import "./index.css";
 import GESHome from "./pages/GESHome";
+import GESAbout from "./pages/GESAbout";
 import GESContact from "./pages/GESContact";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -33,6 +34,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         {/* 🏢 Portal routes */}
         <Route path="/" element={<GESHome />} />
+        <Route path="/about" element={<GESAbout />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/awards" element={<Awards />} />
         <Route path="/team" element={<Team />} />
