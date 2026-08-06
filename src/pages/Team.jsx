@@ -59,6 +59,14 @@ export default function Team() {
         "researchgate": "https://www.researchgate.net/profile/Igor-Vaz-3"
     },
     {
+        "name": "Hedelvan Emerson Fardin",
+        "role": "Doutorando",
+        "image": "./assets/team/hedelvan.jpg",
+        "orcid": "https://orcid.org/0000-0001-5838-6733",
+        "lattes": "http://lattes.cnpq.br/1136405611229993",
+        "researchgate": "https://www.researchgate.net/profile/Hedelvan-Fardin?ev=hdr_xprf"
+    },
+    {
         "name": "Joelia Silva Cavalcante",
         "role": "Doutoranda",
         "email": "joeliacavalcante@gmail.com"
