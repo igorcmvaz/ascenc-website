@@ -124,7 +124,9 @@ if os.path.exists(colab_file):
         "utfpr": {"key": "utfpr", "name": "Universidade Tecnológica Federal do Paraná (UTFPR)", "img": "./assets/logos/UTFPR.png", "url": "https://www.utfpr.edu.br/"},
         "ufsc": {"key": "ufsc", "name": "Universidade Federal de Santa Catarina (UFSC)", "img": "./assets/logos/ufsc.png", "url": "https://ppgec.posgrad.ufsc.br/"},
         "ufsc-automacao": {"key": "ufsc-automacao", "name": "Universidade Federal de Santa Catarina (UFSC)", "img": "./assets/logos/ufsc.png", "url": "https://automacao.ufsc.br/"},
-        "ufms": {"key": "ufms", "name": "Universidade Federal de Mato Grosso do Sul (UFMS)", "img": "./assets/logos/UFMS.png", "url": "https://faeng.ufms.br/"}
+        "ufms": {"key": "ufms", "name": "Universidade Federal de Mato Grosso do Sul (UFMS)", "img": "./assets/logos/UFMS.png", "url": "https://faeng.ufms.br/"},
+        "ufrn": {"key": "ufrn", "name": "Universidade Federal do Rio Grande do Norte (UFRN)", "img": "./assets/logos/ufrn.png", "url": "https://ufrn.br/"},
+        "denmark": {"key": "denmark", "name": "Dinamarca", "img": "", "url": ""}
     }
 
     for row in ws.iter_rows(min_row=5, values_only=True):

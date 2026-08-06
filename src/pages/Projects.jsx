@@ -7,15 +7,22 @@ import initialProjectsData from "../data/projectsData.json";
 
 function ProjectCard({ proj, isOngoing, t }) {
   const [isDescExpanded, setIsDescExpanded] = useState(false);
+  const { i18n } = useTranslation();
 
-  const title = t(`projects.${proj.id}_title`);
-  const subtitle = t(`projects.${proj.id}_subtitle`);
-  const description = t(`projects.${proj.id}_desc`);
-  const rawKeywords = t(`projects.${proj.id}_keywords`);
-  const keywordsList = rawKeywords ? rawKeywords.split("#").map(k => k.trim()).filter(Boolean) : [];
-  const coordinator = t(`projects.${proj.id}_coordinator`);
-  const funding = t(`projects.${proj.id}_funding`);
-  const period = t(`projects.${proj.id}_period`);
+  const currentLang = i18n.language || "pt-BR";
+  let langSuffix = "_pt";
+  if (currentLang.startsWith("en")) langSuffix = "_en";
+  else if (currentLang.startsWith("es")) langSuffix = "_es";
+  else if (currentLang.startsWith("zh")) langSuffix = "_zh";
+
+  const title = proj[`titulo${langSuffix}`] || proj.titulo_pt;
+  const subtitle = proj[`subtitulo${langSuffix}`] || proj.subtitulo_pt;
+  const description = proj[`descricao${langSuffix}`] || proj.descricao_pt;
+  const rawKeywords = proj[`keywords${langSuffix}`] || proj.keywords_pt;
+  const keywordsList = rawKeywords ? rawKeywords.split(",").map(k => k.trim().replace(/^#/, '')).filter(Boolean) : [];
+  const coordinator = proj.coordenador;
+  const funding = proj.financiamento;
+  const period = proj.periodo;
 
   const borderClass = isOngoing
     ? "border-emerald-200 dark:border-slate-300"
@@ -40,7 +47,7 @@ function ProjectCard({ proj, isOngoing, t }) {
         </div>
 
         {/* Title & Subtitle Container */}
-        <div className="space-y-1.5">
+        <div className="space-y-1.5 min-h-[85px] md:min-h-[90px]">
           <h3 className="text-sm font-black text-slate-900 leading-snug group-hover:text-emerald-800 transition-colors">
             {title}
           </h3>

@@ -117,6 +117,42 @@ export default function Partners() {
             "img": "./assets/logos/UTFPR.png",
             "url": "https://www.utfpr.edu.br/"
         }
+    },
+    {
+        "name": "Ricardo Forgiarini Rupp",
+        "role": "Pesquisador Colaborador",
+        "image": "./assets/team/ricardorupp.jpeg",
+        "orcid": "https://orcid.org/0000-0002-8205-7259",
+        "lattes": "http://lattes.cnpq.br/0355666000210770",
+        "researchgate": "https://www.researchgate.net/profile/Ricardo-Rupp",
+        "areas": [
+            "Conforto-Termico",
+            "Comportamento-Usuario"
+        ],
+        "university": {
+            "key": "denmark",
+            "name": "Dinamarca",
+            "img": "",
+            "url": ""
+        }
+    },
+    {
+        "name": "Aldomar Pedrini",
+        "role": "Pesquisador Colaborador",
+        "image": "./assets/team/aldomarpedrini.jpg",
+        "orcid": "https://orcid.org/0000-0002-6607-2176",
+        "lattes": "http://lattes.cnpq.br/9012296636400514",
+        "researchgate": "https://www.researchgate.net/profile/Aldomar-Pedrini-2",
+        "areas": [
+            "Conforto-Termico",
+            "Simulacao-Computacional"
+        ],
+        "university": {
+            "key": "ufrn",
+            "name": "Universidade Federal do Rio Grande do Norte (UFRN)",
+            "img": "./assets/logos/ufrn.png",
+            "url": "https://ufrn.br/"
+        }
     }
 ];
 
