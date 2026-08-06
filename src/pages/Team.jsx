@@ -98,7 +98,11 @@ export default function Team() {
     },
     {
         "name": "Laryssa Bitencourt Anselmo",
-        "role": "Mestranda"
+        "role": "Mestranda",
+        "image": "./assets/team/laryssa.JPG",
+        "orcid": "https://orcid.org/0009-0005-6226-6482",
+        "lattes": "http://lattes.cnpq.br/1140397275052549",
+        "researchgate": "https://www.researchgate.net/profile/Laryssa-Bitencourt-Anselmo-2"
     },
     {
         "name": "João Pedro Gemelli Reali",
