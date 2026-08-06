@@ -90,7 +90,11 @@ export default function Team() {
     {
         "name": "Amanda Costa Ramos",
         "role": "Mestranda",
-        "email": "amanda.costa.arqeurb@gmail.com"
+        "email": "amanda.costa.arqeurb@gmail.com",
+        "image": "./assets/team/amandaramos.jpg",
+        "orcid": "https://orcid.org/0009-0003-4233-1916",
+        "lattes": "http://lattes.cnpq.br/7093081804402916",
+        "researchgate": "https://www.researchgate.net/profile/Amanda-Ramos-33?ev=hdr_xprf"
     },
     {
         "name": "Laryssa Bitencourt Anselmo",
@@ -98,7 +102,11 @@ export default function Team() {
     },
     {
         "name": "João Pedro Gemelli Reali",
-        "role": "Mestrando"
+        "role": "Mestrando",
+        "image": "./assets/team/joaoreali.png",
+        "orcid": "https://orcid.org/0009-0004-2894-3358",
+        "lattes": "http://lattes.cnpq.br/0417273364484908",
+        "researchgate": "https://www.researchgate.net/profile/Joao-Pedro-Gemelli-Reali?ev=hdr_xprf"
     },
     {
         "name": "Matheus Do Nascimento Martins",
@@ -110,7 +118,11 @@ export default function Team() {
     },
     {
         "name": "Rita Carolina Aimi",
-        "role": "Mestranda"
+        "role": "Mestranda",
+        "image": "./assets/team/ritaaimi.jpg",
+        "orcid": "https://orcid.org/0009-0006-2002-0529",
+        "lattes": "http://lattes.cnpq.br/6906714712146099",
+        "researchgate": "https://www.researchgate.net/profile/Rita-Aimi?ev=hdr_xprf"
     },
     {
         "name": "Vitória Vicente Coltri",
