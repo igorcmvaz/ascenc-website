@@ -178,7 +178,7 @@ export default function Header() {
 
                   <div className="my-1.5 mx-3 border-t border-emerald-100 dark:border-zinc-700" />
                   <p className="px-4 pb-1 text-[10px] font-bold uppercase tracking-widest text-slate-700 dark:text-zinc-300">
-                    {t("ges_header.ascenc_tools")}
+                    {t("ges_header.ascenc_tools", "Ferramentas ASCENC")}
                   </p>
 
                   {ascencTools.map((tool) =>

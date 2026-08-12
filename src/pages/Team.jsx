@@ -80,6 +80,14 @@ export default function Team() {
         "role": "Doutorando"
     },
     {
+        "name": "Maurício Tonial",
+        "role": "Doutorando",
+        "image": "./assets/team/mauriciotonial.jpeg",
+        "orcid": "https://orcid.org/0000-0001-8806-5586",
+        "lattes": "http://lattes.cnpq.br/2550386614107842",
+        "researchgate": "https://www.researchgate.net/profile/Mauricio-Tonial"
+    },
+    {
         "name": "Priscila Zampier",
         "role": "Mestranda",
         "image": "./assets/team/priscila.jpeg",
@@ -90,11 +98,11 @@ export default function Team() {
     {
         "name": "Amanda Costa Ramos",
         "role": "Mestranda",
-        "email": "amanda.costa.arqeurb@gmail.com",
         "image": "./assets/team/amandaramos.jpg",
         "orcid": "https://orcid.org/0009-0003-4233-1916",
         "lattes": "http://lattes.cnpq.br/7093081804402916",
-        "researchgate": "https://www.researchgate.net/profile/Amanda-Ramos-33?ev=hdr_xprf"
+        "researchgate": "https://www.researchgate.net/profile/Amanda-Ramos-33?ev=hdr_xprf",
+        "email": "amanda.costa.arqeurb@gmail.com"
     },
     {
         "name": "Laryssa Bitencourt Anselmo",
@@ -135,6 +143,12 @@ export default function Team() {
         "orcid": "https://orcid.org/0009-0001-5724-9208",
         "lattes": "http://lattes.cnpq.br/8663301891731042",
         "researchgate": "https://www.researchgate.net/profile/Vitoria-Coltri?ev=hdr_xprf"
+    },
+    {
+        "name": "Mariana Souto dos Anjos",
+        "role": "Mestranda",
+        "image": "./assets/team/marianaanjos.jpg",
+        "lattes": "http://lattes.cnpq.br/5374050645646016"
     }
 ];
 
