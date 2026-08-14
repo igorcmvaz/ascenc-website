@@ -80,26 +80,26 @@ export default function Header() {
 
   return (
     <header className="bg-white/95 dark:bg-[#161b18]/95 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-emerald-100 dark:border-[#2a3530] transition-colors duration-300">
-      <div className="w-full max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div className="w-full max-w-7xl mx-auto px-4 py-3 flex justify-between items-center gap-4">
 
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-2 group shrink-0 mr-2 lg:mr-4">
           <div className="p-1 bg-white rounded-xl shadow-sm border border-emerald-200 group-hover:scale-105 transition-transform duration-200 flex items-center justify-center w-9 h-9">
             <img src="./assets/logos/ufsc.png" alt="UFSC" className="w-7 h-7 object-contain" />
           </div>
-          <span className="font-extrabold text-base sm:text-lg tracking-tight bg-gradient-to-r from-emerald-800 via-emerald-700 to-teal-600 bg-clip-text text-transparent dark:from-emerald-400 dark:to-teal-300 transition-colors duration-300">
+          <span className="font-extrabold text-base sm:text-lg tracking-tight bg-gradient-to-r from-emerald-800 via-emerald-700 to-teal-600 bg-clip-text text-transparent dark:from-emerald-400 dark:to-teal-300 transition-colors duration-300 whitespace-nowrap">
             {t("ges_home.title")}
           </span>
         </Link>
 
         {/* ── Desktop nav ── */}
-        <nav className="hidden md:flex items-center gap-2.5 lg:gap-3.5 xl:gap-4 ml-auto">
+        <nav className="hidden md:flex items-center gap-1.5 md:gap-2 lg:gap-3 xl:gap-4 ml-auto">
 
           {gesLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className="text-slate-800 dark:text-zinc-200 hover:text-emerald-700 dark:hover:text-emerald-400 transition font-semibold text-xs lg:text-sm px-1 py-1"
+              className="text-slate-800 dark:text-zinc-200 hover:text-emerald-700 dark:hover:text-emerald-400 transition font-semibold text-xs lg:text-sm px-1 py-1 whitespace-nowrap"
             >
               {link.name}
             </Link>

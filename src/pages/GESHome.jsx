@@ -15,8 +15,7 @@ export default function GESHome() {
           
           <div className="max-w-6xl mx-auto px-4 text-center space-y-6 relative z-10">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100/90 dark:bg-emerald-950/60 text-emerald-900 dark:text-emerald-300 text-xs font-bold tracking-wider uppercase border border-emerald-300/60 dark:border-emerald-800/50 shadow-sm mt-2">
-              <img src="./assets/logos/ufsc.png" alt="UFSC" className="w-4 h-4 object-contain animate-pulse dark:hidden" />
-              <img src="./assets/logos/ufsc_escuro.png" alt="UFSC" className="w-4 h-4 object-contain animate-pulse hidden dark:block" />
+              <img src="./assets/logos/ufsc.png" alt="UFSC" className="w-4 h-4 object-contain animate-pulse" />
               <span>sustainability.ufsc.br</span>
             </div>
             
