@@ -1,0 +1,9 @@
+node_modules
+dist
+.git
+.github
+dados_site
+scripts
+*.md
+.vscode
+.idea

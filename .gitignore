@@ -23,9 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-# Docker & GitLab CI (Temporariamente desativados)
-Dockerfile
-docker-compose.yml
-.dockerignore
-.gitlab-ci.yml
-
