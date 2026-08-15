@@ -915,7 +915,7 @@ export default function Team() {
             {/* Pós-Doutorado */}
             {formerMembers.some(m => m.category === "Pós-Doutorado") && (
               <div>
-                <h3 className="text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-2">Pós-Doutores</h3>
+                <h3 className="text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-2">{t('team.former_postdocs')}</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
                   {formerMembers.filter(m => m.category === "Pós-Doutorado").map((member, index) => (
                     <div key={index} className="bg-white dark:bg-slate-100 px-2.5 py-1.5 rounded-lg border border-slate-300 flex items-center justify-between gap-1.5 shadow-2xs hover:border-emerald-400 transition-colors">
@@ -934,7 +934,7 @@ export default function Team() {
             {/* Doutorado */}
             {formerMembers.some(m => m.category === "Doutorado") && (
               <div>
-                <h3 className="text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-2 mt-2">Doutores</h3>
+                <h3 className="text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-2 mt-2">{t('team.former_phds')}</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
                   {formerMembers.filter(m => m.category === "Doutorado").map((member, index) => (
                     <div key={index} className="bg-white dark:bg-slate-100 px-2.5 py-1.5 rounded-lg border border-slate-300 flex items-center justify-between gap-1.5 shadow-2xs hover:border-emerald-400 transition-colors">
@@ -953,7 +953,7 @@ export default function Team() {
             {/* Mestrado */}
             {formerMembers.some(m => m.category === "Mestrado") && (
               <div>
-                <h3 className="text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-2 mt-2">Mestres</h3>
+                <h3 className="text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-2 mt-2">{t('team.former_masters')}</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
                   {formerMembers.filter(m => m.category === "Mestrado").map((member, index) => (
                     <div key={index} className="bg-white dark:bg-slate-100 px-2.5 py-1.5 rounded-lg border border-slate-300 flex items-center justify-between gap-1.5 shadow-2xs hover:border-emerald-400 transition-colors">
@@ -972,7 +972,7 @@ export default function Team() {
             {/* Graduação e Iniciação Científica */}
             {formerMembers.some(m => m.category === "Graduação") && (
               <div>
-                <h3 className="text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-2 mt-2">Graduação e Iniciação Científica (TCC / PIBIC)</h3>
+                <h3 className="text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-2 mt-2">{t('team.former_undergrads')}</h3>
                 <div className="bg-white dark:bg-slate-100 p-3 rounded-lg border border-slate-300 shadow-2xs">
                   <div className="text-slate-700 dark:text-slate-800 text-[11px] leading-relaxed">
                     {formerMembers.filter(m => m.category === "Graduação").map((member, index, arr) => (

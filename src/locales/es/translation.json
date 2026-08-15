@@ -127,7 +127,11 @@
     "phds": "Postdoctorados y Doctorandos",
     "graduates": "Maestrandos y Estudiantes de Grado",
     "no_graduates": "Nuevos miembros serán agregados pronto.",
-    "ex_members": "Ex-miembros"
+    "ex_members": "Ex-miembros",
+    "former_postdocs": "Posdoctorados",
+    "former_phds": "Doctores",
+    "former_masters": "Magísteres",
+    "former_undergrads": "Grado e Iniciación Científica (TCC / PIBIC)"
   },
   "papers": {
     "title": "Artículos Publicados",

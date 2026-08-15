@@ -59,7 +59,7 @@ export default function Header() {
   ];
 
   const ascencPages = [
-    { name: "Home",               path: "/ascenc" },
+    { name: t("header.home"),     path: "/ascenc" },
     { name: t("header.about"),    path: "/ascenc/about" },
     { name: t("header.tools"),    path: "/ascenc/tools" },
   ];

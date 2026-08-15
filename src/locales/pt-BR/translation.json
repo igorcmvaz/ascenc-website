@@ -57,7 +57,7 @@
     "description": "Utilize o formulário abaixo para enviar sua dúvida ou mensagem diretamente para nossa equipe."
   },
   "header": {
-    "home": "Home",
+    "home": "Início",
     "about": "Sobre",
     "papers": "Artigos",
     "tools": "Ferramentas",
@@ -127,7 +127,11 @@
     "phds": "Pós-doutores e Doutorandos",
     "graduates": "Mestrandos e Graduandos",
     "no_graduates": "Novos membros serão adicionados em breve.",
-    "ex_members": "Ex-membros"
+    "ex_members": "Ex-membros",
+    "former_postdocs": "Pós-Doutores",
+    "former_phds": "Doutores",
+    "former_masters": "Mestres",
+    "former_undergrads": "Graduação e Iniciação Científica (TCC / PIBIC)"
   },
   "papers": {
     "title": "Artigos Científicos",

@@ -127,7 +127,11 @@
     "phds": "Postdocs and PhD Students",
     "graduates": "Master's & Undergraduate Students",
     "no_graduates": "New members will be added soon.",
-    "ex_members": "Former Members"
+    "ex_members": "Former Members",
+    "former_postdocs": "Postdoctoral Researchers",
+    "former_phds": "PhD Graduates",
+    "former_masters": "Master's Graduates",
+    "former_undergrads": "Undergraduate & Scientific Initiation (BSc / PIBIC)"
   },
   "papers": {
     "title": "Published Papers",

@@ -127,7 +127,11 @@
     "phds": "博士后和博士生",
     "graduates": "硕士生和本科生",
     "no_graduates": "新成员即将加入。",
-    "ex_members": "前成员"
+    "ex_members": "前成员",
+    "former_postdocs": "博士后",
+    "former_phds": "博士",
+    "former_masters": "硕士",
+    "former_undergrads": "本科生与科研启蒙 (毕业设计 / PIBIC)"
   },
   "papers": {
     "title": "已发表论文",
