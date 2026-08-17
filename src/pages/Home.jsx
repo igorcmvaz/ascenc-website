@@ -19,7 +19,12 @@ export default function Home() {
           <img
             src="./assets/logos/ascenc.png" 
             alt="ASCENC"
-            className="max-w-lg md:max-w-xl w-full h-auto"
+            className="max-w-lg md:max-w-xl w-full h-auto dark:hidden"
+          />
+          <img
+            src="./assets/logos/ascenc_escuro.png" 
+            alt="ASCENC"
+            className="max-w-lg md:max-w-xl w-full h-auto hidden dark:block"
           />
         </div>
       </div>
