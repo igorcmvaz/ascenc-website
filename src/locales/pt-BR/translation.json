@@ -212,6 +212,8 @@
     "expand_all": "Expandir todos",
     "pub_singular": "publicação",
     "pub_plural": "publicações",
+    "year_count": "({{count}} {{unit}})",
+    "citations_count": "Citações: {{count}}",
     "chart_bar_title": "Produção por Ano (Artigos)",
     "filter_active": "Filtro ativo",
     "chart_bar_sub_filtered": "Fundo: Total | Destaque: Tema selecionado",
@@ -238,6 +240,7 @@
     "title": "Entre em Contato",
     "description": "Preencha o formulário abaixo para enviar sua dúvida ou sugestão.",
     "name": "Nome",
+    "email": "E-mail",
     "institution": "Instituição",
     "message": "Dúvida / Sugestão",
     "submit": "Enviar"
@@ -306,6 +309,8 @@
     "manual": "Manual do usuário",
     "support_files": "Arquivos de apoio",
     "setup": "Setup Netuno 4",
+    "downloads": "Downloads",
+    "download": "Download",
     "back": "Voltar",
     "legacy_title": "Versões Legadas (Excel)",
     "legacy_desc": "Eram versões iniciais em Excel para estudos anteriores a 2014, sendo essa versão depreciada a partir do lançamento do Netuno 4.",
@@ -373,7 +378,10 @@
     "completed_2_keywords": "#Ventilação Híbrida #Conforto Térmico #Clima Subtropical #Edifícios Comerciais"
   },
   "roles": {
+    "Professora": "Professora",
+    "Professor": "Professor",
     "Pesquisadora": "Pesquisadora",
+    "Pesquisador": "Pesquisador",
     "Pesquisador Doutorando": "Doutorando",
     "Pesquisadora Doutoranda": "Doutoranda",
     "Doutorando": "Doutorando",
@@ -420,8 +428,8 @@
       "dept": "Faculdade de Ciências e Tecnologia (FCTUC)"
     },
     "cura-lab": {
-      "name": "CURA Lab (ADAI / UC)",
-      "dept": "Laboratório de Pesquisa em Clima e Urbanismo (ADAI / UC)"
+      "name": "CURA Lab (ADAI)",
+      "dept": "Climate and Urban Resilience Assessment Lab"
     },
     "udesc": {
       "name": "Universidade do Estado de Santa Catarina (UDESC)",
@@ -452,8 +460,8 @@
       "dept": "Departamento de Arquitetura"
     },
     "denmark": {
-      "name": "Dinamarca",
-      "dept": ""
+      "name": "Universidade Técnica da Dinamarca (DTU)",
+      "dept": "International Centre for Indoor Environment and Energy"
     }
   },
   "tags": {

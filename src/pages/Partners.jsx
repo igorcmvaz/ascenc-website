@@ -131,9 +131,9 @@ export default function Partners() {
         ],
         "university": {
             "key": "denmark",
-            "name": "Dinamarca",
+            "name": "Technical University of Denmark (DTU)",
             "img": "",
-            "url": ""
+            "url": "https://www.dtu.dk/"
         }
     },
     {

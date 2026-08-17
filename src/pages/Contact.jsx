@@ -34,6 +34,22 @@ export default function Contact() {
 
           <div>
             <label
+              htmlFor="email"
+              className="block font-extrabold mb-1.5 text-slate-900"
+            >
+              {t("contact.email")}
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              className="w-full p-2.5 bg-white dark:bg-slate-100 border border-slate-300 text-slate-900 font-bold rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            />
+          </div>
+
+          <div>
+            <label
               htmlFor="institution"
               className="block font-extrabold mb-1.5 text-slate-900"
             >

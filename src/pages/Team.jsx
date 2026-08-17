@@ -25,7 +25,7 @@ export default function Team() {
     },
     {
         "name": "Liseane Padilha Thives",
-        "role": "Pesquisadora",
+        "role": "Professora",
         "image": "./assets/team/liseanepthives.jpeg",
         "orcid": "https://orcid.org/0000-0002-4782-2496",
         "lattes": "http://lattes.cnpq.br/3913788588121411",

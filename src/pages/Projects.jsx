@@ -24,6 +24,14 @@ function ProjectCard({ proj, isOngoing, t }) {
   const funding = proj.financiamento;
   const period = proj.periodo;
 
+  const formatPeriod = (p) => {
+    if (!p) return "";
+    if (currentLang.startsWith("zh")) {
+      return p.replace("Atual", "至今").replace("Present", "至今").replace(/(\d{4})\s*-\s*至今/, "$1 年至今");
+    }
+    return p;
+  };
+
   const borderClass = isOngoing
     ? "border-emerald-200 dark:border-slate-300"
     : "border-slate-300 dark:border-slate-300";
@@ -42,7 +50,7 @@ function ProjectCard({ proj, isOngoing, t }) {
           </span>
           <span className="text-xs font-bold text-slate-700 dark:text-slate-700 flex items-center gap-1">
             <Clock className={`w-3.5 h-3.5 ${isOngoing ? "text-emerald-700" : "text-slate-600"}`} />
-            {period}
+            {formatPeriod(period)}
           </span>
         </div>
 

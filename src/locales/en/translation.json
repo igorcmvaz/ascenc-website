@@ -212,6 +212,8 @@
     "expand_all": "Expand all",
     "pub_singular": "publication",
     "pub_plural": "publications",
+    "year_count": "({{count}} {{unit}})",
+    "citations_count": "Citations: {{count}}",
     "chart_bar_title": "Production by Year (Articles)",
     "filter_active": "Filter active",
     "chart_bar_sub_filtered": "Background: Total | Highlight: Selected topic",
@@ -238,6 +240,7 @@
     "title": "Contact",
     "description": "Fill out the form below to send your question or suggestion.",
     "name": "Name",
+    "email": "Email",
     "institution": "Institution",
     "message": "Question / Suggestion",
     "submit": "Submit"
@@ -312,8 +315,9 @@
     "team": "Team:",
     "team_members": "Prof. Enedir Ghisi<br />Marcelo Marcel Cordova, Eng.",
     "manual": "User manual",
-    "support_files": "Support files",
-    "setup": "Setup Netuno 4",
+     "setup": "Setup Netuno 4",
+    "downloads": "Downloads",
+    "download": "Download",
     "back": "Back",
     "legacy_title": "Legacy Versions (Excel)",
     "legacy_desc": "Initial Excel versions for studies prior to 2014, deprecated starting with the release of Netuno 4.",
@@ -381,7 +385,10 @@
     "completed_2_keywords": "#Hybrid Ventilation #Thermal Comfort #Subtropical Climate #Commercial Buildings"
   },
   "roles": {
+    "Professora": "Professor",
+    "Professor": "Professor",
     "Pesquisadora": "Researcher",
+    "Pesquisador": "Researcher",
     "Pesquisador Doutorando": "PhD Student",
     "Pesquisadora Doutoranda": "PhD Student",
     "Doutorando": "PhD Student",
@@ -419,7 +426,7 @@
     "Programação": "Programming",
     "Arquitetura de Software": "Software Architecture",
     "Água": "Water Resources",
-    "Mudancas Climáticas": "Climate Change",
+    "Mudanças Climáticas": "Climate Change",
     "Drenagem": "Urban Drainage"
   },
   "universities": {
@@ -428,8 +435,8 @@
       "dept": "Faculty of Sciences and Technology (FCTUC)"
     },
     "cura-lab": {
-      "name": "CURA Lab (ADAI / UC)",
-      "dept": "Climate and Urbanism Research Laboratory (ADAI / UC)"
+      "name": "CURA Lab (ADAI)",
+      "dept": "Climate and Urban Resilience Assessment Lab"
     },
     "udesc": {
       "name": "Santa Catarina State University (UDESC)",
@@ -460,8 +467,8 @@
       "dept": "Department of Architecture"
     },
     "denmark": {
-      "name": "Denmark",
-      "dept": ""
+      "name": "Technical University of Denmark (DTU)",
+      "dept": "International Centre for Indoor Environment and Energy"
     }
   },
   "tags": {

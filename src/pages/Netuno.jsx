@@ -28,7 +28,7 @@ export default function Netuno() {
         {/* 📥 DOWNLOADS SECTION */}
         <section className="space-y-6">
           <h2 className="text-2xl font-black text-slate-900 dark:text-zinc-100 tracking-tight">
-            Downloads
+            {t("netuno.downloads", "Downloads")}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -50,7 +50,7 @@ export default function Netuno() {
                 </p>
               </div>
               <div className="pt-6 flex items-center gap-1.5 text-xs font-black text-blue-800">
-                <span>Download</span>
+                <span>{t("netuno.download", "Download")}</span>
                 <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
               </div>
             </a>
@@ -73,7 +73,7 @@ export default function Netuno() {
                 </p>
               </div>
               <div className="pt-6 flex items-center gap-1.5 text-xs font-black text-cyan-800">
-                <span>Download</span>
+                <span>{t("netuno.download", "Download")}</span>
                 <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
               </div>
             </a>
@@ -96,7 +96,7 @@ export default function Netuno() {
                 </p>
               </div>
               <div className="pt-6 flex items-center gap-1.5 text-xs font-black text-indigo-800">
-                <span>Download</span>
+                <span>{t("netuno.download", "Download")}</span>
                 <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
               </div>
             </a>

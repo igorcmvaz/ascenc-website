@@ -3,8 +3,14 @@ import PageLayout from "../components/PageLayout";
 import { useTranslation } from "react-i18next";
 import { ArrowRight, BookOpen, ChevronDown, ChevronUp, Search } from "lucide-react";
 
-function parseCitation(paper) {
-  return { articleTitle: paper.title, pubInfo: paper.details };
+function parseCitation(paper, t) {
+  let pubInfo = paper.details;
+  if (pubInfo && t) {
+    pubInfo = pubInfo.replace(/Cita[çc][õo]es\s*:\s*(\d+)/gi, (match, count) => {
+      return t("papers.citations_count", { count, defaultValue: match });
+    });
+  }
+  return { articleTitle: paper.title, pubInfo };
 }
 
 function shortAuthors(authors) {
@@ -4039,7 +4045,10 @@ export default function Papers() {
                     <span className="w-2 h-5 bg-emerald-700 rounded-full inline-block shrink-0" />
                     <span className="text-lg font-black text-slate-900">{year}</span>
                     <span className="text-xs text-slate-800 ml-1 font-extrabold">
-                      ({papers.length} {papers.length === 1 ? t("papers.pub_singular", "publicação") : t("papers.pub_plural", "publicações")})
+                      {t("papers.year_count", "({{count}} {{unit}})", {
+                        count: papers.length,
+                        unit: papers.length === 1 ? t("papers.pub_singular", "publicação") : t("papers.pub_plural", "publicações")
+                      })}
                     </span>
                     <span className="ml-auto text-slate-800">
                       {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
@@ -4049,7 +4058,7 @@ export default function Papers() {
                   {isOpen && (
                     <div className="bg-white dark:bg-slate-50 px-3 py-2 divide-y divide-slate-200">
                       {papers.map((paper, idx) => {
-                        const { articleTitle, pubInfo } = parseCitation(paper);
+                        const { articleTitle, pubInfo } = parseCitation(paper, t);
                         const authors = shortAuthors(paper.authors);
                         return (
                           <div

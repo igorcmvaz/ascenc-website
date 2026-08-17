@@ -65,7 +65,6 @@ const SIDAC_EMISSIONS = {
 // ============================================================================
 // I18N DICTIONARY & LANGUAGE CONTROLLER
 // ============================================================================
-
 const PAIC_TRANSLATIONS = {
   pt: {
     tab_workspace: "Parâmetros",
@@ -121,7 +120,36 @@ const PAIC_TRANSLATIONS = {
     chart_lbl_pie_title: "Contribuição por Elemento (EN 16757)",
     chart_lbl_initial_emissions: "Emissão Inicial",
     chart_lbl_total_uptake: "Captura Total",
-    chart_lbl_net_balance: "Balanço Líquido"
+    chart_lbl_net_balance: "Balanço Líquido",
+    modal_cement_title: "Coeficientes por Tipo de Cimento (Possan)",
+    modal_cement_th_cement: "Cimento",
+    modal_mat_title: "Propriedades dos Materiais SIDAC",
+    modal_mat_th_mat: "Material",
+    modal_mat_th_fc: "fc (MPa)",
+    modal_mat_th_cement: "Cimento (kg/m³)",
+    modal_mat_th_lime: "Cal (kg/m³)",
+    modal_mat_th_type: "Tipo principal de cimento",
+    btn_restore_defaults: "Restaurar Padrões",
+    btn_cancel: "Cancelar",
+    btn_save: "Salvar",
+    modal_elem_title: "Parâmetros Avançados",
+    modal_elem_tab_comp: "Composição & Resistência",
+    modal_elem_tab_en: "Método EN 16757",
+    modal_elem_tab_possan: "Possan / Collins",
+    modal_elem_lbl_fc: "Resistência Compres. fc (MPa):",
+    modal_elem_lbl_cem_type: "Tipo de Cimento:",
+    modal_elem_lbl_cem_content: "Consumo de Cimento C (kg/m³):",
+    modal_elem_lbl_lime_content: "Consumo de Cal (kg/m³):",
+    modal_elem_chk_k: "Sobrescrever Taxa k (EN)",
+    modal_elem_chk_dc: "Sobrescrever Grau de Carbonatação Dc (%)",
+    modal_elem_chk_utcc: "Sobrescrever Fator Utcc (EN)",
+    modal_elem_possan_banner: "Valores Padrão da Classe de Exposição atual:",
+    modal_elem_lbl_kce: "Fator de exposição Possan kce =",
+    modal_elem_chk_kce: "Sobrescrever fator de exposição kce (Possan)",
+    modal_elem_ref_kce: "Referência kce (Possan):",
+    modal_elem_ref_ext_rain: "Externo desprotegido da chuva (kce = 0.65)",
+    modal_elem_ref_ext_shelt: "Externo protegido da chuva (kce = 1.00)",
+    modal_elem_ref_int_shelt: "Interno protegido da chuva (kce = 1.30)"
   },
   en: {
     tab_workspace: "Parameters",
@@ -177,7 +205,36 @@ const PAIC_TRANSLATIONS = {
     chart_lbl_pie_title: "Contribution by Element (EN 16757)",
     chart_lbl_initial_emissions: "Initial Emissions",
     chart_lbl_total_uptake: "Total Capture",
-    chart_lbl_net_balance: "Net Balance"
+    chart_lbl_net_balance: "Net Balance",
+    modal_cement_title: "Coefficients by Cement Type (Possan)",
+    modal_cement_th_cement: "Cement",
+    modal_mat_title: "SIDAC Materials Properties",
+    modal_mat_th_mat: "Material",
+    modal_mat_th_fc: "fc (MPa)",
+    modal_mat_th_cement: "Cement (kg/m³)",
+    modal_mat_th_lime: "Lime (kg/m³)",
+    modal_mat_th_type: "Main cement type",
+    btn_restore_defaults: "Restore Defaults",
+    btn_cancel: "Cancel",
+    btn_save: "Save",
+    modal_elem_title: "Advanced Parameters",
+    modal_elem_tab_comp: "Composition & Strength",
+    modal_elem_tab_en: "EN 16757 Method",
+    modal_elem_tab_possan: "Possan / Collins",
+    modal_elem_lbl_fc: "Compressive Strength fc (MPa):",
+    modal_elem_lbl_cem_type: "Cement Type:",
+    modal_elem_lbl_cem_content: "Cement Content C (kg/m³):",
+    modal_elem_lbl_lime_content: "Lime Content (kg/m³):",
+    modal_elem_chk_k: "Override Rate k (EN)",
+    modal_elem_chk_dc: "Override Carbonation Degree Dc (%)",
+    modal_elem_chk_utcc: "Override Utcc Factor (EN)",
+    modal_elem_possan_banner: "Default values for current exposure class:",
+    modal_elem_lbl_kce: "Possan exposure factor kce =",
+    modal_elem_chk_kce: "Override exposure factor kce (Possan)",
+    modal_elem_ref_kce: "Reference kce (Possan):",
+    modal_elem_ref_ext_rain: "Outdoor rain-exposed (kce = 0.65)",
+    modal_elem_ref_ext_shelt: "Outdoor rain-sheltered (kce = 1.00)",
+    modal_elem_ref_int_shelt: "Indoor rain-sheltered (kce = 1.30)"
   },
   es: {
     tab_workspace: "Parámetros",
@@ -233,7 +290,36 @@ const PAIC_TRANSLATIONS = {
     chart_lbl_pie_title: "Contribución por Elemento (EN 16757)",
     chart_lbl_initial_emissions: "Emisión Inicial",
     chart_lbl_total_uptake: "Captura Total",
-    chart_lbl_net_balance: "Balance Neto"
+    chart_lbl_net_balance: "Balance Neto",
+    modal_cement_title: "Coeficientes por Tipo de Cemento (Possan)",
+    modal_cement_th_cement: "Cemento",
+    modal_mat_title: "Propiedades de los Materiales SIDAC",
+    modal_mat_th_mat: "Material",
+    modal_mat_th_fc: "fc (MPa)",
+    modal_mat_th_cement: "Cemento (kg/m³)",
+    modal_mat_th_lime: "Cal (kg/m³)",
+    modal_mat_th_type: "Tipo principal de cemento",
+    btn_restore_defaults: "Restaurar Valores por Defecto",
+    btn_cancel: "Cancelar",
+    btn_save: "Guardar",
+    modal_elem_title: "Parámetros Avanzados",
+    modal_elem_tab_comp: "Composición y Resistencia",
+    modal_elem_tab_en: "Método EN 16757",
+    modal_elem_tab_possan: "Possan / Collins",
+    modal_elem_lbl_fc: "Resistencia a Compresión fc (MPa):",
+    modal_elem_lbl_cem_type: "Tipo de Cemento:",
+    modal_elem_lbl_cem_content: "Consumo de Cemento C (kg/m³):",
+    modal_elem_lbl_lime_content: "Consumo de Cal (kg/m³):",
+    modal_elem_chk_k: "Sobrescribir Tasa k (EN)",
+    modal_elem_chk_dc: "Sobrescribir Grado de Carbonatación Dc (%)",
+    modal_elem_chk_utcc: "Sobrescribir Factor Utcc (EN)",
+    modal_elem_possan_banner: "Valores por defecto para la clase de exposición actual:",
+    modal_elem_lbl_kce: "Factor de exposición Possan kce =",
+    modal_elem_chk_kce: "Sobrescribir factor de exposición kce (Possan)",
+    modal_elem_ref_kce: "Referencia kce (Possan):",
+    modal_elem_ref_ext_rain: "Exterior desprotegido de la lluvia (kce = 0.65)",
+    modal_elem_ref_ext_shelt: "Exterior protegido de la lluvia (kce = 1.00)",
+    modal_elem_ref_int_shelt: "Interior protegido de la lluvia (kce = 1.30)"
   },
   zh: {
     tab_workspace: "参数设置",
@@ -289,15 +375,361 @@ const PAIC_TRANSLATIONS = {
     chart_lbl_pie_title: "构件贡献占比 (EN 16757)",
     chart_lbl_initial_emissions: "初始排放",
     chart_lbl_total_uptake: "总捕集量",
-    chart_lbl_net_balance: "净排放"
+    chart_lbl_net_balance: "净排放",
+    modal_cement_title: "按水泥类型的碳化系数 (Possan)",
+    modal_cement_th_cement: "水泥类型",
+    modal_mat_title: "SIDAC 材料物理化学属性",
+    modal_mat_th_mat: "材料",
+    modal_mat_th_fc: "抗压强度 fc (MPa)",
+    modal_mat_th_cement: "水泥用量 (kg/m³)",
+    modal_mat_th_lime: "石灰用量 (kg/m³)",
+    modal_mat_th_type: "主要水泥类型",
+    btn_restore_defaults: "恢复默认值",
+    btn_cancel: "取消",
+    btn_save: "保存",
+    modal_elem_title: "高级参数设置",
+    modal_elem_tab_comp: "配合比与强度",
+    modal_elem_tab_en: "EN 16757 方法",
+    modal_elem_tab_possan: "Possan / Collins 模型",
+    modal_elem_lbl_fc: "抗压强度 fc (MPa):",
+    modal_elem_lbl_cem_type: "水泥类型:",
+    modal_elem_lbl_cem_content: "水泥用量 C (kg/m³):",
+    modal_elem_lbl_lime_content: "石灰用量 (kg/m³):",
+    modal_elem_chk_k: "自定义碳化速率 k (EN)",
+    modal_elem_chk_dc: "自定义碳化度 Dc (%)",
+    modal_elem_chk_utcc: "自定义理论最大吸收 Utcc (EN)",
+    modal_elem_possan_banner: "当前暴露等级默认参考值:",
+    modal_elem_lbl_kce: "Possan 暴露系数 kce =",
+    modal_elem_chk_kce: "自定义暴露系数 kce (Possan)",
+    modal_elem_ref_kce: "kce 参考基准 (Possan):",
+    modal_elem_ref_ext_rain: "室外淋雨暴露 (kce = 0.65)",
+    modal_elem_ref_ext_shelt: "室外避雨环境 (kce = 1.00)",
+    modal_elem_ref_int_shelt: "室内避雨环境 (kce = 1.30)"
   }
 };
+
+const MAT_TRANSLATIONS = {
+  pt: {
+    "Mortar (1:6)": "Argamassa (1:6)",
+    "Mortar (1:2:9)": "Argamassa (1:2:9)",
+    "Mortar (1:2:8)": "Argamassa (1:2:8)",
+    "Mortar (1:1:6)": "Argamassa (1:1:6)",
+    "Mortar (1:4)": "Argamassa (1:4)",
+    "Mortar (1:3)": "Argamassa (1:3)",
+    "Concrete 20Mpa": "Concreto 20 MPa",
+    "Concrete 25Mpa": "Concreto 25 MPa",
+    "Concrete 30Mpa": "Concreto 30 MPa",
+    "Concrete 35Mpa": "Concreto 35 MPa",
+    "Concrete 40Mpa": "Concreto 40 MPa",
+    "Lean concrete": "Concreto magro (15 MPa)",
+    "Customizado": "Personalizado"
+  },
+  en: {
+    "Mortar (1:6)": "Mortar (1:6)",
+    "Mortar (1:2:9)": "Mortar (1:2:9)",
+    "Mortar (1:2:8)": "Mortar (1:2:8)",
+    "Mortar (1:1:6)": "Mortar (1:1:6)",
+    "Mortar (1:4)": "Mortar (1:4)",
+    "Mortar (1:3)": "Mortar (1:3)",
+    "Concrete 20Mpa": "Concrete 20 MPa",
+    "Concrete 25Mpa": "Concrete 25 MPa",
+    "Concrete 30Mpa": "Concrete 30 MPa",
+    "Concrete 35Mpa": "Concrete 35 MPa",
+    "Concrete 40Mpa": "Concrete 40 MPa",
+    "Lean concrete": "Lean concrete (15 MPa)",
+    "Customizado": "Custom"
+  },
+  es: {
+    "Mortar (1:6)": "Mortero (1:6)",
+    "Mortar (1:2:9)": "Mortero (1:2:9)",
+    "Mortar (1:2:8)": "Mortero (1:2:8)",
+    "Mortar (1:1:6)": "Mortero (1:1:6)",
+    "Mortar (1:4)": "Mortero (1:4)",
+    "Mortar (1:3)": "Mortero (1:3)",
+    "Concrete 20Mpa": "Hormigón 20 MPa",
+    "Concrete 25Mpa": "Hormigón 25 MPa",
+    "Concrete 30Mpa": "Hormigón 30 MPa",
+    "Concrete 35Mpa": "Hormigón 35 MPa",
+    "Concrete 40Mpa": "Hormigón 40 MPa",
+    "Lean concrete": "Hormigón de limpieza (15 MPa)",
+    "Customizado": "Personalizado"
+  },
+  zh: {
+    "Mortar (1:6)": "砂浆 (1:6)",
+    "Mortar (1:2:9)": "砂浆 (1:2:9)",
+    "Mortar (1:2:8)": "砂浆 (1:2:8)",
+    "Mortar (1:1:6)": "砂浆 (1:1:6)",
+    "Mortar (1:4)": "砂浆 (1:4)",
+    "Mortar (1:3)": "砂浆 (1:3)",
+    "Concrete 20Mpa": "混凝土 20 MPa",
+    "Concrete 25Mpa": "混凝土 25 MPa",
+    "Concrete 30Mpa": "混凝土 30 MPa",
+    "Concrete 35Mpa": "混凝土 35 MPa",
+    "Concrete 40Mpa": "混凝土 40 MPa",
+    "Lean concrete": "垫层混凝土 (15 MPa)",
+    "Customizado": "自定义"
+  }
+};
+
+const EXPOSURE_TRANSLATIONS = {
+  pt: {
+    "Indoor with cover": "Interno com revestimento",
+    "Indoor without cover": "Interno sem revestimento",
+    "Outdoor sheltered": "Externo protegido da chuva",
+    "Outdoor rain exposed": "Externo exposto à chuva",
+    "In ground": "Em contato com o solo",
+    "Ambiente interno protegido da chuva": "Interno protegido da chuva",
+    "Ambiente externo protegido da chuva": "Externo protegido da chuva",
+    "Ambiente externo desprotegido da chuva": "Externo desprotegido da chuva"
+  },
+  en: {
+    "Indoor with cover": "Indoor with cover",
+    "Indoor without cover": "Indoor without cover",
+    "Outdoor sheltered": "Outdoor sheltered",
+    "Outdoor rain exposed": "Outdoor rain exposed",
+    "In ground": "In ground",
+    "Ambiente interno protegido da chuva": "Indoor rain-sheltered",
+    "Ambiente externo protegido da chuva": "Outdoor rain-sheltered",
+    "Ambiente externo desprotegido da chuva": "Outdoor rain-exposed"
+  },
+  es: {
+    "Indoor with cover": "Interior con revestimiento",
+    "Indoor without cover": "Interior sin revestimiento",
+    "Outdoor sheltered": "Exterior protegido de la lluvia",
+    "Outdoor rain exposed": "Exterior expuesto a la lluvia",
+    "In ground": "En contacto con el terreno",
+    "Ambiente interno protegido da chuva": "Interior protegido de la lluvia",
+    "Ambiente externo protegido da chuva": "Exterior protegido de la lluvia",
+    "Ambiente externo desprotegido da chuva": "Exterior desprotegido de la lluvia"
+  },
+  zh: {
+    "Indoor with cover": "室内有饰面层",
+    "Indoor without cover": "室内无饰面层",
+    "Outdoor sheltered": "室外避雨环境",
+    "Outdoor rain exposed": "室外淋雨暴露",
+    "In ground": "埋地 / 地下环境",
+    "Ambiente interno protegido da chuva": "室内避雨环境",
+    "Ambiente externo protegido da chuva": "室外避雨环境",
+    "Ambiente externo desprotegido da chuva": "室外淋雨暴露"
+  }
+};
+
+function getTranslatedMatName(mat) {
+  const lang = currentPaicLang || 'pt';
+  return (MAT_TRANSLATIONS[lang] && MAT_TRANSLATIONS[lang][mat]) || mat;
+}
+
+function getTranslatedExpName(exp) {
+  const lang = currentPaicLang || 'pt';
+  return (EXPOSURE_TRANSLATIONS[lang] && EXPOSURE_TRANSLATIONS[lang][exp]) || exp;
+}
+
+const GLOSSARY_DATA = {
+  pt: {
+    title: "Glossário de Variáveis e Parâmetros",
+    sec_time: "⏳ Parâmetros de Tempo e Vida Útil",
+    t_use: "<strong>T_uso (Tempo de Uso):</strong> <code>[Anos]</code> Período em que o elemento estrutural cimentício permanece exposto às condições operacionais (fase de uso da edificação) antes da demolição.",
+    t_eol: "<strong>T_eol (Horizonte Fim de Vida - EoL):</strong> <code>[Anos]</code> Período após a demolição e trituração do concreto, durante o qual os fragmentos secundários continuam expostos ao ar (tipicamente em aterro ou reciclagem base), permitindo uma absorção acelerada de CO₂ devido ao drástico aumento da área de superfície exposta.",
+    sec_env: "🌍 Condições Ambientais de Exposição",
+    co2: "<strong>CO₂ (Concentração de Dióxido de Carbono):</strong> <code>[ppm]</code> Representa o teor de carbono no ar ambiente. Níveis elevados aceleram a difusão do CO₂ nos poros capilares do concreto.",
+    ur: "<strong>UR (Umidade Relativa):</strong> <code>[%]</code> Umidade do ar local. A carbonatação atinge seu pico de eficiência cinética em níveis intermediários de umidade (geralmente entre 50-70%). Se muito seco, falta água para dissolver o CO₂ e iniciar a reação aquosa; se muito úmido, os poros bloqueados por água impedem a rápida difusão gasosa.",
+    exp_class: "<strong>Classe de Exposição (EN 16757):</strong> <code>[Categoria]</code> Classificação padrão que determina o quão exposta a estrutura de concreto está ao ambiente externo e a agentes agressivos (ex: interna, externa, coberta, exposta à chuva), o que influencia diretamente a velocidade da frente de carbonatação normatizada.",
+    sec_mat: "🧱 Propriedades dos Materiais (Físico-Químicas)",
+    fc: "<strong>fc (Resistência à Compressão):</strong> <code>[MPa]</code> Reflete indiretamente a densidade e o fator a/c da matriz cimentícia. Concretos de maior resistência geralmente apresentam menor porosidade permeável, o que retarda fortemente o avanço da frente de carbonatação.",
+    cement_lime: "<strong>Consumo de Cimento / Cal:</strong> <code>[kg/m³]</code> Massa de cimento Portland ou cal hidratada utilizada por metro cúbico de mistura estrutural. É a fonte primária dos hidróxidos de cálcio (Portlandita e C-S-H) que irão carbonatar.",
+    cao: "<strong>Fração CaO (Óxido de Cálcio):</strong> <code>[%]</code> Proporção mássica de cálcio reativo presente na composição química intrínseca do aglomerante. É a substância que efetivamente reage com o ácido carbônico para formar o carbonato de cálcio (CaCO₃) insolúvel.",
+    thick: "<strong>Espessura do Elemento:</strong> <code>[m]</code> Profundidade total do elemento. Essencial para o cálculo de volume total e para estabelecer o limite físico da carbonatação (quando a frente atinge o centro do elemento, ocorre a \"carbonatação total\").",
+    area: "<strong>Área de Exposição:</strong> <code>[m²]</code> Superfície do material exposta diretamente ao ar ambiente. Funciona como a janela de entrada gasosa primária para a captura de carbono.",
+    sec_en: "📊 Parâmetros do Método Europeu (EN 16757)",
+    k_en: "<strong>k (Taxa de Carbonatação EN):</strong> <code>[mm/ano<sup>0.5</sup>]</code> Coeficiente constante de difusão de CO₂ padronizado de forma simplificada pela norma europeia, estimado empiricamente com base na resistência (fc) e na classe de exposição da estrutura.",
+    dc_en: "<strong>Dc (Grau de Carbonatação da Norma):</strong> <code>[%]</code> Fator prescritivo de conversão estequiométrica adotado pela norma, indicando o limite máximo conservador de reatividade da matriz cimentícia para dadas condições.",
+    utcc: "<strong>Utcc (Maximum Theoretical Uptake):</strong> <code>[kg CO₂/kg Cimento]</code> Fração teórica máxima absoluta de dióxido de carbono que a composição do cimento poderia absorver se todos os seus compostos reativos (CaO e SO₃) fossem integralmente carbonatados ao longo de um tempo infinito.",
+    sec_pos: "📈 Modelo Paramétrico de Carbonatação (Possan / Collins)",
+    r_col: "<strong>r (Grau de Carbonatação de Collins):</strong> <code>[%]</code> Proporção efetiva e validada do CaO que realmente participa da reação ao longo do tempo, refinada de acordo com o tipo de cimento e mistura, oferecendo uma predição mais realista do que a métrica linear da norma.",
+    k_ce: "<strong>k_ce (Fator do Tipo de Cimento):</strong> <code>[Adim.]</code> Coeficiente que penaliza ou favorece a taxa de penetração dependendo do teor de adições minerais (como escória em CP III ou pozolana em CP IV), afetando a reserva alcalina natural da pasta.",
+    k_c: "<strong>k_c (Fator de Consumo):</strong> <code>[Adim.]</code> Avalia como a alta ou baixa disponibilidade de cimento por metro cúbico altera a barreira física à frente de carbonatação.",
+    k_fc: "<strong>k_fc (Fator de Resistência):</strong> <code>[Adim.]</code> Demonstra o amortecimento não-linear na velocidade de avanço do carbono imposto por concretos estruturais de alta performance.",
+    k_ad: "<strong>k_ad (Fator de Adições Ativas):</strong> <code>[Adim.]</code> Modela a interferência de adições cimentícias suplementares no consumo prévio da Portlandita pela reação pozolânica.",
+    k_co2: "<strong>k_co2 (Fator de Concentração):</strong> <code>[Adim.]</code> Coeficiente de aceleração que corrige a taxa difusiva baseada no aumento contínuo ou extremo do teor de CO₂ ambiente.",
+    k_ur: "<strong>k_ur (Fator Cinético de Umidade):</strong> <code>[Adim.]</code> Modificador estatístico que molda a \"curva de sino\" de reatividade aquosa (sendo baixa nos extremos e alta no meio), essencial para o progresso do gás nos capilares do material.",
+    sec_ref: "Referências Bibliográficas",
+    ref_en: "<strong>Norma EN 16757:</strong> Sustentabilidade das obras de construção — Declarações ambientais de produto — Regras de categoria de produto para concreto e elementos de concreto.",
+    ref_pos: "<strong>Tese de Possan:</strong> Metodologia para modelagem da carbonatação e estimativa da captura de CO₂ em concretos.",
+    ref_col: "<strong>Artigo de Collins:</strong> Avaliação do ciclo de vida de materiais cimentícios e considerações de EoL.",
+    btn_access: "Acessar"
+  },
+  en: {
+    title: "Glossary of Variables and Parameters",
+    sec_time: "⏳ Time and Service Life Parameters",
+    t_use: "<strong>T_use (Use Time):</strong> <code>[Years]</code> Period during which the cementitious structural element remains exposed to operational conditions (building use phase) before demolition.",
+    t_eol: "<strong>T_eol (End-of-Life Horizon - EoL):</strong> <code>[Years]</code> Period following demolition and crushing of concrete, during which secondary fragments remain exposed to air (typically in landfills or roadbase recycling), enabling accelerated CO₂ uptake due to the drastically increased exposed surface area.",
+    sec_env: "🌍 Environmental Exposure Conditions",
+    co2: "<strong>CO₂ (Carbon Dioxide Concentration):</strong> <code>[ppm]</code> Atmospheric carbon concentration. Elevated levels accelerate CO₂ diffusion through concrete capillary pores.",
+    ur: "<strong>RH (Relative Humidity):</strong> <code>[%]</code> Local air humidity. Carbonation reaches peak kinetic efficiency at intermediate humidity levels (typically 50–70%). If too dry, insufficient moisture is available to dissolve CO₂ and drive the aqueous reaction; if too wet, water-blocked pores hinder gaseous diffusion.",
+    exp_class: "<strong>Exposure Class (EN 16757):</strong> <code>[Category]</code> Standardized classification determining structural exposure to environmental aggressors (e.g., indoor, outdoor, sheltered, rain-exposed), directly governing the standardized carbonation front rate.",
+    sec_mat: "🧱 Material Properties (Physicochemical)",
+    fc: "<strong>fc (Compressive Strength):</strong> <code>[MPa]</code> Indirect indicator of cementitious matrix density and w/c ratio. Higher-strength concrete generally features lower permeable porosity, strongly dampening carbonation front progression.",
+    cement_lime: "<strong>Cement / Lime Content:</strong> <code>[kg/m³]</code> Mass of Portland cement or hydrated lime per cubic meter of mix. Primary source of calcium hydroxides (Portlandite and C-S-H) subject to carbonation.",
+    cao: "<strong>CaO Fraction (Calcium Oxide):</strong> <code>[%]</code> Mass proportion of reactive calcium in binder chemical composition. Substance reacting with carbonic acid to precipitate insoluble calcium carbonate (CaCO₃).",
+    thick: "<strong>Element Thickness:</strong> <code>[m]</code> Total element depth. Essential for total volume computation and defining physical carbonation limits (full carbonation when the front reaches the element centerline).",
+    area: "<strong>Exposure Area:</strong> <code>[m²]</code> Surface area directly exposed to ambient air, acting as the primary gaseous entry window for carbon capture.",
+    sec_en: "📊 European Method Parameters (EN 16757)",
+    k_en: "<strong>k (EN Carbonation Rate):</strong> <code>[mm/year<sup>0.5</sup>]</code> Simplified constant diffusion coefficient standardized by the European norm, empirically estimated from compressive strength (fc) and exposure class.",
+    dc_en: "<strong>Dc (Normative Carbonation Degree):</strong> <code>[%]</code> Prescriptive stoichiometric conversion factor adopted by the standard, defining conservative maximum reactivity limits under given conditions.",
+    utcc: "<strong>Utcc (Maximum Theoretical Uptake):</strong> <code>[kg CO₂/kg Cement]</code> Absolute theoretical maximum carbon dioxide that the binder composition could absorb if all reactive constituents (CaO and SO₃) were fully carbonated over infinite time.",
+    sec_pos: "📈 Parametric Carbonation Model (Possan / Collins)",
+    r_col: "<strong>r (Collins Carbonation Degree):</strong> <code>[%]</code> Validated effective proportion of CaO actively participating in the reaction over time, tailored to cement type and mix, providing realistic predictions beyond linear normative metrics.",
+    k_ce: "<strong>k_ce (Cement Type Factor):</strong> <code>[Dim.]</code> Coefficient adjusting penetration rate according to supplementary cementitious materials (e.g., slag in CP III or pozzolan in CP IV), modifying paste alkaline reserve.",
+    k_c: "<strong>k_c (Content Factor):</strong> <code>[Dim.]</code> Quantifies how cement availability per cubic meter modifies the physical resistance to the carbonation front.",
+    k_fc: "<strong>k_fc (Strength Factor):</strong> <code>[Dim.]</code> Models nonlinear damping of carbonation velocity provided by high-performance structural concretes.",
+    k_ad: "<strong>k_ad (Active Additions Factor):</strong> <code>[Dim.]</code> Accounts for supplementary cementitious material consumption of Portlandite via pozzolanic reactions.",
+    k_co2: "<strong>k_co2 (Concentration Factor):</strong> <code>[Dim.]</code> Acceleration factor correcting diffusive flux under elevated ambient CO₂ concentrations.",
+    k_ur: "<strong>k_ur (Kinetic Humidity Factor):</strong> <code>[Dim.]</code> Statistical modifier shaping the bell curve of moisture reactivity, capturing the essential humidity window for capillary gas diffusion.",
+    sec_ref: "Bibliographic References",
+    ref_en: "<strong>EN 16757 Standard:</strong> Sustainability of construction works — Environmental product declarations — Product Category Rules for concrete and concrete elements.",
+    ref_pos: "<strong>Possan Thesis:</strong> Methodology for carbonation modeling and CO₂ uptake estimation in concrete.",
+    ref_col: "<strong>Collins Article:</strong> Life cycle assessment of cementitious materials and end-of-life considerations.",
+    btn_access: "Access"
+  },
+  es: {
+    title: "Glosario de Variables y Parámetros",
+    sec_time: "⏳ Parámetros de Tiempo y Vida Útil",
+    t_use: "<strong>T_uso (Tiempo de Uso):</strong> <code>[Años]</code> Período en el que el elemento estructural cimenticio permanece expuesto a las condiciones operacionales (fase de uso de la edificación) antes de la demolición.",
+    t_eol: "<strong>T_eol (Horizonte Fin de Vida - EoL):</strong> <code>[Años]</code> Período posterior a la demolición y trituración del hormigón, durante el cual los fragmentos secundarios continúan expuestos al aire (típicamente en vertedero o reciclaje de base), permitiendo una absorción acelerada de CO₂ debido al drástico aumento del área de superficie expuesta.",
+    sec_env: "🌍 Condiciones Ambientales de Exposición",
+    co2: "<strong>CO₂ (Concentración de Dióxido de Carbono):</strong> <code>[ppm]</code> Representa el contenido de carbono en el aire ambiente. Niveles elevados aceleran la difusión del CO₂ en los poros capilares del hormigón.",
+    ur: "<strong>HR (Humedad Relativa):</strong> <code>[%]</code> Humedad del aire local. La carbonatación alcanza su pico de eficiencia cinética en niveles intermedios de humedad (generalmente entre 50-70%). Si es muy seco, falta agua para disolver el CO₂ y accionar la reacción acuosa; si es muy húmedo, los poros bloqueados por agua impiden la rápida difusión gaseosa.",
+    exp_class: "<strong>Clase de Exposición (EN 16757):</strong> <code>[Categoría]</code> Clasificación estándar que determina el grado de exposición de la estructura de hormigón al entorno exterior y a agentes agresivos (ej: interior, exterior, protegida, expuesta a la lluvia), lo que influye directamente en la velocidad del frente de carbonatación normativo.",
+    sec_mat: "🧱 Propiedades de los Materiales (Físico-Químicas)",
+    fc: "<strong>fc (Resistencia a Compresión):</strong> <code>[MPa]</code> Refleja indirectamente la densidad y la relación a/c de la matriz cementicia. Hormigones de mayor resistencia generalmente presentan menor porosidad permeable, lo que retarda fuertemente el avance del frente de carbonatación.",
+    cement_lime: "<strong>Consumo de Cemento / Cal:</strong> <code>[kg/m³]</code> Masa de cemento Portland o cal hidratada utilizada por metro cúbico de mezcla estructural. Es la fuente primaria de los hidróxidos de calcio (Portlandita y C-S-H) que van a carbonatar.",
+    cao: "<strong>Fracción CaO (Óxido de Calcio):</strong> <code>[%]</code> Proporción másica de calcio reactivo presente en la composición química intrínseca del aglomerante. Es la sustancia que efectivamente reacciona con el ácido carbónico para formar carbonato de calcio (CaCO₃) insoluble.",
+    thick: "<strong>Espesor del Elemento:</strong> <code>[m]</code> Profundidad total del elemento. Esencial para el cálculo del volumen total y para establecer el límite físico de la carbonatación (cuando el frente alcanza el centro del elemento, se produce la \"carbonatación total\").",
+    area: "<strong>Área de Exposición:</strong> <code>[m²]</code> Superficie del material expuesta directamente al aire ambiente. Funciona como la ventana primaria de entrada gaseosa para la captura de carbono.",
+    sec_en: "📊 Parámetros del Método Europeo (EN 16757)",
+    k_en: "<strong>k (Tasa de Carbonatación EN):</strong> <code>[mm/año<sup>0.5</sup>]</code> Coeficiente constante de difusión de CO₂ estandarizado de forma simplificada por la norma europea, estimado empíricamente en función de la resistencia (fc) y de la clase de exposición.",
+    dc_en: "<strong>Dc (Grado de Carbonatación Normativo):</strong> <code>[%]</code> Factor prescriptivo de conversión estequiométrica adoptado por la norma, indicando el límite máximo conservador de reactividad de la matriz cementicia para determinadas condiciones.",
+    utcc: "<strong>Utcc (Maximum Theoretical Uptake):</strong> <code>[kg CO₂/kg Cemento]</code> Fracción teórica máxima absoluta de dióxido de carbono que la composición del cemento podría absorber si todos sus compuestos reactivos (CaO y SO₃) fuesen completamente carbonatados a lo largo de un tiempo infinito.",
+    sec_pos: "📈 Modelo Paramétrico de Carbonatación (Possan / Collins)",
+    r_col: "<strong>r (Grado de Carbonatación de Collins):</strong> <code>[%]</code> Proporción efectiva y validada del CaO que realmente participa en la reacción a lo largo del tiempo, refinada según el tipo de cemento y dosificación, ofreciendo una predicción más realista que la métrica lineal normativa.",
+    k_ce: "<strong>k_ce (Factor del Tipo de Cemento):</strong> <code>[Adim.]</code> Coeficiente que penaliza o favorece la tasa de penetración según el contenido de adiciones minerales (como escoria en CP III o puzolana en CP IV), afectando la reserva alcalina natural de la pasta.",
+    k_c: "<strong>k_c (Factor de Consumo):</strong> <code>[Adim.]</code> Evalúa cómo la alta o baja disponibilidad de cemento por metro cúbico altera la barrera física al frente de carbonatación.",
+    k_fc: "<strong>k_fc (Factor de Resistencia):</strong> <code>[Adim.]</code> Modela la amortiguación no lineal en la velocidad de avance del carbono aportada por hormigones estructurales de alto desempeño.",
+    k_ad: "<strong>k_ad (Factor de Adiciones Activas):</strong> <code>[Adim.]</code> Modela la interferencia de adiciones cementicias suplementarias en el consumo previo de Portlandita mediante la reacción puzolánica.",
+    k_co2: "<strong>k_co2 (Factor de Concentración):</strong> <code>[Adim.]</code> Coeficiente de aceleración que corrige la tasa difusiva según el incremento continuo o extremo de CO₂ ambiente.",
+    k_ur: "<strong>k_ur (Factor Cinético de Humedad):</strong> <code>[Adim.]</code> Modificador estadístico que modela la \"curva de campana\" de reactividad acuosa, esencial para el progreso del gas en los capilares del material.",
+    sec_ref: "Referencias Bibliográficas",
+    ref_en: "<strong>Norma EN 16757:</strong> Sostenibilidad en obras de construcción — Declaraciones ambientales de producto — Reglas de categoría de producto para hormigón y elementos de hormigón.",
+    ref_pos: "<strong>Tesis de Possan:</strong> Metodología para el modelado de la carbonatación y estimación de la captura de CO₂ en hormigones.",
+    ref_col: "<strong>Artículo de Collins:</strong> Evaluación del ciclo de vida de materiales cementicios y consideraciones de EoL.",
+    btn_access: "Acceder"
+  },
+  zh: {
+    title: "变量与参数术语表",
+    sec_time: "⏳ 时间与使用寿命参数",
+    t_use: "<strong>T_use (使用时间):</strong> <code>[年]</code> 水泥基结构构件在拆除前暴露于运行工况（建筑使用阶段）的持续时间。",
+    t_eol: "<strong>T_eol (生命周期结束时间界限 - EoL):</strong> <code>[年]</code> 混凝土拆除并破碎后的时间段，在此期间次级颗粒持续暴露于空气中（通常用于填埋或再生路基），由于比表面积急剧增大而显著加速吸收 CO₂。",
+    sec_env: "🌍 环境暴露条件",
+    co2: "<strong>CO₂ (二氧化碳浓度):</strong> <code>[ppm]</code> 环境空气中的碳浓度。较高浓度会加速 CO₂ 在混凝土毛细孔隙中的扩散。",
+    ur: "<strong>RH (相对湿度):</strong> <code>[%]</code> 当地空气相对湿度。碳化动力学在中间湿度区间（通常 50–70%）达到最高效率。过干缺乏溶解 CO₂ 的液相水；过湿毛细孔被水充满阻碍气体扩散。",
+    exp_class: "<strong>暴露等级 (EN 16757):</strong> <code>[分类]</code> 评估混凝土结构所处环境与腐蚀程度的标准分类（如室内、室外、有遮蔽、雨淋暴露等），直接决定规范碳化前沿速度。",
+    sec_mat: "🧱 材料物理化学性能",
+    fc: "<strong>fc (抗压强度):</strong> <code>[MPa]</code> 间接反映水泥基质致密度与水灰比。高强混凝土孔隙率较低，能显著延缓碳化前沿推进。",
+    cement_lime: "<strong>水泥 / 石灰用量:</strong> <code>[kg/m³]</code> 每立方米混合料中硅酸盐水泥或熟石灰的质量，是参与碳化的氢氧化钙（氢氧钙石与 C-S-H 凝胶）的主要来源。",
+    cao: "<strong>CaO 比例 (氧化钙):</strong> <code>[%]</code> 胶凝材料内在化学成分中活性钙的质量比例，即与碳酸反应生成难溶碳酸钙（CaCO₃）的核心活性成分。",
+    thick: "<strong>构件厚度:</strong> <code>[m]</code> 构件全厚度。用于体积计算并确定物理碳化极限（前沿到达构件中心线即达到全碳化）。",
+    area: "<strong>暴露面积:</strong> <code>[m²]</code> 直接暴露于环境空气的材料表面积，是碳捕集的气体主要进入通道。",
+    sec_en: "📊 欧洲规范方法参数 (EN 16757)",
+    k_en: "<strong>k (EN 碳化速率):</strong> <code>[mm/年<sup>0.5</sup>]</code> 欧洲规范简化的恒定 CO₂ 扩散系数，根据抗压强度 (fc) 和暴露等级经验估算。",
+    dc_en: "<strong>Dc (规范碳化度):</strong> <code>[%]</code> 规范采用的化学计量转换系数，表示在特定条件下水泥基质的保守最大反应活性极限。",
+    utcc: "<strong>Utcc (理论最大吸收量):</strong> <code>[kg CO₂/kg 水泥]</code> 胶凝组分在无限时间内所有反应成分（CaO 和 SO₃）完全碳化时理论上能吸收的 CO₂ 绝对最大比例。",
+    sec_pos: "📈 碳化参数化模型 (Possan / Collins)",
+    r_col: "<strong>r (Collins 碳化度):</strong> <code>[%]</code> 随时间实际参与反应的有效 CaO 比例，依据水泥类型与配合比修正，相比规范线性指标更为精准真实。",
+    k_ce: "<strong>k_ce (水泥类型系数):</strong> <code>[无量纲]</code> 根据矿物掺合料含量（如矿渣 CP III 或火山灰 CP IV）调整渗透速率并影响浆体碱储备的系数。",
+    k_c: "<strong>k_c (水泥用量系数):</strong> <code>[无量纲]</code> 评估每立方米水泥用量对碳化前沿物理屏障的影响。",
+    k_fc: "<strong>k_fc (强度影响系数):</strong> <code>[无量纲]</code> 反映高性能结构混凝土对碳化推进速度的非线性阻滞效应。",
+    k_ad: "<strong>k_ad (活性掺合料系数):</strong> <code>[无量纲]</code> 模拟火山灰反应对氢氧钙石前期消耗对碳化的综合影响。",
+    k_co2: "<strong>k_co2 (CO₂ 浓度系数):</strong> <code>[无量纲]</code> 针对环境 CO₂ 浓度升高或极端工况修正扩散速率的加速系数。",
+    k_ur: "<strong>k_ur (湿度动力学系数):</strong> <code>[无量纲]</code> 刻画水相反应性“钟形曲线”的统计修正系数，反映孔隙气体扩散的关键湿度窗口。",
+    sec_ref: "参考文献",
+    ref_en: "<strong>EN 16757 标准:</strong> 建筑工程可持续性 — 环境产品声明 — 混凝土和混凝土构件的产品类别规则。",
+    ref_pos: "<strong>Possan 博士论文:</strong> 混凝土碳化建模及 CO₂ 捕集估算方法学。",
+    ref_col: "<strong>Collins 学术论文:</strong> 水泥基材料生命周期评价与生命周期结束阶段考量。",
+    btn_access: "查看文献"
+  }
+};
+
+function renderGlossary(lang) {
+  const container = document.getElementById("glossary_content_container");
+  if (!container) return;
+  const d = GLOSSARY_DATA[lang] || GLOSSARY_DATA.pt;
+
+  container.innerHTML = `
+    <h2 class="citation-title" style="margin-bottom: 25px; font-size: 1.6rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">${d.title}</h2>
+    
+    <div class="glossary-section" style="margin-bottom: 30px;">
+        <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">${d.sec_time}</h3>
+        <ul style="line-height: 1.7; color: var(--text-color); padding-left: 20px;">
+            <li>${d.t_use}</li>
+            <li>${d.t_eol}</li>
+        </ul>
+    </div>
+    
+    <div class="glossary-section" style="margin-bottom: 30px;">
+        <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">${d.sec_env}</h3>
+        <ul style="line-height: 1.7; color: var(--text-color); padding-left: 20px;">
+            <li>${d.co2}</li>
+            <li>${d.ur}</li>
+            <li>${d.exp_class}</li>
+        </ul>
+    </div>
+    
+    <div class="glossary-section" style="margin-bottom: 30px;">
+        <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">${d.sec_mat}</h3>
+        <ul style="line-height: 1.7; color: var(--text-color); padding-left: 20px;">
+            <li>${d.fc}</li>
+            <li>${d.cement_lime}</li>
+            <li>${d.cao}</li>
+            <li>${d.thick}</li>
+            <li>${d.area}</li>
+        </ul>
+    </div>
+    
+    <div class="glossary-section" style="margin-bottom: 30px;">
+        <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">${d.sec_en}</h3>
+        <ul style="line-height: 1.7; color: var(--text-color); padding-left: 20px;">
+            <li>${d.k_en}</li>
+            <li>${d.dc_en}</li>
+            <li>${d.utcc}</li>
+        </ul>
+    </div>
+    
+    <div class="glossary-section" style="margin-bottom: 40px;">
+        <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">${d.sec_pos}</h3>
+        <ul style="line-height: 1.7; color: var(--text-color); padding-left: 20px;">
+            <li>${d.r_col}</li>
+            <li>${d.k_ce}</li>
+            <li>${d.k_c}</li>
+            <li>${d.k_fc}</li>
+            <li>${d.k_ad}</li>
+            <li>${d.k_co2}</li>
+            <li>${d.k_ur}</li>
+        </ul>
+    </div>
+
+    <h2 class="citation-title" style="margin-bottom: 20px; font-size: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 30px;">${d.sec_ref}</h2>
+    <ul style="line-height: 1.8; color: var(--text-color); padding-left: 20px;">
+        <li>${d.ref_en} <a href="https://standards.iteh.ai/catalog/standards/cen/50f0d48d-b47c-4efd-8e44-80b114f50c63/pren-16757?srsltid=AfmBOoqwrlXpACXTBCXCeKqjBSIYdm227Q4qEXgA59tHSQNfe9fHoyiT" target="_blank" style="color: var(--primary); text-decoration: underline;">${d.btn_access}</a>.</li>
+        <li>${d.ref_pos} <a href="https://lume.ufrgs.br/handle/10183/28923" target="_blank" style="color: var(--primary); text-decoration: underline;">${d.btn_access}</a>.</li>
+        <li>${d.ref_col} <a href="https://link.springer.com/article/10.1007/s11367-010-0191-4" target="_blank" style="color: var(--primary); text-decoration: underline;">${d.btn_access}</a>.</li>
+    </ul>
+  `;
+}
 
 let currentPaicLang = 'pt';
 
 function changePaicLanguage(lang) {
     if (!lang || !PAIC_TRANSLATIONS[lang]) lang = 'pt';
-    if (currentPaicLang === lang && document.documentElement.getAttribute('data-paic-lang') === lang) return;
     currentPaicLang = lang;
     document.documentElement.setAttribute('data-paic-lang', lang);
     const tDict = PAIC_TRANSLATIONS[lang];
@@ -315,6 +747,9 @@ function changePaicLanguage(lang) {
     }
     
     localStorage.setItem('paicacv_lang', lang);
+    
+    renderGlossary(lang);
+    renderElementTable();
     
     if (typeof recalculate === 'function' && elements.length > 0) {
         recalculate();
@@ -1093,14 +1528,14 @@ function renderElementTable() {
         Object.keys(materialProps).forEach(matName => {
             const opt = document.createElement("option");
             opt.value = matName;
-            opt.innerText = matName;
+            opt.innerText = getTranslatedMatName(matName);
             if (elem.material_name === matName) opt.selected = true;
             matSelect.appendChild(opt);
         });
         
         const optCust = document.createElement("option");
         optCust.value = "Customizado";
-        optCust.innerText = "Customizado";
+        optCust.innerText = getTranslatedMatName("Customizado");
         if (elem.material_name === "Customizado") optCust.selected = true;
         matSelect.appendChild(optCust);
         
@@ -1125,19 +1560,19 @@ function renderElementTable() {
                 <div class="exposure-row">
                     <span>EN:</span>
                     <select class="form-control" onchange="updateElemField(${idx}, 'exposure_class_en', this.value)">
-                        <option value="Indoor with cover" ${elem.exposure_class_en === 'Indoor with cover' ? 'selected' : ''}>Indoor with cover</option>
-                        <option value="Indoor without cover" ${elem.exposure_class_en === 'Indoor without cover' ? 'selected' : ''}>Indoor without cover</option>
-                        <option value="Outdoor sheltered" ${elem.exposure_class_en === 'Outdoor sheltered' ? 'selected' : ''}>Outdoor sheltered</option>
-                        <option value="Outdoor rain exposed" ${elem.exposure_class_en === 'Outdoor rain exposed' ? 'selected' : ''}>Outdoor rain exposed</option>
-                        <option value="In ground" ${elem.exposure_class_en === 'In ground' ? 'selected' : ''}>In ground</option>
+                        <option value="Indoor with cover" ${elem.exposure_class_en === 'Indoor with cover' ? 'selected' : ''}>${getTranslatedExpName('Indoor with cover')}</option>
+                        <option value="Indoor without cover" ${elem.exposure_class_en === 'Indoor without cover' ? 'selected' : ''}>${getTranslatedExpName('Indoor without cover')}</option>
+                        <option value="Outdoor sheltered" ${elem.exposure_class_en === 'Outdoor sheltered' ? 'selected' : ''}>${getTranslatedExpName('Outdoor sheltered')}</option>
+                        <option value="Outdoor rain exposed" ${elem.exposure_class_en === 'Outdoor rain exposed' ? 'selected' : ''}>${getTranslatedExpName('Outdoor rain exposed')}</option>
+                        <option value="In ground" ${elem.exposure_class_en === 'In ground' ? 'selected' : ''}>${getTranslatedExpName('In ground')}</option>
                     </select>
                 </div>
                 <div class="exposure-row">
                     <span>Possan:</span>
                     <select class="form-control" onchange="updateElemField(${idx}, 'exposure_class_possan', this.value)">
-                        <option value="Ambiente interno protegido da chuva" ${elem.exposure_class_possan === 'Ambiente interno protegido da chuva' ? 'selected' : ''}>Ambiente interno protegido da chuva</option>
-                        <option value="Ambiente externo protegido da chuva" ${elem.exposure_class_possan === 'Ambiente externo protegido da chuva' ? 'selected' : ''}>Ambiente externo protegido da chuva</option>
-                        <option value="Ambiente externo desprotegido da chuva" ${elem.exposure_class_possan === 'Ambiente externo desprotegido da chuva' ? 'selected' : ''}>Ambiente externo desprotegido da chuva</option>
+                        <option value="Ambiente interno protegido da chuva" ${elem.exposure_class_possan === 'Ambiente interno protegido da chuva' ? 'selected' : ''}>${getTranslatedExpName('Ambiente interno protegido da chuva')}</option>
+                        <option value="Ambiente externo protegido da chuva" ${elem.exposure_class_possan === 'Ambiente externo protegido da chuva' ? 'selected' : ''}>${getTranslatedExpName('Ambiente externo protegido da chuva')}</option>
+                        <option value="Ambiente externo desprotegido da chuva" ${elem.exposure_class_possan === 'Ambiente externo desprotegido da chuva' ? 'selected' : ''}>${getTranslatedExpName('Ambiente externo desprotegido da chuva')}</option>
                     </select>
                 </div>
             </div>
@@ -1222,7 +1657,7 @@ function openMaterialModal() {
         selectHtml += `</select>`;
         
         row.innerHTML = `
-            <span style="font-weight: 600; font-size: 0.8rem;">${matName}</span>
+            <span style="font-weight: 600; font-size: 0.8rem;">${getTranslatedMatName(matName)}</span>
             <input type="number" step="0.01" class="form-control text-center" data-mat="${matName}" data-prop="fc" value="${props.fc.toFixed(2)}">
             <input type="number" step="0.01" class="form-control text-center" data-mat="${matName}" data-prop="cement" value="${props.cement.toFixed(2)}">
             <input type="number" step="0.01" class="form-control text-center" data-mat="${matName}" data-prop="lime" value="${props.lime.toFixed(2)}">

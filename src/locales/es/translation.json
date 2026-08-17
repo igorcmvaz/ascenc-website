@@ -212,6 +212,8 @@
     "expand_all": "Expandir todos",
     "pub_singular": "publicación",
     "pub_plural": "publicaciones",
+    "year_count": "({{count}} {{unit}})",
+    "citations_count": "Citas: {{count}}",
     "chart_bar_title": "Producción por Año (Artículos)",
     "filter_active": "Filtro activo",
     "chart_bar_sub_filtered": "Fondo: Total | Destacado: Tema seleccionado",
@@ -238,6 +240,7 @@
     "title": "Contacto",
     "description": "Rellena el formulario a continuación para enviar tu duda o sugerencia.",
     "name": "Nombre",
+    "email": "Correo electrónico",
     "institution": "Institución",
     "message": "Duda / Sugerencia",
     "submit": "Enviar"
@@ -306,6 +309,8 @@
     "manual": "Manual del usuario",
     "support_files": "Archivos de apoyo",
     "setup": "Setup Netuno 4",
+    "downloads": "Descargas",
+    "download": "Descargar",
     "back": "Volver",
     "legacy_title": "Versiones Legadas (Excel)",
     "legacy_desc": "Versiones iniciales en Excel para estudios anteriores a 2014, siendo estas versiones obsoletas a partir del lanzamiento de Netuno 4.",
@@ -373,7 +378,10 @@
     "completed_2_keywords": "#Ventilación Híbrida #Confort Térmico #Clima Subtropical #Edificios Comerciales"
   },
   "roles": {
+    "Professora": "Profesora",
+    "Professor": "Profesor",
     "Pesquisadora": "Investigadora",
+    "Pesquisador": "Investigador",
     "Pesquisador Doutorando": "Estudiante de Doctorado",
     "Pesquisadora Doutoranda": "Estudiante de Doctorado",
     "Doutorando": "Estudiante de Doctorado",
@@ -406,7 +414,7 @@
     "Eficiência Energética": "Eficiencia Energética",
     "Água da Chuva": "Agua de Lluvia",
     "Hidrologia": "Hidrología",
-    "Hidráulica": "Hidráulica",
+    "Hidráulica": "Hydráulica",
     "Análise de Qualidade": "Análisis de Calidad",
     "Programação": "Programación",
     "Arquitetura de Software": "Arquitectura de Software",
@@ -420,8 +428,8 @@
       "dept": "Facultad de Ciencias y Tecnología (FCTUC)"
     },
     "cura-lab": {
-      "name": "CURA Lab (ADAI / UC)",
-      "dept": "Laboratorio de Investigación en Clima y Urbanismo (ADAI / UC)"
+      "name": "CURA Lab (ADAI)",
+      "dept": "Climate and Urban Resilience Assessment Lab"
     },
     "udesc": {
       "name": "Universidad del Estado de Santa Catarina (UDESC)",
@@ -452,8 +460,8 @@
       "dept": "Departamento de Arquitectura"
     },
     "denmark": {
-      "name": "Dinamarca",
-      "dept": ""
+      "name": "Universidad Técnica de Dinamarca (DTU)",
+      "dept": "Centro Internacional para el Ambiente Interior y la Energía"
     }
   },
   "tags": {

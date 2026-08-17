@@ -15,7 +15,7 @@ export default function TeamMemberCard({ image, name, role, orcid, researchgate,
         </div>
       )}
       <div className="flex-1 min-w-0">
-        <h5 className="text-xs sm:text-[13px] font-extrabold text-slate-900 truncate leading-tight" title={name}>{name}</h5>
+        <h5 className="text-xs sm:text-[13px] font-extrabold text-slate-900 line-clamp-2 leading-tight break-words" title={name}>{name}</h5>
         <p className="text-slate-600 text-[10px] sm:text-[11px] font-semibold mt-0 mb-1 truncate">{role}</p>
         
         {/* Links */}
