@@ -475,7 +475,9 @@ export default function Papers() {
             "doi": "http://dx.doi.org/10.1016/j.scitotenv.2026.181801",
             "tags": [
                 "Pavimento-Permeavel",
-                "CCV"
+                "CCV",
+                "Aproveitamento-agua-chuva",
+                "Agua-Pluvial"
             ]
         },
         {
@@ -586,11 +588,28 @@ export default function Papers() {
                 "Residencial-Unifamiliar",
                 "Simulacao-Computacional"
             ]
+        },
+        {
+            "id": 13,
+            "authors": "ANTUNES, LUCAS NIEHUNS; SCOLARO, TAYLANA PICCININI; Ghisi, Enedir",
+            "title": "Quantifying environmental impacts through the full life cycle assessment of permeable pavements",
+            "details": "SCIENCE OF THE TOTAL ENVIRONMENT, v. 1049, p. 182179, 2026",
+            "year": "2026",
+            "citations": "",
+            "doi": "http://dx.doi.org/10.1016/j.scitotenv.2026.182179",
+            "tags": [
+                "Pavimento-Permeavel",
+                "ACV",
+                "Aproveitamento-agua-chuva",
+                "Agua-Pluvial",
+                "Agua-Potavel",
+                "Emissoes-Carbono"
+            ]
         }
     ],
     "2025": [
         {
-            "id": 13,
+            "id": 14,
             "authors": "SOUZA, T. D.; ONEDA, T. M. S.; GHISI, E.",
             "title": "Usos finais da água em canteiros de obras: estudo de caso em Criciúma, SC",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 25, p. e138746, 2025",
@@ -604,7 +623,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 14,
+            "id": 15,
             "authors": "TESTON, ANDREA; GHISI, E.; VAZ, I. C. M.; CARVALHO, J. W. L. T.; MAYER, D.; TEIXEIRA, C. A.",
             "title": "Water Balance Modeling as a Tool for Assessing the Inventory Flows of Urban Water Systems and Water Consumption in Buildings",
             "details": "JOURNAL OF WATER RESOURCES PLANNING AND MANAGEMENT, v. 151, p. 05024015, 2025. Citações:2",
@@ -621,7 +640,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 15,
+            "id": 16,
             "authors": "THIVES, L.P.; SCOLARO, T. P.; GHISI, E.",
             "title": "The influence of inequalities in electricity access on people's health in Brazil",
             "details": "PARC : PESQUISA EM ARQUITETURA E CONSTRUÇÃO, v. 16, p. e025009, 2025",
@@ -635,7 +654,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 16,
+            "id": 17,
             "authors": "RIBEIRO, L. M. L.; SCOLARO, T. P.; GHISI, E.",
             "title": "LEED Certification in Building Energy Efficiency: A Review of Its Performance Efficacy and Global Applicability",
             "details": "Sustainability, v. 17, p. 1876, 2025. Citações:12",
@@ -650,7 +669,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 17,
+            "id": 18,
             "authors": "VAZ, IGOR CATÃO MARTINS; Ghisi, Enedir; THIVES, LISEANE PADILHA; VIEIRA, Abel Silva; Rupp, Ricardo Forgiarini; SCHAEFER, ALINE; FLORES, RAFAEL ALMEIDA; BASTOS, MATHEUS BRUHNS; MARINOSKI, DEIVIS LUIS; SILVA, ARTHUR SANTOS; WEEBER, MAX; INVIDIATA, ANDREA",
             "title": "Dashboard for interpreting future climate files used in the simulation of buildings - An outdoor thermal comfort approach",
             "details": "ENERGY AND BUILDINGS, v. 326, p. 115059, 2025. Citações:1",
@@ -666,7 +685,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 18,
+            "id": 19,
             "authors": "SCOLARO, T. P.; GHISI, E.",
             "title": "Life cycle integrated multi-criteria decision model for roof assessment",
             "details": "ENERGY AND BUILDINGS, v. 336, p. 115628, 2025. Citações:1",
@@ -682,7 +701,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 19,
+            "id": 20,
             "authors": "ONEDA, T. M. S.; GHISI, E.",
             "title": "Analysing the water-energy nexus considering rainwater harvesting in buildings",
             "details": "Water, v. 17, p. 1037, 2025. Citações:2|3",
@@ -699,7 +718,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 20,
+            "id": 21,
             "authors": "FLORES, RAFAEL; Ghisi, Enedir",
             "title": "Development of a Fuzzy Indicator of Water Efficiency in Buildings",
             "details": "WATER RESOURCES MANAGEMENT, v. 39, p. 1827-1853, 2025. Citações:1",
@@ -713,7 +732,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 21,
+            "id": 22,
             "authors": "VAZ, I. C. M.; GHISI, E.; SCOLARO, T. P.; SCHAEFER, A.",
             "title": "Understanding the environmental impacts of residential water consumption in Brazil: Integrating the building stock with life cycle assessment",
             "details": "BUILDING AND ENVIRONMENT, v. 279, p. 113085, 2025. Citações:4",
@@ -729,7 +748,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 22,
+            "id": 23,
             "authors": "VAZ, I. C. M.; SANTOS, V.; GIGLIO, T. G. F.; GHISI, E.",
             "title": "Water heating in Brazilian residential buildings: a comparison between electric showers and solar heating",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 25, p. e145506, 2025",
@@ -745,7 +764,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 23,
+            "id": 24,
             "authors": "VAZ, IGOR CATÃO MARTINS; SCOLARO, TAYLANA PICCININI; Ghisi, Enedir",
             "title": "Understanding the environmental impact of residential electricity consumption in Brazil: integrating top-down and bottom-up approaches with Life Cycle Assessment",
             "details": "SCIENCE OF THE TOTAL ENVIRONMENT, v. 986, p. 179774, 2025",
@@ -761,7 +780,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 24,
+            "id": 25,
             "authors": "MAYKOT, J. K.; VAZ, I. C. M.; GHISI, E.",
             "title": "Characterisation of First Flush for Rainwater Harvesting Purposes in Buildings",
             "details": "Water, v. 17, p. 1772, 2025. Citações:2",
@@ -776,7 +795,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 25,
+            "id": 26,
             "authors": "SCOLARO, T. P.; GHISI, E.",
             "title": "Assessing the energy and economic performance of green and cool roofs: a life cycle approach",
             "details": "Sustainability, v. 17, p. 5782, 2025. Citações:1",
@@ -793,7 +812,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 26,
+            "id": 27,
             "authors": "THIVES, LISEANE P.; Ghisi, Enedir; JÚNIOR, JUAREZ J. THIVES",
             "title": "Current panorama of road cargo transport in Brazil",
             "details": "International Journal of Logistics Systems and Management, v. 51, p. 274-296, 2025",
@@ -807,7 +826,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 27,
+            "id": 28,
             "authors": "FIGUEROBA, C. M.; VAZ, I. C. M.; THIVES, L.P.; GHISI, E.",
             "title": "Technical and Economic Feasibility of Strategies to Reduce Potable Water Consumption in a Library",
             "details": "Water, v. 17, p. 2137, 2025",
@@ -824,7 +843,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 28,
+            "id": 29,
             "authors": "MULLER, BEATRIZ BAYESTORFF; SCOLARO, TAYLANA PICCININI; Rupp, Ricardo Forgiarini; Ghisi, Enedir",
             "title": "Local thermal discomfort and self-assessed productivity of occupants in office buildings in a humid subtropical climate",
             "details": "ENERGY AND BUILDINGS, v. 347, p. 116416, 2025",
@@ -838,7 +857,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 29,
+            "id": 30,
             "authors": "SILVA, H. I.; TESTON, ANDREA; VAZ, I. C. M.; GHISI, E.",
             "title": "Potable water savings potential through rainwater harvesting in a Brazilian fitness centre: a case study",
             "details": "Water, v. 17, p. 2748, 2025. Citações:1",
@@ -854,7 +873,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 30,
+            "id": 31,
             "authors": "DELOWSKI, L. C.; VAZ, I. C. M.; GHISI, E.; THIVES, L.P.",
             "title": "The use of rainwater harvesting in a multifamily building",
             "details": "European Journal Of Sustainable Development, v. 14, p. 77-90, 2025",
@@ -870,7 +889,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 31,
+            "id": 32,
             "authors": "SCOLARO, TAYLANA PICCININI; MARTINS VAZ, IGOR CATÃO; Ghisi, Enedir",
             "title": "Assessing thermal comfort in naturally ventilated residential buildings under current and projected regional climates in Brazil",
             "details": "ENERGY AND BUILDINGS, v. 349, p. 116566, 2025",
@@ -886,7 +905,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 32,
+            "id": 33,
             "authors": "FRANCO, E.; GHISI, E.; VAZ, I. C. M.; THIVES, L.P.",
             "title": "Permeable Pavements: An Integrative Review of Technical and Environmental Contributions to Sustainable Cities",
             "details": "Water, v. 17, p. 3323, 2025. Citações:3",
@@ -901,7 +920,7 @@ export default function Papers() {
     ],
     "2024": [
         {
-            "id": 33,
+            "id": 34,
             "authors": "GHISI, E.; BAVARESCO, M. V.; SILVESTRE, A. G. C.",
             "title": "Avaliação do comportamento de usuários em escritórios compartilhados em Florianópolis: estudo de caso sobre janelas, luminárias e aparelhos de ar-condicionado",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 24, p. e132319, 2024",
@@ -918,7 +937,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 34,
+            "id": 35,
             "authors": "SCHAEFER, A.; ECCEL, J. V.; GHISI, E.",
             "title": "Finding patterns of occupant behaviour in actual data for thermal performance simulation: a case study in low-income houses",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 24, p. e133438, 2024",
@@ -934,7 +953,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 35,
+            "id": 36,
             "authors": "CUSTODIO, D. A.; GHISI, E.",
             "title": "Potential for potable water savings using rainwater: a case study in a university building in Southern Brazil",
             "details": "Urban Water Journal, v. 21, p. 1-8, 2024. Citações:6|6",
@@ -949,7 +968,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 36,
+            "id": 37,
             "authors": "TESTON, A.; GHISI, E.; VAZ, I. C. M.; SCOLARO, T. P.; SEVERIS, R. M.",
             "title": "Modular life cycle assessment approach: Environmental impact of rainwater harvesting systems in urban water systems",
             "details": "SCIENCE OF THE TOTAL ENVIRONMENT, v. 908, p. 168281, 2024. Citações:12|13",
@@ -965,7 +984,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 37,
+            "id": 38,
             "authors": "SCOLARO, T. P.; REALI, J. P. G.; GHISI, E.; RUPP, R.F.",
             "title": "Influência do modo de operação e parâmetros antropométricos na produtividade autoavaliada em edifícios de escritórios",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 24, p. e134303, 2024",
@@ -980,7 +999,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 38,
+            "id": 39,
             "authors": "BAVARESCO, M.; GNECCO, V.; PIGLIAUTILE, I.; PISELLI, C.; BRACHT, M.; CUREAU, R.; DE SOUZA, L.; GERALDI, M.; VASQUEZ, N.G.; FABIANI, C.; GHISI, E.; LAMBERTS, R.; MELO, A.P.; PISELLO, A.L.",
             "title": "Multi-domain simulation for the holistic assessment of the indoor environment: A systematic review",
             "details": "JOURNAL OF BUILDING ENGINEERING, v. 84, p. 108612, 2024. Citações:17|19",
@@ -994,7 +1013,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 39,
+            "id": 40,
             "authors": "DIAS, T. F.; GHISI, E.",
             "title": "Urban water consumption: a systematic literature review",
             "details": "Water, v. 16, p. 838, 2024. Citações:17|7",
@@ -1008,7 +1027,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 40,
+            "id": 41,
             "authors": "PIEROZAN, EDUARDO; PICCININI SCOLARO, TAYLANA; WATZKO, ELISE SOMMER; Ghisi, Enedir",
             "title": "Technical and Economic Feasibility of Multi-Family Social Housing and Nearly Zero-Energy Buildings in Southern Brazil",
             "details": "Sustainability, v. 16, p. 2608, 2024. Citações:3|4",
@@ -1025,7 +1044,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 41,
+            "id": 42,
             "authors": "MELLER, B. J.; MARINOSKI, Deivis L; GÜTHS, Saulo; GHISI, E.",
             "title": "Comparison of methods to determine the solar heat gain coefficient of glazing",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 24, p. e138257, 2024",
@@ -1041,7 +1060,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 42,
+            "id": 43,
             "authors": "BORGERT, A. E.; GHISI, E.",
             "title": "The Impact of the Water Tariff on the Economic Feasibility of Rainwater Harvesting for Use in Residential Buildings",
             "details": "Water, v. 16, p. 1058, 2024. Citações:3",
@@ -1055,7 +1074,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 43,
+            "id": 44,
             "authors": "SCHAEFER, A.; SCOLARO, T. P.; GHISI, E.",
             "title": "Cluster analysis applied to obtaining reference models for building thermal performance studies",
             "details": "JOURNAL OF BUILDING ENGINEERING, v. 89, p. 109273, 2024. Citações:8|2",
@@ -1070,7 +1089,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 44,
+            "id": 45,
             "authors": "CUSTODIO, D. A.; GHISI, E.; RUPP, R.F.",
             "title": "Thermal comfort in university classrooms in humid subtropical climate: Field study during all seasons",
             "details": "BUILDING AND ENVIRONMENT, v. 258, p. 111644, 2024. Citações:13|3",
@@ -1084,7 +1103,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 45,
+            "id": 46,
             "authors": "MARTINS VAZ, IGOR CATÃO; ANTUNES, LUCAS NIEHUNS; Ghisi, Enedir; THIVES, LISEANE PADILHA",
             "title": "Life Cycle Assessment of Pervious Pavements: Integrative Review and Novel Ideas of Analysis",
             "details": "Water, v. 16, p. 1403, 2024. Citações:7|2",
@@ -1098,7 +1117,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 46,
+            "id": 47,
             "authors": "BILESIMO, T. L.; GHISI, E.",
             "title": "Utilisation of Machine Learning in Control Systems Based on the Preference of Office Users",
             "details": "Sustainability, v. 16, p. 4258, 2024. Citações:1",
@@ -1112,7 +1131,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 47,
+            "id": 48,
             "authors": "GHISI, E.; FREITAS, D. A.",
             "title": "Economic feasibility of rainwater harvesting and greywater reuse in a multifamily building",
             "details": "Water, v. 16, p. 1580, 2024. Citações:3|1",
@@ -1128,7 +1147,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 48,
+            "id": 49,
             "authors": "PICCININI SCOLARO, TAYLANA; Ghisi, Enedir; SILVA, CRISTINA MATOS",
             "title": "Assessing the impact of evapotranspiration from green roofs on reducing surface temperatures",
             "details": "JOURNAL OF BUILDING ENGINEERING, v. 95, p. 110095, 2024. Citações:22|4",
@@ -1141,7 +1160,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 49,
+            "id": 50,
             "authors": "VAZ, IGOR CATÃO MARTINS; VIANA, MARINA RIBEIRO; Ghisi, Enedir",
             "title": "Comparison of future weather files for Brazilian cities",
             "details": "E3S Web of Conferences, v. 546, p. 01017, 2024",
@@ -1154,7 +1173,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 50,
+            "id": 51,
             "authors": "CUSTÓDIO, DIEGO ANTÔNIO; Ghisi, Enedir; FORGIARINI RUPP, RICARDO; LODETE BILÉSIMO, THAYANE",
             "title": "The influence of socioeconomic context on the thermal comfort of university students in a humid subtropical climate",
             "details": "ENERGY AND BUILDINGS, v. 319, p. 114556, 2024. Citações:1",
@@ -1168,7 +1187,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 51,
+            "id": 52,
             "authors": "OLIVEIRA, C. C.; VAZ, I. C. M.; GHISI, E.",
             "title": "Retrofit strategies to improve energy efficiency in buildings: An integrative review",
             "details": "ENERGY AND BUILDINGS, v. 321, p. 114624, 2024. Citações:52|30",
@@ -1183,7 +1202,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 52,
+            "id": 53,
             "authors": "ONEDA, T. M. S.; GHISI, E.",
             "title": "Análise do sistema de aproveitamento de água pluvial a partir da medição dos usos finais de água",
             "details": "P@ranoá (UNB), v. 17, p. e53378, 2024",
@@ -1198,7 +1217,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 53,
+            "id": 54,
             "authors": "FIATES, J. R.; GHISI, E.",
             "title": "Life Cycle Assessment of construction components of schools in southern Brazil",
             "details": "EUROPEAN JOURNAL OF SUSTAINABLE DEVELOPMENT, v. 13, p. 57-70, 2024",
@@ -1212,7 +1231,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 54,
+            "id": 55,
             "authors": "SCOLARO, T. P.; GHISI, E.; SILVA, C. M.",
             "title": "Effectiveness of Cool and Green Roofs Inside and Outside Buildings in the Brazilian Context",
             "details": "Sustainability, v. 16, p. 8104, 2024. Citações:3",
@@ -1228,7 +1247,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 55,
+            "id": 56,
             "authors": "BARBOSA, K. H.; SCOLARO, T. P.; GHISI, E.",
             "title": "Enhancing building sustainability: integrating user behaviour and solar orientation on the thermal performance of houses",
             "details": "Sustainability, v. 16, p. 8349, 2024. Citações:3",
@@ -1244,7 +1263,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 56,
+            "id": 57,
             "authors": "VAZ, I. C. M.; GHISI, E.",
             "title": "Rainwater harvesting through roofs and stormwater harvesting through pervious pavements: A Life Cycle Assessment and decision-making comparison",
             "details": "JOURNAL OF CLEANER PRODUCTION, v. 476, p. 143782, 2024. Citações:8",
@@ -1260,7 +1279,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 57,
+            "id": 58,
             "authors": "VAZ, I. C. M.; GHISI, E.; THIVES, L.P.",
             "title": "An Inventory Comparison of Harvesting Rainwater from Roofs and Stormwater from Pervious Pavements",
             "details": "Water Resources Management, v. -, p. ---, 2024",
@@ -1279,7 +1298,7 @@ export default function Papers() {
     ],
     "2023": [
         {
-            "id": 58,
+            "id": 59,
             "authors": "RIBEIRO, L. M. L.; GHISI, E.",
             "title": "Potencial de economia de água potável utilizando água da chuva: estudo de caso no Brasil",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 23, p. 47-64, 2023",
@@ -1294,7 +1313,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 59,
+            "id": 60,
             "authors": "CUSTODIO, D. A.; GHISI, E.",
             "title": "Impact of residential rainwater harvesting on stormwater runoff",
             "details": "JOURNAL OF ENVIRONMENTAL MANAGEMENT, v. 326, p. 116814, 2023. Citações:24|28",
@@ -1309,7 +1328,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 60,
+            "id": 61,
             "authors": "KLEIN, C. W.; MAYKOT, J. K.; GHISI, E.; THIVES, L.P.",
             "title": "Financial Feasibility of Harvesting Rainwater from Permeable Pavements: a Case Study in a City Square",
             "details": "Sci, v. 5, p. 1, 2023. Citações:2|2",
@@ -1323,7 +1342,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 61,
+            "id": 62,
             "authors": "ISTCHUK, R. N.; GHISI, E.",
             "title": "Influence of Design Variables on the Financial Feasibility of Rainwater Harvesting Systems",
             "details": "Water, v. 15, p. 1112, 2023. Citações:10|8",
@@ -1338,7 +1357,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 62,
+            "id": 63,
             "authors": "PIEROZAN, E.; SCOLARO, T. P.; WATZKO, E. S.; GHISI, E.",
             "title": "Influência do padrão de uso e ocupação de habitações multifamiliares no consumo energético da edificação",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 23, p. 43-61, 2023",
@@ -1353,7 +1372,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 63,
+            "id": 64,
             "authors": "VAZ, I. C. M.; GHISI, E.; SOUZA, J. C.",
             "title": "Potential use of rainwater as a tool for fire stations and firefighting: Literature review, environmental and cost assessments",
             "details": "SCIENCE OF THE TOTAL ENVIRONMENT, v. 898, p. 165510, 2023. Citações:5|5",
@@ -1370,7 +1389,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 64,
+            "id": 65,
             "authors": "SANTOS, M. B.; SANTINI, N.; THIVES, L.P.; THIVES JUNIOR, J. J.; GHISI, E.",
             "title": "Identificação de emissões atmosféricas geradas em usinas de asfalto e proposição de protocolo de controle",
             "details": "Revista Ação Sustentável Global, v. 3, p. 83-111, 2023",
@@ -1383,7 +1402,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 65,
+            "id": 66,
             "authors": "SOUZA, L. P.; BAVARESCO, M. V.; GERALDI, M. S.; VAZ, C. E. V.; GHISI, E.",
             "title": "Climatic conditions as a guideline to mass customisation in Brazilian housing",
             "details": "PARC : PESQUISA EM ARQUITETURA E CONSTRUÇÃO, v. 14, p. e023022, 2023",
@@ -1401,7 +1420,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 66,
+            "id": 67,
             "authors": "VAZ, I. C. M.; ISTCHUK, R. N.; ONEDA, T. M. S.; GHISI, E.",
             "title": "Sustainable Rainwater Management and Life Cycle Assessment: Challenges and Perspectives",
             "details": "Sustainability, v. 15, p. 12133, 2023. Citações:10|9",
@@ -1416,7 +1435,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 67,
+            "id": 68,
             "authors": "REALI, J. P. G.; SCOLARO, T. P.; GHISI, E.; RUPP, R.F.",
             "title": "Relationship between self-assessed productivity, gender and age in mixed-mode and fully air-conditioned offices in Florianópolis, Brazil",
             "details": "Sustainability, v. 15, p. 12377, 2023. Citações:1",
@@ -1431,7 +1450,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 68,
+            "id": 69,
             "authors": "SCHAEFER, ALINE; SCOLARO, TAYLANA PICCININI; Ghisi, Enedir",
             "title": "Finding Patterns of Construction Systems in Low-Income Housing for Thermal and Energy Performance Evaluation through Cluster Analysis",
             "details": "Sustainability, v. 15, p. 12793, 2023. Citações:4|2",
@@ -1447,7 +1466,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 69,
+            "id": 70,
             "authors": "SANGOI, J. M.; SCOLARO, T. P.; GHISI, E.",
             "title": "Water heating systems performance in multi-family residential buildings in Brazil",
             "details": "Water, v. 15, p. 3145, 2023. Citações:1",
@@ -1461,7 +1480,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 70,
+            "id": 71,
             "authors": "THIVES, L.P.; GHISI, E.; LONGO, G.; HAMMES, G.; BELOTTO, T.",
             "title": "Performance of permeable pavement to filter stormwater runoff for non-potable uses in buildings",
             "details": "European Journal Of Sustainable Development, v. 12, p. 80-90, 2023. Citações:4",
@@ -1477,7 +1496,7 @@ export default function Papers() {
     ],
     "2022": [
         {
-            "id": 71,
+            "id": 72,
             "authors": "IORIS, M. D.; GHISI, E.",
             "title": "Financial feasibility of implementing an automated system to save the cold potable water that would be wasted at the beginning of a hot shower",
             "details": "Urban Water Journal, v. 19, p. 22-31, 2022. Citações:3|4",
@@ -1491,7 +1510,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 72,
+            "id": 73,
             "authors": "GERALDI, M. S.; GHISI, E.",
             "title": "Data-driven framework towards realistic bottom-up energy benchmarking using an Artificial Neural Network",
             "details": "APPLIED ENERGY, v. 306, p. 117960, 2022. Citações:32|31",
@@ -1507,7 +1526,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 73,
+            "id": 74,
             "authors": "ANTUNES, L. N.; GHISI, E.; SOUZA, J. C.",
             "title": "Stormwater harvested from a permeable pavement for use in the fire extinguishing system and non-potable uses of a building: a case study",
             "details": "Urban Water Journal, v. 19, p. 433-440, 2022. Citações:4|4",
@@ -1522,7 +1541,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 74,
+            "id": 75,
             "authors": "THIVES, L.P.; GHISI, E.; THIVES JUNIOR, J. J.",
             "title": "Assessment of disposal and recycling of waste tyres in Brazil",
             "details": "CIÊNCIA E NATURA, v. 44, p. e11, 2022",
@@ -1537,7 +1556,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 75,
+            "id": 76,
             "authors": "GERALDI, MATHEUS SOARES; Ghisi, Enedir",
             "title": "Integrating evidence-based thermal satisfaction in energy benchmarking: A data-driven approach for a whole-building evaluation",
             "details": "ENERGY, v. 244, p. 123161, 2022. Citações:15|18",
@@ -1552,7 +1571,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 76,
+            "id": 77,
             "authors": "FLORES, R. A.; GHISI, E.",
             "title": "Water benchmarking in buildings: a systematic review on methods and benchmarks for water conservation",
             "details": "Water, v. 14, p. 473, 2022. Citações:12|9",
@@ -1566,7 +1585,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 77,
+            "id": 78,
             "authors": "THIVES, LISEANE PADILHA; GHISI, E.; THIVES JUNIOR, J. J.",
             "title": "Regional inequalities in electricity access versus quality of life in Brazil",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 22, p. 47-65, 2022",
@@ -1580,7 +1599,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 78,
+            "id": 79,
             "authors": "GERALDI, MATHEUS; BAVARESCO, M. V.; GNECCO, V. M.; AZEVEDO, L. D.; GHISI, E.; FOSSATI, Michele",
             "title": "Análise estatística da intensidade do uso de energia de edificações escolares no Brasil: proposição de benchmarking simplificado",
             "details": "Revista Sítio Novo, v. 6, p. 21-34, 2022",
@@ -1595,7 +1614,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 79,
+            "id": 80,
             "authors": "SCOLARO, T. P.; GHISI, E.",
             "title": "Life cycle assessment of green roofs: A literature review of layers materials and purposes",
             "details": "SCIENCE OF THE TOTAL ENVIRONMENT, v. 829, p. 154650, 2022. Citações:49|50",
@@ -1609,7 +1628,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 80,
+            "id": 81,
             "authors": "FLORES, R. A.; GHISI, E.",
             "title": "Benchmarking water efficiency in public school buildings",
             "details": "Sustainability, v. 14, p. 3794, 2022. Citações:5|6",
@@ -1623,7 +1642,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 81,
+            "id": 82,
             "authors": "BAVARESCO, M. V.; KOUSIS, I.; PIGLIAUTILE, I.; PISELLO, A. L.; PISELLI, C.; GHISI, E.",
             "title": "Are years-long field studies about window operation efficient? a data-driven approach based on information theory and deep learning",
             "details": "ENERGY AND BUILDINGS, v. 268, p. 112197, 2022. Citações:4|5",
@@ -1639,7 +1658,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 82,
+            "id": 83,
             "authors": "THIVES, L.P.; GHISI, E.; THIVES JUNIOR, J. J.; VIEIRA, Abel Silva",
             "title": "Is asbestos still a problem in the world?",
             "details": "A current review. JOURNAL OF ENVIRONMENTAL MANAGEMENT, v. 319, p. 115716, 2022. Citações:82|81",
@@ -1653,7 +1672,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 83,
+            "id": 84,
             "authors": "MAYKOT, J. K.; OLIVEIRA, C. C.; GHISI, E.; RUPP, R.F.",
             "title": "Influence of gender on thermal, air-movement, humidity and air-quality perception in mixed-mode and fully air-conditioned offices",
             "details": "Sustainability, v. 14, p. 9722, 2022. Citações:2|3",
@@ -1669,7 +1688,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 84,
+            "id": 85,
             "authors": "TESTON, A.; SCOLARO, T. P.; MAYKOT, J. K.; GHISI, E.",
             "title": "Comprehensive environmental assessment of rainwater harvesting systems: A literature review",
             "details": "Water, v. 14, p. 2716, 2022. Citações:42|40",
@@ -1684,7 +1703,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 85,
+            "id": 86,
             "authors": "ISTCHUK, R. N.; GHISI, E.",
             "title": "Influence of rainfall time series indicators on the performance of residential rainwater harvesting systems",
             "details": "JOURNAL OF ENVIRONMENTAL MANAGEMENT, v. 323, p. 116163--, 2022. Citações:11|11",
@@ -1699,7 +1718,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 86,
+            "id": 87,
             "authors": "THIVES, LISEANE P.; Ghisi, Enedir; THIVES JÚNIOR, JUAREZ J.",
             "title": "An outlook on the management of construction and demolition waste in Brazil",
             "details": "Cleaner Materials, v. 6, p. 100153, 2022. Citações:15|12",
@@ -1713,7 +1732,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 87,
+            "id": 88,
             "authors": "ISTCHUK, R. N.; GHISI, E.",
             "title": "Financial feasibility analysis of residential rainwater harvesting in Maringá, Brazil",
             "details": "Sustainability, v. 14, p. 12859, 2022. Citações:4|4",
@@ -1730,7 +1749,7 @@ export default function Papers() {
     ],
     "2021": [
         {
-            "id": 88,
+            "id": 89,
             "authors": "BAVARESCO, M. V.; CUCHIVAGUE, H. Y. O.; SCHINAZI, A.; GHISI, E.",
             "title": "Aspectos impactantes no desempenho energético de habitações de interesse social brasileiras: revisão de literatura",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 21, p. 263-292, 2021",
@@ -1745,7 +1764,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 89,
+            "id": 90,
             "authors": "BAVARESCO, M. V.; GHISI, E.",
             "title": "Monitoramento e modelagem da operação de elementos internos de sombreamento em escritórios: uma revisão de literatura",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 21, p. 315-334, 2021",
@@ -1762,7 +1781,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 90,
+            "id": 91,
             "authors": "GRANDO, F. O.; GHISI, E.",
             "title": "Assessment of public lighting systems considering mesopic vision",
             "details": "JOURNAL OF CLEANER PRODUCTION, v. 279, p. 123369--, 2021. Citações:6|7",
@@ -1776,7 +1795,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 91,
+            "id": 92,
             "authors": "SILVA, A. S.; GHISI, E.",
             "title": "Evaluation of capabilities of different global sensitivity analysis techniques for building energy simulation: experiment on design variables",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 21, p. 89-111, 2021",
@@ -1792,7 +1811,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 92,
+            "id": 93,
             "authors": "Rupp, Ricardo Forgiarini; ANDERSEN, RUNE KORSHOLM; TOFTUM, JØRN; Ghisi, Enedir",
             "title": "Occupant behaviour in mixed-mode office buildings in a subtropical climate: Beyond typical models of adaptive actions",
             "details": "BUILDING AND ENVIRONMENT, v. 190, p. 107541, 2021. Citações:34|39",
@@ -1808,7 +1827,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 93,
+            "id": 94,
             "authors": "BAVARESCO, M. V.; GHISI, E.; D'OCA, SIMONA; PISELLO, A. L.",
             "title": "Triggering occupant behaviour for energy sustainability: Exploring subjective and comfort-related drivers in Brazilian offices",
             "details": "Energy Research & Social Science, v. 74, p. 101959, 2021. Citações:46|30",
@@ -1823,7 +1842,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 94,
+            "id": 95,
             "authors": "THIVES, L.P.; GHISI, E.; THIVES JUNIOR, J. J.",
             "title": "Racial inequality related to transportation means in Brazil",
             "details": "INTERNATIONAL JOURNAL OF ENGINEERING RESEARCH AND APPLICATIONS (IJERA), v. 11, p. 24-37, 2021",
@@ -1837,7 +1856,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 95,
+            "id": 96,
             "authors": "BERTUZZI, G.; GHISI, E.",
             "title": "Potential for Potable Water Savings due to Rainwater Use in a Precast Concrete Factory",
             "details": "Water, v. 13, p. 448, 2021. Citações:6|6",
@@ -1852,7 +1871,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 96,
+            "id": 97,
             "authors": "ROSA, G. C.; GHISI, E.",
             "title": "Water Quality and Financial Analysis of a System Combining Rainwater and Greywater in a House",
             "details": "Water, v. 13, p. 930, 2021. Citações:11|11",
@@ -1868,7 +1887,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 97,
+            "id": 98,
             "authors": "OLIVEIRA, C. C.; Rupp, Ricardo Forgiarini; GHISI, E.",
             "title": "Influence of environmental variables on thermal comfort and air quality perception in office buildings in the humid subtropical climate zone of Brazil",
             "details": "ENERGY AND BUILDINGS, v. 243, p. 110982, 2021. Citações:25|28",
@@ -1882,7 +1901,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 98,
+            "id": 99,
             "authors": "VAZ, I. C. M.; GHISI, E.; THIVES, L.P.",
             "title": "Stormwater Harvested from Permeable Pavements as a Means to Save Potable Water in Buildings",
             "details": "Water, v. 13, p. 1896, 2021. Citações:10|14",
@@ -1897,7 +1916,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 99,
+            "id": 100,
             "authors": "GERALDI, M. S.; GNECCO, V. M.; BARZAN NETO, A.; MARTINS, B. A. M.; GHISI, E.; FOSSATI, Michele; MELO, Ana Paula; LAMBERTS, Roberto",
             "title": "Evaluating the impact of the shape of school reference buildings on bottom-up energy benchmarking",
             "details": "JOURNAL OF BUILDING ENGINEERING, v. 43, p. 103142, 2021. Citações:27|28",
@@ -1914,7 +1933,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 100,
+            "id": 101,
             "authors": "VAZ, I. C. M.; ANTUNES, L. N.; GHISI, E.; THIVES, L.P.",
             "title": "Permeable Pavements as a Means to Save Water in Buildings: State of the Art in Brazil",
             "details": "Sci, v. 3, p. 36, 2021. Citações:6",
@@ -1928,7 +1947,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 101,
+            "id": 102,
             "authors": "OLIVEIRA, C. C.; RUPP, R.F.; GHISI, E.",
             "title": "Assessment of air quality perception and its effects on users? thermal comfort in office buildings",
             "details": "Sci, v. 3, p. 47, 2021. Citações:8",
@@ -1944,7 +1963,7 @@ export default function Papers() {
     ],
     "2020": [
         {
-            "id": 102,
+            "id": 103,
             "authors": "SILVA, A. S.; GHISI, E.",
             "title": "Estimating the sensitivity of design variables in the thermal and energy performance of buildings through a systematic procedure",
             "details": "JOURNAL OF CLEANER PRODUCTION, v. 244, p. 118753, 2020. Citações:33|32",
@@ -1961,7 +1980,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 103,
+            "id": 104,
             "authors": "BAVARESCO, M. V.; GHISI, E.",
             "title": "A low-cost framework to establish internal blind control patterns and enable simulation-based user-centric design",
             "details": "Journal of Building Engineering, v. 28, p. 101077--, 2020. Citações:11|9",
@@ -1978,7 +1997,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 104,
+            "id": 105,
             "authors": "VAZ, I. C. M.; GHISI, E.; THIVES, L.P.",
             "title": "Life cycle energy assessment and economic feasibility of stormwater harvested from pervious pavements",
             "details": "WATER RESEARCH, v. 170, p. 115322, 2020. Citações:23|24",
@@ -1993,7 +2012,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 105,
+            "id": 106,
             "authors": "BAVARESCO, M. V.; D'OCA, SIMONA; GHISI, E.; LAMBERTS, Roberto",
             "title": "Methods used in social sciences that suit energy research: A literature review on qualitative methods to assess the human dimension of energy use in buildings",
             "details": "ENERGY AND BUILDINGS, v. 209, p. 109702, 2020. Citações:60|61",
@@ -2007,7 +2026,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 106,
+            "id": 107,
             "authors": "GERALDI, MATHEUS SOARES; Ghisi, Enedir",
             "title": "Building-level and Stock-level in contrast: a literature review of the energy performance of buildings during the operational stage",
             "details": "ENERGY AND BUILDINGS, v. 211, p. 109810--, 2020. Citações:92|96",
@@ -2022,7 +2041,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 107,
+            "id": 108,
             "authors": "MAYKOT, J. K.; GHISI, E.",
             "title": "Assessment of a rainwater harvesting system in a multi-storey residential building in Brazil",
             "details": "Water, v. 12, p. 546, 2020. Citações:23|24",
@@ -2036,7 +2055,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 108,
+            "id": 109,
             "authors": "SOUZA, T. D.; GHISI, E.",
             "title": "Harvesting rainwater from scaffolding platforms and walls to reduce potable water consumption at buildings construction sites",
             "details": "JOURNAL OF CLEANER PRODUCTION, v. 258, p. 120909, 2020. Citações:11|14",
@@ -2050,7 +2069,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 109,
+            "id": 110,
             "authors": "CUREAU, R. J.; GHISI, E.",
             "title": "Electricity savings by reducing water consumption in a whole city: a case study in Joinville, Southern Brazil",
             "details": "JOURNAL OF CLEANER PRODUCTION, v. 261, p. 121194, 2020. Citações:16|16",
@@ -2066,7 +2085,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 110,
+            "id": 111,
             "authors": "HAMMES, G.; GHISI, E.; THIVES, L.P.",
             "title": "Water end-uses and rainwater harvesting: a case study in Brazil",
             "details": "Urban Water Journal, v. 17, p. 177-183, 2020. Citações:18|20",
@@ -2080,7 +2099,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 111,
+            "id": 112,
             "authors": "SANTOS, C.; IMTEAZ, M. A.; GHISI, E.; MATOS, C.",
             "title": "The effect of climate change on domestic Rainwater Harvesting",
             "details": "SCIENCE OF THE TOTAL ENVIRONMENT, v. 729, p. 138967, 2020. Citações:27|30",
@@ -2094,7 +2113,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 112,
+            "id": 113,
             "authors": "ANTUNES, LUCAS NIEHUNS; Ghisi, Enedir",
             "title": "Water and energy consumption in schools: case studies in Brazil",
             "details": "ENVIRONMENT, DEVELOPMENT AND SUSTAINABILITY, v. 22, p. 4225-4249, 2020. Citações:21|20",
@@ -2109,7 +2128,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 113,
+            "id": 114,
             "authors": "ROSA, G. C.; GHISI, E.",
             "title": "A modelling evaluation of a system combining rainwater and greywater for potable water savings",
             "details": "Urban Water Journal, v. 17, p. 283-291, 2020. Citações:10|8",
@@ -2124,7 +2143,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 114,
+            "id": 115,
             "authors": "GERALDI, M. S.; GHISI, E.",
             "title": "Mapping the energy usage in Brazilian public schools",
             "details": "ENERGY AND BUILDINGS, v. 224, p. 110209, 2020. Citações:24|26",
@@ -2139,7 +2158,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 115,
+            "id": 116,
             "authors": "BARRETO, L. S. S.; GHISI, E.; GODOI, C.; OLIVEIRA, F. J. S.",
             "title": "Reuse of ornamental rock solid waste for stabilization and solidification of galvanic solid waste: Optimization for sustainable waste management strategy",
             "details": "JOURNAL OF CLEANER PRODUCTION, v. 275, p. 122996, 2020. Citações:15|17",
@@ -2153,7 +2172,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 116,
+            "id": 117,
             "authors": "BAVARESCO, M. V.; D'OCA, SIMONA; GHISI, E.; PISELLO, A. L.",
             "title": "Assessing underlying effects on the choices of adaptive behaviours in offices through an interdisciplinary framework",
             "details": "BUILDING AND ENVIRONMENT, v. 181, p. 107086--, 2020. Citações:16|21",
@@ -2166,7 +2185,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 117,
+            "id": 118,
             "authors": "GHISI, E.; BELOTTO, T.; THIVES, LISEANE PADILHA",
             "title": "The use of Permeable Interlocking Concrete Pavement to filter stormwater for non-potable uses in buildings",
             "details": "Water, v. 12, p. 2045, 2020. Citações:15|16",
@@ -2180,7 +2199,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 118,
+            "id": 119,
             "authors": "ANTUNES, L. N.; GHISI, E.; SEVERIS, R. M.",
             "title": "Environmental assessment of a permeable pavement system used to harvest stormwater for non-potable water uses in a building",
             "details": "SCIENCE OF THE TOTAL ENVIRONMENT, v. 746, p. 141087--, 2020. Citações:30|39",
@@ -2196,7 +2215,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 119,
+            "id": 120,
             "authors": "OLIVEIRA, CANDI CITADINI DE; Rupp, Ricardo Forgiarini; Ghisi, Enedir",
             "title": "Influência da umidade do ar no conforto térmico de usuários de edificações de escritórios em Florianópolis/SC",
             "details": "AMBIENTE CONSTRUÍDO (SÃO PAULO. IMPRESSO), v. 20, p. 7-21, 2020",
@@ -2209,7 +2228,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 120,
+            "id": 121,
             "authors": "AZEVEDO, LETICIA DALPAZ DE; GERALDI, MATHEUS SOARES; Ghisi, Enedir",
             "title": "Avaliação do Ciclo de Vida de diferentes envoltórias para habitações de interesse social em Florianópolis",
             "details": "AMBIENTE CONSTRUÍDO (SÃO PAULO. IMPRESSO), v. 20, p. 123-141, 2020",
@@ -2224,7 +2243,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 121,
+            "id": 122,
             "authors": "ANTUNES, L. N.; SYDNEY, C.; GHISI, E.; PHOENIX, V.; THIVES, L.P.; WHITE, C.; GARCIA, E. S. H.",
             "title": "Reduction of environmental impacts due to using permeable pavements to harvest stormwaterwater",
             "details": "Water, v. 12, p. 2840, 2020. Citações:16|19",
@@ -2240,7 +2259,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 122,
+            "id": 123,
             "authors": "IORIS, M. D.; GHISI, E.",
             "title": "Saving cold drinking water in residential hot water distribution systems",
             "details": "REVISTA ELETRÔNICA EM GESTÃO, EDUCAÇÃO E TECNOLOGIA AMBIENTAL, v. 24, p. e4, 2020. Citações:1",
@@ -2253,7 +2272,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 123,
+            "id": 124,
             "authors": "FREITAS, DOUGLAS ANCELMO; Ghisi, Enedir",
             "title": "Economic feasibility analysis of rainwater harvesting: a case study in Imbituba, Brazil",
             "details": "Urban Water Journal, v. 17, p. 1-7, 2020. Citações:10|9",
@@ -2270,7 +2289,7 @@ export default function Papers() {
     ],
     "2019": [
         {
-            "id": 124,
+            "id": 125,
             "authors": "RUPP, R.F.; GHISI, E.",
             "title": "Avaliação de modelos preditivos de conforto térmico em escritórios no clima subtropical brasileiro",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 19, p. 91-107, 2019",
@@ -2283,7 +2302,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 125,
+            "id": 126,
             "authors": "AZEVEDO, L. D.; BORGERT, A. E.; VENDRAMI, J. M.; GHISI, E.",
             "title": "Tipos e eficiência de unidades de tratamento para água pluvial: revisão de literatura",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 19, p. 207-231, 2019",
@@ -2297,7 +2316,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 126,
+            "id": 127,
             "authors": "GERALDI, M. S.; GHISI, E.",
             "title": "Short-term instead of long-term rainfall time series in rainwater harvesting simulation in houses: An assessment using Bayesian Network",
             "details": "RESOURCES CONSERVATION AND RECYCLING, v. 144, p. 1-12, 2019. Citações:36|39",
@@ -2314,7 +2333,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 127,
+            "id": 128,
             "authors": "MARINOSKI, Ana Kelly; GHISI, E.",
             "title": "Environmental performance of hybrid rainwater-greywater systems in residential buildings",
             "details": "RESOURCES CONSERVATION AND RECYCLING, v. 144, p. 100-114, 2019. Citações:34|33",
@@ -2329,7 +2348,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 128,
+            "id": 129,
             "authors": "GHISI, E.; MANOROV, T. C. S.; ANTUNES, L. N.; THIVES, L.P.",
             "title": "Electricity Savings Due to the Replacement of Fluorescent Lamps with LEDs in Classrooms",
             "details": "EUROPEAN JOURNAL OF SUSTAINABLE DEVELOPMENT, v. 8, p. 64-74, 2019. Citações:1",
@@ -2344,7 +2363,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 129,
+            "id": 130,
             "authors": "TEIXEIRA, CELIMAR AZAMBUJA; Ghisi, Enedir",
             "title": "Comparative Analysis of Granular and Membrane Filters for Rainwater Treatment",
             "details": "Water, v. 11, p. 1004, 2019. Citações:18|16",
@@ -2357,7 +2376,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 130,
+            "id": 131,
             "authors": "SANGOI, J. M.; GHISI, E.",
             "title": "Energy Efficiency of Water Heating Systems in Single-Family Dwellings in Brazil",
             "details": "Water, v. 11, p. 1068, 2019. Citações:13|14",
@@ -2372,7 +2391,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 131,
+            "id": 132,
             "authors": "Rupp, Ricardo Forgiarini; KIM, JUNGSOO; Ghisi, Enedir; DE DEAR, RICHARD",
             "title": "Thermal sensitivity of occupants in different building typologies: the Griffiths Constant is a Variable",
             "details": "ENERGY AND BUILDINGS, v. 200, p. 11-20, 2019. Citações:72|80",
@@ -2385,7 +2404,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 132,
+            "id": 133,
             "authors": "BAVARESCO, MATEUS VINÍCIUS; D'OCA, SIMONA; Ghisi, Enedir; LAMBERTS, Roberto",
             "title": "Technological innovations to assess and include the human dimension in the building-performance loop: A review",
             "details": "ENERGY AND BUILDINGS, v. 202, p. 109365--, 2019. Citações:41|46",
@@ -2398,7 +2417,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 133,
+            "id": 134,
             "authors": "CUSTODIO, D. A.; GHISI, E.",
             "title": "Assessing the Potential for Potable Water Savings in the Residential Sector of a City: A Case Study of Joinville City",
             "details": "Water, v. 11, p. 2074--, 2019. Citações:12|16",
@@ -2411,7 +2430,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 134,
+            "id": 135,
             "authors": "CUREAU, R. J.; GHISI, E.",
             "title": "Reduction of potable water consumption and sewage generation in a city scale: a case study in Brazil",
             "details": "Water, v. 11, p. 2351, 2019. Citações:18|21",
@@ -2424,7 +2443,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 135,
+            "id": 136,
             "authors": "GARCIA, EMMANUELLE S.H.; THIVES, LISEANE PADILHA; Ghisi, Enedir; ANTUNES, LUCAS NIEHUNS",
             "title": "Analysis of permeability reduction in drainage asphalt mixtures due to decrease in void volume",
             "details": "JOURNAL OF CLEANER PRODUCTION, v. 248, p. 119292--, 2019. Citações:37",
@@ -2438,7 +2457,7 @@ export default function Papers() {
     ],
     "2018": [
         {
-            "id": 136,
+            "id": 137,
             "authors": "MARINOSKI, Ana Kelly; GHISI, E.",
             "title": "Avaliação de viabilidade ambiental e econômica de sistemas de aproveitamento de água pluvial em habitação de baixo padrão: estudo de caso em Florianópolis, SC",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 18, p. 423-443, 2018",
@@ -2454,7 +2473,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 137,
+            "id": 138,
             "authors": "MARINOSKI, Ana Kelly; RUPP, R.F.; GHISI, E.",
             "title": "Environmental benefit analysis of strategies for potable water savings in residential buildings",
             "details": "JOURNAL OF ENVIRONMENTAL MANAGEMENT, v. 206, p. 28-39, 2018. Citações:60|64",
@@ -2470,7 +2489,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 138,
+            "id": 139,
             "authors": "GHISI, E.; THIVES, L.P.; PAES, R. F. W.",
             "title": "Investment feasibility analysis of rainwater harvesting in a building in Brazil",
             "details": "Water Science and Technology-Water Supply, v. 18, p. 1497-1504, 2018. Citações:6|9",
@@ -2484,7 +2503,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 139,
+            "id": 140,
             "authors": "MAYKOT, JÉSSICA KUNTZ; Rupp, Ricardo Forgiarini; Ghisi, Enedir",
             "title": "Assessment of gender on requirements for thermal comfort in office buildings located in the Brazilian humid subtropical climate",
             "details": "ENERGY AND BUILDINGS, v. 158, p. 1170-1183, 2018. Citações:31|34",
@@ -2498,7 +2517,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 140,
+            "id": 141,
             "authors": "Rupp, Ricardo Forgiarini; DE DEAR, RICHARD; Ghisi, Enedir",
             "title": "Field study of mixed-mode office buildings in Southern Brazil using an adaptive thermal comfort framework",
             "details": "ENERGY AND BUILDINGS, v. 158, p. 1475-1486, 2018. Citações:93|95",
@@ -2513,7 +2532,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 141,
+            "id": 142,
             "authors": "GERALDI, M. S.; GHISI, E.",
             "title": "Assessment of the length of rainfall time series for rainwater harvesting in buildings",
             "details": "RESOURCES CONSERVATION AND RECYCLING, v. 133, p. 231-241, 2018. Citações:34|32",
@@ -2527,7 +2546,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 142,
+            "id": 143,
             "authors": "THIVES, L.P.; GHISI, E.; BRECHT, D. G.; PIRES, D. M.",
             "title": "Filtering Capability of Porous Asphalt Pavements",
             "details": "Water, v. 10, p. 206, 2018. Citações:21|23",
@@ -2540,7 +2559,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 143,
+            "id": 144,
             "authors": "BAVARESCO, M. V.; GHISI, E.",
             "title": "Influence of user interaction with internal blinds on the energy efficiency of office buildings",
             "details": "ENERGY AND BUILDINGS, v. 166, p. 538-549, 2018. Citações:21|23",
@@ -2557,7 +2576,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 144,
+            "id": 145,
             "authors": "RUPP, R.F.; KIM, J.; DE DEAR, R.; GHISI, E.",
             "title": "Associations of occupant demographics, thermal history and obesity variables with their thermal comfort in air-conditioned and mixed-mode ventilation office buildings",
             "details": "BUILDING AND ENVIRONMENT, v. 135, p. 1-9, 2018. Citações:86|92",
@@ -2572,7 +2591,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 145,
+            "id": 146,
             "authors": "BALVEDI, B. F.; BAVARESCO, M. V.; ROSA, A. S.; GHISI, E.",
             "title": "Identificação de perfis de comportamento do usuário para edificações residenciais multifamiliares e naturalmente ventiladas em Florianópolis",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 18, p. 149-160, 2018",
@@ -2586,7 +2605,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 146,
+            "id": 147,
             "authors": "MENEGATTI, M. C.; RUPP, R.F.; GHISI, E.",
             "title": "Influência do índice de massa corpórea e frequência de atividades físicas no conforto térmico humano: análise estatística de dados de estudo de campo com usuários de escritórios em Florianópolis, SC",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 18, p. 119-133, 2018",
@@ -2600,7 +2619,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 147,
+            "id": 148,
             "authors": "TESTON, A.; GERALDI, M. S.; COLASIO, B. M.; GHISI, E.",
             "title": "Rainwater Harvesting in Buildings in Brazil: A Literature Review",
             "details": "Water, v. 10, p. 471, 2018. Citações:46|61",
@@ -2614,7 +2633,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 148,
+            "id": 149,
             "authors": "INVIDIATA, ANDREA; LAVAGNA, MONICA; Ghisi, Enedir",
             "title": "Selecting design strategies using multi-criteria decision making to improve the sustainability of buildings",
             "details": "BUILDING AND ENVIRONMENT, v. 139, p. 58-68, 2018. Citações:122|138",
@@ -2630,7 +2649,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 149,
+            "id": 150,
             "authors": "WEEBER, MAX; Ghisi, Enedir; SAUER, ALEXANDER",
             "title": "Applying Energy Building Simulation in the Assessment of Energy Efficiency Measures in Factories",
             "details": "PROCEDIA CIRP, v. 69, p. 336-341, 2018. Citações:14",
@@ -2645,7 +2664,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 150,
+            "id": 151,
             "authors": "HAMMES, G.; THIVES, L.P.; GHISI, E.",
             "title": "Application of stormwater collected from porous asphalt pavements for non-potable uses in buildings",
             "details": "JOURNAL OF ENVIRONMENTAL MANAGEMENT, v. 222, p. 338-347, 2018. Citações:36|39",
@@ -2661,7 +2680,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 151,
+            "id": 152,
             "authors": "BALVEDI, B. F.; GHISI, E.; LAMBERTS, Roberto",
             "title": "A review of occupant behaviour in residential buildings",
             "details": "ENERGY AND BUILDINGS, v. 174, p. 495-505, 2018",
@@ -2675,7 +2694,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 152,
+            "id": 153,
             "authors": "TESTON, A.; TEIXEIRA, C. A.; GHISI, E.; CARDOSO, E. B.",
             "title": "Impact of Rainwater Harvesting on the Drainage System: Case Study of a Condominium of Houses in Curitiba, Southern Brazil",
             "details": "Water, v. 10, p. 1100, 2018",
@@ -2689,7 +2708,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 153,
+            "id": 154,
             "authors": "MAYKOT, J. K.; RUPP, R.F.; GHISI, E.",
             "title": "A field study about gender and thermal comfort temperatures in office buildings",
             "details": "ENERGY AND BUILDINGS, v. 178, p. 254-264, 2018",
@@ -2704,7 +2723,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 154,
+            "id": 155,
             "authors": "ANTUNES, L. N.; GHISI, E.; THIVES, L.P.",
             "title": "Permeable Pavements Life Cycle Assessment: A Literature Review",
             "details": "Water, v. 10, p. 1575--, 2018",
@@ -2719,7 +2738,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 155,
+            "id": 156,
             "authors": "KALBUSCH, A.; GHISI, E.",
             "title": "Energy consumption in the life cycle of plumbing fixtures",
             "details": "Water Science and Technology-Water Supply, v. 19, p. ws2018053, 2018",
@@ -2734,7 +2753,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 156,
+            "id": 157,
             "authors": "VECHI, MARCEL; Ghisi, Enedir",
             "title": "Evaluation of Water Heating Systems Through Life Cycle Assessment",
             "details": "EUROPEAN JOURNAL OF SUSTAINABLE DEVELOPMENT, v. 7, p. 131-142, 2018",
@@ -2750,7 +2769,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 157,
+            "id": 158,
             "authors": "THIVES, LISEANE PADILHA; Ghisi, Enedir; DA SILVA, NATÁLIA MATTOS",
             "title": "Potable Water Savings in Multifamily Buildings Using Stormwater Runoff from Impermeable Paved Streets",
             "details": "EUROPEAN JOURNAL OF SUSTAINABLE DEVELOPMENT, v. 7, p. 120-130, 2018",
@@ -2768,7 +2787,7 @@ export default function Papers() {
     ],
     "2017": [
         {
-            "id": 158,
+            "id": 159,
             "authors": "SILVA, A. S.; ALMEIDA, L. S. S.; GHISI, E.",
             "title": "Análise de incertezas físicas em simulação computacional de edificações residenciais",
             "details": "Ambiente Construído (Online), v. 17, p. 289-303, 2017",
@@ -2784,7 +2803,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 159,
+            "id": 160,
             "authors": "PEREIRA, Cláudia Donald; MARINOSKI, Deivis L; LAMBERTS, Roberto; GÜTHS, Saulo; GHISI, E.",
             "title": "Avaliação experimental do espectrômetro Alta II e sua aplicação na normatização brasileira",
             "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 17, p. 197-213, 2017",
@@ -2798,7 +2817,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 160,
+            "id": 161,
             "authors": "RUPP, R.F.; VECCHI, R.; ASMUS, B.; CANDIDO, C.; GHISI, E.",
             "title": "Conforto térmico humano em escritórios com sistema central de condicionamento artificial em clima subtropical úmido: estudos de campo vs. abordagem analítica",
             "details": "Ambiente Construído (Online), v. 17, p. 111-123, 2017",
@@ -2812,7 +2831,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 161,
+            "id": 162,
             "authors": "TEIXEIRA, C. A.; BUDEL, M. A.; CARVALHO, K. Q.; BEZERRA, S. M. C.; GHISI, E.",
             "title": "Estudo comparativo da qualidade da água da chuva coletada em telhado com telhas de concreto e em telhado verde para usos não potáveis",
             "details": "Ambiente Construído (Online), v. 17, p. 135-155, 2017",
@@ -2827,7 +2846,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 162,
+            "id": 163,
             "authors": "NARDELLI, A.; DEUSCHLE, E.; AZEVEDO, L. D.; PESSOA, J. L. N.; GHISI, E.",
             "title": "Assessment of Light Emitting Diodes technology for general lighting: A critical review",
             "details": "RENEWABLE & SUSTAINABLE ENERGY REVIEWS, v. 75, p. 368-379, 2017",
@@ -2841,7 +2860,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 163,
+            "id": 164,
             "authors": "THIVES, L.P.; GHISI, E.",
             "title": "Asphalt mixtures emission and energy consumption: A review",
             "details": "Renewable & Sustainable Energy Reviews, v. 72, p. 473-484, 2017",
@@ -2855,7 +2874,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 164,
+            "id": 165,
             "authors": "CAMPISANO, A.; BUTLER, D.; WARD, S.; BURNS, M. J.; FRIEDLER, E.; DEBUSK, K.; FISHER-JEFFES, L. N.; GHISI, E.; RAHMAN, A.; FURUMAI, H.; HAN, M.",
             "title": "Urban rainwater harvesting systems: Research, implementation and future perspectives",
             "details": "Water Research (Oxford), v. 115, p. 195-209, 2017",
@@ -2869,7 +2888,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 165,
+            "id": 166,
             "authors": "RUPP, R.F.; GHISI, E.",
             "title": "Predicting thermal comfort in office buildings in a Brazilian temperate and humid climate",
             "details": "Energy and Buildings, v. 144, p. 152-166, 2017",
@@ -2883,7 +2902,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 166,
+            "id": 167,
             "authors": "RUPP, R.F.; GHISI, E.",
             "title": "Assessing window area and potential for electricity savings by using daylighting and hybrid ventilation in office buildings in southern Brazil",
             "details": "SIMULATION-TRANSACTIONS OF THE SOCIETY FOR MODELING AND SIMULATION INTERNATIONAL, v. 93, p. 003754971770617-15, 2017",
@@ -2901,7 +2920,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 167,
+            "id": 168,
             "authors": "GERALDI, M. S.; GHISI, E.",
             "title": "Influence of the length of rainfall time series on rainwater harvesting systems: A case study in Berlin",
             "details": "RESOURCES CONSERVATION AND RECYCLING, v. 125, p. 169-180, 2017",
@@ -2919,7 +2938,7 @@ export default function Papers() {
     ],
     "2016": [
         {
-            "id": 168,
+            "id": 169,
             "authors": "VIEIRA, Abel Silva; GHISI, E.",
             "title": "Water-energy nexus in houses in Brazil: comparing rainwater and gray water use with a centralized system",
             "details": "Water Science and Technology: Water Supply (Print), v. 16, p. 274-283, 2016",
@@ -2936,7 +2955,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 169,
+            "id": 170,
             "authors": "LOPES, A. C.; RUPP, R.F.; GHISI, E.",
             "title": "Assessment of the potential for potable water savings by using rainwater in houses in southern Brazil",
             "details": "Water Science and Technology: Water Supply (Print), v. 16, p. 533-541, 2016",
@@ -2950,7 +2969,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 170,
+            "id": 171,
             "authors": "MUNARIM, Ulisses; Ghisi, Enedir",
             "title": "Environmental feasibility of heritage buildings rehabilitation",
             "details": "Renewable & Sustainable Energy Reviews, v. 58, p. 235-249, 2016",
@@ -2965,7 +2984,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 171,
+            "id": 172,
             "authors": "SILVA, ARTHUR SANTOS; Ghisi, Enedir; LAMBERTS, Roberto",
             "title": "Performance evaluation of long-term thermal comfort indices in building simulation according to ashrae standard 55",
             "details": "Building and Environment, v. 102, p. 95-115, 2016",
@@ -2980,7 +2999,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 172,
+            "id": 173,
             "authors": "ANTUNES, L. N.; THIVES, L.P.; GHISI, E.",
             "title": "Potential for Potable Water Savings in Buildings by Using Stormwater Harvested from Porous Pavements",
             "details": "Water, v. 8, p. 110, 2016",
@@ -2997,7 +3016,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 173,
+            "id": 174,
             "authors": "SILVA, A. S.; GHISI, E.",
             "title": "Uncertainty analysis of daily potable water demand on the performance evaluation of rainwater harvesting systems in residential buildings",
             "details": "Journal of Environmental Management, v. 180, p. 82-93, 2016",
@@ -3014,7 +3033,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 174,
+            "id": 175,
             "authors": "VIEIRA, Abel Silva; Ghisi, Enedir",
             "title": "Water-energy nexus in low-income houses in Brazil: the influence of integrated on-site water and sewage management strategies on the energy consumption of water and sewerage services",
             "details": "Journal of Cleaner Production, v. 133, p. 145-162, 2016",
@@ -3030,7 +3049,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 175,
+            "id": 176,
             "authors": "INVIDIATA, ANDREA; Ghisi, Enedir",
             "title": "Life-cycle energy and cost analyses of window shading used to improve the thermal performance of houses",
             "details": "Journal of Cleaner Production, v. 133, p. 1371-1383, 2016",
@@ -3049,7 +3068,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 176,
+            "id": 177,
             "authors": "SILVA, A. S.; ALMEIDA, L. S. S.; GHISI, E.",
             "title": "Decision-making process for improving thermal and energy performance of residential buildings: A case study of constructive systems in Brazil",
             "details": "Energy and Buildings, v. 128, p. 270-286, 2016",
@@ -3065,7 +3084,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 177,
+            "id": 178,
             "authors": "SCHAEFER, ALINE; Ghisi, Enedir",
             "title": "Method for obtaining reference buildings",
             "details": "Energy and Buildings, v. 128, p. 660-672, 2016",
@@ -3081,7 +3100,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 178,
+            "id": 179,
             "authors": "INVIDIATA, A.; GHISI, E.",
             "title": "Impact of climate change on heating and cooling energy demand in houses in Brazil",
             "details": "Energy and Buildings, v. 130, p. 20-32, 2016",
@@ -3098,7 +3117,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 179,
+            "id": 180,
             "authors": "BRE, F.; SILVA, A. S.; GHISI, E.; FACHINOTTI, V. D.",
             "title": "Residential building design optimisation using sensitivity analysis and genetic algorithm",
             "details": "Energy and Buildings, v. 133, p. 853-866, 2016",
@@ -3117,7 +3136,7 @@ export default function Papers() {
     ],
     "2015": [
         {
-            "id": 180,
+            "id": 181,
             "authors": "KALBUSCH, ANDREZA; Ghisi, Enedir",
             "title": "Comparative life-cycle assessment of ordinary and water-saving taps",
             "details": "JOURNAL OF CLEANER PRODUCTION, v. 112, p. 4585-4593, 2015",
@@ -3133,7 +3152,7 @@ export default function Papers() {
     ],
     "2014": [
         {
-            "id": 181,
+            "id": 182,
             "authors": "RUPP, R.F.; GHISI, E.",
             "title": "What is the most adequate method to assess thermal comfort in hybrid commercial buildings located in hot-humid summer climate?",
             "details": "Renewable & Sustainable Energy Reviews, v. 29, p. 449-462, 2014",
@@ -3148,7 +3167,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 182,
+            "id": 183,
             "authors": "SILVA, A. S.; LUIZ, F.; MANSUR, A. C.; VIEIRA, Abel Silva; SCHAEFER, A.; GHISI, E.",
             "title": "Knowing electricity end-uses to successfully promote energy efficiency in buildings: a case study in low-income houses in Southern Brazil",
             "details": "Journal of Sustainable Energy Planning and Management, v. 2, p. 7-18, 2014",
@@ -3164,7 +3183,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 183,
+            "id": 184,
             "authors": "SILVA, A. S.; GHISI, E.",
             "title": "Uncertainty analysis of the computer model in building performance simulation",
             "details": "Energy and Buildings, v. 76, p. 258-269, 2014",
@@ -3178,7 +3197,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 184,
+            "id": 185,
             "authors": "VIEIRA, Abel Silva; BEAL, C. D.; GHISI, E.; STEWART, R. A.",
             "title": "Energy intensity of rainwater harvesting systems: A review",
             "details": "Renewable & Sustainable Energy Reviews, v. 34, p. 225-242, 2014",
@@ -3194,7 +3213,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 185,
+            "id": 186,
             "authors": "SILVA, A. S.; GHISI, E.",
             "title": "Uncertainty analysis of user behaviour and physical parameters in residential building performance simulation",
             "details": "Energy and Buildings, v. 76, p. 381-391, 2014",
@@ -3210,7 +3229,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 186,
+            "id": 187,
             "authors": "SILVA, A. S.; GHISI, E.",
             "title": "Análise comparativa dos resultados do desempenho térmico da envoltória de uma edificação residencial pelos métodos de simulação do RTQ-R e da NBR 15575-1",
             "details": "Ambiente Construído (Online), v. 14, p. 215-230, 2014",
@@ -3225,7 +3244,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 187,
+            "id": 188,
             "authors": "GHISI, E.; RUPP, R.F.; TRISKA, Y.",
             "title": "Comparing indicators to rank strategies to save potable water in buildings",
             "details": "Resources, Conservation and Recycling, v. 87, p. 137-144, 2014",
@@ -3243,7 +3262,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 188,
+            "id": 189,
             "authors": "MARINOSKI, Ana Kelly; VIEIRA, Abel Silva; SILVA, A. S.; GHISI, E.",
             "title": "Water End-Uses in Low-Income Houses in Southern Brazil",
             "details": "Water, v. 6, p. 1985-1999, 2014",
@@ -3258,7 +3277,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 189,
+            "id": 190,
             "authors": "BERWANGER, H.; GHISI, E.",
             "title": "Investment feasibility analysis of rainwater harvesting in the city of Itapiranga, Brazil",
             "details": "International Journal of Sustainable Human Development, v. 2, p. 104-114, 2014",
@@ -3273,7 +3292,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 190,
+            "id": 191,
             "authors": "PEREIRA, Cláudia Donald; GHISI, E.; GÜTHS, Saulo",
             "title": "Comparação do desempenho térmico de revestimentos brancos",
             "details": "P@ranoá (UNB), p. 65-72, 2014",
@@ -3286,7 +3305,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 191,
+            "id": 192,
             "authors": "SILVA, A. S.; LUIZ, F.; MANSUR, A. C.; GHISI, E.",
             "title": "Usos Finais de Eletricidade e Rotinas de Uso como Base para Estratégias de Eficiência Energética por Meio de Auditoria Residencial",
             "details": "P@ranoá (UNB), p. 85-93, 2014",
@@ -3302,7 +3321,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 192,
+            "id": 193,
             "authors": "SILVA, A. S.; SORGATO, M. J.; MAZZAFERRO, L.; MELO, Ana Paula; GHISI, E.",
             "title": "Incerteza do método de simulação da NBR 15575-1 para a avaliação do desempenho térmico de habitações",
             "details": "Ambiente Construído (Online), v. 14, p. 103-117, 2014",
@@ -3320,7 +3339,7 @@ export default function Papers() {
     ],
     "2013": [
         {
-            "id": 193,
+            "id": 194,
             "authors": "PROENÇA, Lúcio Costa; Ghisi, Enedir",
             "title": "Assessment of Potable Water Savings in Office Buildings Considering Embodied Energy",
             "details": "Water Resources Management, v. 27, p. 581-599, 2013",
@@ -3337,7 +3356,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 194,
+            "id": 195,
             "authors": "GHISI, E.; SCHONDERMARK, P. N.",
             "title": "Investment Feasibility Analysis of Rainwater Use in Residences",
             "details": "Water Resources Management, v. 27, p. 2555-2576, 2013",
@@ -3352,7 +3371,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 195,
+            "id": 196,
             "authors": "RUPP, R.F.; GHISI, E.",
             "title": "Potencial de economia de energia elétrica em edificações comerciais híbridas localizadas em Florianópolis, SC",
             "details": "Ambiente Construído (Online), v. 13, p. 143-160, 2013",
@@ -3368,7 +3387,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 196,
+            "id": 197,
             "authors": "VIEIRA, Abel Silva; GHISI, E.; WEEBER, M.",
             "title": "Self-cleaning filtration: A novel concept for rainwater harvesting systems",
             "details": "Resources, Conservation and Recycling, v. 78, p. 67-73, 2013",
@@ -3382,7 +3401,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 197,
+            "id": 198,
             "authors": "SILVA, A. S.; GHISI, E.",
             "title": "Análise de sensibilidade global dos parâmetros termofísicos de uma edificação residencial de acordo com o método de simulação do RTQ-R",
             "details": "Ambiente Construído (Online), v. 13, p. 135-148, 2013",
@@ -3398,7 +3417,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 198,
+            "id": 199,
             "authors": "Rupp, Ricardo Forgiarini; GHISI, E.",
             "title": "Potencial de economia de energia elétrica através do uso da luz natural e da ventilação híbrida em edifícios comerciais em Florianópolis",
             "details": "Ambiente Construído (Online), v. 13, p. 75-86, 2013",
@@ -3417,7 +3436,7 @@ export default function Papers() {
     ],
     "2012": [
         {
-            "id": 199,
+            "id": 200,
             "authors": "GHISI, E.; CARDOSO, Karla Albino; Rupp, Ricardo Forgiarini",
             "title": "Short-term versus long-term rainfall time series in the assessment of potable water savings by using rainwater in houses",
             "details": "Journal of Environmental Management, v. 100, p. 109-119, 2012",
@@ -3434,7 +3453,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 200,
+            "id": 201,
             "authors": "SOUZA, E.L.; GHISI, E.",
             "title": "Potable Water Savings by Using Rainwater for Non-Potable Uses in Houses",
             "details": "Water, v. 4, p. 607-628, 2012",
@@ -3450,7 +3469,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 201,
+            "id": 202,
             "authors": "KALBUSCH, A; GHISI, E.",
             "title": "Método para quantificação do consumo energético no ciclo de vida de equipamentos hidrossanitários",
             "details": "Ambiente Construído (Online), v. 12, p. 57-73, 2012",
@@ -3466,7 +3485,7 @@ export default function Papers() {
     ],
     "2011": [
         {
-            "id": 202,
+            "id": 203,
             "authors": "PROENÇA, Lúcio Costa; GHISI, E.; TAVARES, D. F.; COELHO, Gabriel Marcon",
             "title": "Potential for electricity savings by reducing potable water consumption in a city scale",
             "details": "Resources, Conservation and Recycling, v. 55, p. 960-965, 2011",
@@ -3482,7 +3501,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 203,
+            "id": 204,
             "authors": "PEREIRA, Cláudia Donald; GHISI, E.",
             "title": "The influence of the envelope on the thermal performance of ventilated and occupied houses",
             "details": "Energy and Buildings, v. 43, p. 3391-3399, 2011",
@@ -3498,7 +3517,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 204,
+            "id": 205,
             "authors": "GHISI, E.; RUPP, R.F.; MUNARIM, Ulisses",
             "title": "Comparação de métodos para dimensionamento de reservatórios de água pluvial",
             "details": "Ambiente Construído (Online), v. 11, p. 47-64, 2011",
@@ -3513,7 +3532,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 205,
+            "id": 206,
             "authors": "GHISI, E.; FASOLA, G.B.; MARINOSKI, Ana Kelly; BORINELLI, J.B.",
             "title": "Potencial de economia de água em duas escolas em Florianópolis, SC",
             "details": "Ambiente Construído (Online), v. 11, p. 65-78, 2011",
@@ -3532,7 +3551,7 @@ export default function Papers() {
     ],
     "2010": [
         {
-            "id": 206,
+            "id": 207,
             "authors": "PROENÇA, Lúcio Costa; GHISI, E.",
             "title": "Water end-uses in Brazilian office buildings",
             "details": "Resources, Conservation and Recycling, v. 54, p. 489-500, 2010",
@@ -3547,7 +3566,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 207,
+            "id": 208,
             "authors": "RAMOS, Greici; GHISI, E.",
             "title": "Analysis of daylight calculated using the EnergyPlus programme",
             "details": "Renewable & Sustainable Energy Reviews, v. 14, p. 1948-1958, 2010",
@@ -3561,7 +3580,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 208,
+            "id": 209,
             "authors": "GHISI, E.; RAMOS, Greici",
             "title": "Avaliação do cálculo da iluminação natural realizada pelo programa EnergyPlus",
             "details": "Ambiente Construído (Online), v. 10, p. 157-169, 2010",
@@ -3576,7 +3595,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 209,
+            "id": 210,
             "authors": "GHISI, E",
             "title": "Parameters Influencing the Sizing of Rainwater Tanks",
             "details": "Water Resources Management, v. 24, p. 2381-2403, 2010",
@@ -3593,7 +3612,7 @@ export default function Papers() {
     ],
     "2009": [
         {
-            "id": 210,
+            "id": 211,
             "authors": "PROENÇA, Lúcio Costa; GHISI, E.",
             "title": "Estimativa de usos finais de água em quatro edifícios de escritórios localizados em Florianópolis",
             "details": "Ambiente Construído (Online), v. 9, p. 95-108, 2009",
@@ -3608,7 +3627,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 211,
+            "id": 212,
             "authors": "GHISI, E.; TAVARES, D. F.; ROCHA, Vinicius Luis",
             "title": "Rainwater harvesting in petrol stations in Brasília: potential for potable water savings and investment feasibility analysis",
             "details": "Resources, Conservation and Recycling, v. 54, p. 79-85, 2009",
@@ -3625,7 +3644,7 @@ export default function Papers() {
     ],
     "2008": [
         {
-            "id": 212,
+            "id": 213,
             "authors": "MARINOSKI, Ana Kelly; GHISI, E.",
             "title": "Aproveitamento de água pluvial para fins não potáveis em instituição de ensino: estudo de caso em Florianópolis - SC",
             "details": "Ambiente Construído (Online), v. 8, p. 67-84, 2008",
@@ -3641,7 +3660,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 213,
+            "id": 214,
             "authors": "PEÑA, Carolina Canella; GHISI, E.; PEREIRA, Cláudia Donald",
             "title": "Comparação entre necessidade e disponibilidade de vento e radiação solar para fins de análise bioclimática de edificações em Florianópolis",
             "details": "Ambiente Construído (Online), v. 8, p. 87-101, 2008",
@@ -3658,7 +3677,7 @@ export default function Papers() {
     ],
     "2007": [
         {
-            "id": 214,
+            "id": 215,
             "authors": "GHISI, E.; MASSIGNANI, Ricardo",
             "title": "Thermal performance of bedrooms in a multi-storey residential building in southern Brazil",
             "details": "Building and Environment, Inglaterra, v. 42, n.2, p. 730-742, 2007",
@@ -3672,7 +3691,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 215,
+            "id": 216,
             "authors": "GHISI, E.; OLIVEIRA, Sulayre Mengotti",
             "title": "Potential for potable water savings by combining the use of rainwater and greywater in houses in southern Brazil",
             "details": "Building and Environment, Inglaterra, v. 42, p. 1731-1742, 2007",
@@ -3690,7 +3709,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 216,
+            "id": 217,
             "authors": "GHISI, E.; BRESSAN, Diego Lapolli; MARTINI, Maurício",
             "title": "Rainwater tank capacity and potential for potable water savings by using rainwater in the residential sector of southeastern Brazil",
             "details": "Building and Environment, v. 42, p. 1654-1666, 2007",
@@ -3706,7 +3725,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 217,
+            "id": 218,
             "authors": "GHISI, E.; FERREIRA, Daniel Fabricio",
             "title": "Potential for potable water savings by using rainwater and greywater in a multi-storey residential building in southern Brazil",
             "details": "Building and Environment, v. 42, p. 2512-2522, 2007",
@@ -3723,7 +3742,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 218,
+            "id": 219,
             "authors": "GHISI, E.; GOSCH, Samuel; LAMBERTS, Roberto",
             "title": "Electricity end-uses in the residential sector of Brazil",
             "details": "Energy Policy, v. 35, p. 4107-4120, 2007",
@@ -3740,7 +3759,7 @@ export default function Papers() {
     ],
     "2006": [
         {
-            "id": 219,
+            "id": 220,
             "authors": "GHISI, E.; MONTIBELLER, Andreza; SCHMIDT, Richard Williann",
             "title": "Potential for potable water savings by using rainwater: an analysis over 62 cities in southern Brazil",
             "details": "Building and Environment, Inglaterra, v. 41, n.2, p. 204-210, 2006",
@@ -3755,7 +3774,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 220,
+            "id": 221,
             "authors": "GHISI, E",
             "title": "Potential for potable water savings by using rainwater in the residential sector of Brazil.",
             "details": "Building and Environment, Inglaterra, v. 41, n.11, p. 1544-1550, 2006",
@@ -3770,7 +3789,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 221,
+            "id": 222,
             "authors": "KAMMERS, Pauline; GHISI, E.",
             "title": "Usos finais de água em edifícios públicos localizados em Florianópolis-SC",
             "details": "Ambiente Construído (Online), Porto Alegre, v. 6, n.1, p. 75-90, 2006",
@@ -3785,7 +3804,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 222,
+            "id": 223,
             "authors": "GHISI, E.; TINKER, John A",
             "title": "Evaluating the potential for energy savings on lighting by integrating fibre optics in buildings",
             "details": "Building and Environment, Inglaterra, v. 41, n.12, p. 1611-1621, 2006",
@@ -3801,7 +3820,7 @@ export default function Papers() {
     ],
     "2005": [
         {
-            "id": 223,
+            "id": 224,
             "authors": "GHISI, E.; TINKER, J.",
             "title": "An Ideal Window Area concept for energy efficient integration of daylight and artificial light in buildings",
             "details": "Building and Environment, Inglaterra, v. 40, n.1, p. 51-61, 2005",
@@ -3817,7 +3836,7 @@ export default function Papers() {
             ]
         },
         {
-            "id": 224,
+            "id": 225,
             "authors": "GHISI, E.; TINKER, John A; IBRAHIM, Siti Halipah",
             "title": "Área de janela e dimensões de ambientes para iluminação natural e eficiência energética: literatura versus simulação computacional",
             "details": "Ambiente Construído (Online), Porto Alegre, v. 5, n.4, p. 81-93, 2005",
@@ -3835,7 +3854,7 @@ export default function Papers() {
     ],
     "2004": [
         {
-            "id": 225,
+            "id": 226,
             "authors": "GHISI, E.; TINKER, John A",
             "title": "Potencial de economia de energia em iluminação através da utilização de fibras ópticas",
             "details": "Ambiente Construído (Online), http://www.antac.org.br/, v. 4, n.3, p. 61-77, 2004",
