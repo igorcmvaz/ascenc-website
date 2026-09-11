@@ -45,6 +45,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/netuno" element={<Netuno />} />
           <Route path="/netuno/v123" element={<NetunoV123 />} />
           <Route path="/netuno/v5" element={<NetunoV5 />} />
+          <Route path="/paicacv" element={<PAICACV />} />
           <Route path="/papers" element={<Papers />} />
           <Route path="/partners" element={<Partners />} />
 

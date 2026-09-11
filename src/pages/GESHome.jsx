@@ -29,7 +29,7 @@ export default function GESHome() {
               {t("ges_home.subtitle")}
             </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto pt-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto pt-4">
               {/* Card 1: ASCENC */}
               <Link
                 to="/ascenc"
@@ -38,7 +38,7 @@ export default function GESHome() {
                 <div className="p-2 bg-emerald-100 rounded-xl shrink-0 flex items-center justify-center w-10 h-10 group-hover:scale-105 transition-transform duration-300 border border-emerald-300">
                   <img src="./assets/logos/ascenc.png" alt="ASCENC" className="w-6 h-6 object-contain" />
                 </div>
-                <div className="space-y-0.5">
+                <div className="space-y-0.5 flex-1 min-w-0">
                   <h3 className="font-extrabold text-slate-900 group-hover:text-emerald-800 transition-colors flex items-center gap-1 text-sm">
                     {t("ges_home.ascenc_card_title")}
                     <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
@@ -52,18 +52,37 @@ export default function GESHome() {
               {/* Card 2: Netuno */}
               <Link
                 to="/netuno"
-                className="group flex items-start gap-3.5 p-4 bg-white dark:bg-slate-200 backdrop-blur-md rounded-2xl border border-emerald-200 dark:border-slate-300 hover:border-emerald-500 shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-left"
+                className="group flex items-start gap-3.5 p-4 bg-white dark:bg-slate-200 backdrop-blur-md rounded-2xl border border-emerald-200 dark:border-slate-300 hover:border-blue-500 shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-left"
               >
                 <div className="p-2 bg-blue-100 rounded-xl shrink-0 flex items-center justify-center w-10 h-10 group-hover:scale-105 transition-transform duration-300 border border-blue-300">
                   <img src="./assets/icons/netuno.ico" alt="Netuno" className="w-6 h-6 object-contain" />
                 </div>
-                <div className="space-y-0.5">
+                <div className="space-y-0.5 flex-1 min-w-0">
                   <h3 className="font-extrabold text-slate-900 group-hover:text-blue-800 transition-colors flex items-center gap-1 text-sm">
                     Netuno
                     <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                   </h3>
                   <p className="text-xs text-slate-800 leading-snug font-bold">
                     {t("ges_home.netuno_card_desc")}
+                  </p>
+                </div>
+              </Link>
+
+              {/* Card 3: PAIC-ACV */}
+              <Link
+                to="/ascenc/paicacv"
+                className="group flex items-start gap-3.5 p-4 bg-white dark:bg-slate-200 backdrop-blur-md rounded-2xl border border-emerald-200 dark:border-slate-300 hover:border-amber-500 shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-left"
+              >
+                <div className="p-2 bg-amber-100 rounded-xl shrink-0 flex items-center justify-center w-10 h-10 group-hover:scale-105 transition-transform duration-300 border border-amber-300">
+                  <img src="./assets/tools/paicacv.png" alt="PAIC-ACV" className="w-6 h-6 object-contain" />
+                </div>
+                <div className="space-y-0.5 flex-1 min-w-0">
+                  <h3 className="font-extrabold text-slate-900 group-hover:text-amber-800 transition-colors flex items-center gap-1 text-sm">
+                    {t("ges_home.paicacv_card_title") || "PAIC-ACV"}
+                    <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                  </h3>
+                  <p className="text-xs text-slate-800 leading-snug font-bold">
+                    {t("ges_home.paicacv_card_desc")}
                   </p>
                 </div>
               </Link>
