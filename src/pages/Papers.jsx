@@ -605,6 +605,23 @@ export default function Papers() {
                 "Agua-Potavel",
                 "Emissoes-Carbono"
             ]
+        },
+        {
+            "id": 14,
+            "authors": "VAZ, IGOR CATÃO MARTINS; SCOLARO, TAYLANA PICCININI; RODRIGUES, EUGÉNIO; GHISI, ENEDIR",
+            "title": "Carbonation of cement-based materials from a Whole Building Life Cycle Assessment perspective",
+            "details": "JOURNAL OF BUILDING ENGINEERING, v. In Press, p. 117306, 2026",
+            "year": "2026",
+            "citations": "",
+            "doi": "http://dx.doi.org/10.1016/j.jobe.2026.117306",
+            "tags": [
+                "ACV",
+                "Emissoes-Carbono",
+                "Habitacao-Interesse-Social",
+                "Residencial-Unifamiliar",
+                "Analise-Sensibilidade",
+                "Analise-Incerteza"
+            ]
         }
     ],
     "2025": [
