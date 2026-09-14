@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Official canonical sitemap (strictly without www)
+Sitemap: https://sustainability.ufsc.br/sitemap.xml
