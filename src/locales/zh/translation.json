@@ -306,6 +306,7 @@
     "title": "Netuno",
     "description": "Netuno 旨在通过雨水利用来评估建筑中节约饮用水的潜力。该分析工具可辅助设计储水箱容量，并评估系统在非饮用水需求（如便器冲洗、地面清洁、庭院浇灌、车辆冲洗和蒸发冷却）下的技术与财务可行性。",
     "more_info": "有关如何使用 Netuno 4 的更多信息，请阅读用户手册。",
+    "language_notice": "该版本仅提供葡萄牙语版本。",
     "team": "团队：",
     "team_members": "Enedir Ghisi 教授<br />Marcelo Marcel Cordova，工程师",
     "manual": "用户手册",

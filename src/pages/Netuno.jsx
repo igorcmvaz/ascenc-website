@@ -1,5 +1,5 @@
 import PageLayout from "../components/PageLayout";
-import { ArrowLeft, Download, FileText, FolderArchive, Settings, Users } from "lucide-react";
+import { ArrowLeft, Download, FileText, FolderArchive, Settings, Users, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -14,7 +14,11 @@ export default function Netuno() {
           <div className="p-3 bg-blue-50 rounded-2xl shadow-md border border-blue-200 shrink-0 flex items-center justify-center w-20 h-20">
             <img src="./assets/icons/netuno.ico" alt="Netuno Logo" className="w-14 h-14 object-contain" />
           </div>
-          <div className="space-y-4 text-center md:text-left">
+          <div className="space-y-4 text-center md:text-left flex-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-100/90 border border-blue-200 dark:border-blue-300 text-blue-900 text-xs sm:text-sm font-extrabold shadow-xs">
+              <Globe className="w-3.5 h-3.5 text-blue-700 shrink-0" />
+              <span>{t("netuno.language_notice")}</span>
+            </div>
             <p
               className="text-lg leading-relaxed text-slate-900 font-bold"
               dangerouslySetInnerHTML={{ __html: t("netuno.description") }}
@@ -27,9 +31,15 @@ export default function Netuno() {
 
         {/* 📥 DOWNLOADS SECTION */}
         <section className="space-y-6">
-          <h2 className="text-2xl font-black text-slate-900 dark:text-zinc-100 tracking-tight">
-            {t("netuno.downloads", "Downloads")}
-          </h2>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h2 className="text-2xl font-black text-slate-900 dark:text-zinc-100 tracking-tight">
+              {t("netuno.downloads", "Downloads")}
+            </h2>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white dark:bg-slate-200 border border-slate-300 text-slate-700 text-xs font-bold shadow-2xs">
+              <Globe className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+              <span>{t("netuno.language_notice")}</span>
+            </div>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* MANUAL DO USUÁRIO */}

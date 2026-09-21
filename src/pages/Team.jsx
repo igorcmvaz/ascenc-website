@@ -73,7 +73,11 @@ export default function Team() {
     },
     {
         "name": "Dilson Machado Cunha",
-        "role": "Doutorando"
+        "role": "Doutorando",
+        "image": "./assets/team/dilson.jpg",
+        "orcid": "https://orcid.org/0009-0001-9453-8367",
+        "lattes": "http://lattes.cnpq.br/2689584980953242",
+        "researchgate": "https://www.researchgate.net/profile/Dilson-Cunha-3"
     },
     {
         "name": "Marco Aurelio Vieira Boufleur",
