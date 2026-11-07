@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import PageLayout from "../components/PageLayout";
 import { Link } from "react-router-dom";
 import {
@@ -6,23 +6,36 @@ import {
   RefreshCw,
   ArrowLeft,
   Users,
-  ExternalLink,
-  Bell
+  Lock,
+  KeyRound,
+  ShieldCheck,
+  LogOut
 } from "lucide-react";
-
-export const TRITON_NTFY_TOPIC = "triton_ufsc_downloads_igor_9f8a2b";
+import {
+  TRITON_ENCRYPTED_TOPIC,
+  unlockAdminPrivateKey,
+  decryptRegistrationMessage,
+} from "../utils/tritonCrypto";
 
 export default function TritonRegistros() {
+  const [password, setPassword] = useState("");
+  const [privateKey, setPrivateKey] = useState(null);
+  const [authError, setAuthError] = useState("");
+  const [unlocking, setUnlocking] = useState(false);
+
   const [records, setRecords] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const fetchRecords = async () => {
+  const fetchAndDecryptRecords = async (unlockedKey) => {
+    const keyToUse = unlockedKey || privateKey;
+    if (!keyToUse) return;
+
     setLoading(true);
     setError("");
     try {
       const res = await fetch(
-        `https://ntfy.sh/${TRITON_NTFY_TOPIC}/json?poll=1&since=all`
+        `https://ntfy.sh/${TRITON_ENCRYPTED_TOPIC}/json?poll=1&since=all`
       );
       const text = await res.text();
       const lines = text
@@ -35,46 +48,56 @@ export default function TritonRegistros() {
         try {
           const item = JSON.parse(line);
           if (item.event === "message" && item.message) {
-            let payload = null;
-            try {
-              payload = JSON.parse(item.message);
-            } catch {
-              payload = {
-                name: "-",
-                email: "-",
-                institution: "-",
-                edition: "-",
-                purpose: item.message,
-              };
-            }
+            const payload = await decryptRegistrationMessage(
+              keyToUse,
+              item.message
+            );
             parsed.push({
               id: item.id,
               time: item.time
                 ? new Date(item.time * 1000).toLocaleString("pt-BR")
                 : "-",
-              name: payload.name || "-",
-              email: payload.email || "-",
-              institution: payload.institution || "-",
-              edition: payload.edition || "-",
-              purpose: payload.purpose || "-",
+              name: payload?.name || "-",
+              email: payload?.email || "-",
+              institution: payload?.institution || "-",
+              edition: payload?.edition || "-",
+              purpose: payload?.purpose || "-",
             });
           }
         } catch {
-          // ignore malformed line
+          // ignora mensagens que não pertençam à chave
         }
       }
 
       setRecords(parsed.reverse());
     } catch {
-      setError("Não foi possível carregar os registros no momento.");
+      setError("Não foi possível carregar os registros criptografados no momento.");
     } finally {
       setLoading(false);
     }
   };
 
-  useEffect(() => {
-    fetchRecords();
-  }, []);
+  const handleUnlock = async (e) => {
+    e.preventDefault();
+    setAuthError("");
+    setUnlocking(true);
+    try {
+      const key = await unlockAdminPrivateKey(password);
+      setPrivateKey(key);
+      setPassword("");
+      await fetchAndDecryptRecords(key);
+    } catch {
+      setAuthError("Senha incorreta. Acesso negado.");
+    } finally {
+      setUnlocking(false);
+    }
+  };
+
+  const handleLock = () => {
+    setPrivateKey(null);
+    setRecords([]);
+    setPassword("");
+  };
 
   const exportCsv = () => {
     const header = [
@@ -100,6 +123,81 @@ export default function TritonRegistros() {
     URL.revokeObjectURL(url);
   };
 
+  if (!privateKey) {
+    return (
+      <PageLayout>
+        <div className="max-w-md mx-auto py-12 px-4">
+          <div className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-xl space-y-5">
+            <div className="flex flex-col items-center text-center space-y-2">
+              <div className="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 flex items-center justify-center shadow-sm">
+                <Lock className="w-7 h-7" />
+              </div>
+              <span className="text-[11px] font-black uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+                Ambiente Blindado • RSA-2048 + AES-GCM
+              </span>
+              <h1 className="text-xl font-black text-slate-900 dark:text-white">
+                Painel Restrito do Triton
+              </h1>
+              <p className="text-xs text-slate-500 dark:text-zinc-400 leading-relaxed">
+                Os dados de quem baixa o Triton são criptografados ponta-a-ponta. Insira a senha administrativa para desbloquear a chave privada e visualizar os registros.
+              </p>
+            </div>
+
+            <form onSubmit={handleUnlock} className="space-y-4">
+              <div>
+                <label
+                  htmlFor="triton-admin-pwd"
+                  className="block text-xs font-extrabold mb-1.5 text-slate-800 dark:text-zinc-200"
+                >
+                  Senha Administrativa
+                </label>
+                <div className="relative">
+                  <input
+                    id="triton-admin-pwd"
+                    type="password"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="••••••••••••"
+                    className="w-full p-3 pl-10 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  />
+                  <KeyRound className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
+                </div>
+              </div>
+
+              {authError && (
+                <div className="p-3 rounded-xl bg-rose-50 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-800 text-rose-700 dark:text-rose-300 text-xs font-bold text-center">
+                  {authError}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={unlocking}
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 text-white font-black text-sm shadow-md transition-all cursor-pointer"
+              >
+                <ShieldCheck className="w-4 h-4" />
+                <span>
+                  {unlocking ? "Descriptografando chave..." : "Desbloquear Registros"}
+                </span>
+              </button>
+            </form>
+
+            <div className="text-center pt-1">
+              <Link
+                to="/triton"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-slate-800 dark:text-zinc-400 dark:hover:text-white"
+              >
+                <ArrowLeft className="w-3.5 h-3.5" />
+                <span>Voltar à página do Triton</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </PageLayout>
+    );
+  }
+
   return (
     <PageLayout>
       <div className="max-w-5xl mx-auto space-y-6 pb-10">
@@ -113,8 +211,8 @@ export default function TritonRegistros() {
                 <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
                   Registros de Download do Triton
                 </h1>
-                <p className="text-xs text-slate-500 dark:text-zinc-400">
-                  Painel de acompanhamento em tempo real (Plano B independente do FormSubmit)
+                <p className="text-xs text-emerald-700 dark:text-emerald-400 font-bold">
+                  Chave privada desbloqueada • Registros descriptografados localmente
                 </p>
               </div>
             </div>
@@ -122,7 +220,7 @@ export default function TritonRegistros() {
             <div className="flex flex-wrap items-center gap-2">
               <button
                 type="button"
-                onClick={fetchRecords}
+                onClick={() => fetchAndDecryptRecords()}
                 className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-zinc-200 text-xs font-bold cursor-pointer"
               >
                 <RefreshCw className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`} />
@@ -139,34 +237,15 @@ export default function TritonRegistros() {
                 <span>Exportar CSV</span>
               </button>
 
-              <Link
-                to="/triton"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-zinc-200 text-xs font-bold"
+              <button
+                type="button"
+                onClick={handleLock}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-rose-100 hover:bg-rose-200 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 text-xs font-bold cursor-pointer"
               >
-                <ArrowLeft className="w-3.5 h-3.5" />
-                <span>Voltar</span>
-              </Link>
+                <LogOut className="w-3.5 h-3.5" />
+                <span>Bloquear</span>
+              </button>
             </div>
-          </div>
-
-          {/* Dica de inscrição no celular/navegador */}
-          <div className="p-4 rounded-2xl bg-blue-50/70 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-slate-700 dark:text-zinc-300">
-            <div className="flex items-start sm:items-center gap-2.5">
-              <Bell className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5 sm:mt-0" />
-              <span>
-                Você também pode ver o feed ao vivo ou ativar notificações no celular/navegador pelo canal:{" "}
-                <strong className="font-mono">{TRITON_NTFY_TOPIC}</strong>
-              </span>
-            </div>
-            <a
-              href={`https://ntfy.sh/${TRITON_NTFY_TOPIC}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 font-black text-blue-700 dark:text-blue-400 underline shrink-0"
-            >
-              <span>Abrir no ntfy.sh</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
           </div>
 
           {error && (
@@ -191,13 +270,13 @@ export default function TritonRegistros() {
                 {loading ? (
                   <tr>
                     <td colSpan={6} className="p-6 text-center text-slate-500">
-                      Carregando registros...
+                      Descriptografando registros...
                     </td>
                   </tr>
                 ) : records.length === 0 ? (
                   <tr>
                     <td colSpan={6} className="p-6 text-center text-slate-500">
-                      Nenhum registro recente encontrado.
+                      Nenhum registro encontrado ainda.
                     </td>
                   </tr>
                 ) : (

@@ -1,6 +1,10 @@
 import React, { useState, useRef } from "react";
 import PageLayout from "../components/PageLayout";
 import TritonWorldMinimap from "../components/TritonWorldMinimap";
+import {
+  encryptRegistrationPayload,
+  TRITON_ENCRYPTED_TOPIC,
+} from "../utils/tritonCrypto";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -213,35 +217,31 @@ export default function Triton() {
       // ignore storage errors
     }
 
-    // Plano B independente do FormSubmit: registra instantaneamente no ntfy.sh
-    // Sem headers customizados para ser uma Simple Request CORS (sem preflight OPTIONS)
-    const payload = JSON.stringify({
+    // Plano B blindado: criptografa os dados com a chave pública RSA-2048 antes do envio,
+    // de modo que somente quem tem a senha administrativa consegue descriptografar em #/triton/registros.
+    encryptRegistrationPayload({
       name: formData.name,
       email: formData.email,
       institution: formData.institution,
       edition: formData.edition,
       purpose: formData.purpose,
       timestamp: new Date().toISOString(),
-    });
-
-    try {
-      const sent =
-        typeof navigator !== "undefined" &&
-        typeof navigator.sendBeacon === "function" &&
-        navigator.sendBeacon(
-          "https://ntfy.sh/triton_ufsc_downloads_igor_9f8a2b",
-          payload
-        );
-      if (!sent) {
-        fetch("https://ntfy.sh/triton_ufsc_downloads_igor_9f8a2b", {
-          method: "POST",
-          keepalive: true,
-          body: payload,
-        }).catch(() => {});
-      }
-    } catch {
-      // ignore network errors
-    }
+    })
+      .then((encryptedBody) => {
+        const url = `https://ntfy.sh/${TRITON_ENCRYPTED_TOPIC}`;
+        const sent =
+          typeof navigator !== "undefined" &&
+          typeof navigator.sendBeacon === "function" &&
+          navigator.sendBeacon(url, encryptedBody);
+        if (!sent) {
+          fetch(url, {
+            method: "POST",
+            keepalive: true,
+            body: encryptedBody,
+          }).catch(() => {});
+        }
+      })
+      .catch(() => {});
 
     setSubmitStatus("submitting");
     // Plano A: o form envia o POST silenciosamente para o iframe oculto "triton_email_iframe"
