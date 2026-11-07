@@ -212,10 +212,33 @@ export default function Triton() {
     } catch {
       // ignore storage errors
     }
+
+    // Plano B independente do FormSubmit: registra instantaneamente no ntfy.sh
+    // (consultável em #/triton/registros e em https://ntfy.sh/triton_ufsc_downloads_igor_9f8a2b)
+    try {
+      fetch("https://ntfy.sh/triton_ufsc_downloads_igor_9f8a2b", {
+        method: "POST",
+        keepalive: true,
+        headers: {
+          Title: `Download Triton: ${formData.name || "Visitante"} (${formData.edition})`,
+          Tags: "droplet",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          institution: formData.institution,
+          edition: formData.edition,
+          purpose: formData.purpose,
+          timestamp: new Date().toISOString(),
+        }),
+      }).catch(() => {});
+    } catch {
+      // ignore network errors
+    }
+
     setSubmitStatus("submitting");
-    // O form envia o POST silenciosamente para o iframe oculto "triton_email_iframe"
-    // (assim, mesmo que o servidor do FormSubmit esteja fora do ar com Erro 522,
-    // o navegador do usuário nunca sai do site e abre direto #/triton/download).
+    // Plano A: o form envia o POST silenciosamente para o iframe oculto "triton_email_iframe"
+    // e abre #/triton/download em seguida.
     setTimeout(() => {
       navigate("/triton/download");
     }, 350);

@@ -27,6 +27,7 @@ const NetunoV123 = lazy(() => import("./pages/NetunoV123"));
 const NetunoV5 = lazy(() => import("./pages/NetunoV5"));
 const Triton = lazy(() => import("./pages/Triton"));
 const TritonDownload = lazy(() => import("./pages/TritonDownload"));
+const TritonRegistros = lazy(() => import("./pages/TritonRegistros"));
 
 // Importante: inicializar o i18n
 import "./i18n";
@@ -53,6 +54,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/contact" element={<GESContact />} />
           <Route path="/triton" element={<Triton />} />
           <Route path="/triton/download" element={<TritonDownload />} />
+          <Route path="/triton/registros" element={<TritonRegistros />} />
           <Route path="/netuno" element={<Netuno />} />
           <Route path="/netuno/v123" element={<Netuno />} />
           <Route path="/netuno/v5" element={<Triton />} />
