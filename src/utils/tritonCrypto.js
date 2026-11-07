@@ -149,6 +149,6 @@ export async function decryptRegistrationMessage(privateKey, messageStr) {
     return JSON.parse(dec.decode(plainBuffer));
   }
 
-  return parsed;
+  throw new Error("Invalid encrypted payload");
 }
 

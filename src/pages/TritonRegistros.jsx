@@ -34,8 +34,54 @@ export default function TritonRegistros() {
     setLoading(true);
     setError("");
     try {
+      const encryptedById = new Map();
+
+      // 1. Carrega o histórico criptografado salvo localmente no dispositivo
+      try {
+        const localRaw = window.localStorage.getItem(
+          "triton_encrypted_archive_v1"
+        );
+        if (localRaw) {
+          const localArr = JSON.parse(localRaw);
+          if (Array.isArray(localArr)) {
+            for (const item of localArr) {
+              if (item && item.id && item.message) {
+                encryptedById.set(item.id, item);
+              }
+            }
+          }
+        }
+      } catch {
+        // ignore localStorage errors
+      }
+
+      // 2. Carrega o arquivo permanente criptografado do repositório (sincronizado a cada 4h via GitHub Actions)
+      const archiveUrls = [
+        `https://raw.githubusercontent.com/igorcmvaz/ascenc-website/main/public/data/triton_encrypted_records.json?t=${Date.now()}`,
+        `./data/triton_encrypted_records.json?t=${Date.now()}`,
+      ];
+      for (const archiveUrl of archiveUrls) {
+        try {
+          const archRes = await fetch(archiveUrl, { cache: "no-store" });
+          if (archRes.ok) {
+            const archArr = await archRes.json();
+            if (Array.isArray(archArr)) {
+              for (const item of archArr) {
+                if (item && item.id && item.message) {
+                  encryptedById.set(item.id, item);
+                }
+              }
+            }
+          }
+        } catch {
+          // ignore archive fetch failure
+        }
+      }
+
+      // 3. Carrega em tempo real os registros recentes do canal ntfy.sh
       const res = await fetch(
-        `https://ntfy.sh/${TRITON_ENCRYPTED_TOPIC}/json?poll=1&since=all`
+        `https://ntfy.sh/${TRITON_ENCRYPTED_TOPIC}/json?poll=1&since=all`,
+        { cache: "no-store" }
       );
       const text = await res.text();
       const lines = text
@@ -43,27 +89,57 @@ export default function TritonRegistros() {
         .map((l) => l.trim())
         .filter(Boolean);
 
-      const parsed = [];
       for (const line of lines) {
         try {
           const item = JSON.parse(line);
-          if (item.event === "message" && item.message) {
-            const payload = await decryptRegistrationMessage(
-              keyToUse,
-              item.message
-            );
-            parsed.push({
-              id: item.id,
-              time: item.time
-                ? new Date(item.time * 1000).toLocaleString("pt-BR")
-                : "-",
-              name: payload?.name || "-",
-              email: payload?.email || "-",
-              institution: payload?.institution || "-",
-              edition: payload?.edition || "-",
-              purpose: payload?.purpose || "-",
-            });
+          if (item.event === "message" && item.id && item.message) {
+            const msgObj = JSON.parse(item.message);
+            if (msgObj && msgObj.v === 1 && msgObj.k && msgObj.iv && msgObj.c) {
+              encryptedById.set(item.id, {
+                id: item.id,
+                time: item.time,
+                message: item.message,
+              });
+            }
           }
+        } catch {
+          // ignora linhas inválidas
+        }
+      }
+
+      // Persiste a lista criptografada unificada no localStorage para nunca perder histórico
+      const allEncrypted = Array.from(encryptedById.values()).sort(
+        (a, b) => (a.time || 0) - (b.time || 0)
+      );
+      try {
+        window.localStorage.setItem(
+          "triton_encrypted_archive_v1",
+          JSON.stringify(allEncrypted)
+        );
+      } catch {
+        // ignore storage quota errors
+      }
+
+      const parsed = [];
+      for (const item of allEncrypted) {
+        try {
+          const payload = await decryptRegistrationMessage(
+            keyToUse,
+            item.message
+          );
+          parsed.push({
+            id: item.id,
+            time: item.time
+              ? new Date(item.time * 1000).toLocaleString("pt-BR")
+              : payload?.timestamp
+              ? new Date(payload.timestamp).toLocaleString("pt-BR")
+              : "-",
+            name: payload?.name || "-",
+            email: payload?.email || "-",
+            institution: payload?.institution || "-",
+            edition: payload?.edition || "-",
+            purpose: payload?.purpose || "-",
+          });
         } catch {
           // ignora mensagens que não pertençam à chave
         }

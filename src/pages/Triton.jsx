@@ -228,7 +228,13 @@ export default function Triton() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleUnlockAccess = () => {
+  const handleUnlockAccess = async (e) => {
+    if (e && typeof e.preventDefault === "function") {
+      e.preventDefault();
+    }
+    if (submitStatus === "submitting") return;
+    setSubmitStatus("submitting");
+
     try {
       window.sessionStorage.setItem(
         "triton_user_request",
@@ -238,38 +244,63 @@ export default function Triton() {
       // ignore storage errors
     }
 
-    // Plano B blindado: criptografa os dados com a chave pública RSA-2048 antes do envio,
-    // de modo que somente quem tem a senha administrativa consegue descriptografar em #/triton/registros.
-    encryptRegistrationPayload({
+    const payloadObj = {
       name: formData.name,
       email: formData.email,
       institution: formData.institution,
       edition: formData.edition,
       purpose: formData.purpose,
       timestamp: new Date().toISOString(),
-    })
-      .then((encryptedBody) => {
-        const url = `https://ntfy.sh/${TRITON_ENCRYPTED_TOPIC}`;
-        const sent =
-          typeof navigator !== "undefined" &&
-          typeof navigator.sendBeacon === "function" &&
-          navigator.sendBeacon(url, encryptedBody);
-        if (!sent) {
-          fetch(url, {
-            method: "POST",
-            keepalive: true,
-            body: encryptedBody,
-          }).catch(() => {});
-        }
-      })
-      .catch(() => {});
+    };
 
-    setSubmitStatus("submitting");
-    // Plano A: o form envia o POST silenciosamente para o iframe oculto "triton_email_iframe"
-    // e abre #/triton/download em seguida.
-    setTimeout(() => {
-      navigate("/triton/download");
-    }, 350);
+    const url = `https://ntfy.sh/${TRITON_ENCRYPTED_TOPIC}`;
+
+    // Plano B blindado (primário): aguarda a criptografia RSA-2048 + AES-GCM e confirma
+    // o POST via fetch antes de redirecionar (evitando bloqueio silencioso do sendBeacon).
+    try {
+      const encryptedBody = await encryptRegistrationPayload(payloadObj);
+      try {
+        const res = await fetch(url, {
+          method: "POST",
+          keepalive: true,
+          headers: {
+            "Content-Type": "text/plain;charset=UTF-8",
+          },
+          body: encryptedBody,
+        });
+        if (!res.ok && typeof navigator?.sendBeacon === "function") {
+          navigator.sendBeacon(url, encryptedBody);
+        }
+      } catch {
+        if (typeof navigator?.sendBeacon === "function") {
+          navigator.sendBeacon(url, encryptedBody);
+        }
+      }
+    } catch {
+      // ignore crypto errors
+    }
+
+    // Plano A: dispara o e-mail em segundo plano via AJAX (sem travar a página caso o FormSubmit dê erro 522)
+    fetch("https://formsubmit.co/ajax/igorcmvaz@gmail.com", {
+      method: "POST",
+      keepalive: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        _subject: `Novo Download do Triton (${formData.edition}) - ${formData.name || "Visitante"}`,
+        _captcha: "false",
+        _template: "table",
+        name: formData.name,
+        email: formData.email,
+        institution: formData.institution,
+        edition: formData.edition,
+        purpose: formData.purpose,
+      }),
+    }).catch(() => {});
+
+    navigate("/triton/download");
   };
 
   return (
@@ -596,20 +627,9 @@ export default function Triton() {
             </div>
 
             <form
-              action="https://formsubmit.co/igorcmvaz@gmail.com"
-              method="POST"
-              target="triton_email_iframe"
               onSubmit={handleUnlockAccess}
               className="space-y-4"
             >
-              {/* E-mail automático em segundo plano para igorcmvaz@gmail.com */}
-              <input
-                type="hidden"
-                name="_subject"
-                value={`Novo Download do Triton (${formData.edition}) - ${formData.name || "Visitante"}`}
-              />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                 <div>
