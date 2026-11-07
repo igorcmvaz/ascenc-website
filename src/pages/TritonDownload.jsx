@@ -20,36 +20,6 @@ const ZENODO_URL = "https://zenodo.org/records/23402916";
 const DOI_URL = "https://doi.org/10.5281/zenodo.23402916";
 const GITHUB_URL = "https://github.com/igorcmvaz/triton";
 
-const EDITIONS_FILES = [
-  {
-    id: "Triton Brasil (BRL)",
-    label: "Edição Brasil (BRL)",
-    badge: "R$ • ABNT NBR 15527",
-    installer: "Triton_Brasil_Setup_v0.1.0.exe",
-    manual: "Manual_Triton_Brasil_v0.1.0.pdf",
-    icon: "./assets/triton/triton-brl.png",
-    details: "Tarifas de 652 municípios brasileiros e séries CLIMBra (histórico + SSP2-4.5 / SSP5-8.5).",
-  },
-  {
-    id: "Triton Ibérica (IBE)",
-    label: "Edição Ibérica (IBE)",
-    badge: "€ • EN 16941-1 (PT & ES)",
-    installer: "Triton_Iberica_Setup_v0.1.0.exe",
-    manual: "Manual_Triton_Iberica_v0.1.0_PT.pdf",
-    icon: "./assets/triton/triton-prt.png",
-    details: "Tarifários ERSAR (Portugal) e Espanha em Euros (€) e séries Iberia01, ERA5 e E-OBS.",
-  },
-  {
-    id: "Triton Internacional (INT)",
-    label: "Edição Internacional (INT)",
-    badge: "Global • ISO 14040/14044",
-    installer: "Triton_Internacional_Setup_v0.1.0.exe",
-    manual: "Manual_Triton_Internacional_v0.1.0_EN.pdf",
-    icon: "./assets/triton/triton-int.png",
-    details: "Interface em inglês, suporte a qualquer moeda/tarifa local e importação universal via CSV.",
-  },
-];
-
 export default function TritonDownload() {
   const { t } = useTranslation();
   const [copiedBib, setCopiedBib] = useState(false);
@@ -67,6 +37,45 @@ export default function TritonDownload() {
   const selectedEdition =
     savedUser?.edition || "Todas as Edições (Brasil, Ibérica e Internacional)";
   const userName = savedUser?.name || "";
+
+  const editionsFiles = [
+    {
+      id: "Triton Brasil (BRL)",
+      label: t("triton.dl_ed_brl_label", "Edição Brasil (BRL)"),
+      badge: t("triton.dl_ed_brl_badge", "R$ • ABNT NBR 15527"),
+      installer: "Triton_Brasil_Setup_v0.1.0.exe",
+      manual: "Manual_Triton_Brasil_v0.1.0.pdf",
+      icon: "./assets/triton/triton-brl.png",
+      details: t(
+        "triton.dl_ed_brl_details",
+        "Tarifas de 652 municípios brasileiros e séries CLIMBra (histórico + SSP2-4.5 / SSP5-8.5)."
+      ),
+    },
+    {
+      id: "Triton Ibérica (IBE)",
+      label: t("triton.dl_ed_ibe_label", "Edição Ibérica (IBE)"),
+      badge: t("triton.dl_ed_ibe_badge", "€ • EN 16941-1 (PT & ES)"),
+      installer: "Triton_Iberica_Setup_v0.1.0.exe",
+      manual: "Manual_Triton_Iberica_v0.1.0_PT.pdf",
+      icon: "./assets/triton/triton-prt.png",
+      details: t(
+        "triton.dl_ed_ibe_details",
+        "Tarifários ERSAR (Portugal) e Espanha em Euros (€) e séries Iberia01, ERA5 e E-OBS."
+      ),
+    },
+    {
+      id: "Triton Internacional (INT)",
+      label: t("triton.dl_ed_int_label", "Edição Internacional (INT)"),
+      badge: t("triton.dl_ed_int_badge", "Global • ISO 14040/14044"),
+      installer: "Triton_Internacional_Setup_v0.1.0.exe",
+      manual: "Manual_Triton_Internacional_v0.1.0_EN.pdf",
+      icon: "./assets/triton/triton-int.png",
+      details: t(
+        "triton.dl_ed_int_details",
+        "Interface em inglês, suporte a qualquer moeda/tarifa local e importação universal via CSV."
+      ),
+    },
+  ];
 
   const textCitation = `Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica) (Version 0.1.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23402916`;
 
@@ -130,7 +139,7 @@ export default function TritonDownload() {
               <div className="space-y-2">
                 <div className="flex items-center justify-between gap-2">
                   <span className="px-2.5 py-0.5 rounded-full text-[11px] font-black bg-emerald-600 text-white uppercase">
-                    Zenodo • Instaladores & Manuais
+                    {t("triton.zenodo_card_pill", "Zenodo • Instaladores & Manuais")}
                   </span>
                   <span className="text-[11px] font-mono font-bold text-emerald-800 dark:text-emerald-300">
                     DOI: 10.5281/zenodo.23402916
@@ -164,7 +173,7 @@ export default function TritonDownload() {
               <div className="space-y-2">
                 <div className="flex items-center justify-between gap-2">
                   <span className="px-2.5 py-0.5 rounded-full text-[11px] font-black bg-slate-900 dark:bg-slate-700 text-white uppercase">
-                    GitHub • Código-Fonte & Issues
+                    {t("triton.github_card_pill", "GitHub • Código-Fonte & Issues")}
                   </span>
                   <span className="text-[11px] font-mono font-bold text-slate-600 dark:text-zinc-400">
                     MIT License • v0.1.0
@@ -207,10 +216,12 @@ export default function TritonDownload() {
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              {EDITIONS_FILES.map((item) => {
+              {editionsFiles.map((item) => {
                 const isSelected =
                   selectedEdition === item.id ||
-                  selectedEdition.includes("Todas");
+                  selectedEdition.includes("Todas") ||
+                  selectedEdition.includes("All") ||
+                  selectedEdition.includes("全部");
                 return (
                   <div
                     key={item.id}
@@ -286,7 +297,7 @@ export default function TritonDownload() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 font-black text-amber-900 dark:text-amber-300 underline"
                 >
-                  <span>Abrir Issue no GitHub</span>
+                  <span>{t("triton.open_github_issue", "Abrir Issue no GitHub")}</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
@@ -300,7 +311,7 @@ export default function TritonDownload() {
             <div className="flex items-center gap-1.5">
               <BookOpen className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
               <h3 className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-wider">
-                {t("triton.cite_title", "Como Citar o Triton")}
+                {t("triton.citation_title", "Como Citar o Triton")}
               </h3>
             </div>
             <div className="flex items-center gap-2">
@@ -314,7 +325,11 @@ export default function TritonDownload() {
                 ) : (
                   <Copy className="w-3.5 h-3.5" />
                 )}
-                <span>{copiedTextCite ? "Copiado!" : "Copiar Texto"}</span>
+                <span>
+                  {copiedTextCite
+                    ? t("triton.copied", "Copiado!")
+                    : t("triton.copy_reference", "Copiar Texto")}
+                </span>
               </button>
               <button
                 type="button"
@@ -326,7 +341,11 @@ export default function TritonDownload() {
                 ) : (
                   <Copy className="w-3.5 h-3.5" />
                 )}
-                <span>{copiedBib ? "BibTeX Copiado!" : "Copiar BibTeX"}</span>
+                <span>
+                  {copiedBib
+                    ? t("triton.copied", "Copiado!")
+                    : t("triton.copy_bibtex", "Copiar BibTeX")}
+                </span>
               </button>
             </div>
           </div>

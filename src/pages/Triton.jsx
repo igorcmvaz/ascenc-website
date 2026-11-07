@@ -203,6 +203,11 @@ export default function Triton() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const downloadPageUrl =
+    typeof window !== "undefined"
+      ? `${window.location.origin}${window.location.pathname}#/triton/download`
+      : "https://igorcmvaz.github.io/ascenc-website/#/triton/download";
+
   const handleUnlockAccess = () => {
     try {
       window.sessionStorage.setItem(
@@ -213,12 +218,12 @@ export default function Triton() {
       // ignore storage errors
     }
     setSubmitStatus("submitting");
-    // O form HTML faz o POST nativo silencioso no iframe oculto "triton_email_iframe"
-    // enviando o e-mail para igorcmvaz@gmail.com com os dados de quem está baixando,
-    // e redirecionamos o usuário para a página escondida com o Zenodo e GitHub.
+    // O form HTML faz o POST nativo para https://formsubmit.co/igorcmvaz@gmail.com
+    // e redireciona via _next para #/triton/download. Caso o FormSubmit demore mais
+    // de 3.5s, o fallback abaixo garante a abertura da página de download.
     setTimeout(() => {
       navigate("/triton/download");
-    }, 550);
+    }, 3500);
   };
 
   return (
@@ -547,7 +552,6 @@ export default function Triton() {
             <form
               action="https://formsubmit.co/igorcmvaz@gmail.com"
               method="POST"
-              target="triton_email_iframe"
               onSubmit={handleUnlockAccess}
               className="space-y-4"
             >
@@ -559,6 +563,7 @@ export default function Triton() {
               />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_next" value={downloadPageUrl} />
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                 <div>
