@@ -107,42 +107,45 @@ export default function Header() {
 
           {/* Grouped interactive dropdowns and translations with tighter gap */}
           <div className="flex items-center gap-2">
-            {/* Netuno dropdown */}
+            {/* Triton / Netuno dropdown */}
             <div className="relative" ref={netunoDropdownRef}>
               <button
                 onClick={() => setNetunoOpen((v) => !v)}
                 className={`flex items-center gap-1 text-xs lg:text-sm font-semibold px-2.5 py-1 rounded-lg border transition-all duration-200 cursor-pointer
-                  ${location.pathname.startsWith("/netuno") || netunoOpen
+                  ${location.pathname.startsWith("/triton") || location.pathname.startsWith("/netuno") || netunoOpen
                     ? "bg-blue-50 dark:bg-blue-950/40 text-blue-800 dark:text-blue-300 border-blue-300/80 dark:border-blue-700/50"
                     : "text-blue-800 dark:text-blue-300 border-transparent hover:bg-blue-50/70 dark:hover:bg-blue-950/30"
                   }`}
               >
                 <Droplet className="w-3.5 h-3.5" />
-                Netuno
+                Triton
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${netunoOpen ? "rotate-180" : ""}`} />
               </button>
 
               {netunoOpen && (
-                <div className="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-[#161b18] rounded-xl shadow-xl border border-blue-100 dark:border-zinc-800 py-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+                <div className="absolute right-0 top-full mt-2 w-52 bg-white dark:bg-[#161b18] rounded-xl shadow-xl border border-blue-100 dark:border-zinc-800 py-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
                   <Link
-                    to="/netuno/v123"
-                    className="flex items-center px-4 py-2 text-sm font-semibold text-slate-800 dark:text-zinc-200 hover:bg-blue-50 dark:hover:bg-zinc-700 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                    to="/triton"
+                    className="flex items-center justify-between px-3.5 py-2.5 text-sm font-bold text-slate-800 dark:text-zinc-200 hover:bg-blue-50 dark:hover:bg-zinc-700 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
                   >
-                    Netuno 1, 2 & 3
+                    <span className="flex items-center gap-2">
+                      <img src="./assets/triton/triton-brl.png" alt="Triton" className="w-5 h-5 object-contain" />
+                      <span>Triton</span>
+                    </span>
+                    <span className="text-[10px] font-black bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 rounded px-1.5 py-0.5 uppercase tracking-wide">
+                      {t("ges_header.new_badge", "Novo")}
+                    </span>
                   </Link>
                   <Link
                     to="/netuno"
-                    className="flex items-center px-4 py-2 text-sm font-semibold text-slate-800 dark:text-zinc-200 hover:bg-blue-50 dark:hover:bg-zinc-700 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                    className="flex items-center justify-between px-3.5 py-2.5 text-sm font-semibold text-slate-700 dark:text-zinc-300 hover:bg-blue-50 dark:hover:bg-zinc-700 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
                   >
-                    Netuno 4
-                  </Link>
-                  <Link
-                    to="/netuno/v5"
-                    className="flex items-center justify-between px-4 py-2 text-sm font-semibold text-slate-800 dark:text-zinc-200 hover:bg-blue-50 dark:hover:bg-zinc-700 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
-                  >
-                    <span>Netuno 5</span>
-                    <span className="text-[9px] font-semibold bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-300 rounded px-1.5 py-0.5 uppercase tracking-wide">
-                      dev
+                    <span className="flex items-center gap-2">
+                      <img src="./assets/icons/netuno.ico" alt="Netuno" className="w-5 h-5 object-contain" />
+                      <span>Netuno</span>
+                    </span>
+                    <span className="text-[10px] font-semibold text-slate-400 dark:text-zinc-500">
+                      {t("ges_header.netuno_badge", "v1 a 4")}
                     </span>
                   </Link>
                 </div>
@@ -246,7 +249,7 @@ export default function Header() {
             </Link>
           ))}
 
-          {/* Netuno mobile accordion */}
+          {/* Triton mobile accordion */}
           <div className="border-b border-gray-50 dark:border-zinc-700/50">
             <button
               onClick={() => setNetunoMobOpen((v) => !v)}
@@ -254,7 +257,7 @@ export default function Header() {
             >
               <span className="flex items-center gap-2">
                 <Droplet className="w-4 h-4" />
-                Netuno
+                Triton
               </span>
               <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${netunoMobOpen ? "rotate-180" : ""}`} />
             </button>
@@ -262,27 +265,29 @@ export default function Header() {
             {netunoMobOpen && (
               <div className="bg-gray-50 dark:bg-zinc-900/50">
                 <Link
-                  to="/netuno/v123"
-                  className="block pl-10 pr-4 py-2.5 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
+                  to="/triton"
+                  className="flex items-center justify-between pl-8 pr-4 py-2.5 text-sm font-bold text-slate-800 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >
-                  Netuno 1, 2 & 3
+                  <span className="flex items-center gap-2">
+                    <img src="./assets/triton/triton-brl.png" alt="Triton" className="w-5 h-5 object-contain" />
+                    <span>Triton</span>
+                  </span>
+                  <span className="text-[9px] font-black bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 rounded px-1.5 py-0.5 uppercase tracking-wide mr-4">
+                    {t("ges_header.new_badge", "Novo")}
+                  </span>
                 </Link>
                 <Link
                   to="/netuno"
-                  className="block pl-10 pr-4 py-2.5 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
+                  className="flex items-center justify-between pl-8 pr-4 py-2.5 text-sm font-semibold text-slate-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >
-                  Netuno 4
-                </Link>
-                <Link
-                  to="/netuno/v5"
-                  className="flex items-center justify-between pl-10 pr-4 py-2.5 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <span>Netuno 5</span>
-                  <span className="text-[9px] font-semibold bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-300 rounded px-1.5 py-0.5 uppercase tracking-wide mr-4">
-                    dev
+                  <span className="flex items-center gap-2">
+                    <img src="./assets/icons/netuno.ico" alt="Netuno" className="w-5 h-5 object-contain" />
+                    <span>Netuno</span>
+                  </span>
+                  <span className="text-[9px] font-semibold text-slate-400 dark:text-zinc-500 mr-4">
+                    {t("ges_header.netuno_badge", "v1 a 4")}
                   </span>
                 </Link>
               </div>

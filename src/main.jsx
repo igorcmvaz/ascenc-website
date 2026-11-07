@@ -25,6 +25,7 @@ const PAIMRWH = lazy(() => import("./pages/paimrwh"));
 const Netuno = lazy(() => import("./pages/Netuno"));
 const NetunoV123 = lazy(() => import("./pages/NetunoV123"));
 const NetunoV5 = lazy(() => import("./pages/NetunoV5"));
+const Triton = lazy(() => import("./pages/Triton"));
 
 // Importante: inicializar o i18n
 import "./i18n";
@@ -42,9 +43,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/awards" element={<Awards />} />
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<GESContact />} />
+          <Route path="/triton" element={<Triton />} />
           <Route path="/netuno" element={<Netuno />} />
-          <Route path="/netuno/v123" element={<NetunoV123 />} />
-          <Route path="/netuno/v5" element={<NetunoV5 />} />
+          <Route path="/netuno/v123" element={<Netuno />} />
+          <Route path="/netuno/v5" element={<Triton />} />
           <Route path="/paicacv" element={<PAICACV />} />
           <Route path="/papers" element={<Papers />} />
           <Route path="/partners" element={<Partners />} />

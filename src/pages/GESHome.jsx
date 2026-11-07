@@ -49,21 +49,26 @@ export default function GESHome() {
                 </div>
               </Link>
 
-              {/* Card 2: Netuno */}
+              {/* Card 2: Triton */}
               <Link
-                to="/netuno"
+                to="/triton"
                 className="group flex items-start gap-3.5 p-4 bg-white dark:bg-slate-200 backdrop-blur-md rounded-2xl border border-emerald-200 dark:border-slate-300 hover:border-blue-500 shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-left"
               >
-                <div className="p-2 bg-blue-100 rounded-xl shrink-0 flex items-center justify-center w-10 h-10 group-hover:scale-105 transition-transform duration-300 border border-blue-300">
-                  <img src="./assets/icons/netuno.ico" alt="Netuno" className="w-6 h-6 object-contain" />
+                <div className="p-1.5 bg-blue-50 dark:bg-blue-950/40 rounded-xl shrink-0 flex items-center justify-center w-11 h-11 group-hover:scale-105 transition-transform duration-300 border border-blue-200 dark:border-blue-800">
+                  <img src="./assets/triton/triton-brl.png" alt="Triton" className="w-8 h-8 object-contain" />
                 </div>
                 <div className="space-y-0.5 flex-1 min-w-0">
-                  <h3 className="font-extrabold text-slate-900 group-hover:text-blue-800 transition-colors flex items-center gap-1 text-sm">
-                    Netuno
-                    <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                  </h3>
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-extrabold text-slate-900 group-hover:text-blue-800 transition-colors flex items-center gap-1 text-sm">
+                      Triton
+                      <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                    </h3>
+                    <span className="text-[9px] font-black uppercase px-1.5 py-0.5 bg-blue-100 text-blue-800 rounded">
+                      {t("ges_header.new_badge", "Novo")}
+                    </span>
+                  </div>
                   <p className="text-xs text-slate-800 leading-snug font-bold">
-                    {t("ges_home.netuno_card_desc")}
+                    {t("ges_home.triton_card_desc", "Nova geração do software Netuno para simulação e dimensionamento de aproveitamento de água pluvial.")}
                   </p>
                 </div>
               </Link>
