@@ -434,7 +434,7 @@
     "open_zenodo_btn": "Open Triton Page on Zenodo",
     "github_card_pill": "GitHub • Source Code & Issues",
     "github_card_title": "Official GitHub Repository",
-    "github_card_desc": "Access the full source code (Electron + React + Python/FastAPI), follow release updates, and report suggestions or technical issues.",
+    "github_card_desc": "Access the full source code in Python 3.12+ (PySide6/Qt6, NumPy, Pandas, Matplotlib & SQLite), follow updates, and report suggestions or technical issues.",
     "open_github_btn": "Open GitHub Repository",
     "which_file_title": "Which file to download on Zenodo for each edition:",
     "dl_ed_brl_label": "Brazil Edition (BRL)",

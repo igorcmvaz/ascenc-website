@@ -428,7 +428,7 @@
     "open_zenodo_btn": "Acessar Página do Triton no Zenodo",
     "github_card_pill": "GitHub • Código-Fonte & Issues",
     "github_card_title": "Repositório Oficial no GitHub",
-    "github_card_desc": "Acesse o código-fonte completo (Electron + React + Python/FastAPI), acompanhe as atualizações das releases e reporte sugestões ou problemas técnicos.",
+    "github_card_desc": "Acesse o código-fonte completo em Python 3.12+ (PySide6/Qt6, NumPy, Pandas, Matplotlib e SQLite), acompanhe as atualizações e reporte sugestões ou problemas técnicos.",
     "open_github_btn": "Acessar Repositório no GitHub",
     "which_file_title": "Qual arquivo baixar dentro do Zenodo para cada versão:",
     "dl_ed_brl_label": "Edição Brasil (BRL)",

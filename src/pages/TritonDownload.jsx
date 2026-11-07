@@ -176,7 +176,7 @@ export default function TritonDownload() {
                     {t("triton.github_card_pill", "GitHub • Código-Fonte & Issues")}
                   </span>
                   <span className="text-[11px] font-mono font-bold text-slate-600 dark:text-zinc-400">
-                    MIT License • v0.1.0
+                    Python 3.12+ • PySide6
                   </span>
                 </div>
                 <h2 className="text-lg font-black text-slate-900 dark:text-white">
@@ -185,7 +185,7 @@ export default function TritonDownload() {
                 <p className="text-xs text-slate-700 dark:text-zinc-300 leading-relaxed">
                   {t(
                     "triton.github_card_desc",
-                    "Acesse o código-fonte completo (Electron + React + Python/FastAPI), acompanhe as atualizações das releases e reporte sugestões ou problemas técnicos."
+                    "Acesse o código-fonte completo em Python 3.12+ (PySide6/Qt6, NumPy, Pandas, Matplotlib e SQLite), acompanhe as atualizações e reporte sugestões ou problemas técnicos."
                   )}
                 </p>
               </div>

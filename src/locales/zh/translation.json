@@ -428,7 +428,7 @@
     "open_zenodo_btn": "访问 Zenodo 上的 Triton 页面",
     "github_card_pill": "GitHub • 源代码与 Issues",
     "github_card_title": "GitHub 官方代码仓库",
-    "github_card_desc": "访问完整源代码（Electron + React + Python/FastAPI），追踪版本更新并反馈建议或技术问题。",
+    "github_card_desc": "访问完整源代码（Python 3.12+、PySide6/Qt6、NumPy、Pandas、Matplotlib 与 SQLite），追踪版本更新并反馈建议或技术问题。",
     "open_github_btn": "访问 GitHub 代码仓库",
     "which_file_title": "在 Zenodo 中各版本应下载的文件：",
     "dl_ed_brl_label": "巴西版 (BRL)",
