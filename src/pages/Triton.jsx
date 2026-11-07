@@ -155,6 +155,7 @@ export default function Triton() {
   const navigate = useNavigate();
   const [copiedBib, setCopiedBib] = useState(false);
   const [copiedTextCite, setCopiedTextCite] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
   const formRef = useRef(null);
   const nameInputRef = useRef(null);
 
@@ -200,6 +201,26 @@ export default function Triton() {
         nameInputRef.current?.focus();
       }, 450);
     }
+  };
+
+  const scrollToPartnershipForm = () => {
+    setFormData((prev) => ({
+      ...prev,
+      edition: "Triton Internacional (INT)",
+      purpose: "Propor Parceria / Nova Edição Regional",
+    }));
+    if (formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+      setTimeout(() => {
+        nameInputRef.current?.focus();
+      }, 450);
+    }
+  };
+
+  const copyPartnerEmail = () => {
+    navigator.clipboard.writeText(TRITON_CONFIG.authorEmail);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2200);
   };
 
   const handleInputChange = (e) => {
@@ -688,6 +709,9 @@ export default function Triton() {
                     <option value="Ensino / Disciplina Universitária">
                       {t("triton.opt_purp_teaching", "Ensino / Disciplina Universitária")}
                     </option>
+                    <option value="Propor Parceria / Nova Edição Regional">
+                      {t("triton.opt_purp_partner", "Propor Parceria / Nova Edição Regional")}
+                    </option>
                     <option value="Outro">
                       {t("triton.opt_purp_other", "Outro")}
                     </option>
@@ -800,15 +824,46 @@ export default function Triton() {
 
             <TritonWorldMinimap onSelectEdition={scrollToForm} />
 
-            <div className="pt-1 flex items-center justify-between gap-2">
-              <a
-                href={`mailto:${TRITON_CONFIG.authorEmail}?subject=Triton%20-%20Nova%20Edi%C3%A7%C3%A3o%20Regional`}
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-emerald-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-black text-xs transition-colors"
+            <div className="pt-1 space-y-2">
+              <button
+                type="button"
+                onClick={scrollToPartnershipForm}
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-black text-xs shadow-sm hover:shadow-md transition-all cursor-pointer"
               >
-                <Mail className="w-3.5 h-3.5 text-emerald-600 dark:text-teal-400" />
-                <span>{t("triton.collab_btn", "Propor parceria por e-mail")}</span>
-                <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
-              </a>
+                <Mail className="w-3.5 h-3.5" />
+                <span>{t("triton.collab_btn", "Propor parceria / Nova edição")}</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+
+              <div className="flex items-center justify-between gap-2 px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/70 text-[11px]">
+                <a
+                  href={`mailto:${TRITON_CONFIG.authorEmail}?subject=${encodeURIComponent(
+                    "Triton - Parceria para Nova Edição Regional"
+                  )}&body=${encodeURIComponent(
+                    "Olá Igor e Prof. Enedir,\n\nTenho interesse em colaborar na criação de uma edição regional do Triton para o meu país/região.\n\nNome: \nInstituição: \nPaís/Região: "
+                  )}`}
+                  className="font-mono font-bold text-slate-700 dark:text-zinc-300 hover:text-teal-700 dark:hover:text-teal-400 underline truncate"
+                >
+                  {TRITON_CONFIG.authorEmail}
+                </a>
+                <button
+                  type="button"
+                  onClick={copyPartnerEmail}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-white dark:bg-slate-700 text-slate-700 dark:text-zinc-200 border border-slate-200 dark:border-slate-600 font-bold hover:bg-slate-100 cursor-pointer shrink-0"
+                >
+                  {copiedEmail ? (
+                    <>
+                      <Check className="w-3 h-3 text-emerald-600" />
+                      <span>{t("triton.copied", "Copiado!")}</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-3 h-3" />
+                      <span>{t("triton.copy_email", "Copiar e-mail")}</span>
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
           </div>
         </div>
