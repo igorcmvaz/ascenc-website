@@ -4,7 +4,7 @@
 // - Apenas quem possui a senha consegue derivar a chave AES-GCM via PBKDF2 (100.000 iterações)
 //   para descriptografar a chave privada (ENCRYPTED_PRIV_KEY_B64) e ler os registros.
 
-export const TRITON_ENCRYPTED_TOPIC = "triton_ufsc_enc_v1_8a4c9e2f";
+export const TRITON_ENCRYPTED_TOPIC = "triton_ufsc_enc_prod_4d9b7a1e";
 
 const SALT_B64 = "Y0Vjfvcj6/bgteBBzzpnjA==";
 const IV_B64 = "rYLeD7W2L7eT3flN";
@@ -151,3 +151,4 @@ export async function decryptRegistrationMessage(privateKey, messageStr) {
 
   return parsed;
 }
+
