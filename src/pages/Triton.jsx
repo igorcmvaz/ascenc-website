@@ -214,24 +214,31 @@ export default function Triton() {
     }
 
     // Plano B independente do FormSubmit: registra instantaneamente no ntfy.sh
-    // (consultável em #/triton/registros e em https://ntfy.sh/triton_ufsc_downloads_igor_9f8a2b)
+    // Sem headers customizados para ser uma Simple Request CORS (sem preflight OPTIONS)
+    const payload = JSON.stringify({
+      name: formData.name,
+      email: formData.email,
+      institution: formData.institution,
+      edition: formData.edition,
+      purpose: formData.purpose,
+      timestamp: new Date().toISOString(),
+    });
+
     try {
-      fetch("https://ntfy.sh/triton_ufsc_downloads_igor_9f8a2b", {
-        method: "POST",
-        keepalive: true,
-        headers: {
-          Title: `Download Triton: ${formData.name || "Visitante"} (${formData.edition})`,
-          Tags: "droplet",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          institution: formData.institution,
-          edition: formData.edition,
-          purpose: formData.purpose,
-          timestamp: new Date().toISOString(),
-        }),
-      }).catch(() => {});
+      const sent =
+        typeof navigator !== "undefined" &&
+        typeof navigator.sendBeacon === "function" &&
+        navigator.sendBeacon(
+          "https://ntfy.sh/triton_ufsc_downloads_igor_9f8a2b",
+          payload
+        );
+      if (!sent) {
+        fetch("https://ntfy.sh/triton_ufsc_downloads_igor_9f8a2b", {
+          method: "POST",
+          keepalive: true,
+          body: payload,
+        }).catch(() => {});
+      }
     } catch {
       // ignore network errors
     }
