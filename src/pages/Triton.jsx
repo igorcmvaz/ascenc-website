@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import PageLayout from "../components/PageLayout";
 import TritonWorldMinimap from "../components/TritonWorldMinimap";
 import { useTranslation } from "react-i18next";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Globe,
   Sparkles,
@@ -148,7 +148,7 @@ Grupo de Pesquisa Espaço Sustentável — UFSC`;
 
 export default function Triton() {
   const { t } = useTranslation();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [copiedBib, setCopiedBib] = useState(false);
   const [copiedTextCite, setCopiedTextCite] = useState(false);
   const formRef = useRef(null);
@@ -161,22 +161,7 @@ export default function Triton() {
     edition: "Todas as Edições (Brasil, Ibérica e Internacional)",
     purpose: "Pesquisa Acadêmica",
   });
-  const [lastSubmittedEdition, setLastSubmittedEdition] = useState(
-    () =>
-      (typeof window !== "undefined" &&
-        window.sessionStorage.getItem("triton_last_edition")) ||
-      "Todas as Edições (Brasil, Ibérica e Internacional)"
-  );
   const [submitStatus, setSubmitStatus] = useState("idle");
-
-  useEffect(() => {
-    if (searchParams.get("enviado") === "1") {
-      setSubmitStatus("success");
-      setTimeout(() => {
-        formRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-      }, 200);
-    }
-  }, [searchParams]);
 
   const textCitation = `Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica) (Version 0.1.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brazil.`;
 
@@ -218,24 +203,23 @@ export default function Triton() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleNativeSubmit = () => {
+  const handleUnlockAccess = () => {
     try {
-      window.sessionStorage.setItem("triton_last_edition", formData.edition);
+      window.sessionStorage.setItem(
+        "triton_user_request",
+        JSON.stringify(formData)
+      );
     } catch {
       // ignore storage errors
     }
-    setLastSubmittedEdition(formData.edition);
     setSubmitStatus("submitting");
-    // Não chama e.preventDefault(): deixa o formulário HTML nativo fazer o POST
-    // diretamente para https://formsubmit.co/igorcmvaz@gmail.com (igual à aba Contato).
+    // O form HTML faz o POST nativo silencioso no iframe oculto "triton_email_iframe"
+    // enviando o e-mail para igorcmvaz@gmail.com com os dados de quem está baixando,
+    // e redirecionamos o usuário para a página escondida com o Zenodo e GitHub.
+    setTimeout(() => {
+      navigate("/triton/download");
+    }, 550);
   };
-
-  const nextUrl =
-    typeof window !== "undefined"
-      ? `${window.location.origin}${window.location.pathname}#/triton?enviado=1`
-      : "https://igorcmvaz.github.io/ascenc-website/#/triton?enviado=1";
-
-  const replyTemplate = buildReplyEmailTemplate(formData.name, formData.edition);
 
   return (
     <PageLayout>
@@ -550,230 +534,159 @@ export default function Triton() {
                 {t("triton.form_badge", "Acesso Gratuito • v0.1.0 Beta")}
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
-                {t("triton.form_title", "Receba o Link de Download por E-mail")}
+                {t("triton.form_title", "Identifique-se para Liberar o Download")}
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-400 font-medium">
                 {t(
                   "triton.form_desc",
-                  "Preencha os dados abaixo em 15 segundos e enviaremos o link oficial com os instaladores e manuais."
+                  "Preencha seus dados abaixo em 10 segundos para abrir a página com os links oficiais do Zenodo e do GitHub."
                 )}
               </p>
             </div>
 
-            {submitStatus === "success" ? (
-              <div className="p-6 text-left space-y-4 bg-emerald-50/70 dark:bg-emerald-950/30 rounded-2xl border border-emerald-200 dark:border-emerald-800">
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-8 h-8 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                  <div>
-                    <h3 className="text-lg font-black text-slate-900 dark:text-white">
-                      {t("triton.form_success_title", "Solicitação Enviada!")}
-                    </h3>
-                    <p className="text-xs text-slate-600 dark:text-zinc-300">
-                      {t(
-                        "triton.form_success_desc",
-                        "Recebemos seu pedido e enviaremos o link do Zenodo para o seu e-mail."
-                      )}
-                    </p>
-                  </div>
+            <form
+              action="https://formsubmit.co/igorcmvaz@gmail.com"
+              method="POST"
+              target="triton_email_iframe"
+              onSubmit={handleUnlockAccess}
+              className="space-y-4"
+            >
+              {/* E-mail automático para igorcmvaz@gmail.com registrando quem está baixando */}
+              <input
+                type="hidden"
+                name="_subject"
+                value={`Novo Download do Triton (${formData.edition}) - ${formData.name || "Visitante"}`}
+              />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                <div>
+                  <label htmlFor="triton-name" className="block text-xs font-extrabold mb-1 text-slate-800 dark:text-zinc-200">
+                    {t("triton.field_name", "Nome *")}
+                  </label>
+                  <input
+                    ref={nameInputRef}
+                    type="text"
+                    id="triton-name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder={t("triton.placeholder_name", "Seu nome")}
+                    className="w-full p-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  />
                 </div>
 
-                {/* Aviso importante sobre o link do Zenodo e colaboração no detalhamento */}
-                <div className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2 text-xs text-slate-700 dark:text-zinc-300 leading-relaxed">
-                  <p className="font-bold text-slate-900 dark:text-white">
-                    📦 {t("triton.reply_note_zenodo_title", "Importante ao receber o e-mail de resposta:")}
-                  </p>
-                  <p>
-                    {t(
-                      "triton.reply_note_zenodo_desc",
-                      "As três edições (Brasil, Ibérica e Internacional) estão reunidas na mesma página do Zenodo — lembre-se de baixar o instalador (.exe) e o manual (.pdf) respectivos da edição solicitada"
-                    )}{" "}
-                    (<strong>{lastSubmittedEdition}</strong>).
-                  </p>
-                  <p>
-                    🔍 {t(
-                      "triton.reply_note_feedback",
-                      "Como a calibração de tarifas de água/esgoto, séries de precipitação e detalhes normativos são específicos de cada modelo, você pode colaborar com a versão Beta apontando eventuais erros ou correções no detalhamento diretamente por e-mail."
-                    )}
-                  </p>
+                <div>
+                  <label htmlFor="triton-email" className="block text-xs font-extrabold mb-1 text-slate-800 dark:text-zinc-200">
+                    {t("triton.field_email", "E-mail *")}
+                  </label>
+                  <input
+                    type="email"
+                    id="triton-email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder={t("triton.placeholder_email", "seu@email.com")}
+                    className="w-full p-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  />
                 </div>
 
-                <div className="text-center pt-1">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSubmitStatus("idle");
-                      if (searchParams.get("enviado")) {
-                        searchParams.delete("enviado");
-                        setSearchParams(searchParams, { replace: true });
-                      }
-                    }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 dark:bg-slate-700 text-white text-xs font-extrabold hover:bg-slate-800 transition-colors cursor-pointer"
-                  >
-                    {t("triton.form_send_another", "Enviar outro pedido")}
-                  </button>
+                <div>
+                  <label htmlFor="triton-institution" className="block text-xs font-extrabold mb-1 text-slate-800 dark:text-zinc-200">
+                    {t("triton.field_institution", "Instituição / Empresa *")}
+                  </label>
+                  <input
+                    type="text"
+                    id="triton-institution"
+                    name="institution"
+                    required
+                    value={formData.institution}
+                    onChange={handleInputChange}
+                    placeholder={t("triton.placeholder_institution", "Ex.: UFSC, Empresa...")}
+                    className="w-full p-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  />
                 </div>
               </div>
-            ) : (
-              <form
-                action="https://formsubmit.co/igorcmvaz@gmail.com"
-                method="POST"
-                onSubmit={handleNativeSubmit}
-                className="space-y-4"
-              >
-                {/* Campos ocultos do FormSubmit (mesmo endpoint das abas de Contato) */}
-                <input
-                  type="hidden"
-                  name="_subject"
-                  value={`Pedido de Acesso ao Triton (${formData.edition}) - ${formData.name || "Novo Pedido"}`}
-                />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_next" value={nextUrl} />
-                <input
-                  type="hidden"
-                  name="Modelo_de_Email_de_Resposta_da_Versao"
-                  value={replyTemplate}
-                />
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-                  <div>
-                    <label htmlFor="triton-name" className="block text-xs font-extrabold mb-1 text-slate-800 dark:text-zinc-200">
-                      {t("triton.field_name", "Nome *")}
-                    </label>
-                    <input
-                      ref={nameInputRef}
-                      type="text"
-                      id="triton-name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder={t("triton.placeholder_name", "Seu nome")}
-                      className="w-full p-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="triton-email" className="block text-xs font-extrabold mb-1 text-slate-800 dark:text-zinc-200">
-                      {t("triton.field_email", "E-mail *")}
-                    </label>
-                    <input
-                      type="email"
-                      id="triton-email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder={t("triton.placeholder_email", "seu@email.com")}
-                      className="w-full p-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="triton-institution" className="block text-xs font-extrabold mb-1 text-slate-800 dark:text-zinc-200">
-                      {t("triton.field_institution", "Instituição / Empresa *")}
-                    </label>
-                    <input
-                      type="text"
-                      id="triton-institution"
-                      name="institution"
-                      required
-                      value={formData.institution}
-                      onChange={handleInputChange}
-                      placeholder={t("triton.placeholder_institution", "Ex.: UFSC, Empresa...")}
-                      className="w-full p-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                  <div>
-                    <label htmlFor="triton-edition" className="block text-xs font-extrabold mb-1 text-slate-800 dark:text-zinc-200">
-                      {t("triton.field_edition", "Edição Desejada *")}
-                    </label>
-                    <select
-                      id="triton-edition"
-                      name="edition"
-                      value={formData.edition}
-                      onChange={handleInputChange}
-                      className="w-full p-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                    >
-                      <option value="Todas as Edições (Brasil, Ibérica e Internacional)">
-                        {t("triton.opt_ed_all", "Todas as Edições (Brasil, Ibérica e Internacional)")}
-                      </option>
-                      <option value="Triton Brasil (BRL)">
-                        {t("triton.opt_ed_brl", "Triton Brasil (BRL)")}
-                      </option>
-                      <option value="Triton Ibérica (IBE)">
-                        {t("triton.opt_ed_ibe", "Triton Ibérica (IBE)")}
-                      </option>
-                      <option value="Triton Internacional (INT)">
-                        {t("triton.opt_ed_int", "Triton Internacional (INT)")}
-                      </option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="triton-purpose" className="block text-xs font-extrabold mb-1 text-slate-800 dark:text-zinc-200">
-                      {t("triton.field_purpose", "Finalidade *")}
-                    </label>
-                    <select
-                      id="triton-purpose"
-                      name="purpose"
-                      value={formData.purpose}
-                      onChange={handleInputChange}
-                      className="w-full p-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                    >
-                      <option value="Pesquisa Acadêmica">
-                        {t("triton.opt_purp_research", "Pesquisa Acadêmica")}
-                      </option>
-                      <option value="Projeto Profissional / Consultoria">
-                        {t("triton.opt_purp_pro", "Projeto Profissional / Consultoria")}
-                      </option>
-                      <option value="Ensino / Disciplina Universitária">
-                        {t("triton.opt_purp_teaching", "Ensino / Disciplina Universitária")}
-                      </option>
-                      <option value="Outro">
-                        {t("triton.opt_purp_other", "Outro")}
-                      </option>
-                    </select>
-                  </div>
-                </div>
-
-                {/* Nota concisa sobre o e-mail de resposta e colaboração Beta */}
-                <p className="text-[11px] text-slate-500 dark:text-zinc-400 text-center leading-relaxed">
-                  {t(
-                    "triton.form_version_hint",
-                    "No e-mail de resposta você receberá o link do Zenodo (onde estão as 3 versões; baixe o arquivo respectivo). Como tarifas, precipitação e detalhes são específicos de cada modelo, você também poderá colaborar apontando eventuais correções."
-                  )}
-                </p>
-
-                <div className="pt-1 flex flex-col items-center gap-2.5">
-                  <button
-                    type="submit"
-                    disabled={submitStatus === "submitting"}
-                    className="w-full sm:w-auto min-w-[260px] inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 text-white font-black text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer"
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div>
+                  <label htmlFor="triton-edition" className="block text-xs font-extrabold mb-1 text-slate-800 dark:text-zinc-200">
+                    {t("triton.field_edition", "Edição Desejada *")}
+                  </label>
+                  <select
+                    id="triton-edition"
+                    name="edition"
+                    value={formData.edition}
+                    onChange={handleInputChange}
+                    className="w-full p-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   >
-                    <Send className="w-4 h-4" />
-                    <span>
-                      {submitStatus === "submitting"
-                        ? t("triton.form_submitting", "Enviando...")
-                        : t("triton.form_submit", "Receber Link no Meu E-mail")}
-                    </span>
-                  </button>
-
-                  <a
-                    href={`mailto:${TRITON_CONFIG.authorEmail}?subject=${encodeURIComponent(
-                      `Pedido de Acesso ao Triton (${formData.edition}) - ${formData.name || ""}`
-                    )}&body=${encodeURIComponent(
-                      `Olá,\n\nGostaria de solicitar o link de download do Triton (v0.1.0 Beta).\n\nNome: ${formData.name}\nE-mail: ${formData.email}\nInstituição/Empresa: ${formData.institution}\nEdição Desejada: ${formData.edition}\nFinalidade: ${formData.purpose}\n\n---\n${replyTemplate}`
-                    )}`}
-                    className="text-[11px] font-bold text-slate-500 hover:text-emerald-700 dark:text-zinc-400 dark:hover:text-emerald-400 underline transition-colors"
-                  >
-                    {t("triton.form_direct_mailto", "Ou solicite diretamente pelo seu aplicativo de e-mail")}
-                  </a>
+                    <option value="Todas as Edições (Brasil, Ibérica e Internacional)">
+                      {t("triton.opt_ed_all", "Todas as Edições (Brasil, Ibérica e Internacional)")}
+                    </option>
+                    <option value="Triton Brasil (BRL)">
+                      {t("triton.opt_ed_brl", "Triton Brasil (BRL)")}
+                    </option>
+                    <option value="Triton Ibérica (IBE)">
+                      {t("triton.opt_ed_ibe", "Triton Ibérica (IBE)")}
+                    </option>
+                    <option value="Triton Internacional (INT)">
+                      {t("triton.opt_ed_int", "Triton Internacional (INT)")}
+                    </option>
+                  </select>
                 </div>
-              </form>
-            )}
+
+                <div>
+                  <label htmlFor="triton-purpose" className="block text-xs font-extrabold mb-1 text-slate-800 dark:text-zinc-200">
+                    {t("triton.field_purpose", "Finalidade *")}
+                  </label>
+                  <select
+                    id="triton-purpose"
+                    name="purpose"
+                    value={formData.purpose}
+                    onChange={handleInputChange}
+                    className="w-full p-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  >
+                    <option value="Pesquisa Acadêmica">
+                      {t("triton.opt_purp_research", "Pesquisa Acadêmica")}
+                    </option>
+                    <option value="Projeto Profissional / Consultoria">
+                      {t("triton.opt_purp_pro", "Projeto Profissional / Consultoria")}
+                    </option>
+                    <option value="Ensino / Disciplina Universitária">
+                      {t("triton.opt_purp_teaching", "Ensino / Disciplina Universitária")}
+                    </option>
+                    <option value="Outro">
+                      {t("triton.opt_purp_other", "Outro")}
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <p className="text-[11px] text-slate-500 dark:text-zinc-400 text-center leading-relaxed">
+                {t(
+                  "triton.form_version_hint",
+                  "Ao clicar abaixo, você será redirecionado para a página de acesso com os links do Zenodo (onde estão as 3 versões; baixe a respectiva) e do GitHub."
+                )}
+              </p>
+
+              <div className="pt-1 flex justify-center">
+                <button
+                  type="submit"
+                  disabled={submitStatus === "submitting"}
+                  className="w-full sm:w-auto min-w-[260px] inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 text-white font-black text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer"
+                >
+                  <Send className="w-4 h-4" />
+                  <span>
+                    {submitStatus === "submitting"
+                      ? t("triton.form_submitting", "Liberando acesso...")
+                      : t("triton.form_submit", "Liberar Acesso ao Zenodo e GitHub")}
+                  </span>
+                </button>
+              </div>
+            </form>
           </div>
         </section>
 

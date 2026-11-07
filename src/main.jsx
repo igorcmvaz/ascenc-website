@@ -26,6 +26,7 @@ const Netuno = lazy(() => import("./pages/Netuno"));
 const NetunoV123 = lazy(() => import("./pages/NetunoV123"));
 const NetunoV5 = lazy(() => import("./pages/NetunoV5"));
 const Triton = lazy(() => import("./pages/Triton"));
+const TritonDownload = lazy(() => import("./pages/TritonDownload"));
 
 // Importante: inicializar o i18n
 import "./i18n";
@@ -34,6 +35,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <HashRouter>
       <ScrollToTop />
+      {/* Iframe persistente oculto para envio silencioso do e-mail de notificação de download do Triton */}
+      <iframe
+        name="triton_email_iframe"
+        id="triton_email_iframe"
+        title="triton-email-iframe"
+        style={{ display: "none", width: 0, height: 0, border: 0 }}
+      />
       <Suspense fallback={<div className="flex items-center justify-center min-h-screen text-slate-500">Carregando...</div>}>
         <Routes>
           {/* 🏢 Portal routes */}
@@ -44,6 +52,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<GESContact />} />
           <Route path="/triton" element={<Triton />} />
+          <Route path="/triton/download" element={<TritonDownload />} />
           <Route path="/netuno" element={<Netuno />} />
           <Route path="/netuno/v123" element={<Netuno />} />
           <Route path="/netuno/v5" element={<Triton />} />
