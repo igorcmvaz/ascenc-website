@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PageLayout from "../components/PageLayout";
 import TritonWorldMinimap from "../components/TritonWorldMinimap";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import {
   Globe,
   Sparkles,
@@ -148,6 +148,7 @@ Grupo de Pesquisa Espaço Sustentável — UFSC`;
 
 export default function Triton() {
   const { t } = useTranslation();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [copiedBib, setCopiedBib] = useState(false);
   const [copiedTextCite, setCopiedTextCite] = useState(false);
   const formRef = useRef(null);
@@ -161,9 +162,21 @@ export default function Triton() {
     purpose: "Pesquisa Acadêmica",
   });
   const [lastSubmittedEdition, setLastSubmittedEdition] = useState(
-    "Todas as Edições (Brasil, Ibérica e Internacional)"
+    () =>
+      (typeof window !== "undefined" &&
+        window.sessionStorage.getItem("triton_last_edition")) ||
+      "Todas as Edições (Brasil, Ibérica e Internacional)"
   );
   const [submitStatus, setSubmitStatus] = useState("idle");
+
+  useEffect(() => {
+    if (searchParams.get("enviado") === "1") {
+      setSubmitStatus("success");
+      setTimeout(() => {
+        formRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 200);
+    }
+  }, [searchParams]);
 
   const textCitation = `Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica) (Version 0.1.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brazil.`;
 
@@ -205,49 +218,24 @@ export default function Triton() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitStatus("submitting");
-
-    const replyTemplate = buildReplyEmailTemplate(formData.name, formData.edition);
-
+  const handleNativeSubmit = () => {
     try {
-      const response = await fetch("https://formsubmit.co/ajax/igorcmvaz@gmail.com", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          _subject: `Pedido de Acesso ao Triton (${formData.edition}) - ${formData.name}`,
-          _replyto: formData.email,
-          Nome: formData.name,
-          Email: formData.email,
-          Instituicao_Empresa: formData.institution,
-          Edicao_Solicitada: formData.edition,
-          Finalidade_de_Uso: formData.purpose,
-          Modelo_de_Email_de_Resposta_da_Versao: replyTemplate,
-          _template: "table",
-        }),
-      });
-
-      if (response.ok) {
-        setLastSubmittedEdition(formData.edition);
-        setSubmitStatus("success");
-        setFormData({
-          name: "",
-          email: "",
-          institution: "",
-          edition: "Todas as Edições (Brasil, Ibérica e Internacional)",
-          purpose: "Pesquisa Acadêmica",
-        });
-      } else {
-        setSubmitStatus("error");
-      }
+      window.sessionStorage.setItem("triton_last_edition", formData.edition);
     } catch {
-      setSubmitStatus("error");
+      // ignore storage errors
     }
+    setLastSubmittedEdition(formData.edition);
+    setSubmitStatus("submitting");
+    // Não chama e.preventDefault(): deixa o formulário HTML nativo fazer o POST
+    // diretamente para https://formsubmit.co/igorcmvaz@gmail.com (igual à aba Contato).
   };
+
+  const nextUrl =
+    typeof window !== "undefined"
+      ? `${window.location.origin}${window.location.pathname}#/triton?enviado=1`
+      : "https://igorcmvaz.github.io/ascenc-website/#/triton?enviado=1";
+
+  const replyTemplate = buildReplyEmailTemplate(formData.name, formData.edition);
 
   return (
     <PageLayout>
@@ -612,7 +600,13 @@ export default function Triton() {
                 <div className="text-center pt-1">
                   <button
                     type="button"
-                    onClick={() => setSubmitStatus("idle")}
+                    onClick={() => {
+                      setSubmitStatus("idle");
+                      if (searchParams.get("enviado")) {
+                        searchParams.delete("enviado");
+                        setSearchParams(searchParams, { replace: true });
+                      }
+                    }}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 dark:bg-slate-700 text-white text-xs font-extrabold hover:bg-slate-800 transition-colors cursor-pointer"
                   >
                     {t("triton.form_send_another", "Enviar outro pedido")}
@@ -620,7 +614,26 @@ export default function Triton() {
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form
+                action="https://formsubmit.co/igorcmvaz@gmail.com"
+                method="POST"
+                onSubmit={handleNativeSubmit}
+                className="space-y-4"
+              >
+                {/* Campos ocultos do FormSubmit (mesmo endpoint das abas de Contato) */}
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value={`Pedido de Acesso ao Triton (${formData.edition}) - ${formData.name || "Novo Pedido"}`}
+                />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_next" value={nextUrl} />
+                <input
+                  type="hidden"
+                  name="Modelo_de_Email_de_Resposta_da_Versao"
+                  value={replyTemplate}
+                />
+
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                   <div>
                     <label htmlFor="triton-name" className="block text-xs font-extrabold mb-1 text-slate-800 dark:text-zinc-200">
@@ -734,23 +747,7 @@ export default function Triton() {
                   )}
                 </p>
 
-                {submitStatus === "error" && (
-                  <div className="p-3 rounded-xl bg-rose-50 dark:bg-rose-950/50 border border-rose-300 dark:border-rose-800 text-xs text-rose-800 dark:text-rose-200 flex items-center justify-between gap-2">
-                    <span>{t("triton.form_error", "Falha no envio automático. Solicite por e-mail:")}</span>
-                    <a
-                      href={`mailto:${TRITON_CONFIG.authorEmail}?subject=${encodeURIComponent(
-                        `Solicitação Triton (${formData.edition})`
-                      )}&body=${encodeURIComponent(
-                        `Nome: ${formData.name}\nE-mail: ${formData.email}\nInstituição: ${formData.institution}\nEdição: ${formData.edition}\nFinalidade: ${formData.purpose}`
-                      )}`}
-                      className="font-black underline shrink-0"
-                    >
-                      {t("triton.form_error_mailto", "Abrir E-mail")}
-                    </a>
-                  </div>
-                )}
-
-                <div className="pt-1 flex justify-center">
+                <div className="pt-1 flex flex-col items-center gap-2.5">
                   <button
                     type="submit"
                     disabled={submitStatus === "submitting"}
@@ -763,6 +760,17 @@ export default function Triton() {
                         : t("triton.form_submit", "Receber Link no Meu E-mail")}
                     </span>
                   </button>
+
+                  <a
+                    href={`mailto:${TRITON_CONFIG.authorEmail}?subject=${encodeURIComponent(
+                      `Pedido de Acesso ao Triton (${formData.edition}) - ${formData.name || ""}`
+                    )}&body=${encodeURIComponent(
+                      `Olá,\n\nGostaria de solicitar o link de download do Triton (v0.1.0 Beta).\n\nNome: ${formData.name}\nE-mail: ${formData.email}\nInstituição/Empresa: ${formData.institution}\nEdição Desejada: ${formData.edition}\nFinalidade: ${formData.purpose}\n\n---\n${replyTemplate}`
+                    )}`}
+                    className="text-[11px] font-bold text-slate-500 hover:text-emerald-700 dark:text-zinc-400 dark:hover:text-emerald-400 underline transition-colors"
+                  >
+                    {t("triton.form_direct_mailto", "Ou solicite diretamente pelo seu aplicativo de e-mail")}
+                  </a>
                 </div>
               </form>
             )}
