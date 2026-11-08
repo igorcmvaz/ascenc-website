@@ -18,32 +18,47 @@ jobs:
         with:
           ref: main
 
-      - name: Fetch and merge encrypted records from ntfy.sh
+      - name: Fetch and merge encrypted records and activity stats from ntfy.sh
         run: |
           python3 - << 'EOF'
           import json
           import urllib.request
           from pathlib import Path
 
-          topic = "triton_ufsc_enc_prod_4d9b7a1e"
+          enc_topic = "triton_ufsc_enc_prod_4d9b7a1e"
+          act_topic = "triton_ufsc_act_prod_7c3e9b1a"
           archive_path = Path("public/data/triton_encrypted_records.json")
+          stats_path = Path("public/data/triton_activity_stats.json")
           archive_path.parent.mkdir(parents=True, exist_ok=True)
 
-          existing = {}
+          existing_enc = {}
           if archive_path.exists():
               try:
                   for item in json.loads(archive_path.read_text(encoding="utf-8")):
                       if isinstance(item, dict) and item.get("id") and item.get("message"):
-                          existing[item["id"]] = item
+                          existing_enc[item["id"]] = item
               except Exception:
                   pass
 
-          url = f"https://ntfy.sh/{topic}/json?poll=1&since=all"
-          req = urllib.request.Request(url, headers={"User-Agent": "UFSC-Triton-Sync/1.0"})
-          raw = urllib.request.urlopen(req, timeout=20).read().decode("utf-8")
+          existing_act = {}
+          if stats_path.exists():
+              try:
+                  data = json.loads(stats_path.read_text(encoding="utf-8"))
+                  for ev in data.get("events", []):
+                      if isinstance(ev, dict) and ev.get("id"):
+                          existing_act[ev["id"]] = ev
+              except Exception:
+                  pass
 
-          added = 0
-          for line in raw.splitlines():
+          def fetch_ndjson(topic):
+              url = f"https://ntfy.sh/{topic}/json?poll=1&since=all"
+              req = urllib.request.Request(url, headers={"User-Agent": "UFSC-Triton-Sync/1.0"})
+              try:
+                  return urllib.request.urlopen(req, timeout=20).read().decode("utf-8").splitlines()
+              except Exception:
+                  return []
+
+          for line in fetch_ndjson(enc_topic):
               line = line.strip()
               if not line:
                   continue
@@ -51,30 +66,73 @@ jobs:
                   item = json.loads(line)
                   if item.get("event") == "message" and item.get("id") and item.get("message"):
                       msg_obj = json.loads(item["message"])
-                      if isinstance(msg_obj, dict) and msg_obj.get("v") == 1 and msg_obj.get("k") and msg_obj.get("iv") and msg_obj.get("c"):
-                          if item["id"] not in existing:
-                              existing[item["id"]] = {
-                                  "id": item["id"],
-                                  "time": item.get("time"),
-                                  "message": item["message"],
-                              }
-                              added += 1
+                      if isinstance(msg_obj, dict) and (msg_obj.get("v") == 1 or msg_obj.get("v") == 2) and msg_obj.get("c"):
+                          existing_enc[item["id"]] = {
+                              "id": item["id"],
+                              "time": item.get("time"),
+                              "message": item["message"],
+                          }
               except Exception:
                   continue
 
-          merged = sorted(existing.values(), key=lambda x: x.get("time") or 0)
-          archive_path.write_text(json.dumps(merged, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-          print(f"New encrypted records added: {added} (total: {len(merged)})")
+          for line in fetch_ndjson(act_topic):
+              line = line.strip()
+              if not line:
+                  continue
+              try:
+                  item = json.loads(line)
+                  if item.get("event") == "message" and item.get("id") and item.get("message"):
+                      msg_obj = json.loads(item["message"])
+                      if isinstance(msg_obj, dict) and msg_obj.get("kind") in ("like", "view", "registration"):
+                          existing_act[item["id"]] = {
+                              "id": item["id"],
+                              "time": item.get("time"),
+                              "kind": msg_obj.get("kind"),
+                              "device": msg_obj.get("device", "-"),
+                              "lang": msg_obj.get("lang", "-"),
+                              "envelope": msg_obj.get("envelope"),
+                          }
+                          if msg_obj.get("kind") == "registration" and isinstance(msg_obj.get("envelope"), dict):
+                              mirror_id = f"mirror_{item['id']}"
+                              if mirror_id not in existing_enc:
+                                  existing_enc[mirror_id] = {
+                                      "id": mirror_id,
+                                      "time": item.get("time"),
+                                      "message": json.dumps(msg_obj["envelope"], ensure_ascii=False),
+                                  }
+              except Exception:
+                  continue
+
+          merged_enc = sorted(existing_enc.values(), key=lambda x: x.get("time") or 0)
+          archive_path.write_text(json.dumps(merged_enc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+          merged_act = sorted(existing_act.values(), key=lambda x: x.get("time") or 0, reverse=True)
+          likes_count = sum(1 for e in merged_act if e.get("kind") == "like")
+          views_count = sum(1 for e in merged_act if e.get("kind") == "view")
+          stats_path.write_text(
+              json.dumps(
+                  {
+                      "likesCount": likes_count,
+                      "viewsCount": views_count,
+                      "events": merged_act,
+                  },
+                  indent=2,
+                  ensure_ascii=False,
+              )
+              + "\n",
+              encoding="utf-8",
+          )
+          print(f"Total encrypted records: {len(merged_enc)} | Likes: {likes_count} | Views: {views_count}")
           EOF
 
       - name: Commit and push if updated
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/triton_encrypted_records.json
+          git add public/data/triton_encrypted_records.json public/data/triton_activity_stats.json
           if ! git diff --staged --quiet; then
-            git commit -m "chore(triton): arquiva registros criptografados (RSA-2048/AES-GCM)"
+            git commit -m "chore(triton): arquiva registros criptografados e estatisticas de curtidas/acessos"
             git push origin main
           else
-            echo "No new encrypted records to commit."
+            echo "No new encrypted records or stats to commit."
           fi

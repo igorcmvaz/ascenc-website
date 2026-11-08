@@ -1,9 +1,10 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PageLayout from "../components/PageLayout";
 import TritonWorldMinimap from "../components/TritonWorldMinimap";
 import {
-  encryptRegistrationPayload,
-  TRITON_ENCRYPTED_TOPIC,
+  sendRegistrationToServer,
+  sendTritonActivity,
+  fetchTritonActivitySummary,
 } from "../utils/tritonCrypto";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
@@ -23,7 +24,8 @@ import {
   Send,
   History,
   Download,
-  BookOpen
+  BookOpen,
+  Heart
 } from "lucide-react";
 
 export const TRITON_CONFIG = {
@@ -167,6 +169,55 @@ export default function Triton() {
     purpose: "Pesquisa Acadêmica",
   });
   const [submitStatus, setSubmitStatus] = useState("idle");
+  const [likesCount, setLikesCount] = useState(0);
+  const [hasLiked, setHasLiked] = useState(() => {
+    try {
+      return window.localStorage.getItem("triton_liked_v1") === "1";
+    } catch {
+      return false;
+    }
+  });
+  const [liking, setLiking] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+    fetchTritonActivitySummary().then((summary) => {
+      if (active && typeof summary?.likesCount === "number") {
+        setLikesCount(summary.likesCount);
+      }
+    });
+
+    // Registra a abertura da página uma vez por sessão para acompanhamento no painel
+    try {
+      if (!window.sessionStorage.getItem("triton_viewed_session_v1")) {
+        window.sessionStorage.setItem("triton_viewed_session_v1", "1");
+        sendTritonActivity("view");
+      }
+    } catch {
+      sendTritonActivity("view");
+    }
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const handleLikeClick = async () => {
+    if (liking) return;
+    setLiking(true);
+    setHasLiked(true);
+    setLikesCount((prev) => prev + 1);
+    try {
+      window.localStorage.setItem("triton_liked_v1", "1");
+    } catch {
+      // ignore
+    }
+    try {
+      await sendTritonActivity("like");
+    } finally {
+      setLiking(false);
+    }
+  };
 
   const textCitation = `Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica) (Version 0.1.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brazil.`;
 
@@ -253,31 +304,11 @@ export default function Triton() {
       timestamp: new Date().toISOString(),
     };
 
-    const url = `https://ntfy.sh/${TRITON_ENCRYPTED_TOPIC}`;
-
-    // Plano B blindado (primário): aguarda a criptografia RSA-2048 + AES-GCM e confirma
-    // o POST via fetch antes de redirecionar (evitando bloqueio silencioso do sendBeacon).
+    // Plano B blindado com dupla redundância: envia para os dois canais no servidor antes de redirecionar
     try {
-      const encryptedBody = await encryptRegistrationPayload(payloadObj);
-      try {
-        const res = await fetch(url, {
-          method: "POST",
-          keepalive: true,
-          headers: {
-            "Content-Type": "text/plain;charset=UTF-8",
-          },
-          body: encryptedBody,
-        });
-        if (!res.ok && typeof navigator?.sendBeacon === "function") {
-          navigator.sendBeacon(url, encryptedBody);
-        }
-      } catch {
-        if (typeof navigator?.sendBeacon === "function") {
-          navigator.sendBeacon(url, encryptedBody);
-        }
-      }
+      await sendRegistrationToServer(payloadObj);
     } catch {
-      // ignore crypto errors
+      // ignore
     }
 
     // Plano A: dispara o e-mail em segundo plano via AJAX (sem travar a página caso o FormSubmit dê erro 522)
@@ -361,6 +392,33 @@ export default function Triton() {
                   <Download className="w-4 h-4 group-hover:scale-110 transition-transform" />
                   <span>{t("triton.btn_request_access", "Baixar Triton Gratuitamente")}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleLikeClick}
+                  disabled={liking}
+                  className={`inline-flex items-center gap-2 px-4 py-3 rounded-xl font-black text-xs sm:text-sm border transition-all cursor-pointer shadow-sm hover:-translate-y-0.5 ${
+                    hasLiked
+                      ? "bg-rose-50 hover:bg-rose-100 text-rose-700 border-rose-300 dark:bg-rose-950/70 dark:hover:bg-rose-900/70 dark:text-rose-300 dark:border-rose-700"
+                      : "bg-white hover:bg-rose-50 text-slate-800 hover:text-rose-700 border-slate-200 hover:border-rose-300 dark:bg-slate-800 dark:hover:bg-rose-950/60 dark:text-slate-100 dark:hover:text-rose-300 dark:border-slate-700"
+                  }`}
+                >
+                  <Heart
+                    className={`w-4 h-4 transition-transform ${
+                      hasLiked
+                        ? "fill-rose-500 text-rose-500 scale-110"
+                        : "text-rose-500"
+                    }`}
+                  />
+                  <span>
+                    {hasLiked
+                      ? t("triton.btn_liked", "Obrigado por curtir!")
+                      : t("triton.btn_like", "Curtir o Triton")}
+                  </span>
+                  <span className="inline-flex items-center justify-center px-2 py-0.5 rounded-full text-[11px] font-black bg-rose-100 text-rose-800 dark:bg-rose-900/80 dark:text-rose-200">
+                    {likesCount}
+                  </span>
                 </button>
 
                 <Link

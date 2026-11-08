@@ -9,12 +9,17 @@ import {
   Lock,
   KeyRound,
   ShieldCheck,
-  LogOut
+  LogOut,
+  Heart,
+  Eye,
+  Send
 } from "lucide-react";
 import {
   TRITON_ENCRYPTED_TOPIC,
   unlockAdminPrivateKey,
   decryptRegistrationMessage,
+  fetchTritonActivitySummary,
+  sendRegistrationToServer,
 } from "../utils/tritonCrypto";
 
 export default function TritonRegistros() {
@@ -24,7 +29,13 @@ export default function TritonRegistros() {
   const [unlocking, setUnlocking] = useState(false);
 
   const [records, setRecords] = useState([]);
+  const [activity, setActivity] = useState({
+    likesCount: 0,
+    viewsCount: 0,
+    events: [],
+  });
   const [loading, setLoading] = useState(false);
+  const [testingSend, setTestingSend] = useState(false);
   const [error, setError] = useState("");
 
   const fetchAndDecryptRecords = async (unlockedKey) => {
@@ -78,32 +89,56 @@ export default function TritonRegistros() {
         }
       }
 
-      // 3. Carrega em tempo real os registros recentes do canal ntfy.sh
-      const res = await fetch(
-        `https://ntfy.sh/${TRITON_ENCRYPTED_TOPIC}/json?poll=1&since=all`,
-        { cache: "no-store" }
-      );
-      const text = await res.text();
-      const lines = text
-        .split("\n")
-        .map((l) => l.trim())
-        .filter(Boolean);
+      // 3. Carrega em tempo real os registros recentes do canal principal ntfy.sh
+      try {
+        const res = await fetch(
+          `https://ntfy.sh/${TRITON_ENCRYPTED_TOPIC}/json?poll=1&since=all`,
+          { cache: "no-store" }
+        );
+        if (res.ok) {
+          const text = await res.text();
+          const lines = text
+            .split("\n")
+            .map((l) => l.trim())
+            .filter(Boolean);
 
-      for (const line of lines) {
-        try {
-          const item = JSON.parse(line);
-          if (item.event === "message" && item.id && item.message) {
-            const msgObj = JSON.parse(item.message);
-            if (msgObj && msgObj.v === 1 && msgObj.k && msgObj.iv && msgObj.c) {
-              encryptedById.set(item.id, {
-                id: item.id,
-                time: item.time,
-                message: item.message,
-              });
+          for (const line of lines) {
+            try {
+              const item = JSON.parse(line);
+              if (item.event === "message" && item.id && item.message) {
+                const msgObj = JSON.parse(item.message);
+                if (
+                  msgObj &&
+                  ((msgObj.v === 1 && msgObj.k && msgObj.iv && msgObj.c) ||
+                    (msgObj.v === 2 && msgObj.c))
+                ) {
+                  encryptedById.set(item.id, {
+                    id: item.id,
+                    time: item.time,
+                    message: item.message,
+                  });
+                }
+              }
+            } catch {
+              // ignora linhas inválidas
             }
           }
-        } catch {
-          // ignora linhas inválidas
+        }
+      } catch {
+        // ignore
+      }
+
+      // 4. Carrega curtidas, visualizações e espelhos de inscrição do canal de atividade
+      const actSummary = await fetchTritonActivitySummary();
+      setActivity(actSummary);
+
+      for (const ev of actSummary.events) {
+        if (ev.kind === "registration" && ev.envelope) {
+          encryptedById.set(`mirror_${ev.id}`, {
+            id: `mirror_${ev.id}`,
+            time: ev.time,
+            message: JSON.stringify(ev.envelope),
+          });
         }
       }
 
@@ -121,12 +156,19 @@ export default function TritonRegistros() {
       }
 
       const parsed = [];
+      const seenKeys = new Set();
       for (const item of allEncrypted) {
         try {
           const payload = await decryptRegistrationMessage(
             keyToUse,
             item.message
           );
+          const dedupKey = `${payload?.email || ""}|${payload?.name || ""}|${
+            payload?.timestamp || item.time || item.id
+          }`;
+          if (seenKeys.has(dedupKey)) continue;
+          seenKeys.add(dedupKey);
+
           parsed.push({
             id: item.id,
             time: item.time
@@ -150,6 +192,24 @@ export default function TritonRegistros() {
       setError("Não foi possível carregar os registros criptografados no momento.");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleSendLiveTest = async () => {
+    if (testingSend) return;
+    setTestingSend(true);
+    try {
+      await sendRegistrationToServer({
+        name: "Teste ao Vivo (Painel)",
+        email: "igorcmvaz@gmail.com",
+        institution: "UFSC (Verificação de Servidor)",
+        edition: "Triton Brasil (BRL)",
+        purpose: "Teste de Conexão em Tempo Real",
+        timestamp: new Date().toISOString(),
+      });
+      await fetchAndDecryptRecords();
+    } finally {
+      setTestingSend(false);
     }
   };
 
@@ -296,6 +356,18 @@ export default function TritonRegistros() {
             <div className="flex flex-wrap items-center gap-2">
               <button
                 type="button"
+                onClick={handleSendLiveTest}
+                disabled={testingSend}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-amber-100 hover:bg-amber-200 dark:bg-amber-950/60 dark:hover:bg-amber-900/70 text-amber-900 dark:text-amber-300 text-xs font-extrabold cursor-pointer"
+              >
+                <Send className="w-3.5 h-3.5" />
+                <span>
+                  {testingSend ? "Enviando teste..." : "Testar Envio Agora"}
+                </span>
+              </button>
+
+              <button
+                type="button"
                 onClick={() => fetchAndDecryptRecords()}
                 className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-zinc-200 text-xs font-bold cursor-pointer"
               >
@@ -324,59 +396,159 @@ export default function TritonRegistros() {
             </div>
           </div>
 
+          {/* Cards de Resumo de Acesso e Engajamento */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="p-4 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/60 flex items-center gap-3.5">
+              <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0">
+                <Download className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="text-xl font-black text-slate-900 dark:text-white">
+                  {records.length}
+                </div>
+                <div className="text-[11px] font-bold text-slate-600 dark:text-zinc-400">
+                  Inscrições de Download
+                </div>
+              </div>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-rose-50/70 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-800/60 flex items-center gap-3.5">
+              <div className="w-10 h-10 rounded-xl bg-rose-600 text-white flex items-center justify-center shrink-0">
+                <Heart className="w-5 h-5 fill-white" />
+              </div>
+              <div>
+                <div className="text-xl font-black text-slate-900 dark:text-white">
+                  {activity.likesCount}
+                </div>
+                <div className="text-[11px] font-bold text-slate-600 dark:text-zinc-400">
+                  Curtidas no Botão "Curtir"
+                </div>
+              </div>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-blue-50/70 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800/60 flex items-center gap-3.5">
+              <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0">
+                <Eye className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="text-xl font-black text-slate-900 dark:text-white">
+                  {activity.viewsCount}
+                </div>
+                <div className="text-[11px] font-bold text-slate-600 dark:text-zinc-400">
+                  Aberturas da Página (#/triton)
+                </div>
+              </div>
+            </div>
+          </div>
+
           {error && (
             <div className="p-3 rounded-xl bg-rose-50 text-rose-800 text-xs font-bold">
               {error}
             </div>
           )}
 
-          <div className="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800">
-            <table className="w-full text-left text-xs">
-              <thead className="bg-slate-50 dark:bg-slate-800/80 text-slate-700 dark:text-zinc-300 font-black uppercase">
-                <tr>
-                  <th className="p-3">Data / Hora</th>
-                  <th className="p-3">Nome</th>
-                  <th className="p-3">E-mail</th>
-                  <th className="p-3">Instituição / Empresa</th>
-                  <th className="p-3">Edição</th>
-                  <th className="p-3">Finalidade</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-slate-800 dark:text-zinc-200">
-                {loading ? (
+          <div className="space-y-2">
+            <h2 className="text-sm font-black uppercase tracking-wider text-slate-700 dark:text-zinc-300">
+              1. Inscrições do Formulário de Download
+            </h2>
+            <div className="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800">
+              <table className="w-full text-left text-xs">
+                <thead className="bg-slate-50 dark:bg-slate-800/80 text-slate-700 dark:text-zinc-300 font-black uppercase">
                   <tr>
-                    <td colSpan={6} className="p-6 text-center text-slate-500">
-                      Descriptografando registros...
-                    </td>
+                    <th className="p-3">Data / Hora</th>
+                    <th className="p-3">Nome</th>
+                    <th className="p-3">E-mail</th>
+                    <th className="p-3">Instituição / Empresa</th>
+                    <th className="p-3">Edição</th>
+                    <th className="p-3">Finalidade</th>
                   </tr>
-                ) : records.length === 0 ? (
-                  <tr>
-                    <td colSpan={6} className="p-6 text-center text-slate-500">
-                      Nenhum registro encontrado ainda.
-                    </td>
-                  </tr>
-                ) : (
-                  records.map((r) => (
-                    <tr key={r.id} className="hover:bg-slate-50/80 dark:hover:bg-slate-800/40">
-                      <td className="p-3 whitespace-nowrap font-mono text-[11px]">{r.time}</td>
-                      <td className="p-3 font-bold">{r.name}</td>
-                      <td className="p-3">
-                        {r.email !== "-" ? (
-                          <a href={`mailto:${r.email}`} className="text-emerald-700 dark:text-emerald-400 underline">
-                            {r.email}
-                          </a>
-                        ) : (
-                          "-"
-                        )}
+                </thead>
+                <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-slate-800 dark:text-zinc-200">
+                  {loading ? (
+                    <tr>
+                      <td colSpan={6} className="p-6 text-center text-slate-500">
+                        Descriptografando registros...
                       </td>
-                      <td className="p-3">{r.institution}</td>
-                      <td className="p-3">{r.edition}</td>
-                      <td className="p-3">{r.purpose}</td>
                     </tr>
-                  ))
-                )}
-              </tbody>
-            </table>
+                  ) : records.length === 0 ? (
+                    <tr>
+                      <td colSpan={6} className="p-6 text-center text-slate-500">
+                        Nenhum registro encontrado ainda.
+                      </td>
+                    </tr>
+                  ) : (
+                    records.map((r) => (
+                      <tr key={r.id} className="hover:bg-slate-50/80 dark:hover:bg-slate-800/40">
+                        <td className="p-3 whitespace-nowrap font-mono text-[11px]">{r.time}</td>
+                        <td className="p-3 font-bold">{r.name}</td>
+                        <td className="p-3">
+                          {r.email !== "-" ? (
+                            <a href={`mailto:${r.email}`} className="text-emerald-700 dark:text-emerald-400 underline">
+                              {r.email}
+                            </a>
+                          ) : (
+                            "-"
+                          )}
+                        </td>
+                        <td className="p-3">{r.institution}</td>
+                        <td className="p-3">{r.edition}</td>
+                        <td className="p-3">{r.purpose}</td>
+                      </tr>
+                    ))
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="space-y-2 pt-2">
+            <h2 className="text-sm font-black uppercase tracking-wider text-slate-700 dark:text-zinc-300">
+              2. Histórico de Curtidas e Aberturas da Página (#/triton)
+            </h2>
+            <div className="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 max-h-80 overflow-y-auto">
+              <table className="w-full text-left text-xs">
+                <thead className="bg-slate-50 dark:bg-slate-800/80 text-slate-700 dark:text-zinc-300 font-black uppercase sticky top-0">
+                  <tr>
+                    <th className="p-3">Data / Hora</th>
+                    <th className="p-3">Ação</th>
+                    <th className="p-3">Dispositivo</th>
+                    <th className="p-3">Idioma</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-slate-800 dark:text-zinc-200">
+                  {activity.events.filter((e) => e.kind === "like" || e.kind === "view").length === 0 ? (
+                    <tr>
+                      <td colSpan={4} className="p-6 text-center text-slate-500">
+                        Nenhuma curtida ou abertura registrada ainda.
+                      </td>
+                    </tr>
+                  ) : (
+                    activity.events
+                      .filter((e) => e.kind === "like" || e.kind === "view")
+                      .map((ev) => (
+                        <tr key={ev.id} className="hover:bg-slate-50/80 dark:hover:bg-slate-800/40">
+                          <td className="p-3 whitespace-nowrap font-mono text-[11px]">
+                            {ev.time ? new Date(ev.time * 1000).toLocaleString("pt-BR") : "-"}
+                          </td>
+                          <td className="p-3 font-bold">
+                            {ev.kind === "like" ? (
+                              <span className="inline-flex items-center gap-1 text-rose-600 dark:text-rose-400">
+                                ❤️ Curtiu o Triton
+                              </span>
+                            ) : (
+                              <span className="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400">
+                                👀 Abriu a página #/triton
+                              </span>
+                            )}
+                          </td>
+                          <td className="p-3">{ev.device || "-"}</td>
+                          <td className="p-3">{ev.lang || "-"}</td>
+                        </tr>
+                      ))
+                  )}
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
       </div>

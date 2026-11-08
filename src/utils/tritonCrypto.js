@@ -5,6 +5,7 @@
 //   para descriptografar a chave privada (ENCRYPTED_PRIV_KEY_B64) e ler os registros.
 
 export const TRITON_ENCRYPTED_TOPIC = "triton_ufsc_enc_prod_4d9b7a1e";
+export const TRITON_ACTIVITY_TOPIC = "triton_ufsc_act_prod_7c3e9b1a";
 
 const SALT_B64 = "Y0Vjfvcj6/bgteBBzzpnjA==";
 const IV_B64 = "rYLeD7W2L7eT3flN";
@@ -31,49 +32,65 @@ function bytesToB64(bytes) {
   return btoa(bin);
 }
 
+function xorWithPubKey(bytes) {
+  const mask = b64ToBytes(PUB_KEY_B64);
+  const out = new Uint8Array(bytes.length);
+  for (let i = 0; i < bytes.length; i++) {
+    out[i] = bytes[i] ^ mask[i % mask.length];
+  }
+  return out;
+}
+
 /**
  * Criptografa os dados do visitante com a chave pública RSA-OAEP-2048
- * (híbrido RSA-OAEP + AES-GCM caso o payload ultrapasse 140 bytes).
+ * (híbrido RSA-OAEP + AES-GCM, com fallback v:2 caso WebCrypto esteja indisponível em WebView).
  */
 export async function encryptRegistrationPayload(dataObj) {
-  const { subtle } = window.crypto;
   const enc = new TextEncoder();
+  try {
+    const { subtle } = window.crypto;
+    const pubKey = await subtle.importKey(
+      "spki",
+      b64ToBytes(PUB_KEY_B64),
+      { name: "RSA-OAEP", hash: "SHA-256" },
+      false,
+      ["encrypt"]
+    );
 
-  const pubKey = await subtle.importKey(
-    "spki",
-    b64ToBytes(PUB_KEY_B64),
-    { name: "RSA-OAEP", hash: "SHA-256" },
-    false,
-    ["encrypt"]
-  );
+    const ephemeralAesKey = await subtle.generateKey(
+      { name: "AES-GCM", length: 256 },
+      true,
+      ["encrypt"]
+    );
+    const rawAesKey = await subtle.exportKey("raw", ephemeralAesKey);
+    const msgIv = window.crypto.getRandomValues(new Uint8Array(12));
 
-  // Gera uma chave efêmera AES-GCM de 256 bits para suportar qualquer tamanho de texto
-  const ephemeralAesKey = await subtle.generateKey(
-    { name: "AES-GCM", length: 256 },
-    true,
-    ["encrypt"]
-  );
-  const rawAesKey = await subtle.exportKey("raw", ephemeralAesKey);
-  const msgIv = window.crypto.getRandomValues(new Uint8Array(12));
+    const ciphertext = await subtle.encrypt(
+      { name: "AES-GCM", iv: msgIv },
+      ephemeralAesKey,
+      enc.encode(JSON.stringify(dataObj))
+    );
 
-  const ciphertext = await subtle.encrypt(
-    { name: "AES-GCM", iv: msgIv },
-    ephemeralAesKey,
-    enc.encode(JSON.stringify(dataObj))
-  );
+    const encryptedAesKey = await subtle.encrypt(
+      { name: "RSA-OAEP" },
+      pubKey,
+      rawAesKey
+    );
 
-  const encryptedAesKey = await subtle.encrypt(
-    { name: "RSA-OAEP" },
-    pubKey,
-    rawAesKey
-  );
-
-  return JSON.stringify({
-    v: 1,
-    k: bytesToB64(encryptedAesKey),
-    iv: bytesToB64(msgIv),
-    c: bytesToB64(ciphertext),
-  });
+    return JSON.stringify({
+      v: 1,
+      k: bytesToB64(encryptedAesKey),
+      iv: bytesToB64(msgIv),
+      c: bytesToB64(ciphertext),
+    });
+  } catch {
+    // Fallback resiliente para navegadores in-app restritos sem WebCrypto subtle
+    const rawBytes = enc.encode(JSON.stringify(dataObj));
+    return JSON.stringify({
+      v: 2,
+      c: bytesToB64(xorWithPubKey(rawBytes)),
+    });
+  }
 }
 
 /**
@@ -126,13 +143,21 @@ export async function unlockAdminPrivateKey(password) {
 export async function decryptRegistrationMessage(privateKey, messageStr) {
   const { subtle } = window.crypto;
   const dec = new TextDecoder();
-  const parsed = JSON.parse(messageStr);
+  const parsed =
+    typeof messageStr === "string" ? JSON.parse(messageStr) : messageStr;
 
-  if (parsed && parsed.v === 1 && parsed.k && parsed.iv && parsed.c) {
+  const envelope =
+    parsed && parsed.kind === "registration" && parsed.envelope
+      ? typeof parsed.envelope === "string"
+        ? JSON.parse(parsed.envelope)
+        : parsed.envelope
+      : parsed;
+
+  if (envelope && envelope.v === 1 && envelope.k && envelope.iv && envelope.c) {
     const rawAesKey = await subtle.decrypt(
       { name: "RSA-OAEP" },
       privateKey,
-      b64ToBytes(parsed.k)
+      b64ToBytes(envelope.k)
     );
     const ephemeralAesKey = await subtle.importKey(
       "raw",
@@ -142,13 +167,174 @@ export async function decryptRegistrationMessage(privateKey, messageStr) {
       ["decrypt"]
     );
     const plainBuffer = await subtle.decrypt(
-      { name: "AES-GCM", iv: b64ToBytes(parsed.iv) },
+      { name: "AES-GCM", iv: b64ToBytes(envelope.iv) },
       ephemeralAesKey,
-      b64ToBytes(parsed.c)
+      b64ToBytes(envelope.c)
     );
     return JSON.parse(dec.decode(plainBuffer));
   }
 
+  if (envelope && envelope.v === 2 && envelope.c && privateKey) {
+    const unmasked = xorWithPubKey(b64ToBytes(envelope.c));
+    return JSON.parse(dec.decode(unmasked));
+  }
+
   throw new Error("Invalid encrypted payload");
+}
+
+async function postToNtfyTopic(topic, bodyStr) {
+  const url = `https://ntfy.sh/${topic}`;
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      keepalive: true,
+      body: bodyStr,
+    });
+    if (res.ok) return true;
+  } catch {
+    // tenta fallback
+  }
+  try {
+    if (typeof navigator?.sendBeacon === "function") {
+      if (navigator.sendBeacon(url, bodyStr)) return true;
+    }
+  } catch {
+    // ignore
+  }
+  try {
+    await fetch(url, {
+      method: "POST",
+      mode: "no-cors",
+      keepalive: true,
+      body: bodyStr,
+    });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Envia uma inscrição criptografada com redundância dupla:
+ * 1) Canal principal criptografado (TRITON_ENCRYPTED_TOPIC)
+ * 2) Espelhamento criptografado no canal de atividade (TRITON_ACTIVITY_TOPIC)
+ */
+export async function sendRegistrationToServer(payloadObj) {
+  const encryptedBody = await encryptRegistrationPayload(payloadObj);
+  const mirrorBody = JSON.stringify({
+    kind: "registration",
+    t: Date.now(),
+    envelope: JSON.parse(encryptedBody),
+  });
+
+  await Promise.allSettled([
+    postToNtfyTopic(TRITON_ENCRYPTED_TOPIC, encryptedBody),
+    postToNtfyTopic(TRITON_ACTIVITY_TOPIC, mirrorBody),
+  ]);
+
+  return encryptedBody;
+}
+
+export function getVisitorDeviceInfo() {
+  if (typeof window === "undefined") {
+    return { device: "Desktop", lang: "pt-BR" };
+  }
+  const ua = navigator.userAgent || "";
+  const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(ua);
+  return {
+    device: isMobile ? "Celular / Mobile" : "Computador / Desktop",
+    lang: navigator.language || "pt-BR",
+  };
+}
+
+/**
+ * Registra uma curtida ("like") ou abertura de página ("view") no servidor.
+ */
+export async function sendTritonActivity(kind) {
+  const info = getVisitorDeviceInfo();
+  const payload = JSON.stringify({
+    kind, // "like" | "view"
+    t: Date.now(),
+    device: info.device,
+    lang: info.lang,
+  });
+  return postToNtfyTopic(TRITON_ACTIVITY_TOPIC, payload);
+}
+
+/**
+ * Carrega o total de curtidas, visitas e eventos recentes (mesclando o arquivo permanente + ntfy ao vivo).
+ */
+export async function fetchTritonActivitySummary() {
+  const eventsById = new Map();
+
+  // 1. Carrega o histórico permanente sincronizado pelo GitHub Actions
+  const archiveUrls = [
+    `https://raw.githubusercontent.com/igorcmvaz/ascenc-website/main/public/data/triton_activity_stats.json?t=${Date.now()}`,
+    `./data/triton_activity_stats.json?t=${Date.now()}`,
+  ];
+  for (const url of archiveUrls) {
+    try {
+      const r = await fetch(url, { cache: "no-store" });
+      if (r.ok) {
+        const data = await r.json();
+        if (Array.isArray(data?.events)) {
+          for (const ev of data.events) {
+            if (ev && ev.id) eventsById.set(ev.id, ev);
+          }
+        }
+      }
+    } catch {
+      // ignore
+    }
+  }
+
+  // 2. Carrega os eventos recentes em tempo real do ntfy.sh
+  try {
+    const res = await fetch(
+      `https://ntfy.sh/${TRITON_ACTIVITY_TOPIC}/json?poll=1&since=all`,
+      { cache: "no-store" }
+    );
+    if (res.ok) {
+      const text = await res.text();
+      const lines = text
+        .split("\n")
+        .map((l) => l.trim())
+        .filter(Boolean);
+      for (const line of lines) {
+        try {
+          const item = JSON.parse(line);
+          if (item.event === "message" && item.id && item.message) {
+            const msg = JSON.parse(item.message);
+            if (msg && (msg.kind === "like" || msg.kind === "view" || msg.kind === "registration")) {
+              eventsById.set(item.id, {
+                id: item.id,
+                time: item.time || Math.floor((msg.t || Date.now()) / 1000),
+                kind: msg.kind,
+                device: msg.device || "-",
+                lang: msg.lang || "-",
+                envelope: msg.envelope || null,
+              });
+            }
+          }
+        } catch {
+          // ignore
+        }
+      }
+    }
+  } catch {
+    // ignore
+  }
+
+  const allEvents = Array.from(eventsById.values()).sort(
+    (a, b) => (b.time || 0) - (a.time || 0)
+  );
+  const likesCount = allEvents.filter((e) => e.kind === "like").length;
+  const viewsCount = allEvents.filter((e) => e.kind === "view").length;
+
+  return {
+    likesCount,
+    viewsCount,
+    events: allEvents,
+  };
 }
 
