@@ -25,7 +25,9 @@ import {
   History,
   Download,
   BookOpen,
-  Heart
+  Heart,
+  Code2,
+  ExternalLink
 } from "lucide-react";
 
 export const TRITON_CONFIG = {
@@ -320,7 +322,7 @@ export default function Triton() {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        _subject: `Novo Download do Triton (${formData.edition}) - ${formData.name || "Visitante"}`,
+        _subject: `Novo Pedido de Download do Triton (${formData.edition}) - ${formData.name || "Visitante"}`,
         _captcha: "false",
         _template: "table",
         name: formData.name,
@@ -331,7 +333,18 @@ export default function Triton() {
       }),
     }).catch(() => {});
 
-    navigate("/triton/download");
+    // Abre o e-mail direcionado para igorcmvaz@gmail.com com o pedido de download preenchido
+    const subject = encodeURIComponent(
+      `Pedido de Download do Triton (${formData.edition}) - ${formData.name}`
+    );
+    const body = encodeURIComponent(
+      `Olá, Igor!\n\nGostaria de solicitar o link de download do instalador (.exe) e manual (.pdf) do Triton v0.1.0 Beta.\n\n• Nome: ${formData.name}\n• E-mail: ${formData.email}\n• Instituição / Empresa: ${formData.institution}\n• Edição Desejada: ${formData.edition}\n• Finalidade: ${formData.purpose}\n\nObrigado(a)!`
+    );
+    window.location.href = `mailto:${TRITON_CONFIG.authorEmail}?subject=${subject}&body=${body}`;
+
+    setTimeout(() => {
+      navigate("/triton/download");
+    }, 300);
   };
 
   return (
@@ -389,10 +402,21 @@ export default function Triton() {
                   onClick={() => scrollToForm("Todas as Edições (Brasil, Ibérica e Internacional)")}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer group"
                 >
-                  <Download className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  <span>{t("triton.btn_request_access", "Baixar Triton Gratuitamente")}</span>
+                  <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  <span>{t("triton.btn_request_access", "Solicitar Download Gratuito")}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </button>
+
+                <a
+                  href="https://github.com/igorcmvaz/triton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 text-white font-black text-xs sm:text-sm border border-slate-700 shadow-sm hover:-translate-y-0.5 transition-all"
+                >
+                  <Code2 className="w-4 h-4 text-emerald-400" />
+                  <span>{t("triton.open_github_btn", "Repositório no GitHub")}</span>
+                  <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+                </a>
 
                 <button
                   type="button"
@@ -670,16 +694,16 @@ export default function Triton() {
           <div className="max-w-3xl mx-auto space-y-5">
             <div className="text-center space-y-1.5">
               <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-xs font-black uppercase tracking-wider">
-                <Download className="w-3.5 h-3.5" />
+                <Mail className="w-3.5 h-3.5" />
                 {t("triton.form_badge", "Acesso Gratuito • v0.1.0 Beta")}
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
-                {t("triton.form_title", "Identifique-se para Liberar o Download")}
+                {t("triton.form_title", "Solicitar Download do Instalador")}
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-400 font-medium">
                 {t(
                   "triton.form_desc",
-                  "Preencha seus dados abaixo em 10 segundos para abrir a página com os links oficiais do Zenodo e do GitHub."
+                  "Preencha seus dados abaixo para enviar o pedido de download por e-mail e acessar o repositório oficial no GitHub."
                 )}
               </p>
             </div>
@@ -800,7 +824,7 @@ export default function Triton() {
               <p className="text-[11px] text-slate-500 dark:text-zinc-400 text-center leading-relaxed">
                 {t(
                   "triton.form_version_hint",
-                  "Ao clicar abaixo, você será redirecionado para a página de acesso com os links do Zenodo (onde estão as 3 versões; baixe a respectiva) e do GitHub."
+                  "Ao clicar abaixo, seu pedido de download será enviado por e-mail para nossa equipe (que encaminhará o instalador .exe e o manual .pdf da edição escolhida) e você terá acesso ao repositório oficial no GitHub."
                 )}
               </p>
 
@@ -810,11 +834,11 @@ export default function Triton() {
                   disabled={submitStatus === "submitting"}
                   className="w-full sm:w-auto min-w-[260px] inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 text-white font-black text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer"
                 >
-                  <Send className="w-4 h-4" />
+                  <Mail className="w-4 h-4" />
                   <span>
                     {submitStatus === "submitting"
-                      ? t("triton.form_submitting", "Liberando acesso...")
-                      : t("triton.form_submit", "Liberar Acesso ao Zenodo e GitHub")}
+                      ? t("triton.form_submitting", "Enviando pedido...")
+                      : t("triton.form_submit", "Solicitar Download por E-mail & Ver GitHub")}
                   </span>
                 </button>
               </div>

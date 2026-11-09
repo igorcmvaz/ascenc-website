@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import {
   CheckCircle2,
-  Download,
   ExternalLink,
   Code2,
   AlertCircle,
@@ -16,14 +15,14 @@ import {
   FileText
 } from "lucide-react";
 
-const ZENODO_URL = "https://zenodo.org/records/23402916";
-const DOI_URL = "https://doi.org/10.5281/zenodo.23402916";
+const AUTHOR_EMAIL = "igorcmvaz@gmail.com";
 const GITHUB_URL = "https://github.com/igorcmvaz/triton";
 
 export default function TritonDownload() {
   const { t } = useTranslation();
   const [copiedBib, setCopiedBib] = useState(false);
   const [copiedTextCite, setCopiedTextCite] = useState(false);
+  const [copiedRequest, setCopiedRequest] = useState(false);
 
   const savedUser = (() => {
     try {
@@ -37,6 +36,34 @@ export default function TritonDownload() {
   const selectedEdition =
     savedUser?.edition || "Todas as Edições (Brasil, Ibérica e Internacional)";
   const userName = savedUser?.name || "";
+  const userEmail = savedUser?.email || "";
+  const userInstitution = savedUser?.institution || "";
+  const userPurpose = savedUser?.purpose || "Pesquisa Acadêmica";
+
+  const requestEmailSubject = `Pedido de Download do Triton (${selectedEdition}) - ${userName || "Solicitante"}`;
+  const requestEmailBody = `Olá, Igor!
+
+Gostaria de solicitar o link de download do instalador (.exe) e manual (.pdf) do Triton v0.1.0 Beta.
+
+• Nome: ${userName || "-"}
+• E-mail: ${userEmail || "-"}
+• Instituição / Empresa: ${userInstitution || "-"}
+• Edição Desejada: ${selectedEdition}
+• Finalidade: ${userPurpose}
+
+Obrigado(a)!`;
+
+  const mailtoUrl = `mailto:${AUTHOR_EMAIL}?subject=${encodeURIComponent(
+    requestEmailSubject
+  )}&body=${encodeURIComponent(requestEmailBody)}`;
+
+  const copyRequestToClipboard = () => {
+    navigator.clipboard.writeText(
+      `Para: ${AUTHOR_EMAIL}\nAssunto: ${requestEmailSubject}\n\n${requestEmailBody}`
+    );
+    setCopiedRequest(true);
+    setTimeout(() => setCopiedRequest(false), 2400);
+  };
 
   const editionsFiles = [
     {
@@ -77,16 +104,16 @@ export default function TritonDownload() {
     },
   ];
 
-  const textCitation = `Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica) (Version 0.1.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23402916`;
+  const textCitation = `Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica) (Version 0.1.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brazil.`;
 
   const bibtexCitation = `@software{vaz_ghisi_triton_2026,
   author       = {Vaz, Igor Catão Martins and Ghisi, Enedir},
   title        = {Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica)},
   year         = {2026},
-  publisher    = {Zenodo},
   version      = {0.1.0},
-  doi          = {10.5281/zenodo.23402916},
-  url          = {https://doi.org/10.5281/zenodo.23402916}
+  organization = {Universidade Federal de Santa Catarina (UFSC)},
+  address      = {Florianópolis, SC, Brazil},
+  url          = {https://sustainability.ufsc.br/#/triton}
 }`;
 
   const copyBibToClipboard = () => {
@@ -113,12 +140,12 @@ export default function TritonDownload() {
               </div>
               <div>
                 <span className="inline-block text-[11px] font-black uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
-                  {t("triton.access_unlocked_badge", "Acesso Liberado • v0.1.0 Beta")}
+                  {t("triton.access_unlocked_badge", "Pedido Registrado • v0.1.0 Beta")}
                 </span>
                 <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
                   {userName
-                    ? `${t("triton.access_hello", "Olá")}, ${userName}! ${t("triton.access_ready", "Aqui estão os links oficiais do Triton")}`
-                    : t("triton.access_title", "Repositórios Oficiais do Triton (Zenodo & GitHub)")}
+                    ? `${t("triton.access_hello", "Olá")}, ${userName}! ${t("triton.access_ready", "Solicitação de Download e Repositório no GitHub")}`
+                    : t("triton.access_title", "Solicitação de Download por E-mail & GitHub")}
                 </h1>
               </div>
             </div>
@@ -132,40 +159,57 @@ export default function TritonDownload() {
             </Link>
           </div>
 
-          {/* Dois cards principais: Zenodo e GitHub */}
+          {/* Dois cards principais: Pedido por E-mail e GitHub */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* ZENODO */}
+            {/* PEDIDO DE DOWNLOAD POR E-MAIL */}
             <div className="rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/25 border-2 border-emerald-500/70 p-5 flex flex-col justify-between space-y-4">
               <div className="space-y-2">
                 <div className="flex items-center justify-between gap-2">
                   <span className="px-2.5 py-0.5 rounded-full text-[11px] font-black bg-emerald-600 text-white uppercase">
-                    {t("triton.zenodo_card_pill", "Zenodo • Instaladores & Manuais")}
+                    {t("triton.email_card_pill", "E-mail • Instaladores & Manuais")}
                   </span>
                   <span className="text-[11px] font-mono font-bold text-emerald-800 dark:text-emerald-300">
-                    DOI: 10.5281/zenodo.23402916
+                    {AUTHOR_EMAIL}
                   </span>
                 </div>
                 <h2 className="text-lg font-black text-slate-900 dark:text-white">
-                  {t("triton.zenodo_card_title", "Baixar Instalador (.exe) e Manual (.pdf)")}
+                  {t("triton.email_card_title", "Receber Instalador (.exe) e Manual (.pdf) por E-mail")}
                 </h2>
                 <p className="text-xs text-slate-700 dark:text-zinc-300 leading-relaxed">
                   {t(
-                    "triton.zenodo_card_desc",
-                    "As 3 edições do Triton (Brasil, Ibérica e Internacional) estão hospedadas juntas na mesma página oficial do Zenodo. Ao abrir o link, baixe o instalador e o manual respectivos da edição que você vai utilizar."
+                    "triton.email_card_desc",
+                    "Sua solicitação já foi registrada em nosso sistema. Clique no botão abaixo para confirmar o pedido diretamente no seu e-mail (igorcmvaz@gmail.com) e receber o link com o instalador e o manual da edição solicitada."
                   )}
                 </p>
               </div>
 
-              <a
-                href={ZENODO_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm shadow-md hover:shadow-lg transition-all"
-              >
-                <Download className="w-4 h-4" />
-                <span>{t("triton.open_zenodo_btn", "Acessar Página do Triton no Zenodo")}</span>
-                <ExternalLink className="w-4 h-4" />
-              </a>
+              <div className="space-y-2">
+                <a
+                  href={mailtoUrl}
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm shadow-md hover:shadow-lg transition-all"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>{t("triton.send_email_btn", "Enviar Pedido por E-mail")}</span>
+                </a>
+
+                <button
+                  type="button"
+                  onClick={copyRequestToClipboard}
+                  className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-white/90 hover:bg-white dark:bg-slate-800 dark:hover:bg-slate-700 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 text-xs font-extrabold transition-colors cursor-pointer"
+                >
+                  {copiedRequest ? (
+                    <>
+                      <Check className="w-3.5 h-3.5 text-emerald-600" />
+                      <span>{t("triton.copied_request", "E-mail e pedido copiados!")}</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-3.5 h-3.5" />
+                      <span>{t("triton.copy_request_btn", "Copiar E-mail e Texto do Pedido")}</span>
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
 
             {/* GITHUB */}
@@ -203,14 +247,14 @@ export default function TritonDownload() {
             </div>
           </div>
 
-          {/* Guia rápido: qual arquivo baixar no Zenodo para cada edição */}
+          {/* Guia rápido: arquivos de cada edição */}
           <div className="space-y-3 pt-2">
             <h3 className="text-sm font-black text-slate-900 dark:text-white flex items-center gap-2">
               <FileText className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
               <span>
                 {t(
                   "triton.which_file_title",
-                  "Qual arquivo baixar dentro do Zenodo para cada versão:"
+                  "Arquivos oficiais (Instalador .exe e Manual .pdf) de cada edição:"
                 )}
               </span>
             </h3>
@@ -285,11 +329,11 @@ export default function TritonDownload() {
               </p>
               <div className="pt-1 flex flex-wrap items-center gap-3">
                 <a
-                  href="mailto:igorcmvaz@gmail.com?subject=Feedback%20Detalhamento%20Triton%20v0.1.0"
+                  href={`mailto:${AUTHOR_EMAIL}?subject=Feedback%20Detalhamento%20Triton%20v0.1.0`}
                   className="inline-flex items-center gap-1.5 font-black text-amber-900 dark:text-amber-300 underline"
                 >
                   <Mail className="w-3.5 h-3.5" />
-                  <span>igorcmvaz@gmail.com</span>
+                  <span>{AUTHOR_EMAIL}</span>
                 </a>
                 <a
                   href={`${GITHUB_URL}/issues`}
@@ -355,15 +399,7 @@ export default function TritonDownload() {
             <em>
               Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica)
             </em>{" "}
-            (Version 0.1.0) [Computer software]. Zenodo.{" "}
-            <a
-              href={DOI_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-emerald-700 dark:text-emerald-400 underline font-semibold"
-            >
-              https://doi.org/10.5281/zenodo.23402916
-            </a>
+            (Version 0.1.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brazil.
           </div>
 
           <pre className="p-3 rounded-xl bg-slate-900 text-slate-100 font-mono text-[11px] overflow-x-auto leading-relaxed select-all">
