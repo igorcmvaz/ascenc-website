@@ -1,7 +1,31 @@
 {
   "likesCount": 1,
-  "viewsCount": 5,
+  "viewsCount": 8,
   "events": [
+    {
+      "id": "Dk8N7zAySEFQ",
+      "time": 1794331684,
+      "kind": "view",
+      "device": "Computador / Desktop",
+      "lang": "pt-BR",
+      "envelope": null
+    },
+    {
+      "id": "KT8WkYPwnk4H",
+      "time": 1794313899,
+      "kind": "view",
+      "device": "Celular / Mobile",
+      "lang": "pt-BR",
+      "envelope": null
+    },
+    {
+      "id": "DYW2ERxqUKjW",
+      "time": 1794313606,
+      "kind": "view",
+      "device": "Celular / Mobile",
+      "lang": "pt-BR",
+      "envelope": null
+    },
     {
       "id": "vlNgX0BwlrKL",
       "time": 1794311810,
