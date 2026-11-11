@@ -1,7 +1,23 @@
 {
   "likesCount": 1,
-  "viewsCount": 8,
+  "viewsCount": 10,
   "events": [
+    {
+      "id": "KcRlWleD56TE",
+      "time": 1794425450,
+      "kind": "view",
+      "device": "Computador / Desktop",
+      "lang": "pt-BR",
+      "envelope": null
+    },
+    {
+      "id": "D1vmmttG7WUs",
+      "time": 1794418718,
+      "kind": "view",
+      "device": "Computador / Desktop",
+      "lang": "pt-BR",
+      "envelope": null
+    },
     {
       "id": "Dk8N7zAySEFQ",
       "time": 1794331684,
