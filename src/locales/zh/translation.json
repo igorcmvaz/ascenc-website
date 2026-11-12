@@ -657,5 +657,13 @@
     "count_label": "项荣誉与奖项",
     "no_awards": "暂无记录。",
     "view_source": "查看来源链接"
+  },
+  "triton_nav": {
+    "home": "首页",
+    "docs": "文档",
+    "papers": "论文",
+    "versions": "版本",
+    "contact": "联系与建议",
+    "btn_download": "获取测试版"
   }
 }

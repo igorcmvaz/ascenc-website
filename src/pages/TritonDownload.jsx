@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PageLayout from "../components/PageLayout";
+import TritonSubNav from "../components/TritonSubNav";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import {
@@ -131,6 +132,7 @@ Obrigado(a)!`;
   return (
     <PageLayout>
       <div className="space-y-6 max-w-4xl mx-auto pb-10">
+        <TritonSubNav />
         {/* Topo de confirmação */}
         <section className="rounded-3xl bg-white dark:bg-slate-900 border-2 border-emerald-500/80 dark:border-emerald-500/50 p-6 sm:p-8 shadow-lg space-y-5">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800 pb-4">

@@ -123,29 +123,60 @@ export default function Header() {
               </button>
 
               {netunoOpen && (
-                <div className="absolute right-0 top-full mt-2 w-52 bg-white dark:bg-[#161b18] rounded-xl shadow-xl border border-blue-100 dark:border-zinc-800 py-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-                  <Link
-                    to="/triton"
-                    className="flex items-center justify-between px-3.5 py-2.5 text-sm font-bold text-slate-800 dark:text-zinc-200 hover:bg-blue-50 dark:hover:bg-zinc-700 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
-                  >
-                    <span className="flex items-center gap-2">
-                      <img src="./assets/triton/triton-brl.png" alt="Triton" className="w-5 h-5 object-contain" />
+                <div className="absolute right-0 top-full mt-2 w-56 bg-white dark:bg-[#161b18] rounded-xl shadow-xl border border-blue-100 dark:border-zinc-800 py-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+                  <div className="px-3.5 py-1.5 flex items-center justify-between border-b border-slate-100 dark:border-zinc-800/80 mb-1">
+                    <span className="flex items-center gap-1.5 text-xs font-black text-slate-800 dark:text-zinc-200">
+                      <img src="./assets/triton/triton-brl.png" alt="Triton" className="w-4 h-4 object-contain" />
                       <span>Triton</span>
                     </span>
-                    <span className="text-[10px] font-black bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 rounded px-1.5 py-0.5 uppercase tracking-wide">
-                      {t("ges_header.new_badge", "Novo")}
+                    <span className="text-[9px] font-black bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 rounded px-1.5 py-0.5 uppercase tracking-wide">
+                      v0.1.0 Beta
                     </span>
+                  </div>
+
+                  <Link
+                    to="/triton"
+                    className="flex items-center px-3.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-zinc-300 hover:bg-blue-50 dark:hover:bg-zinc-700 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                  >
+                    {t("triton_nav.home", "Início")}
                   </Link>
                   <Link
-                    to="/netuno"
-                    className="flex items-center justify-between px-3.5 py-2.5 text-sm font-semibold text-slate-700 dark:text-zinc-300 hover:bg-blue-50 dark:hover:bg-zinc-700 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                    to="/triton/documentacao"
+                    className="flex items-center px-3.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-zinc-300 hover:bg-blue-50 dark:hover:bg-zinc-700 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
                   >
-                    <span className="flex items-center gap-2">
-                      <img src="./assets/icons/netuno.ico" alt="Netuno" className="w-5 h-5 object-contain" />
+                    {t("triton_nav.docs", "Documentação")}
+                  </Link>
+                  <Link
+                    to="/triton/artigos"
+                    className="flex items-center px-3.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-zinc-300 hover:bg-blue-50 dark:hover:bg-zinc-700 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                  >
+                    {t("triton_nav.papers", "Artigos")}
+                  </Link>
+                  <Link
+                    to="/triton/versoes"
+                    className="flex items-center px-3.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-zinc-300 hover:bg-blue-50 dark:hover:bg-zinc-700 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                  >
+                    {t("triton_nav.versions", "Versões")}
+                  </Link>
+                  <Link
+                    to="/triton/contato"
+                    className="flex items-center px-3.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-zinc-300 hover:bg-blue-50 dark:hover:bg-zinc-700 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                  >
+                    {t("triton_nav.contact", "Contato & Sugestões")}
+                  </Link>
+
+                  <div className="my-1.5 mx-3 border-t border-slate-100 dark:border-zinc-800" />
+
+                  <Link
+                    to="/netuno"
+                    className="flex items-center justify-between px-3.5 py-1.5 text-xs font-semibold text-slate-600 dark:text-zinc-400 hover:bg-blue-50 dark:hover:bg-zinc-700 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                  >
+                    <span className="flex items-center gap-1.5">
+                      <img src="./assets/icons/netuno.ico" alt="Netuno" className="w-4 h-4 object-contain" />
                       <span>Netuno</span>
                     </span>
-                    <span className="text-[10px] font-semibold text-slate-400 dark:text-zinc-500">
-                      {t("ges_header.netuno_badge", "v1 a 4")}
+                    <span className="text-[10px] text-slate-400 dark:text-zinc-500">
+                      v1 a 4
                     </span>
                   </Link>
                 </div>
@@ -263,23 +294,52 @@ export default function Header() {
             </button>
 
             {netunoMobOpen && (
-              <div className="bg-gray-50 dark:bg-zinc-900/50">
+              <div className="bg-gray-50 dark:bg-zinc-900/50 py-1">
                 <Link
                   to="/triton"
-                  className="flex items-center justify-between pl-8 pr-4 py-2.5 text-sm font-bold text-slate-800 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
+                  className="flex items-center justify-between pl-8 pr-4 py-2 text-sm font-bold text-slate-800 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >
                   <span className="flex items-center gap-2">
                     <img src="./assets/triton/triton-brl.png" alt="Triton" className="w-5 h-5 object-contain" />
-                    <span>Triton</span>
+                    <span>Triton (Início)</span>
                   </span>
                   <span className="text-[9px] font-black bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 rounded px-1.5 py-0.5 uppercase tracking-wide mr-4">
-                    {t("ges_header.new_badge", "Novo")}
+                    v0.1.0 Beta
                   </span>
                 </Link>
                 <Link
+                  to="/triton/documentacao"
+                  className="block pl-12 pr-4 py-1.5 text-xs text-slate-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {t("triton_nav.docs", "Documentação")}
+                </Link>
+                <Link
+                  to="/triton/artigos"
+                  className="block pl-12 pr-4 py-1.5 text-xs text-slate-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {t("triton_nav.papers", "Artigos")}
+                </Link>
+                <Link
+                  to="/triton/versoes"
+                  className="block pl-12 pr-4 py-1.5 text-xs text-slate-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {t("triton_nav.versions", "Versões")}
+                </Link>
+                <Link
+                  to="/triton/contato"
+                  className="block pl-12 pr-4 py-1.5 text-xs text-slate-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {t("triton_nav.contact", "Contato & Sugestões")}
+                </Link>
+                <div className="mx-6 my-1 border-t border-gray-200 dark:border-zinc-700" />
+                <Link
                   to="/netuno"
-                  className="flex items-center justify-between pl-8 pr-4 py-2.5 text-sm font-semibold text-slate-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
+                  className="flex items-center justify-between pl-8 pr-4 py-2 text-sm font-semibold text-slate-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >
                   <span className="flex items-center gap-2">

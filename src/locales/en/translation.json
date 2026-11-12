@@ -662,5 +662,13 @@
     "count_label": "awards and recognitions",
     "no_awards": "No awards registered.",
     "view_source": "View source link"
+  },
+  "triton_nav": {
+    "home": "Home",
+    "docs": "Documentation",
+    "papers": "Papers",
+    "versions": "Versions",
+    "contact": "Contact & Feedback",
+    "btn_download": "Get Beta"
   }
 }

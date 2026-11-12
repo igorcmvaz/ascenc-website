@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import PageLayout from "../components/PageLayout";
 import TritonWorldMinimap from "../components/TritonWorldMinimap";
+import TritonSubNav from "../components/TritonSubNav";
 import {
   sendRegistrationToServer,
   sendTritonActivity,
@@ -27,7 +28,9 @@ import {
   BookOpen,
   Heart,
   Code2,
-  ExternalLink
+  ExternalLink,
+  FileText,
+  MessageSquare
 } from "lucide-react";
 
 export const TRITON_CONFIG = {
@@ -350,6 +353,8 @@ export default function Triton() {
   return (
     <PageLayout>
       <div className="space-y-8 max-w-5xl mx-auto pb-10">
+        {/* ── 🧭 SUB-NAVEGAÇÃO OFICIAL DO TRITON ── */}
+        <TritonSubNav activeTab="inicio" />
 
         {/* ── 🚀 HERO: CLEAN NO LIGHT MODE, AZUL PROFUNDO NO DARK MODE ── */}
         <section className="relative overflow-hidden rounded-3xl bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-950 dark:to-slate-900 text-slate-900 dark:text-white p-6 sm:p-8 border border-slate-200/90 dark:border-blue-500/30 shadow-lg">
@@ -459,6 +464,101 @@ export default function Triton() {
               </p>
             </div>
           </div>
+        </section>
+
+        {/* ── 🧭 SUBPÁGINAS DO TRITON (EXPLORE O ECOSSISTEMA) ── */}
+        <section className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <Link
+            to="/triton/documentacao"
+            className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:border-blue-500 hover:shadow-md transition-all group flex flex-col justify-between"
+          >
+            <div className="space-y-2">
+              <div className="w-9 h-9 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-105 transition-transform">
+                <BookOpen className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="font-black text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">
+                  Documentação
+                </h3>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium leading-snug mt-0.5">
+                  Manuais técnicos, equações e guia de uso.
+                </p>
+              </div>
+            </div>
+            <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400 pt-2 flex items-center gap-1">
+              <span>Acessar</span>
+              <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+            </span>
+          </Link>
+
+          <Link
+            to="/triton/artigos"
+            className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:border-indigo-500 hover:shadow-md transition-all group flex flex-col justify-between"
+          >
+            <div className="space-y-2">
+              <div className="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800 flex items-center justify-center text-indigo-600 dark:text-indigo-400 group-hover:scale-105 transition-transform">
+                <FileText className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="font-black text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-indigo-600 transition-colors">
+                  Artigos Científicos
+                </h3>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium leading-snug mt-0.5">
+                  84 publicações com validação empírica.
+                </p>
+              </div>
+            </div>
+            <span className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 pt-2 flex items-center gap-1">
+              <span>Explorar</span>
+              <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+            </span>
+          </Link>
+
+          <Link
+            to="/triton/versoes"
+            className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:border-emerald-500 hover:shadow-md transition-all group flex flex-col justify-between"
+          >
+            <div className="space-y-2">
+              <div className="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-105 transition-transform">
+                <Layers className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="font-black text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-emerald-600 transition-colors">
+                  Versões & Histórico
+                </h3>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium leading-snug mt-0.5">
+                  Comparativo BRL/IBE/INT e evolução.
+                </p>
+              </div>
+            </div>
+            <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 pt-2 flex items-center gap-1">
+              <span>Ver versões</span>
+              <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+            </span>
+          </Link>
+
+          <Link
+            to="/triton/contato"
+            className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:border-teal-500 hover:shadow-md transition-all group flex flex-col justify-between"
+          >
+            <div className="space-y-2">
+              <div className="w-9 h-9 rounded-xl bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 flex items-center justify-center text-teal-600 dark:text-teal-400 group-hover:scale-105 transition-transform">
+                <MessageSquare className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="font-black text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-teal-600 transition-colors">
+                  Contato & Sugestões
+                </h3>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium leading-snug mt-0.5">
+                  Envie sua tarifa, reporte erros ou tire dúvidas.
+                </p>
+              </div>
+            </div>
+            <span className="text-[10px] font-bold text-teal-600 dark:text-teal-400 pt-2 flex items-center gap-1">
+              <span>Colaborar</span>
+              <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+            </span>
+          </Link>
         </section>
 
         {/* ── 🌍 ESCOLHA SUA EDIÇÃO (KISS: DIRETO AO PONTO) ── */}
@@ -688,7 +788,7 @@ export default function Triton() {
         {/* ── 📬 FORMULÁRIO DIRETO DE SOLICITAÇÃO DE DOWNLOAD ── */}
         <section
           ref={formRef}
-          id="solicitar-acesso"
+          id="triton-download-form"
           className="scroll-mt-24 rounded-3xl bg-white dark:bg-slate-900 border-2 border-emerald-500/80 dark:border-emerald-500/50 shadow-xl p-6 sm:p-8"
         >
           <div className="max-w-3xl mx-auto space-y-5">

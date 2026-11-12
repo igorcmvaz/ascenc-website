@@ -26,6 +26,10 @@ const Netuno = lazy(() => import("./pages/Netuno"));
 const NetunoV123 = lazy(() => import("./pages/NetunoV123"));
 const NetunoV5 = lazy(() => import("./pages/NetunoV5"));
 const Triton = lazy(() => import("./pages/Triton"));
+const TritonDocs = lazy(() => import("./pages/TritonDocs"));
+const TritonPapers = lazy(() => import("./pages/TritonPapers"));
+const TritonVersions = lazy(() => import("./pages/TritonVersions"));
+const TritonContact = lazy(() => import("./pages/TritonContact"));
 const TritonDownload = lazy(() => import("./pages/TritonDownload"));
 const TritonRegistros = lazy(() => import("./pages/TritonRegistros"));
 
@@ -53,6 +57,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<GESContact />} />
           <Route path="/triton" element={<Triton />} />
+          <Route path="/triton/documentacao" element={<TritonDocs />} />
+          <Route path="/triton/docs" element={<TritonDocs />} />
+          <Route path="/triton/artigos" element={<TritonPapers />} />
+          <Route path="/triton/papers" element={<TritonPapers />} />
+          <Route path="/triton/versoes" element={<TritonVersions />} />
+          <Route path="/triton/versions" element={<TritonVersions />} />
+          <Route path="/triton/contato" element={<TritonContact />} />
+          <Route path="/triton/sugestoes" element={<TritonContact />} />
           <Route path="/triton/download" element={<TritonDownload />} />
           <Route path="/triton/registros" element={<TritonRegistros />} />
           <Route path="/netuno" element={<Netuno />} />
