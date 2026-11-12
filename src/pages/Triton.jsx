@@ -449,14 +449,6 @@ export default function Triton() {
                     {likesCount}
                   </span>
                 </button>
-
-                <Link
-                  to="/netuno"
-                  className="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-xs sm:text-sm border border-slate-200 dark:border-slate-700 transition-colors"
-                >
-                  <History className="w-4 h-4 text-slate-500 dark:text-blue-400" />
-                  <span>{t("triton.btn_netuno_history", "Ver Netuno 4")}</span>
-                </Link>
               </div>
 
               <p className="text-[11px] text-slate-500 dark:text-slate-400 font-semibold pt-1">

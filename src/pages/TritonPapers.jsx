@@ -215,13 +215,6 @@ export default function TritonPapers() {
               {copiedBib ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
               <span>{copiedBib ? "BibTeX Copiado!" : "Copiar Citação do Triton (BibTeX)"}</span>
             </button>
-            <Link
-              to="/netuno"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-200 font-semibold text-xs border border-slate-300 dark:border-zinc-700 transition-colors"
-            >
-              <History className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-              <span>Ver Histórico do Netuno 4</span>
-            </Link>
           </div>
         </section>
 
@@ -353,13 +346,12 @@ export default function TritonPapers() {
         </div>
 
         {/* ── LISTAGEM AGRUPADA POR ANO COM SANFONAS (ESTILO PAPERS.JSX) ── */}
-        {/* ── LISTAGEM AGRUPADA POR ANO COM SANFONAS (ESTILO PAPERS.JSX) ── */}
         {toolFilter === "triton" ? (
-          <div className="text-center py-12 px-6 rounded-3xl bg-blue-50/60 dark:bg-blue-950/20 border border-blue-200/80 dark:border-blue-900/50 space-y-4">
-            <div className="w-12 h-12 mx-auto rounded-2xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center">
-              <Droplet className="w-6 h-6" />
+          <div className="text-center py-10 px-6 rounded-3xl bg-blue-50/60 dark:bg-blue-950/20 border border-blue-200/80 dark:border-blue-900/50 space-y-3">
+            <div className="w-10 h-10 mx-auto rounded-2xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+              <Droplet className="w-5 h-5" />
             </div>
-            <div className="space-y-1.5 max-w-lg mx-auto">
+            <div className="space-y-1.5 max-w-xl mx-auto">
               <h3 className="text-base font-extrabold text-slate-900 dark:text-white">
                 Nenhum artigo publicado com o Triton até o momento
               </h3>
@@ -367,14 +359,6 @@ export default function TritonPapers() {
                 A plataforma <strong>Triton</strong> é o software de nova geração em fase de implantação pelo grupo. Todos os artigos científicos publicados até agora utilizaram a família <strong>Netuno (versões 1 a 4)</strong>. As novas pesquisas e artigos científicos a partir de 2026/2027 utilizarão a plataforma Triton.
               </p>
             </div>
-            <button
-              type="button"
-              onClick={() => setToolFilter("netuno")}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-xs transition-all cursor-pointer"
-            >
-              <History className="w-3.5 h-3.5" />
-              <span>Ver Artigos Históricos com Netuno ({rawPapers.length})</span>
-            </button>
           </div>
         ) : totalResultsCount === 0 ? (
           <div className="text-center py-12 bg-white dark:bg-zinc-900 border border-dashed border-slate-300 dark:border-zinc-700 rounded-3xl space-y-2">
