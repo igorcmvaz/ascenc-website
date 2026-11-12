@@ -407,8 +407,8 @@ export default function Triton() {
                   onClick={() => scrollToForm("Todas as Edições (Brasil, Ibérica e Internacional)")}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer group"
                 >
-                  <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  <span>{t("triton.btn_request_access", "Solicitar Download Gratuito")}</span>
+                  <Download className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  <span>{t("triton.btn_request_access", "Download")}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </button>
 
