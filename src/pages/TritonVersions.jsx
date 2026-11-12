@@ -11,44 +11,97 @@ import {
   Code2,
   ExternalLink,
   Sparkles,
-  CheckCircle2,
-  AlertCircle,
   Bug,
   RefreshCw,
   PlusCircle,
   Calendar,
   GitBranch,
-  ArrowRight
+  ShieldCheck,
+  FileCode,
+  Tag
 } from "lucide-react";
 
 export default function TritonVersions() {
   const { t } = useTranslation();
-  const [filterType, setFilterType] = useState("all"); // 'all' | '0.1.0' | '0.2.0'
+  const [selectedApp, setSelectedApp] = useState("all"); // 'all' | 'brl' | 'ibe' | 'int'
 
-  // Dados das Versões do Triton (Estrutura de Changelog)
-  const versions = [
+  // Versionamento individual de cada aplicativo / edição
+  const appVersions = [
+    {
+      id: "brl",
+      name: "Triton Brasil",
+      editionCode: "BRL",
+      flag: "🇧🇷",
+      version: "0.1.0-BRL",
+      status: "Lançamento Oficial",
+      statusColor: "bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
+      date: "Março de 2026",
+      installerName: "Triton-Brasil-Setup-v0.1.0.exe",
+      currency: "Real Brasileiro (R$)",
+      standards: "ABNT NBR 15527:2019 e NBR 5626",
+      databaseInfo: "652 municípios brasileiros com séries pluviométricas auditadas e projeções climáticas CLIMBra até 2100 (SSP2-4.5 e SSP5-8.5).",
+      tariffInfo: "Estruturas tarifárias em cascata (blocos de consumo residencial, comercial, público e industrial) com tarifa mínima e fator de esgoto.",
+      githubUrl: "https://github.com/igorcmvaz/triton",
+    },
+    {
+      id: "ibe",
+      name: "Triton Ibérica",
+      editionCode: "IBE",
+      flag: "🇵🇹",
+      version: "0.1.0-IBE",
+      status: "Lançamento Oficial",
+      statusColor: "bg-rose-50 text-rose-800 dark:bg-rose-950/60 dark:text-rose-300 border-rose-200 dark:border-rose-800",
+      date: "Março de 2026",
+      installerName: "Triton-Iberica-Setup-v0.1.0.exe",
+      currency: "Euro (€)",
+      standards: "Norma Europeia EN 16941-1",
+      databaseInfo: "Séries meteorológicas oficiais E-OBS, Iberia01 e reanálise ERA5 mapeadas por concelho (Portugal) e província/município (Espanha).",
+      tariffInfo: "Modelos tarifários regulados pela ERSAR (Portugal) e autarquias espanholas, com tarifas fixas e escalões volumétricos em Euros.",
+      githubUrl: "https://github.com/igorcmvaz/triton",
+    },
+    {
+      id: "int",
+      name: "Triton Internacional",
+      editionCode: "INT",
+      flag: "🌐",
+      version: "0.1.0-INT",
+      status: "Lançamento Oficial",
+      statusColor: "bg-blue-50 text-blue-800 dark:bg-blue-950/60 dark:text-blue-300 border-blue-200 dark:border-blue-800",
+      date: "Março de 2026",
+      installerName: "Triton-International-Setup-v0.1.0.exe",
+      currency: "Moeda Livre ($, €, £, R$, ¥...)",
+      standards: "ISO 14040/14044 (ACV) e Padrões Internacionais",
+      databaseInfo: "Módulo aberto e universal para importação de qualquer série histórica diária de chuva em formato tabular CSV padronizado.",
+      tariffInfo: "Motor de parametrização tarifária customizável para qualquer modelo internacional (taxas fixas, volumétricas lineares ou em blocos).",
+      githubUrl: "https://github.com/igorcmvaz/triton",
+    },
+  ];
+
+  // Histórico de Versões do Triton (Changelog)
+  const versionsChangelog = [
     {
       version: "0.2.0",
       status: "Em desenvolvimento",
       statusColor: "bg-amber-50 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 border-amber-200 dark:border-amber-800",
       date: "Previsto para 2026/2027",
+      appTag: "all",
       githubUrl: "https://github.com/igorcmvaz/triton",
-      summary: "Expansão da cobertura tarifária brasileira, suporte a passo de tempo horário e instaladores multiplataforma nativos.",
+      summary: "Expansão da cobertura de municípios brasileiros, suporte a simulação horária e novos pacotes instaladores nativos.",
       changes: {
         added: [
-          "Exportação direta de relatórios executivos e gráficos em alta resolução (vetorial SVG e PNG 300 DPI).",
-          "Suporte a arquivos de precipitação com passo temporal sub-diário (horário e 15 minutos).",
+          "Exportação direta de relatórios técnicos completos e gráficos em alta resolução (vetorial SVG e PNG 300 DPI).",
+          "Suporte a séries de precipitação em passo de tempo sub-diário (horário e 15 minutos).",
           "Pacotes instaladores pré-compilados para distribuições Linux (Debian/Ubuntu) e macOS (Apple Silicon)."
         ],
         changed: [
           "Expansão do banco de dados tarifário para mais de 1.000 municípios brasileiros auditados.",
-          "Otimização computacional do motor YAS com vetorização avançada em NumPy, reduzindo tempo de simulação para séries longas (50+ anos).",
-          "Aprimoramento da interface gráfica Qt6 com suporte nativo a troca de temas claro/escuro."
+          "Otimização da rotina do motor YAS com vetorização avançada em NumPy, acelerando simulações de séries de 50+ anos.",
+          "Interface gráfica Qt6 com seletor nativo de temas claro/escuro."
         ],
         fixed: [
-          "Ajuste na rotina de cálculo do LCOW para tarifas combinadas (comercial + residencial sob a mesma medição).",
-          "Tratamento automático de dados faltantes ou nulos em séries históricas importadas via CSV.",
-          "Correção de arredondamento em anos bissextos para séries climáticas centenárias."
+          "Ajuste na rotina de cálculo do LCOW para tarifas mistas (comercial + residencial na mesma medição).",
+          "Tratamento automático e imputação para séries pluviométricas importadas com dias faltantes.",
+          "Correção de arredondamento em anos bissextos em projeções climáticas centenárias."
         ]
       }
     },
@@ -58,25 +111,26 @@ export default function TritonVersions() {
       statusColor: "bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
       badge: "Versão Atual (Beta)",
       date: "Março de 2026",
+      appTag: "all",
       githubUrl: "https://github.com/igorcmvaz/triton",
       isLatest: true,
-      summary: "Primeira versão pública e lançamento oficial da plataforma Triton na UFSC, marcando a transição do Netuno para uma arquitetura moderna, integrada e multiplataforma.",
+      summary: "Primeira versão pública e lançamento oficial da plataforma computacional Triton na UFSC, marcando a transição do Netuno para uma arquitetura moderna, integrada e multiplataforma.",
       launchHighlights: [
         {
           title: "Motor de Simulação Diária (YAS)",
-          desc: "Algoritmo Yield-After-Spillage com suporte a múltiplos tanques (inferior e superior), descarte automático do primeiro milímetro (first flush) e dimensionamento de reservatório por confiabilidade volumétrica."
+          desc: "Balanço hídrico Yield-After-Spillage contínuo com múltiplos reservatórios (inferior e superior), descarte de primeiro milímetro (first flush) e dimensionamento por confiabilidade volumétrica."
         },
         {
-          title: "Três Edições Regionais Integradas",
-          desc: "Edição Brasil (BRL) com 652 cidades e projeções CLIMBra até 2100; Edição Ibérica (IBE) com dados de Portugal e Espanha em Euros (€); e Edição Internacional (INT) com importação aberta de arquivos CSV."
+          title: "Três Edições Regionais Coordenadas",
+          desc: "Lançamento simultâneo das edições Triton Brasil (BRL), Triton Ibérica (IBE) e Triton Internacional (INT), compartilhando o mesmo núcleo computacional validado."
         },
         {
-          title: "Engenharia Econômica Automatizada",
-          desc: "Cálculo completo de VPL, TIR, Payback Simples e Descontado, Relação B/C e Custo Nivelado da Água (LCOW), considerando tarifas reais em blocos de consumo e esgoto."
+          title: "Engenharia Econômica Integrada",
+          desc: "Cálculo automatizado de VPL, TIR, Payback Simples e Descontado, Relação B/C e Custo Nivelado da Água (LCOW), com modelagem de tarifas escalonadas em blocos e tarifa mínima de esgoto."
         },
         {
           title: "Módulo de Avaliação do Ciclo de Vida (ACV)",
-          desc: "Abordagem cradle-to-grave para quantificação de emissões de carbono (kg CO₂-eq) e consumo energético para reservatórios em PEAD, fibra de vidro e concreto."
+          desc: "Abordagem cradle-to-grave para quantificação de pegada de carbono (kg CO₂-eq) e energia incorporada para materiais de tanques (PEAD, fibra de vidro e concreto)."
         },
         {
           title: "Tomada de Decisão Multicritério (MCDA)",
@@ -93,7 +147,7 @@ export default function TritonVersions() {
           "Interface gráfica desktop desenvolvida com PySide6 (Qt6) e estilização moderna.",
           "Banco de dados SQLite embarcado com tarifas de 652 municípios brasileiros e séries de precipitação.",
           "Módulos integrados: Balanço Hídrico YAS, Engenharia Econômica, ACV Ambiental e MCDA (4 métodos).",
-          "Instalador dedicado para Windows x64 com todas as dependências pré-configuradas."
+          "Instalador dedicado para Microsoft Windows x64 com dependências pré-configuradas."
         ],
         changed: [
           "Transição da base legada em Delphi (Netuno 4) para código moderno e auditável em Python 3.12+.",
@@ -105,50 +159,6 @@ export default function TritonVersions() {
         ]
       }
     }
-  ];
-
-  // Linha do tempo histórica de evolução
-  const historyTimeline = [
-    {
-      year: "2026",
-      version: "Triton 0.1.0 Beta",
-      badge: "Geração Atual",
-      badgeColor: "bg-blue-50 text-blue-800 dark:bg-blue-950 dark:text-blue-300 border-blue-200 dark:border-blue-800",
-      title: "Lançamento da Plataforma Triton",
-      authors: "Igor Catão Martins Vaz & Prof. Enedir Ghisi",
-      desc: "Refatoração arquitetural em Python 3.12+ (PySide6, NumPy, SQLite). Integração de 3 edições regionais, ACV cradle-to-grave, viabilidade econômica tarifária e 4 métodos MCDA.",
-      active: true,
-    },
-    {
-      year: "2014",
-      version: "Netuno 4.0",
-      badge: "Software Desktop",
-      badgeColor: "bg-slate-100 text-slate-700 dark:bg-zinc-800 dark:text-zinc-300 border-slate-200 dark:border-zinc-700",
-      title: "Consolidação Nacional em Delphi",
-      authors: "Prof. Enedir Ghisi e Eng. Marcelo Marcel Cordova",
-      desc: "Software autônomo para Windows. Principal ferramenta computacional para dimensionamento de reservatórios pluviais no Brasil por mais de 10 anos.",
-      active: false,
-    },
-    {
-      year: "2011–2013",
-      version: "Netuno 3.0",
-      badge: "Planilhas Avançadas",
-      badgeColor: "bg-slate-100 text-slate-700 dark:bg-zinc-800 dark:text-zinc-300 border-slate-200 dark:border-zinc-700",
-      title: "Análise Econômica & Simulações Urbanas",
-      authors: "Prof. Enedir Ghisi e equipe LabEEE/UFSC",
-      desc: "Primeiras rotinas de viabilidade econômica com fluxos de caixa e sensibilidade a tarifas municipais de água e esgoto.",
-      active: false,
-    },
-    {
-      year: "2000s–2006",
-      version: "Netuno 1 & 2",
-      badge: "Pioneirismo",
-      badgeColor: "bg-slate-100 text-slate-700 dark:bg-zinc-800 dark:text-zinc-300 border-slate-200 dark:border-zinc-700",
-      title: "Fundação do Modelo em VBA/Excel",
-      authors: "Prof. Enedir Ghisi",
-      desc: "Modelagem inicial do balanço hídrico diário Yield-After-Spillage em planilhas eletrônicas, fundamentando as primeiras publicações científicas nacionais sobre o tema.",
-      active: false,
-    },
   ];
 
   return (
@@ -189,48 +199,128 @@ export default function TritonVersions() {
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-xs transition-all cursor-pointer"
             >
               <Download className="w-4 h-4" />
-              <span>Solicitar Download (v0.1.0 Beta)</span>
+              <span>Download (v0.1.0 Beta)</span>
             </Link>
           </div>
         </section>
 
-        {/* ── LEGENDA DE TIPOS DE MUDANÇA (PADRÃO CONVENTIONAL CHANGELOG) ── */}
-        <section className="bg-slate-50 dark:bg-zinc-800/50 rounded-2xl border border-slate-200 dark:border-zinc-800 p-4">
-          <div className="flex flex-wrap items-center justify-between gap-3 text-xs">
-            <span className="font-bold text-slate-700 dark:text-zinc-300">
-              Categorias de atualização em cada versão:
-            </span>
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-100/80 text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-300 font-bold border border-emerald-300 dark:border-emerald-800">
-                <PlusCircle className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                <span>Adicionado / Lançamento</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-100/80 text-blue-900 dark:bg-blue-950/60 dark:text-blue-300 font-bold border border-blue-300 dark:border-blue-800">
-                <RefreshCw className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-                <span>Modificado / Melhorias</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-100/80 text-amber-900 dark:bg-amber-950/60 dark:text-amber-300 font-bold border border-amber-300 dark:border-amber-800">
-                <Bug className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
-                <span>Corrigido / Correções</span>
-              </span>
-            </div>
-          </div>
-        </section>
-
-        {/* ── DETALHES POR VERSÃO (FOCO PRINCIPAL REQUISITADO PELO USUÁRIO) ── */}
-        <section className="space-y-6">
+        {/* ── 🚀 VERSIONAMENTO DE CADA APLICATIVO (EDIÇÕES REGIONAIS) ── */}
+        <section className="space-y-4">
           <div className="space-y-1">
             <h2 className="text-xl font-black text-slate-900 dark:text-white flex items-center gap-2">
-              <GitBranch className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-              <span>Registro Detalhado por Versão</span>
+              <Globe className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+              <span>Versionamento por Aplicativo (Edições Regionais)</span>
             </h2>
             <p className="text-xs text-slate-500 dark:text-zinc-400">
-              Detalhes diretos sobre o que cada pacote entrega, módulos novos, alterações de algoritmo e correções de código.
+              Cada aplicativo do Triton possui seu próprio pacote instalador, banco de dados regional e especificações normativas.
             </p>
           </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {appVersions.map((app) => (
+              <div
+                key={app.id}
+                className="p-5 rounded-3xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 shadow-xs flex flex-col justify-between space-y-4 transition-all hover:border-blue-300 dark:hover:border-blue-800"
+              >
+                <div className="space-y-3">
+                  {/* Cabeçalho do Aplicativo */}
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xl">{app.flag}</span>
+                      <div>
+                        <h3 className="text-base font-black text-slate-900 dark:text-white leading-tight">
+                          {app.name}
+                        </h3>
+                        <span className="text-[11px] font-mono font-bold text-slate-500 dark:text-zinc-400">
+                          {app.version}
+                        </span>
+                      </div>
+                    </div>
+                    <span className={`text-[10px] font-black px-2 py-0.5 rounded-full border ${app.statusColor}`}>
+                      {app.status}
+                    </span>
+                  </div>
+
+                  {/* Informações Técnicas do Aplicativo */}
+                  <div className="space-y-2 pt-2 border-t border-slate-100 dark:border-zinc-800 text-xs text-slate-600 dark:text-zinc-300">
+                    <div>
+                      <strong className="text-slate-900 dark:text-white font-extrabold block text-[11px]">
+                        Base Pluviométrica:
+                      </strong>
+                      <span className="text-[11px] leading-relaxed">{app.databaseInfo}</span>
+                    </div>
+
+                    <div>
+                      <strong className="text-slate-900 dark:text-white font-extrabold block text-[11px]">
+                        Estrutura Tarifária:
+                      </strong>
+                      <span className="text-[11px] leading-relaxed">{app.tariffInfo}</span>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] pt-1 text-slate-500 dark:text-zinc-400 font-medium">
+                      <span><strong>Norma:</strong> {app.standards}</span>
+                      <span><strong>Moeda:</strong> {app.currency}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Ações do Aplicativo */}
+                <div className="pt-2 border-t border-slate-100 dark:border-zinc-800 flex items-center justify-between gap-2">
+                  <a
+                    href={app.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-blue-600 dark:text-zinc-300 dark:hover:text-blue-400 transition-colors"
+                  >
+                    <Code2 className="w-3.5 h-3.5" />
+                    <span>Ver no GitHub</span>
+                  </a>
+
+                  <Link
+                    to="/triton"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300 transition-colors"
+                  >
+                    <span>Download</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── DETALHES POR VERSÃO (CHANGELOG COM ADICIONADO / MODIFICADO / CORRIGIDO) ── */}
+        <section className="space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="space-y-1">
+              <h2 className="text-xl font-black text-slate-900 dark:text-white flex items-center gap-2">
+                <GitBranch className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                <span>Registro Geral de Mudanças (Changelog)</span>
+              </h2>
+              <p className="text-xs text-slate-500 dark:text-zinc-400">
+                Detalhes diretos de cada pacote de atualização: o que foi lançado, aprimorado ou corrigido.
+              </p>
+            </div>
+
+            {/* Legenda de Tipos de Mudança */}
+            <div className="flex flex-wrap items-center gap-2 text-xs">
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 font-bold border border-emerald-200 dark:border-emerald-800">
+                <PlusCircle className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
+                <span>Adicionado</span>
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-blue-50 text-blue-800 dark:bg-blue-950/60 dark:text-blue-300 font-bold border border-blue-200 dark:border-blue-800">
+                <RefreshCw className="w-3 h-3 text-blue-600 dark:text-blue-400" />
+                <span>Modificado</span>
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-50 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 font-bold border border-amber-200 dark:border-amber-800">
+                <Bug className="w-3 h-3 text-amber-600 dark:text-amber-400" />
+                <span>Corrigido</span>
+              </span>
+            </div>
+          </div>
+
           <div className="space-y-6">
-            {versions.map((ver) => (
+            {versionsChangelog.map((ver) => (
               <div
                 key={ver.version}
                 className={`rounded-3xl border shadow-sm transition-all overflow-hidden bg-white dark:bg-zinc-900 ${
@@ -366,7 +456,7 @@ export default function TritonVersions() {
           <div className="space-y-1">
             <h2 className="text-xl font-black text-slate-900 dark:text-white flex items-center gap-2">
               <Globe className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-              <span>Comparativo das 3 Edições Regionais (v0.1.0)</span>
+              <span>Matriz Comparativa das 3 Edições (v0.1.0)</span>
             </h2>
             <p className="text-xs text-slate-500 dark:text-zinc-400">
               Todas as três edições rodam sobre o mesmo motor computacional validado e são fornecidas com instalador e documentação técnica específicos.
@@ -425,52 +515,72 @@ export default function TritonVersions() {
           </div>
         </section>
 
-        {/* ── LINHA DO TEMPO HISTÓRICA: DO NETUNO AO TRITON ── */}
-        <section className="space-y-4">
+        {/* ── ⏱️ LINHA DO TEMPO BEM ENXUTA (CONFORME REQUISITADO PELO USUÁRIO) ── */}
+        <section className="space-y-3">
           <div className="space-y-1">
-            <h2 className="text-xl font-black text-slate-900 dark:text-white flex items-center gap-2">
+            <h2 className="text-lg font-black text-slate-900 dark:text-white flex items-center gap-2">
               <History className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-              <span>Legado e Ancestralidade (Netuno 1 a 4)</span>
+              <span>Linha do Tempo Histórica</span>
             </h2>
             <p className="text-xs text-slate-500 dark:text-zinc-400">
-              Mais de duas décadas de validação contínua e pioneirismo das ferramentas de simulação pluvial desenvolvidas pelo grupo na UFSC.
+              Evolução das ferramentas de simulação e dimensionamento de reservatórios pluviais desenvolvidas pelo grupo na UFSC.
             </p>
           </div>
 
-          <div className="relative pl-6 sm:pl-8 space-y-6 before:absolute before:left-2.5 sm:before:left-3.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-200 dark:before:bg-zinc-800">
-            {historyTimeline.map((item, idx) => (
-              <div key={idx} className="relative space-y-2">
-                <div
-                  className={`absolute -left-6 sm:-left-8 top-1.5 w-5 h-5 rounded-full border-2 border-white dark:border-zinc-900 flex items-center justify-center shadow-xs ${
-                    item.active ? "bg-blue-600 ring-4 ring-blue-100 dark:ring-blue-900/50" : "bg-slate-300 dark:bg-zinc-700"
-                  }`}
-                />
-
-                <div className="p-5 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 shadow-xs space-y-2">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs font-black text-slate-900 dark:text-white">
-                        {item.year}
-                      </span>
-                      <span className={`text-[11px] font-black px-2 py-0.5 rounded-full ${item.badgeColor}`}>
-                        {item.version}
-                      </span>
-                    </div>
-                    <span className="text-xs font-semibold text-slate-500 dark:text-zinc-400">
-                      {item.authors}
-                    </span>
-                  </div>
-
-                  <h3 className="text-sm sm:text-base font-black text-slate-900 dark:text-white">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-300 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {/* 1. 2026 Triton em diante */}
+            <div className="p-4 rounded-2xl bg-blue-50/60 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900/60 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-black text-blue-900 dark:text-blue-300">
+                  2026 em diante
+                </span>
+                <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 border border-blue-200 dark:border-blue-800">
+                  Triton
+                </span>
               </div>
-            ))}
+              <h3 className="font-extrabold text-sm text-slate-900 dark:text-white">
+                Plataforma Triton
+              </h3>
+              <p className="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
+                Refatoração em Python 3.12+ (PySide6, SQLite). Edições Brasil, Ibérica e Internacional integradas com balanço diário YAS, engenharia econômica completa, ACV e 4 métodos MCDA.
+              </p>
+            </div>
+
+            {/* 2. 2014 Versão 4 */}
+            <div className="p-4 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 space-y-2 shadow-xs">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-black text-slate-900 dark:text-white">
+                  2014
+                </span>
+                <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 dark:bg-zinc-800 dark:text-zinc-300 border border-slate-200 dark:border-zinc-700">
+                  Versão 4
+                </span>
+              </div>
+              <h3 className="font-extrabold text-sm text-slate-900 dark:text-white">
+                Netuno 4.0
+              </h3>
+              <p className="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
+                Software autônomo compilado em Delphi para Windows. Ampla consolidação acadêmica e profissional no dimensionamento de reservatórios pluviais no Brasil por mais de 10 anos.
+              </p>
+            </div>
+
+            {/* 3. 2012 para antes Versões 1, 2 e 3 */}
+            <div className="p-4 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 space-y-2 shadow-xs">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-black text-slate-900 dark:text-white">
+                  2012 para antes
+                </span>
+                <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 dark:bg-zinc-800 dark:text-zinc-300 border border-slate-200 dark:border-zinc-700">
+                  Versões 1, 2 e 3
+                </span>
+              </div>
+              <h3 className="font-extrabold text-sm text-slate-900 dark:text-white">
+                Netuno 1, 2 e 3
+              </h3>
+              <p className="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
+                Modelagem pioneira do balanço hídrico diário em planilhas eletrônicas com macros VBA e primeiras análises de viabilidade econômica considerando tarifas de água e esgoto.
+              </p>
+            </div>
           </div>
         </section>
       </div>
