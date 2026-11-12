@@ -11,9 +11,6 @@ import {
   Copy,
   Check,
   BookOpen,
-  Calendar,
-  Layers,
-  Sparkles,
   TrendingUp,
   Droplet,
   CloudRain,
@@ -37,11 +34,9 @@ export default function TritonPapers() {
   ];
 
   const filteredPapers = useMemo(() => {
-    // Ordena do mais recente para o mais antigo
     const sorted = [...rawPapers].sort((a, b) => parseInt(b.year || "0") - parseInt(a.year || "0"));
 
     return sorted.filter((p) => {
-      // Filtro de Categoria
       if (selectedCategory === "dimensionamento") {
         const text = (p.title + " " + (p.tags || []).join(" ")).toLowerCase();
         if (!text.includes("dimensionamento") && !text.includes("reservatorio") && !text.includes("sizing") && !text.includes("tank") && !text.includes("simulacao")) {
@@ -64,7 +59,6 @@ export default function TritonPapers() {
         }
       }
 
-      // Filtro de Texto
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
         const inTitle = (p.title || "").toLowerCase().includes(q);
@@ -106,44 +100,43 @@ export default function TritonPapers() {
         <TritonSubNav activeTab="artigos" />
 
         {/* ── HEADER DA SEÇÃO DE ARTIGOS ── */}
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950 to-blue-900 text-white p-6 sm:p-8 border border-indigo-500/20 shadow-lg">
-          <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+        <section className="relative overflow-hidden rounded-3xl bg-white dark:bg-zinc-900 text-slate-900 dark:text-zinc-100 p-6 sm:p-8 border border-slate-200 dark:border-zinc-800 shadow-sm">
           <div className="relative z-10 space-y-3">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-400/30 text-xs font-black uppercase tracking-wider">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-800 dark:bg-indigo-950/70 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800/80 text-xs font-black uppercase tracking-wider">
               <FileText className="w-3.5 h-3.5" />
               <span>Base Científica & Validação Empírica</span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">
               Artigos Científicos sobre Aproveitamento de Água de Chuva
             </h1>
-            <p className="text-slate-300 text-sm sm:text-base font-medium max-w-2xl leading-relaxed">
+            <p className="text-slate-600 dark:text-zinc-300 text-sm sm:text-base font-medium max-w-2xl leading-relaxed">
               O Triton e seu predecessor Netuno são respaldados por mais de 20 anos de pesquisa empírica
               e simulações contínuas realizadas pelo Grupo de Pesquisa Espaço Sustentável da UFSC,
               com dezenas de publicações em periódicos de alto impacto internacional.
             </p>
 
-            <div className="pt-2 flex items-center gap-3">
+            <div className="pt-2 flex flex-wrap items-center gap-3">
               <button
                 type="button"
                 onClick={copyTritonBibtex}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-xs transition-all cursor-pointer"
               >
                 {copiedBib ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{copiedBib ? "BibTeX Copiado!" : "Copiar BibTeX do Triton"}</span>
               </button>
               <Link
                 to="/papers"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs border border-slate-700 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-200 font-semibold text-xs border border-slate-300 dark:border-zinc-700 transition-colors"
               >
                 <span>Ver Todos os Artigos do GES</span>
                 <ExternalLink className="w-3 h-3 opacity-70" />
               </Link>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* ── ARTIGO DE DESTAQUE RECENTE (2026) ── */}
-        <div className="p-5 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-900 dark:to-slate-800/90 border border-blue-200 dark:border-blue-900/60 shadow-sm space-y-2">
+        <div className="p-5 rounded-2xl bg-blue-50/50 dark:bg-blue-950/30 border border-blue-200/80 dark:border-blue-900/50 shadow-xs space-y-2">
           <div className="flex items-center gap-2">
             <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-blue-600 text-white uppercase tracking-wider">
               Destaque 2026 • Mudanças Climáticas
@@ -155,7 +148,7 @@ export default function TritonPapers() {
           <h3 className="text-base font-black text-slate-900 dark:text-white">
             Projected Climate Change Impacts on Rainwater Harvesting in Brazilian Single-Family Houses
           </h3>
-          <p className="text-xs text-slate-600 dark:text-slate-300">
+          <p className="text-xs text-slate-600 dark:text-zinc-300">
             <strong>Autores:</strong> VAZ, I. C. M.; TESTON, A.; RODRIGUES, E. M. S.; GHISI, E.; BALLARIN, A. S.; BRANDÃO, A. R. A.
           </p>
           <div className="pt-1 flex items-center gap-3">
@@ -174,13 +167,13 @@ export default function TritonPapers() {
         {/* ── BARRA DE BUSCA E FILTROS ── */}
         <div className="space-y-3">
           <div className="relative">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-slate-400 dark:text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Buscar por título, autor, periódico ou ano..."
-              className="w-full pl-10 pr-4 py-2.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white placeholder-slate-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm transition-all"
+              className="w-full pl-10 pr-4 py-2.5 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-zinc-500 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-xs transition-all"
             />
           </div>
 
@@ -198,8 +191,8 @@ export default function TritonPapers() {
                   }}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
                     active
-                      ? "bg-slate-900 text-white dark:bg-blue-600 dark:text-white shadow-sm"
-                      : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800"
+                      ? "bg-blue-50 text-blue-800 dark:bg-blue-950 dark:text-blue-300 border border-blue-200 dark:border-blue-800"
+                      : "bg-white dark:bg-zinc-900 text-slate-600 dark:text-zinc-400 border border-slate-200 dark:border-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-800"
                   }`}
                 >
                   <Icon className="w-3.5 h-3.5" />
@@ -212,7 +205,7 @@ export default function TritonPapers() {
 
         {/* ── LISTA DE ARTIGOS ── */}
         <div className="space-y-3">
-          <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-semibold px-1">
+          <div className="flex items-center justify-between text-xs text-slate-500 dark:text-zinc-400 font-semibold px-1">
             <span>Mostrando {Math.min(visibleCount, filteredPapers.length)} de {filteredPapers.length} artigos encontrados</span>
           </div>
 
@@ -222,14 +215,14 @@ export default function TritonPapers() {
               return (
                 <div
                   key={paper.id}
-                  className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-blue-400 dark:hover:border-blue-500 transition-all space-y-2 group"
+                  className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 shadow-xs hover:border-blue-400 dark:hover:border-blue-500 transition-all space-y-2 group"
                 >
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-black px-2 py-0.5 rounded-md bg-blue-100 text-blue-900 dark:bg-blue-950 dark:text-blue-300">
+                      <span className="text-[11px] font-black px-2 py-0.5 rounded-md bg-blue-50 text-blue-800 dark:bg-blue-950/70 dark:text-blue-300 border border-blue-200/80 dark:border-blue-800/80">
                         {paper.year}
                       </span>
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 truncate max-w-[280px] sm:max-w-md">
+                      <span className="text-xs font-bold text-slate-500 dark:text-zinc-400 truncate max-w-[280px] sm:max-w-md">
                         {paper.details}
                       </span>
                     </div>
@@ -237,7 +230,7 @@ export default function TritonPapers() {
                     <button
                       type="button"
                       onClick={() => copyCitation(paper)}
-                      className="inline-flex items-center gap-1 text-[11px] font-bold text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-1 text-[11px] font-bold text-slate-600 hover:text-slate-900 dark:text-zinc-400 dark:hover:text-white transition-colors cursor-pointer"
                       title="Copiar citação ABNT"
                     >
                       {isCopied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
@@ -249,16 +242,16 @@ export default function TritonPapers() {
                     {paper.title}
                   </h3>
 
-                  <p className="text-xs text-slate-600 dark:text-slate-300 line-clamp-2">
+                  <p className="text-xs text-slate-600 dark:text-zinc-300 line-clamp-2">
                     {paper.authors}
                   </p>
 
-                  <div className="pt-2 flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 dark:border-slate-800/80">
+                  <div className="pt-2 flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 dark:border-zinc-800">
                     <div className="flex flex-wrap gap-1">
                       {(paper.tags || []).slice(0, 4).map((tag, idx) => (
                         <span
                           key={idx}
-                          className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300"
+                          className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-slate-100 text-slate-700 dark:bg-zinc-800 dark:text-zinc-300"
                         >
                           #{tag}
                         </span>
@@ -288,7 +281,7 @@ export default function TritonPapers() {
               <button
                 type="button"
                 onClick={() => setVisibleCount((prev) => prev + 15)}
-                className="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-700 text-white font-bold text-xs shadow-sm transition-all cursor-pointer"
+                className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-xs transition-all cursor-pointer"
               >
                 Carregar mais artigos ({filteredPapers.length - visibleCount} restantes)
               </button>
@@ -297,15 +290,15 @@ export default function TritonPapers() {
         </div>
 
         {/* ── CARD COMO CITAR O TRITON ── */}
-        <div className="p-6 rounded-3xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3">
+        <div className="p-6 rounded-3xl bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 space-y-3">
           <h3 className="font-black text-slate-900 dark:text-white text-base flex items-center gap-2">
             <BookOpen className="w-4 h-4 text-blue-600 dark:text-blue-400" />
             <span>Como Citar o Triton em Trabalhos Acadêmicos</span>
           </h3>
-          <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+          <p className="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
             Se você utilizar o Triton em dissertações, teses, artigos ou relatórios de consultoria técnica, cite a ferramenta como:
           </p>
-          <div className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-mono text-xs text-slate-800 dark:text-zinc-200 leading-relaxed">
+          <div className="p-3 rounded-xl bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 font-mono text-xs text-slate-800 dark:text-zinc-200 leading-relaxed">
             Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica) (Version 0.1.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brazil.
           </div>
         </div>
