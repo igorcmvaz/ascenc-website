@@ -1,4 +1,4 @@
-import{u as i,r as o,j as e,q as d,L as c,A as x,V as u,Y as m,_ as p,$ as s,F as b,a0 as h,I as g,k as f,h as j,i as N}from"./vendor-react-DRunCkWD.js";import{P as k}from"./recent-papers-CmnhMa2V.js";import"./vendor-ygfgLl4D.js";function _(){const{t}=i(),[n,a]=o.useState(!1),r=`@manual{netuno4,
+import{u as i,r as o,j as e,q as d,L as c,A as x,V as u,Y as m,_ as p,$ as s,F as b,a0 as h,I as g,k as f,h as j,i as N}from"./vendor-react-DRunCkWD.js";import{P as k}from"./recent-papers-BYhota0A.js";import"./vendor-ygfgLl4D.js";function _(){const{t}=i(),[n,a]=o.useState(!1),r=`@manual{netuno4,
   title = {Netuno: Aproveitamento de Água Pluvial em Edificações - Versão 4.0},
   author = {Ghisi, Enedir and Cordova, Marcelo Marcel},
   organization = {Laboratório de Eficiência Energética em Edificações, UFSC},
