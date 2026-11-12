@@ -16,14 +16,35 @@ import {
   PlusCircle,
   Calendar,
   GitBranch,
-  ShieldCheck,
-  FileCode,
-  Tag
+  ChevronDown,
+  ChevronUp
 } from "lucide-react";
 
 export default function TritonVersions() {
   const { t } = useTranslation();
-  const [selectedApp, setSelectedApp] = useState("all"); // 'all' | 'brl' | 'ibe' | 'int'
+
+  // Controla quais versões estão abertas no Changelog.
+  // A versão atual (0.1.0) inicia aberta; as versões anteriores iniciam colapsadas.
+  const [openVersions, setOpenVersions] = useState({
+    "0.1.0": true,
+  });
+
+  const toggleVersion = (verKey) => {
+    setOpenVersions((prev) => ({
+      ...prev,
+      [verKey]: !prev[verKey],
+    }));
+  };
+
+  const expandAll = () => {
+    const next = {};
+    versionsChangelog.forEach((v) => (next[v.version] = true));
+    setOpenVersions(next);
+  };
+
+  const collapseAll = () => {
+    setOpenVersions({});
+  };
 
   // Versionamento individual de cada aplicativo / edição
   const appVersions = [
@@ -77,15 +98,17 @@ export default function TritonVersions() {
     },
   ];
 
-  // Histórico de Versões do Triton (Changelog)
+  // Histórico de Versões e Changelog
   const versionsChangelog = [
     {
       version: "0.2.0",
+      displayTitle: "Triton v0.2.0",
       status: "Em desenvolvimento",
       statusColor: "bg-amber-50 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 border-amber-200 dark:border-amber-800",
+      badge: "Planejada",
       date: "Previsto para 2026/2027",
-      appTag: "all",
       githubUrl: "https://github.com/igorcmvaz/triton",
+      isLatest: false,
       summary: "Expansão da cobertura de municípios brasileiros, suporte a simulação horária e novos pacotes instaladores nativos.",
       changes: {
         added: [
@@ -107,11 +130,11 @@ export default function TritonVersions() {
     },
     {
       version: "0.1.0",
+      displayTitle: "Triton v0.1.0 Beta",
       status: "Lançamento Oficial",
       statusColor: "bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
       badge: "Versão Atual (Beta)",
       date: "Março de 2026",
-      appTag: "all",
       githubUrl: "https://github.com/igorcmvaz/triton",
       isLatest: true,
       summary: "Primeira versão pública e lançamento oficial da plataforma computacional Triton na UFSC, marcando a transição do Netuno para uma arquitetura moderna, integrada e multiplataforma.",
@@ -156,6 +179,53 @@ export default function TritonVersions() {
         ],
         fixed: [
           "Eliminação de restrições de memória de versões de 32 bits, permitindo simular séries pluviométricas de 100+ anos instantaneamente."
+        ]
+      }
+    },
+    {
+      version: "4.0",
+      displayTitle: "Netuno 4.0",
+      status: "Versão Anterior",
+      statusColor: "bg-slate-100 text-slate-700 dark:bg-zinc-800 dark:text-zinc-300 border-slate-200 dark:border-zinc-700",
+      badge: "Desktop (2014)",
+      date: "2014",
+      internalLink: "/netuno",
+      isLatest: false,
+      summary: "Software autônomo compilado em Delphi para Windows, consolidando-se como a principal ferramenta computacional para dimensionamento de reservatórios pluviais no Brasil por mais de uma década.",
+      changes: {
+        added: [
+          "Interface gráfica desktop autônoma para Windows (sem dependência do Microsoft Excel).",
+          "Banco com séries pluviométricas diárias de estações meteorológicas das principais capitais e cidades brasileiras.",
+          "Geração automatizada de curvas de potencial de economia de água potável vs. capacidade do reservatório.",
+          "Instalador executável distribuído livremente pelo LabEEE/UFSC."
+        ],
+        changed: [
+          "Migração da estrutura baseada em macros VBA para executável compilado em Delphi.",
+          "Aprimoramento do algoritmo Yield-After-Spillage para suporte a múltiplos cenários de consumo."
+        ],
+        fixed: [
+          "Resolução de incompatibilidades decorrentes de atualizações do Microsoft Office em sistemas operacionais modernos."
+        ]
+      }
+    },
+    {
+      version: "1.0-3.0",
+      displayTitle: "Netuno Versões 1, 2 e 3",
+      status: "Versões Pioneiras",
+      statusColor: "bg-slate-100 text-slate-700 dark:bg-zinc-800 dark:text-zinc-300 border-slate-200 dark:border-zinc-700",
+      badge: "Planilhas (2000s–2012)",
+      date: "2000s–2012",
+      internalLink: "/netuno",
+      isLatest: false,
+      summary: "Modelagem pioneira do balanço hídrico diário em planilhas eletrônicas com rotinas em VBA, servindo de alicerce para as primeiras publicações científicas nacionais do grupo sobre aproveitamento de água de chuva.",
+      changes: {
+        added: [
+          "Primeira implementação computacional do algoritmo diário Yield-After-Spillage (YAS) na UFSC.",
+          "Rotinas de dimensionamento de reservatórios para o setor residencial e público.",
+          "Módulo de viabilidade econômica com fluxos de caixa e tarifas de água (Netuno 3.0)."
+        ],
+        changed: [
+          "Aperfeiçoamento sucessivo da interface e das rotinas de cálculo entre as versões 1, 2 e 3."
         ]
       }
     }
@@ -212,7 +282,7 @@ export default function TritonVersions() {
               <span>Versionamento por Aplicativo (Edições Regionais)</span>
             </h2>
             <p className="text-xs text-slate-500 dark:text-zinc-400">
-              Cada aplicativo do Triton possui seu próprio pacote instalador, banco de dados regional e especificações normativas.
+              Cada aplicativo do ecossistema Triton possui seu próprio pacote instalador, banco de dados regional e especificações normativas.
             </p>
           </div>
 
@@ -289,8 +359,8 @@ export default function TritonVersions() {
           </div>
         </section>
 
-        {/* ── DETALHES POR VERSÃO (CHANGELOG COM ADICIONADO / MODIFICADO / CORRIGIDO) ── */}
-        <section className="space-y-6">
+        {/* ── DETALHES POR VERSÃO (CHANGELOG COM SANFONAS COLAPSÁVEIS) ── */}
+        <section className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="space-y-1">
               <h2 className="text-xl font-black text-slate-900 dark:text-white flex items-center gap-2">
@@ -298,156 +368,211 @@ export default function TritonVersions() {
                 <span>Registro Geral de Mudanças (Changelog)</span>
               </h2>
               <p className="text-xs text-slate-500 dark:text-zinc-400">
-                Detalhes diretos de cada pacote de atualização: o que foi lançado, aprimorado ou corrigido.
+                Clique nas versões para expandir ou recolher as notas de lançamento e modificações.
               </p>
             </div>
 
-            {/* Legenda de Tipos de Mudança */}
-            <div className="flex flex-wrap items-center gap-2 text-xs">
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 font-bold border border-emerald-200 dark:border-emerald-800">
-                <PlusCircle className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
-                <span>Adicionado</span>
-              </span>
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-blue-50 text-blue-800 dark:bg-blue-950/60 dark:text-blue-300 font-bold border border-blue-200 dark:border-blue-800">
-                <RefreshCw className="w-3 h-3 text-blue-600 dark:text-blue-400" />
-                <span>Modificado</span>
-              </span>
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-50 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 font-bold border border-amber-200 dark:border-amber-800">
-                <Bug className="w-3 h-3 text-amber-600 dark:text-amber-400" />
-                <span>Corrigido</span>
-              </span>
+            {/* Ações de Expandir/Recolher e Legenda */}
+            <div className="flex flex-wrap items-center gap-3 text-xs">
+              <div className="flex items-center gap-2 font-bold text-slate-600 dark:text-zinc-400">
+                <button
+                  type="button"
+                  onClick={expandAll}
+                  className="hover:text-blue-600 dark:hover:text-blue-400 underline cursor-pointer"
+                >
+                  Expandir todas
+                </button>
+                <span>•</span>
+                <button
+                  type="button"
+                  onClick={collapseAll}
+                  className="hover:text-blue-600 dark:hover:text-blue-400 underline cursor-pointer"
+                >
+                  Recolher todas
+                </button>
+              </div>
+
+              <div className="hidden lg:flex items-center gap-1.5 pl-2 border-l border-slate-200 dark:border-zinc-700">
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 font-bold border border-emerald-200 dark:border-emerald-800">
+                  <PlusCircle className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
+                  <span>Adicionado</span>
+                </span>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-blue-50 text-blue-800 dark:bg-blue-950/60 dark:text-blue-300 font-bold border border-blue-200 dark:border-blue-800">
+                  <RefreshCw className="w-3 h-3 text-blue-600 dark:text-blue-400" />
+                  <span>Modificado</span>
+                </span>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-50 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 font-bold border border-amber-200 dark:border-amber-800">
+                  <Bug className="w-3 h-3 text-amber-600 dark:text-amber-400" />
+                  <span>Corrigido</span>
+                </span>
+              </div>
             </div>
           </div>
 
-          <div className="space-y-6">
-            {versionsChangelog.map((ver) => (
-              <div
-                key={ver.version}
-                className={`rounded-3xl border shadow-sm transition-all overflow-hidden bg-white dark:bg-zinc-900 ${
-                  ver.isLatest
-                    ? "border-blue-300 dark:border-blue-800/80 ring-1 ring-blue-200 dark:ring-blue-900/40"
-                    : "border-slate-200 dark:border-zinc-800"
-                }`}
-              >
-                {/* Cabeçalho da Versão */}
-                <div className="p-6 border-b border-slate-100 dark:border-zinc-800/80 bg-slate-50/70 dark:bg-zinc-800/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="space-y-1.5">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-2xl font-black text-slate-900 dark:text-white tracking-tight">
-                        Triton v{ver.version}
-                      </span>
-                      <span className={`text-[11px] font-black px-2.5 py-0.5 rounded-full border ${ver.statusColor}`}>
-                        {ver.status}
-                      </span>
-                      {ver.badge && (
-                        <span className="text-[11px] font-black px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 dark:bg-blue-900/60 dark:text-blue-200 border border-blue-200 dark:border-blue-700">
-                          {ver.badge}
+          <div className="space-y-4">
+            {versionsChangelog.map((ver) => {
+              const isOpen = !!openVersions[ver.version];
+
+              return (
+                <div
+                  key={ver.version}
+                  className={`rounded-3xl border shadow-xs transition-all overflow-hidden bg-white dark:bg-zinc-900 ${
+                    ver.isLatest
+                      ? "border-blue-300 dark:border-blue-800/80 ring-1 ring-blue-200 dark:ring-blue-900/40"
+                      : "border-slate-200 dark:border-zinc-800"
+                  }`}
+                >
+                  {/* Cabeçalho da Versão (Clicável para expandir/colapsar) */}
+                  <div
+                    onClick={() => toggleVersion(ver.version)}
+                    className="w-full text-left p-5 sm:p-6 bg-slate-50/70 hover:bg-slate-100/80 dark:bg-zinc-800/40 dark:hover:bg-zinc-800/70 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4 cursor-pointer select-none"
+                  >
+                    <div className="space-y-1.5">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">
+                          {ver.displayTitle}
                         </span>
-                      )}
-                    </div>
-                    <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-zinc-400 font-semibold">
-                      <Calendar className="w-3.5 h-3.5" />
-                      <span>{ver.date}</span>
-                    </div>
-                  </div>
-
-                  {/* Link Rápido para o GitHub */}
-                  <div>
-                    <a
-                      href={ver.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-100 font-bold text-xs border border-slate-300 dark:border-zinc-700 shadow-xs hover:-translate-y-0.5 transition-all cursor-pointer"
-                    >
-                      <Code2 className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-                      <span>Ver no GitHub</span>
-                      <ExternalLink className="w-3 h-3 opacity-60" />
-                    </a>
-                  </div>
-                </div>
-
-                {/* Conteúdo da Versão */}
-                <div className="p-6 space-y-6">
-                  {/* Resumo Direto */}
-                  <p className="text-xs sm:text-sm text-slate-700 dark:text-zinc-300 leading-relaxed font-medium">
-                    {ver.summary}
-                  </p>
-
-                  {/* Destaques de Lançamento (apenas para v0.1.0) */}
-                  {ver.launchHighlights && (
-                    <div className="space-y-3 pt-2">
-                      <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-blue-700 dark:text-blue-400">
-                        <Sparkles className="w-4 h-4" />
-                        <span>Módulos e Recursos do Lançamento:</span>
+                        <span className={`text-[11px] font-black px-2.5 py-0.5 rounded-full border ${ver.statusColor}`}>
+                          {ver.status}
+                        </span>
+                        {ver.badge && (
+                          <span className="text-[11px] font-black px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 dark:bg-blue-900/60 dark:text-blue-200 border border-blue-200 dark:border-blue-700">
+                            {ver.badge}
+                          </span>
+                        )}
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {ver.launchHighlights.map((hl, i) => (
-                          <div
-                            key={i}
-                            className="p-3.5 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-1"
-                          >
-                            <span className="font-extrabold text-xs text-slate-900 dark:text-white block">
-                              • {hl.title}
-                            </span>
-                            <p className="text-[11px] text-slate-600 dark:text-zinc-300 leading-relaxed">
-                              {hl.desc}
-                            </p>
+                      <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-zinc-400 font-semibold">
+                        <Calendar className="w-3.5 h-3.5" />
+                        <span>{ver.date}</span>
+                        {!isOpen && (
+                          <span className="text-[11px] text-blue-600 dark:text-blue-400 font-bold ml-1">
+                            • Clique para ver detalhes
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Ações e Botão Chevron */}
+                    <div className="flex items-center gap-2 shrink-0">
+                      {ver.githubUrl && (
+                        <a
+                          href={ver.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-100 font-bold text-xs border border-slate-300 dark:border-zinc-700 shadow-xs transition-all cursor-pointer"
+                        >
+                          <Code2 className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+                          <span>GitHub</span>
+                          <ExternalLink className="w-3 h-3 opacity-60" />
+                        </a>
+                      )}
+                      {ver.internalLink && (
+                        <Link
+                          to={ver.internalLink}
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-100 font-bold text-xs border border-slate-300 dark:border-zinc-700 shadow-xs transition-all"
+                        >
+                          <History className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+                          <span>Página Netuno</span>
+                        </Link>
+                      )}
+
+                      <div className="p-1 rounded-lg text-slate-500 dark:text-zinc-400">
+                        {isOpen ? (
+                          <ChevronUp className="w-5 h-5" />
+                        ) : (
+                          <ChevronDown className="w-5 h-5" />
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Conteúdo Expansível da Versão */}
+                  {isOpen && (
+                    <div className="p-6 space-y-6 border-t border-slate-100 dark:border-zinc-800">
+                      {/* Resumo Direto */}
+                      <p className="text-xs sm:text-sm text-slate-700 dark:text-zinc-300 leading-relaxed font-medium">
+                        {ver.summary}
+                      </p>
+
+                      {/* Destaques de Lançamento (apenas para v0.1.0) */}
+                      {ver.launchHighlights && (
+                        <div className="space-y-3 pt-2">
+                          <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-blue-700 dark:text-blue-400">
+                            <Sparkles className="w-4 h-4" />
+                            <span>Módulos e Recursos do Lançamento:</span>
                           </div>
-                        ))}
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            {ver.launchHighlights.map((hl, i) => (
+                              <div
+                                key={i}
+                                className="p-3.5 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-1"
+                              >
+                                <span className="font-extrabold text-xs text-slate-900 dark:text-white block">
+                                  • {hl.title}
+                                </span>
+                                <p className="text-[11px] text-slate-600 dark:text-zinc-300 leading-relaxed">
+                                  {hl.desc}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Bloco de Alterações Detalhadas (Adicionado / Modificado / Corrigido) */}
+                      <div className="space-y-4 pt-2 border-t border-slate-100 dark:border-zinc-800">
+                        {/* 1. O que foi Adicionado */}
+                        {ver.changes.added && ver.changes.added.length > 0 && (
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-1.5 text-xs font-extrabold text-emerald-800 dark:text-emerald-300">
+                              <PlusCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                              <span>Adicionado ({ver.changes.added.length})</span>
+                            </div>
+                            <ul className="space-y-1.5 pl-6 list-disc text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
+                              {ver.changes.added.map((item, i) => (
+                                <li key={i}>{item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {/* 2. O que foi Modificado */}
+                        {ver.changes.changed && ver.changes.changed.length > 0 && (
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-1.5 text-xs font-extrabold text-blue-800 dark:text-blue-300">
+                              <RefreshCw className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                              <span>Modificado / Aprimorado ({ver.changes.changed.length})</span>
+                            </div>
+                            <ul className="space-y-1.5 pl-6 list-disc text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
+                              {ver.changes.changed.map((item, i) => (
+                                <li key={i}>{item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {/* 3. O que foi Corrigido */}
+                        {ver.changes.fixed && ver.changes.fixed.length > 0 && (
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-1.5 text-xs font-extrabold text-amber-800 dark:text-amber-300">
+                              <Bug className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+                              <span>Corrigido ({ver.changes.fixed.length})</span>
+                            </div>
+                            <ul className="space-y-1.5 pl-6 list-disc text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
+                              {ver.changes.fixed.map((item, i) => (
+                                <li key={i}>{item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
                       </div>
                     </div>
                   )}
-
-                  {/* Bloco de Alterações Detalhadas (Adicionado / Modificado / Corrigido) */}
-                  <div className="space-y-4 pt-2 border-t border-slate-100 dark:border-zinc-800">
-                    {/* 1. O que foi Adicionado / Lançado */}
-                    {ver.changes.added && ver.changes.added.length > 0 && (
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-1.5 text-xs font-extrabold text-emerald-800 dark:text-emerald-300">
-                          <PlusCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                          <span>Adicionado ({ver.changes.added.length})</span>
-                        </div>
-                        <ul className="space-y-1.5 pl-6 list-disc text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
-                          {ver.changes.added.map((item, i) => (
-                            <li key={i}>{item}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {/* 2. O que foi Modificado */}
-                    {ver.changes.changed && ver.changes.changed.length > 0 && (
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-1.5 text-xs font-extrabold text-blue-800 dark:text-blue-300">
-                          <RefreshCw className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                          <span>Modificado / Aprimorado ({ver.changes.changed.length})</span>
-                        </div>
-                        <ul className="space-y-1.5 pl-6 list-disc text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
-                          {ver.changes.changed.map((item, i) => (
-                            <li key={i}>{item}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {/* 3. O que foi Corrigido */}
-                    {ver.changes.fixed && ver.changes.fixed.length > 0 && (
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-1.5 text-xs font-extrabold text-amber-800 dark:text-amber-300">
-                          <Bug className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-                          <span>Corrigido ({ver.changes.fixed.length})</span>
-                        </div>
-                        <ul className="space-y-1.5 pl-6 list-disc text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
-                          {ver.changes.fixed.map((item, i) => (
-                            <li key={i}>{item}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
