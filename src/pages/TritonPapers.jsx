@@ -88,11 +88,10 @@ export default function TritonPapers() {
 
     rawPapers.forEach((paper) => {
       const year = paper.year || "Outros";
-      const yearNum = parseInt(year, 10);
 
-      // Filtro de Ferramenta (Triton 2026+ vs Netuno até 2025)
-      if (toolFilter === "triton" && yearNum < 2026) return;
-      if (toolFilter === "netuno" && yearNum >= 2026) return;
+      // Filtro de Ferramenta
+      // NENHUM artigo publicado utilizou o Triton ainda. Todos os artigos existentes utilizaram o Netuno.
+      if (toolFilter === "triton") return;
 
       // Filtro por Tag
       if (selectedTag !== "all") {
@@ -193,17 +192,17 @@ export default function TritonPapers() {
             </p>
           </div>
 
-          {/* ℹ️ BANNER EXPLICATIVO: NETUNO (ATÉ 2025) vs TRITON (2026+) */}
+          {/* ℹ️ BANNER EXPLICATIVO: NETUNO (HISTÓRICO) vs TRITON (FUTURAS PUBLICAÇÕES) */}
           <div className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-2 text-xs">
             <div className="flex items-center gap-2 text-slate-900 dark:text-zinc-100 font-extrabold">
               <Info className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
               <span>Evolução das Ferramentas Computacionais do Grupo:</span>
             </div>
             <p className="text-slate-600 dark:text-zinc-300 leading-relaxed pl-6">
-              • <strong>Artigos publicados até 2025:</strong> Utilizam como base computacional o software pioneiro{" "}
-              <strong className="text-slate-800 dark:text-zinc-100">Netuno (versões 1, 2, 3 e 4)</strong> para simulação contínua diária com séries históricas pluviométricas.<br />
-              • <strong>Artigos de 2026 em diante:</strong> Passam a empregar a nova plataforma computacional{" "}
-              <strong className="text-blue-700 dark:text-blue-400">Triton (v0.1.0 Beta)</strong>, que expande o algoritmo com Avaliação do Ciclo de Vida (ACV), estruturas tarifárias dinâmicas e tomada de decisão multicritério (MCDA).
+              • <strong>Artigos Publicados (Netuno 1 a 4):</strong> Todas as publicações científicas desenvolvidas até o momento pelo grupo na simulação do aproveitamento de água de chuva e dimensionamento de reservatórios utilizaram o programa pioneiro{" "}
+              <strong className="text-slate-800 dark:text-zinc-100">Netuno (versões 1, 2, 3 e 4)</strong>.<br />
+              • <strong>Próximas Pesquisas (Triton):</strong> A nova plataforma computacional{" "}
+              <strong className="text-blue-700 dark:text-blue-400">Triton</strong> é o software sucessor em desenvolvimento no grupo (com suporte a ACV, estruturas tarifárias e MCDA). Nenhum artigo anterior utilizou o Triton ainda; as pesquisas e publicações a partir de 2026/2027 utilizarão a plataforma Triton.
             </p>
           </div>
 
@@ -260,7 +259,7 @@ export default function TritonPapers() {
             </div>
           </div>
 
-          {/* 2. Filtro Rápido por Ferramenta (Triton 2026+ vs Netuno até 2025) */}
+          {/* 2. Filtro Rápido por Ferramenta (Netuno 1 a 4 vs Triton) */}
           <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-slate-100 dark:border-zinc-800/80">
             <div className="flex flex-wrap items-center gap-1.5 text-xs">
               <span className="text-slate-500 dark:text-zinc-400 font-bold mr-1">Filtrar por ferramenta:</span>
@@ -279,6 +278,19 @@ export default function TritonPapers() {
 
               <button
                 type="button"
+                onClick={() => setToolFilter("netuno")}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                  toolFilter === "netuno"
+                    ? "bg-slate-800 text-white dark:bg-zinc-700 dark:text-white shadow-xs"
+                    : "bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700 border border-slate-200 dark:border-zinc-700"
+                }`}
+              >
+                <History className="w-3.5 h-3.5 text-slate-500 dark:text-zinc-400" />
+                <span>Netuno 1 a 4 ({rawPapers.length})</span>
+              </button>
+
+              <button
+                type="button"
                 onClick={() => setToolFilter("triton")}
                 className={`flex items-center gap-1.5 px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
                   toolFilter === "triton"
@@ -287,20 +299,7 @@ export default function TritonPapers() {
                 }`}
               >
                 <Droplet className="w-3 h-3 text-blue-500 dark:text-blue-300" />
-                <span>Triton (2026+)</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setToolFilter("netuno")}
-                className={`flex items-center gap-1.5 px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
-                  toolFilter === "netuno"
-                    ? "bg-slate-800 text-white dark:bg-zinc-700 dark:text-white shadow-xs"
-                    : "bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700 border border-slate-200 dark:border-zinc-700"
-                }`}
-              >
-                <History className="w-3 h-3 text-slate-500 dark:text-zinc-400" />
-                <span>Netuno 1 a 4 (até 2025)</span>
+                <span>Triton (0)</span>
               </button>
             </div>
 
@@ -354,7 +353,30 @@ export default function TritonPapers() {
         </div>
 
         {/* ── LISTAGEM AGRUPADA POR ANO COM SANFONAS (ESTILO PAPERS.JSX) ── */}
-        {totalResultsCount === 0 ? (
+        {/* ── LISTAGEM AGRUPADA POR ANO COM SANFONAS (ESTILO PAPERS.JSX) ── */}
+        {toolFilter === "triton" ? (
+          <div className="text-center py-12 px-6 rounded-3xl bg-blue-50/60 dark:bg-blue-950/20 border border-blue-200/80 dark:border-blue-900/50 space-y-4">
+            <div className="w-12 h-12 mx-auto rounded-2xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+              <Droplet className="w-6 h-6" />
+            </div>
+            <div className="space-y-1.5 max-w-lg mx-auto">
+              <h3 className="text-base font-extrabold text-slate-900 dark:text-white">
+                Nenhum artigo publicado com o Triton até o momento
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-300 leading-relaxed">
+                A plataforma <strong>Triton</strong> é o software de nova geração em fase de implantação pelo grupo. Todos os artigos científicos publicados até agora utilizaram a família <strong>Netuno (versões 1 a 4)</strong>. As novas pesquisas e artigos científicos a partir de 2026/2027 utilizarão a plataforma Triton.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setToolFilter("netuno")}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-xs transition-all cursor-pointer"
+            >
+              <History className="w-3.5 h-3.5" />
+              <span>Ver Artigos Históricos com Netuno ({rawPapers.length})</span>
+            </button>
+          </div>
+        ) : totalResultsCount === 0 ? (
           <div className="text-center py-12 bg-white dark:bg-zinc-900 border border-dashed border-slate-300 dark:border-zinc-700 rounded-3xl space-y-2">
             <p className="text-sm font-bold text-slate-800 dark:text-zinc-200">
               Nenhum artigo encontrado para os critérios de busca.
@@ -368,7 +390,8 @@ export default function TritonPapers() {
             {sortedYears.map((year) => {
               const isOpen = !collapsed[year];
               const papersInYear = filteredPapersByYear[year];
-              const isTritonEra = parseInt(year, 10) >= 2026;
+              const yearNum = parseInt(year, 10);
+              const softwareLabel = yearNum >= 2014 ? "Netuno 4" : yearNum >= 2008 ? "Netuno 2/3" : "Netuno 1";
 
               return (
                 <div
@@ -382,11 +405,7 @@ export default function TritonPapers() {
                     className="w-full flex items-center justify-between px-4 sm:px-5 py-3.5 bg-slate-50 hover:bg-slate-100/90 dark:bg-zinc-800/70 dark:hover:bg-zinc-800 transition-colors cursor-pointer text-left"
                   >
                     <div className="flex items-center gap-3">
-                      <span
-                        className={`w-2.5 h-6 rounded-full inline-block ${
-                          isTritonEra ? "bg-blue-600" : "bg-slate-400 dark:bg-zinc-600"
-                        }`}
-                      />
+                      <span className="w-2.5 h-6 rounded-full inline-block bg-blue-600" />
                       <div className="flex items-baseline gap-2">
                         <span className="text-lg font-black text-slate-900 dark:text-white">
                           {year}
@@ -398,14 +417,8 @@ export default function TritonPapers() {
                       </div>
 
                       {/* Badge da Ferramenta correspondente ao ano */}
-                      <span
-                        className={`text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider ${
-                          isTritonEra
-                            ? "bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 border border-blue-200 dark:border-blue-800"
-                            : "bg-slate-200/80 text-slate-700 dark:bg-zinc-700 dark:text-zinc-300"
-                        }`}
-                      >
-                        {isTritonEra ? "Triton (Nova Ferramenta)" : "Netuno 4"}
+                      <span className="text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider bg-slate-200/80 text-slate-700 dark:bg-zinc-700 dark:text-zinc-300">
+                        {softwareLabel}
                       </span>
                     </div>
 
@@ -424,6 +437,7 @@ export default function TritonPapers() {
                       {papersInYear.map((paper, idx) => {
                         const authorsFormatted = shortAuthors(paper.authors);
                         const isCopied = copiedId === paper.id;
+                        const badgeText = paper.softwareVersion || softwareLabel;
 
                         return (
                           <div
@@ -433,14 +447,8 @@ export default function TritonPapers() {
                             <div className="flex flex-wrap items-center justify-between gap-2">
                               {/* Badge da Ferramenta no Artigo */}
                               <div className="flex items-center gap-2">
-                                <span
-                                  className={`text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-wider ${
-                                    isTritonEra
-                                      ? "bg-blue-50 text-blue-800 dark:bg-blue-950/70 dark:text-blue-300 border border-blue-200 dark:border-blue-800"
-                                      : "bg-slate-100 text-slate-700 dark:bg-zinc-800 dark:text-zinc-300 border border-slate-200 dark:border-zinc-700"
-                                  }`}
-                                >
-                                  {isTritonEra ? "Triton" : "Netuno 4"}
+                                <span className="text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-wider bg-slate-100 text-slate-700 dark:bg-zinc-800 dark:text-zinc-300 border border-slate-200 dark:border-zinc-700">
+                                  {badgeText}
                                 </span>
 
                                 <span className="text-xs font-bold text-slate-500 dark:text-zinc-400">

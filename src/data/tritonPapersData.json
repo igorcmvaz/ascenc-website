@@ -12,7 +12,9 @@
       "Agua-Pluvial",
       "Residencial-Multifamiliar",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 1"
   },
   {
     "id": 222,
@@ -27,7 +29,9 @@
       "Agua-Pluvial",
       "Aproveitamento-agua-chuva",
       "Precipitacao"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 1"
   },
   {
     "id": 217,
@@ -45,7 +49,9 @@
       "Usos-Finais",
       "Simulacao-Computacional",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 1"
   },
   {
     "id": 218,
@@ -61,7 +67,9 @@
       "Simulacao-Computacional",
       "Reservatorio",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 1"
   },
   {
     "id": 219,
@@ -78,7 +86,9 @@
       "Residencial-Multifamiliar",
       "Usos-Finais",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 1"
   },
   {
     "id": 214,
@@ -94,7 +104,9 @@
       "Usos-Finais",
       "Simulacao-Computacional",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 2/3"
   },
   {
     "id": 213,
@@ -109,7 +121,9 @@
       "CCV",
       "Industrial-Servicos",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 2/3"
   },
   {
     "id": 211,
@@ -124,7 +138,9 @@
       "Simulacao-Computacional",
       "Reservatorio",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 2/3"
   },
   {
     "id": 204,
@@ -140,7 +156,9 @@
       "Agua-Cinza",
       "Agua-Pluvial",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 2/3"
   },
   {
     "id": 206,
@@ -155,7 +173,9 @@
       "Aproveitamento-agua-chuva",
       "Simulacao-Computacional",
       "Reservatorio"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 2/3"
   },
   {
     "id": 207,
@@ -172,7 +192,9 @@
       "Simulacao-Computacional",
       "Usos-Finais",
       "Agua-Pluvial"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 2/3"
   },
   {
     "id": 201,
@@ -189,7 +211,9 @@
       "Precipitacao",
       "Residencial-Unifamiliar",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 2/3"
   },
   {
     "id": 202,
@@ -205,7 +229,9 @@
       "Residencial-Unifamiliar",
       "Simulacao-Computacional",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 2/3"
   },
   {
     "id": 195,
@@ -222,7 +248,9 @@
       "Agua-Cinza",
       "Aproveitamento-agua-chuva",
       "Comercial-Escritorio"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 2/3"
   },
   {
     "id": 196,
@@ -237,37 +265,9 @@
       "Agua-Pluvial",
       "Residencial-Unifamiliar",
       "Aproveitamento-agua-chuva"
-    ]
-  },
-  {
-    "id": 198,
-    "authors": "VIEIRA, Abel Silva; GHISI, E.; WEEBER, M.",
-    "title": "Self-cleaning filtration: A novel concept for rainwater harvesting systems",
-    "details": "Resources, Conservation and Recycling, v. 78, p. 67-73, 2013",
-    "year": "2013",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.1016/j.resconrec.2013.06.008",
-    "tags": [
-      "Agua-Pluvial",
-      "First-Flush",
-      "Qualidade-Agua"
-    ]
-  },
-  {
-    "id": 186,
-    "authors": "VIEIRA, Abel Silva; BEAL, C. D.; GHISI, E.; STEWART, R. A.",
-    "title": "Energy intensity of rainwater harvesting systems: A review",
-    "details": "Renewable & Sustainable Energy Reviews, v. 34, p. 225-242, 2014",
-    "year": "2014",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.1016/j.rser.2014.03.012",
-    "tags": [
-      "Agua-Pluvial",
-      "Eletricidade",
-      "Revisao-Literatura",
-      "Aproveitamento-agua-chuva",
-      "Eficiencia-Energetica"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 2/3"
   },
   {
     "id": 189,
@@ -285,7 +285,9 @@
       "Energia-embutida",
       "Agua-Cinza",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 191,
@@ -300,7 +302,9 @@
       "Agua-Pluvial",
       "Simulacao-Computacional",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 170,
@@ -317,7 +321,9 @@
       "Residencial-Unifamiliar",
       "Simulacao-Computacional",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 171,
@@ -331,24 +337,9 @@
       "Aproveitamento-agua-chuva",
       "Agua-Pluvial",
       "Simulacao-Computacional"
-    ]
-  },
-  {
-    "id": 174,
-    "authors": "ANTUNES, L. N.; THIVES, L.P.; GHISI, E.",
-    "title": "Potential for Potable Water Savings in Buildings by Using Stormwater Harvested from Porous Pavements",
-    "details": "Water, v. 8, p. 110, 2016",
-    "year": "2016",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.3390/w8040110",
-    "tags": [
-      "Agua-Potavel",
-      "Agua-Pluvial",
-      "Pavimento-Permeavel",
-      "Qualidade-Agua",
-      "Simulacao-Computacional",
-      "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 175,
@@ -365,36 +356,9 @@
       "Analise-Incerteza",
       "Analise-Sensibilidade",
       "Aproveitamento-agua-chuva"
-    ]
-  },
-  {
-    "id": 163,
-    "authors": "TEIXEIRA, C. A.; BUDEL, M. A.; CARVALHO, K. Q.; BEZERRA, S. M. C.; GHISI, E.",
-    "title": "Estudo comparativo da qualidade da água da chuva coletada em telhado com telhas de concreto e em telhado verde para usos não potáveis",
-    "details": "Ambiente Construído (Online), v. 17, p. 135-155, 2017",
-    "year": "2017",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.1590/s1678-86212017000200150",
-    "tags": [
-      "Agua-Pluvial",
-      "Telhado-Verde",
-      "Aproveitamento-agua-chuva",
-      "Qualidade-Agua"
-    ]
-  },
-  {
-    "id": 166,
-    "authors": "CAMPISANO, A.; BUTLER, D.; WARD, S.; BURNS, M. J.; FRIEDLER, E.; DEBUSK, K.; FISHER-JEFFES, L. N.; GHISI, E.; RAHMAN, A.; FURUMAI, H.; HAN, M.",
-    "title": "Urban rainwater harvesting systems: Research, implementation and future perspectives",
-    "details": "Water Research (Oxford), v. 115, p. 195-209, 2017",
-    "year": "2017",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.1016/j.watres.2017.02.056",
-    "tags": [
-      "Agua-Pluvial",
-      "Escala-Urbana",
-      "Revisao-Literatura"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 169,
@@ -410,7 +374,9 @@
       "Residencial-Unifamiliar",
       "Precipitacao",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 138,
@@ -426,7 +392,9 @@
       "Agua-Pluvial",
       "Habitacao-Interesse-Social",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 139,
@@ -442,7 +410,9 @@
       "Residencial-Unifamiliar",
       "Aproveitamento-agua-chuva",
       "Agua-Pluvial"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 140,
@@ -456,7 +426,9 @@
       "CCV",
       "Agua-Pluvial",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 143,
@@ -470,50 +442,9 @@
       "Agua-Pluvial",
       "Simulacao-Computacional",
       "Aproveitamento-agua-chuva"
-    ]
-  },
-  {
-    "id": 144,
-    "authors": "THIVES, L.P.; GHISI, E.; BRECHT, D. G.; PIRES, D. M.",
-    "title": "Filtering Capability of Porous Asphalt Pavements",
-    "details": "Water, v. 10, p. 206, 2018. Citações:21|23",
-    "year": "2018",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.3390/w10020206",
-    "tags": [
-      "Pavimento-Permeavel",
-      "Agua-Pluvial"
-    ]
-  },
-  {
-    "id": 149,
-    "authors": "TESTON, A.; GERALDI, M. S.; COLASIO, B. M.; GHISI, E.",
-    "title": "Rainwater Harvesting in Buildings in Brazil: A Literature Review",
-    "details": "Water, v. 10, p. 471, 2018. Citações:46|61",
-    "year": "2018",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.3390/w10040471",
-    "tags": [
-      "Agua-Pluvial",
-      "Revisao-Literatura",
-      "Aproveitamento-agua-chuva"
-    ]
-  },
-  {
-    "id": 152,
-    "authors": "HAMMES, G.; THIVES, L.P.; GHISI, E.",
-    "title": "Application of stormwater collected from porous asphalt pavements for non-potable uses in buildings",
-    "details": "JOURNAL OF ENVIRONMENTAL MANAGEMENT, v. 222, p. 338-347, 2018. Citações:36|39",
-    "year": "2018",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.1016/j.jenvman.2018.05.094",
-    "tags": [
-      "Pavimento-Permeavel",
-      "Agua-Pluvial",
-      "Aproveitamento-agua-chuva",
-      "Escola-Universidade",
-      "Estudo-Campo"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 154,
@@ -527,52 +458,9 @@
       "Agua-Pluvial",
       "Residencial-Unifamiliar",
       "Aproveitamento-agua-chuva"
-    ]
-  },
-  {
-    "id": 156,
-    "authors": "ANTUNES, L. N.; GHISI, E.; THIVES, L.P.",
-    "title": "Permeable Pavements Life Cycle Assessment: A Literature Review",
-    "details": "Water, v. 10, p. 1575--, 2018",
-    "year": "2018",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.3390/w10111575",
-    "tags": [
-      "ACV",
-      "Pavimento-Permeavel",
-      "Revisao-Literatura",
-      "Agua-Pluvial"
-    ]
-  },
-  {
-    "id": 159,
-    "authors": "THIVES, LISEANE PADILHA; Ghisi, Enedir; DA SILVA, NATÁLIA MATTOS",
-    "title": "Potable Water Savings in Multifamily Buildings Using Stormwater Runoff from Impermeable Paved Streets",
-    "details": "EUROPEAN JOURNAL OF SUSTAINABLE DEVELOPMENT, v. 7, p. 120-130, 2018",
-    "year": "2018",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.14207/ejsd.2018.v7n3p120",
-    "tags": [
-      "Agua-Potavel",
-      "Agua-Pluvial",
-      "Residencial-Multifamiliar",
-      "Simulacao-Computacional",
-      "Aproveitamento-agua-chuva"
-    ]
-  },
-  {
-    "id": 127,
-    "authors": "AZEVEDO, L. D.; BORGERT, A. E.; VENDRAMI, J. M.; GHISI, E.",
-    "title": "Tipos e eficiência de unidades de tratamento para água pluvial: revisão de literatura",
-    "details": "AMBIENTE CONSTRUÍDO (ONLINE), v. 19, p. 207-231, 2019",
-    "year": "2019",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.1590/s1678-86212019000300334",
-    "tags": [
-      "Agua-Pluvial",
-      "Revisao-Literatura",
-      "Qualidade-Agua"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 128,
@@ -589,7 +477,9 @@
       "Aproveitamento-agua-chuva",
       "Precipitacao",
       "Residencial-Unifamiliar"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 129,
@@ -604,35 +494,9 @@
       "Agua-Pluvial",
       "Agua-Cinza",
       "Aproveitamento-agua-chuva"
-    ]
-  },
-  {
-    "id": 131,
-    "authors": "TEIXEIRA, CELIMAR AZAMBUJA; Ghisi, Enedir",
-    "title": "Comparative Analysis of Granular and Membrane Filters for Rainwater Treatment",
-    "details": "Water, v. 11, p. 1004, 2019. Citações:18|16",
-    "year": "2019",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.3390/w11051004",
-    "tags": [
-      "Agua-Pluvial",
-      "Qualidade-Agua"
-    ]
-  },
-  {
-    "id": 106,
-    "authors": "VAZ, I. C. M.; GHISI, E.; THIVES, L.P.",
-    "title": "Life cycle energy assessment and economic feasibility of stormwater harvested from pervious pavements",
-    "details": "WATER RESEARCH, v. 170, p. 115322, 2020. Citações:23|24",
-    "year": "2020",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.1016/j.watres.2019.115322",
-    "tags": [
-      "ACV",
-      "CCV",
-      "Agua-Pluvial",
-      "Pavimento-Permeavel"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 109,
@@ -646,7 +510,9 @@
       "Agua-Pluvial",
       "Residencial-Multifamiliar",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 110,
@@ -660,7 +526,9 @@
       "Agua-Pluvial",
       "Industrial-Servicos",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 111,
@@ -676,7 +544,9 @@
       "Escala-Urbana",
       "Aproveitamento-agua-chuva",
       "Agua-Pluvial"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 112,
@@ -690,7 +560,9 @@
       "Usos-Finais",
       "Agua-Pluvial",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 113,
@@ -704,7 +576,9 @@
       "Mudancas-Climaticas",
       "Agua-Pluvial",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 115,
@@ -719,53 +593,9 @@
       "Agua-Cinza",
       "Simulacao-Computacional",
       "Aproveitamento-agua-chuva"
-    ]
-  },
-  {
-    "id": 119,
-    "authors": "GHISI, E.; BELOTTO, T.; THIVES, LISEANE PADILHA",
-    "title": "The use of Permeable Interlocking Concrete Pavement to filter stormwater for non-potable uses in buildings",
-    "details": "Water, v. 12, p. 2045, 2020. Citações:15|16",
-    "year": "2020",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.3390/w12072045",
-    "tags": [
-      "Pavimento-Permeavel",
-      "Agua-Pluvial",
-      "Estudo-Campo"
-    ]
-  },
-  {
-    "id": 120,
-    "authors": "ANTUNES, L. N.; GHISI, E.; SEVERIS, R. M.",
-    "title": "Environmental assessment of a permeable pavement system used to harvest stormwater for non-potable water uses in a building",
-    "details": "SCIENCE OF THE TOTAL ENVIRONMENT, v. 746, p. 141087--, 2020. Citações:30|39",
-    "year": "2020",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.1016/j.scitotenv.2020.141087",
-    "tags": [
-      "ACV",
-      "Pavimento-Permeavel",
-      "Agua-Pluvial",
-      "Escola-Universidade",
-      "Aproveitamento-agua-chuva"
-    ]
-  },
-  {
-    "id": 123,
-    "authors": "ANTUNES, L. N.; SYDNEY, C.; GHISI, E.; PHOENIX, V.; THIVES, L.P.; WHITE, C.; GARCIA, E. S. H.",
-    "title": "Reduction of environmental impacts due to using permeable pavements to harvest stormwaterwater",
-    "details": "Water, v. 12, p. 2840, 2020. Citações:16|19",
-    "year": "2020",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.3390/w12102840",
-    "tags": [
-      "ACV",
-      "Pavimento-Permeavel",
-      "Agua-Pluvial",
-      "Escala-Urbana",
-      "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 125,
@@ -780,7 +610,9 @@
       "Agua-Pluvial",
       "Aproveitamento-agua-chuva",
       "Residencial-Unifamiliar"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 97,
@@ -795,7 +627,9 @@
       "Agua-Potavel",
       "Industrial-Servicos",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 98,
@@ -811,52 +645,9 @@
       "CCV",
       "Aproveitamento-agua-chuva",
       "Qualidade-Agua"
-    ]
-  },
-  {
-    "id": 100,
-    "authors": "VAZ, I. C. M.; GHISI, E.; THIVES, L.P.",
-    "title": "Stormwater Harvested from Permeable Pavements as a Means to Save Potable Water in Buildings",
-    "details": "Water, v. 13, p. 1896, 2021. Citações:10|14",
-    "year": "2021",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.3390/w13141896",
-    "tags": [
-      "Pavimento-Permeavel",
-      "Agua-Pluvial",
-      "Agua-Potavel",
-      "Escola-Universidade"
-    ]
-  },
-  {
-    "id": 75,
-    "authors": "ANTUNES, L. N.; GHISI, E.; SOUZA, J. C.",
-    "title": "Stormwater harvested from a permeable pavement for use in the fire extinguishing system and non-potable uses of a building: a case study",
-    "details": "Urban Water Journal, v. 19, p. 433-440, 2022. Citações:4|4",
-    "year": "2022",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.1080/1573062X.2021.2016869",
-    "tags": [
-      "Pavimento-Permeavel",
-      "Agua-Pluvial",
-      "Industrial-Servicos",
-      "Estudo-Campo"
-    ]
-  },
-  {
-    "id": 86,
-    "authors": "TESTON, A.; SCOLARO, T. P.; MAYKOT, J. K.; GHISI, E.",
-    "title": "Comprehensive environmental assessment of rainwater harvesting systems: A literature review",
-    "details": "Water, v. 14, p. 2716, 2022. Citações:42|40",
-    "year": "2022",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.3390/w14172716",
-    "tags": [
-      "ACV",
-      "Agua-Pluvial",
-      "Revisao-Literatura",
-      "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 87,
@@ -871,7 +662,9 @@
       "Mudancas-Climaticas",
       "Aproveitamento-agua-chuva",
       "Analise-Sensibilidade"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 89,
@@ -886,7 +679,9 @@
       "Agua-Pluvial",
       "Aproveitamento-agua-chuva",
       "Residencial-Unifamiliar"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 60,
@@ -901,7 +696,9 @@
       "Agua-Potavel",
       "Residencial-Multifamiliar",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 61,
@@ -916,21 +713,9 @@
       "Escala-Urbana",
       "Hidraulica",
       "Aproveitamento-agua-chuva"
-    ]
-  },
-  {
-    "id": 62,
-    "authors": "KLEIN, C. W.; MAYKOT, J. K.; GHISI, E.; THIVES, L.P.",
-    "title": "Financial Feasibility of Harvesting Rainwater from Permeable Pavements: a Case Study in a City Square",
-    "details": "Sci, v. 5, p. 1, 2023. Citações:2|2",
-    "year": "2023",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.3390/sci5010001",
-    "tags": [
-      "CCV",
-      "Pavimento-Permeavel",
-      "Agua-Pluvial"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 63,
@@ -945,53 +730,9 @@
       "Agua-Pluvial",
       "Precipitacao",
       "Aproveitamento-agua-chuva"
-    ]
-  },
-  {
-    "id": 65,
-    "authors": "VAZ, I. C. M.; GHISI, E.; SOUZA, J. C.",
-    "title": "Potential use of rainwater as a tool for fire stations and firefighting: Literature review, environmental and cost assessments",
-    "details": "SCIENCE OF THE TOTAL ENVIRONMENT, v. 898, p. 165510, 2023. Citações:5|5",
-    "year": "2023",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.1016/j.scitotenv.2023.165510",
-    "tags": [
-      "Agua-Pluvial",
-      "ACV",
-      "CCV",
-      "Industrial-Servicos",
-      "Preventivo-Incendio",
-      "Aproveitamento-agua-chuva"
-    ]
-  },
-  {
-    "id": 68,
-    "authors": "VAZ, I. C. M.; ISTCHUK, R. N.; ONEDA, T. M. S.; GHISI, E.",
-    "title": "Sustainable Rainwater Management and Life Cycle Assessment: Challenges and Perspectives",
-    "details": "Sustainability, v. 15, p. 12133, 2023. Citações:10|9",
-    "year": "2023",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.3390/su151612133",
-    "tags": [
-      "Agua-Pluvial",
-      "ACV",
-      "Revisao-Literatura",
-      "Aproveitamento-agua-chuva"
-    ]
-  },
-  {
-    "id": 72,
-    "authors": "THIVES, L.P.; GHISI, E.; LONGO, G.; HAMMES, G.; BELOTTO, T.",
-    "title": "Performance of permeable pavement to filter stormwater runoff for non-potable uses in buildings",
-    "details": "European Journal Of Sustainable Development, v. 12, p. 80-90, 2023. Citações:4",
-    "year": "2023",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.14207/ejsd.2023.v12n3p80",
-    "tags": [
-      "Pavimento-Permeavel",
-      "Agua-Pluvial",
-      "Qualidade-Agua"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 37,
@@ -1006,7 +747,9 @@
       "Agua-Potavel",
       "Escola-Universidade",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 38,
@@ -1022,7 +765,9 @@
       "Escala-Urbana",
       "Agua-Potavel",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 44,
@@ -1036,7 +781,9 @@
       "CCV",
       "Agua-Pluvial",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 49,
@@ -1052,7 +799,9 @@
       "Agua-Cinza",
       "Residencial-Multifamiliar",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 54,
@@ -1067,40 +816,9 @@
       "Usos-Finais",
       "Aproveitamento-agua-chuva",
       "Residencial-Unifamiliar"
-    ]
-  },
-  {
-    "id": 58,
-    "authors": "VAZ, I. C. M.; GHISI, E.",
-    "title": "Rainwater harvesting through roofs and stormwater harvesting through pervious pavements: A Life Cycle Assessment and decision-making comparison",
-    "details": "JOURNAL OF CLEANER PRODUCTION, v. 476, p. 143782, 2024. Citações:8",
-    "year": "2024",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.1016/j.jclepro.2024.143782",
-    "tags": [
-      "Agua-Pluvial",
-      "Pavimento-Permeavel",
-      "ACV",
-      "Escola-Universidade",
-      "Aproveitamento-agua-chuva"
-    ]
-  },
-  {
-    "id": 59,
-    "authors": "VAZ, I. C. M.; GHISI, E.; THIVES, L.P.",
-    "title": "An Inventory Comparison of Harvesting Rainwater from Roofs and Stormwater from Pervious Pavements",
-    "details": "Water Resources Management, v. -, p. ---, 2024",
-    "year": "2024",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.1007/s11269-024-04004-6",
-    "tags": [
-      "Agua-Pluvial",
-      "Pavimento-Permeavel",
-      "ACV",
-      "Escola-Universidade",
-      "Hidraulica",
-      "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 16,
@@ -1117,7 +835,9 @@
       "ACV",
       "Agua-Pluvial",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 21,
@@ -1134,22 +854,9 @@
       "Escala-Urbana",
       "Residencial-Unifamiliar",
       "Residencial-Multifamiliar"
-    ]
-  },
-  {
-    "id": 26,
-    "authors": "MAYKOT, J. K.; VAZ, I. C. M.; GHISI, E.",
-    "title": "Characterisation of First Flush for Rainwater Harvesting Purposes in Buildings",
-    "details": "Water, v. 17, p. 1772, 2025. Citações:2",
-    "year": "2025",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.3390/w17121772",
-    "tags": [
-      "Agua-Pluvial",
-      "First-Flush",
-      "Qualidade-Agua",
-      "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 29,
@@ -1166,7 +873,9 @@
       "Aproveitamento-agua-chuva",
       "Agua-Cinza",
       "Agua-Pluvial"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 31,
@@ -1182,7 +891,9 @@
       "Industrial-Servicos",
       "Usos-Finais",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 32,
@@ -1198,53 +909,9 @@
       "Usos-Finais",
       "CCV",
       "Aproveitamento-agua-chuva"
-    ]
-  },
-  {
-    "id": 4,
-    "authors": "BRANDÃO, ABDERRAMAN R. A.; CASTRO, MARIA A. R. A.; SÁNCHEZ, MATEO H.; GOMES, MARCUS N.; UCHÔA, JOSÉ GESCILAM S. M.; VAZ, IGOR C. M.; Ghisi, Enedir; ANACHE, JAMIL A. A.; WENDLAND, EDSON C.; OLIVEIRA, PAULO T. S.; MENDIONDO, EDUARDO M.; BALLARIN, ANDRÉ S.",
-    "title": "Flood Event Escalation and Urban Drainage Design Implications Under Nonstationary Rainfall in São Paulo State, Brazil",
-    "details": "Water, v. 18, p. 561, 2026",
-    "year": "2026",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.3390/w18050561",
-    "tags": [
-      "Agua-Pluvial",
-      "Escala-Urbana",
-      "Mudancas-Climaticas",
-      "Hidraulica",
-      "Precipitacao"
-    ]
-  },
-  {
-    "id": 5,
-    "authors": "ANTUNES, LUCAS NIEHUNS; SCOLARO, TAYLANA PICCININI; Ghisi, Enedir",
-    "title": "Impacts of the operational phase on the life cycle cost of permeable pavements",
-    "details": "SCIENCE OF THE TOTAL ENVIRONMENT, v. 1030, p. 181801, 2026",
-    "year": "2026",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.1016/j.scitotenv.2026.181801",
-    "tags": [
-      "Pavimento-Permeavel",
-      "CCV",
-      "Aproveitamento-agua-chuva",
-      "Agua-Pluvial"
-    ]
-  },
-  {
-    "id": 6,
-    "authors": "ONEDA, T. M. S.; GHISI, E.",
-    "title": "How Rainwater Harvesting Bridges the Water-Energy Nexus in Buildings: A Systematic Review",
-    "details": "Water, v. 18, p. 1495, 2026",
-    "year": "2026",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.3390/w18121495",
-    "tags": [
-      "Agua-Pluvial",
-      "Eletricidade",
-      "Revisao-Literatura",
-      "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 8,
@@ -1261,7 +928,9 @@
       "Habitacao-Interesse-Social",
       "Precipitacao",
       "Aproveitamento-agua-chuva"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   },
   {
     "id": 10,
@@ -1276,23 +945,8 @@
       "Aproveitamento-agua-chuva",
       "Residencial-Unifamiliar",
       "CCV"
-    ]
-  },
-  {
-    "id": 13,
-    "authors": "ANTUNES, LUCAS NIEHUNS; SCOLARO, TAYLANA PICCININI; Ghisi, Enedir",
-    "title": "Quantifying environmental impacts through the full life cycle assessment of permeable pavements",
-    "details": "SCIENCE OF THE TOTAL ENVIRONMENT, v. 1049, p. 182179, 2026",
-    "year": "2026",
-    "citations": "",
-    "doi": "http://dx.doi.org/10.1016/j.scitotenv.2026.182179",
-    "tags": [
-      "Pavimento-Permeavel",
-      "ACV",
-      "Aproveitamento-agua-chuva",
-      "Agua-Pluvial",
-      "Agua-Potavel",
-      "Emissoes-Carbono"
-    ]
+    ],
+    "tool": "Netuno",
+    "softwareVersion": "Netuno 4"
   }
 ]
