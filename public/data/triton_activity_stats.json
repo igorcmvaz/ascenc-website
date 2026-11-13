@@ -1,7 +1,47 @@
 {
   "likesCount": 2,
-  "viewsCount": 13,
+  "viewsCount": 18,
   "events": [
+    {
+      "id": "ZUnwTCG098wi",
+      "time": 1794590264,
+      "kind": "view",
+      "device": "Computador / Desktop",
+      "lang": "en-US",
+      "envelope": null
+    },
+    {
+      "id": "CR2mWuSjZGzt",
+      "time": 1794590246,
+      "kind": "view",
+      "device": "Computador / Desktop",
+      "lang": "en-US",
+      "envelope": null
+    },
+    {
+      "id": "whlVTnCDLCMd",
+      "time": 1794590143,
+      "kind": "view",
+      "device": "Computador / Desktop",
+      "lang": "pt-BR",
+      "envelope": null
+    },
+    {
+      "id": "wI7mw1nVmJDu",
+      "time": 1794579084,
+      "kind": "view",
+      "device": "Computador / Desktop",
+      "lang": "pt-BR",
+      "envelope": null
+    },
+    {
+      "id": "A77Bs92ng8N5",
+      "time": 1794574109,
+      "kind": "view",
+      "device": "Computador / Desktop",
+      "lang": "pt-BR",
+      "envelope": null
+    },
     {
       "id": "atYyjDsmyrzq",
       "time": 1794495063,
