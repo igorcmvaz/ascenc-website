@@ -26,33 +26,33 @@ export default function TritonDocs() {
   const sections = [
     {
       id: "balanco",
-      title: "Balanço Hídrico Diário",
+      title: t("triton_docs.tab_balanco", "Balanço Hídrico Diário"),
       icon: Droplet,
-      badge: "Simulação Contínua",
+      badge: t("triton_docs.tab_balanco_badge", "Simulação Contínua"),
     },
     {
       id: "economia",
-      title: "Engenharia Econômica",
+      title: t("triton_docs.tab_economia", "Engenharia Econômica"),
       icon: TrendingUp,
-      badge: "VPL, TIR & Tarifas",
+      badge: t("triton_docs.tab_economia_badge", "VPL, TIR & Tarifas"),
     },
     {
       id: "acv",
-      title: "Ciclo de Vida (ACV)",
+      title: t("triton_docs.tab_acv", "Ciclo de Vida (ACV)"),
       icon: Leaf,
-      badge: "Pegada de Carbono",
+      badge: t("triton_docs.tab_acv_badge", "Pegada de Carbono"),
     },
     {
       id: "mcda",
-      title: "Decisão Multicritério (MCDA)",
+      title: t("triton_docs.tab_mcda", "Decisão Multicritério (MCDA)"),
       icon: Layers,
-      badge: "4 Métodos",
+      badge: t("triton_docs.tab_mcda_badge", "4 Métodos"),
     },
     {
       id: "instalacao",
-      title: "Instalação & Guia de Uso",
+      title: t("triton_docs.tab_instalacao", "Instalação & Guia de Uso"),
       icon: Terminal,
-      badge: "Windows & Python",
+      badge: t("triton_docs.tab_instalacao_badge", "Windows & Python"),
     },
   ];
 
@@ -67,14 +67,13 @@ export default function TritonDocs() {
           <div className="relative z-10 space-y-3">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-800 dark:bg-blue-950/70 dark:text-blue-300 border border-blue-200 dark:border-blue-800/80 text-xs font-black uppercase tracking-wider">
               <BookOpen className="w-3.5 h-3.5" />
-              <span>Documentação Técnica Oficial</span>
+              <span>{t("triton_docs.badge", "Documentação Técnica Oficial")}</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-              Documentação do Triton
+              {t("triton_docs.title", "Documentação do Triton")}
             </h1>
             <p className="text-slate-600 dark:text-zinc-300 text-sm sm:text-base font-medium max-w-2xl leading-relaxed">
-              Consulte a fundamentação matemática, equações do balanço hídrico diário (Yield-After-Spillage),
-              modelagem tarifária escalonada, ACV cradle-to-grave e os manuais técnicos de cada edição.
+              {t("triton_docs.subtitle", "Consulte a fundamentação matemática, equações do balanço hídrico diário (Yield-After-Spillage), modelagem tarifária escalonada, ACV cradle-to-grave e os manuais técnicos de cada edição.")}
             </p>
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
@@ -83,7 +82,7 @@ export default function TritonDocs() {
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all"
               >
                 <Download className="w-4 h-4" />
-                <span>Solicitar Manuais & Instalador</span>
+                <span>{t("triton_docs.btn_request_manuals", "Solicitar Manuais & Instalador")}</span>
               </Link>
               <a
                 href="https://github.com/igorcmvaz/triton"
@@ -92,7 +91,7 @@ export default function TritonDocs() {
                 className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-200 font-semibold text-xs sm:text-sm border border-slate-300 dark:border-zinc-700 transition-colors"
               >
                 <Code2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                <span>Código-fonte no GitHub</span>
+                <span>{t("triton_docs.btn_github", "Código-fonte no GitHub")}</span>
                 <ExternalLink className="w-3 h-3 opacity-70" />
               </a>
             </div>
@@ -103,7 +102,7 @@ export default function TritonDocs() {
         <section className="space-y-3">
           <h2 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white flex items-center gap-2">
             <FileText className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-            <span>Manuais Técnicos por Edição (PDF)</span>
+            <span>{t("triton_docs.manuals_section_title", "Manuais Técnicos por Edição (PDF)")}</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -112,22 +111,22 @@ export default function TritonDocs() {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-[11px] font-black px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800 dark:bg-emerald-950/70 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
-                    Edição Brasil
+                    {t("triton_docs.manual_brl_badge", "Edição Brasil")}
                   </span>
-                  <span className="text-xs text-slate-400 dark:text-zinc-500 font-bold">138 páginas</span>
+                  <span className="text-xs text-slate-400 dark:text-zinc-500 font-bold">{t("triton_docs.manual_brl_pages", "138 páginas")}</span>
                 </div>
                 <h3 className="font-black text-sm text-slate-900 dark:text-white">
-                  Manual Triton Brasil (BRL)
+                  {t("triton_docs.manual_brl_title", "Manual Triton Brasil (BRL)")}
                 </h3>
                 <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
-                  Calibração das tarifas de água e esgoto de 652 cidades, séries CLIMBra (histórico e projeções CMIP6), ABNT NBR 15527 e NBR 5626.
+                  {t("triton_docs.manual_brl_desc", "Calibração das tarifas de água e esgoto de 652 cidades, séries CLIMBra (histórico e projeções CMIP6), ABNT NBR 15527 e NBR 5626.")}
                 </p>
               </div>
               <Link
                 to="/triton#download"
                 className="inline-flex items-center justify-center gap-1.5 text-xs font-bold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 pt-2 border-t border-slate-100 dark:border-zinc-800"
               >
-                <span>Solicitar PDF do Manual</span>
+                <span>{t("triton_docs.btn_request_pdf", "Solicitar PDF do Manual")}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -137,22 +136,22 @@ export default function TritonDocs() {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-[11px] font-black px-2 py-0.5 rounded-md bg-rose-50 text-rose-800 dark:bg-rose-950/70 dark:text-rose-300 border border-rose-200 dark:border-rose-800">
-                    Edição Ibérica
+                    {t("triton_docs.manual_ibe_badge", "Edição Ibérica")}
                   </span>
-                  <span className="text-xs text-slate-400 dark:text-zinc-500 font-bold">124 páginas</span>
+                  <span className="text-xs text-slate-400 dark:text-zinc-500 font-bold">{t("triton_docs.manual_ibe_pages", "124 páginas")}</span>
                 </div>
                 <h3 className="font-black text-sm text-slate-900 dark:text-white">
-                  Manual Triton Ibérica (IBE)
+                  {t("triton_docs.manual_ibe_title", "Manual Triton Ibérica (IBE)")}
                 </h3>
                 <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
-                  Redação em Português Europeu, tarifários ERSAR e municípios espanhóis em Euros (€), séries Iberia01 / E-OBS e norma EN 16941-1.
+                  {t("triton_docs.manual_ibe_desc", "Redação em Português Europeu, tarifários ERSAR e municípios espanhóis em Euros (€), séries Iberia01 / E-OBS e norma EN 16941-1.")}
                 </p>
               </div>
               <Link
                 to="/triton#download"
                 className="inline-flex items-center justify-center gap-1.5 text-xs font-bold text-rose-600 hover:text-rose-700 dark:text-rose-400 pt-2 border-t border-slate-100 dark:border-zinc-800"
               >
-                <span>Solicitar PDF do Manual</span>
+                <span>{t("triton_docs.btn_request_pdf", "Solicitar PDF do Manual")}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -162,22 +161,22 @@ export default function TritonDocs() {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-[11px] font-black px-2 py-0.5 rounded-md bg-blue-50 text-blue-800 dark:bg-blue-950/70 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
-                    Edição Global
+                    {t("triton_docs.manual_int_badge", "Edição Global")}
                   </span>
-                  <span className="text-xs text-slate-400 dark:text-zinc-500 font-bold">116 pages</span>
+                  <span className="text-xs text-slate-400 dark:text-zinc-500 font-bold">{t("triton_docs.manual_int_pages", "116 pages")}</span>
                 </div>
                 <h3 className="font-black text-sm text-slate-900 dark:text-white">
-                  Triton International User Manual (INT)
+                  {t("triton_docs.manual_int_title", "Triton International User Manual (INT)")}
                 </h3>
                 <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
-                  Redação em Inglês, flexível para qualquer país e moeda, importação aberta de arquivos CSV de precipitação e conformidade ISO 14040/14044.
+                  {t("triton_docs.manual_int_desc", "Redação em Inglês, flexível para qualquer país e moeda, importação aberta de arquivos CSV de precipitação e conformidade ISO 14040/14044.")}
                 </p>
               </div>
               <Link
                 to="/triton#download"
                 className="inline-flex items-center justify-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-700 dark:text-blue-400 pt-2 border-t border-slate-100 dark:border-zinc-800"
               >
-                <span>Solicitar PDF do Manual</span>
+                <span>{t("triton_docs.btn_request_pdf", "Solicitar PDF do Manual")}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
