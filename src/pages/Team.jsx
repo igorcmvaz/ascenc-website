@@ -52,7 +52,7 @@ export default function Team() {
     },
     {
         "name": "Igor Catão Martins Vaz",
-        "role": "Doutorando",
+        "role": "Doutor",
         "image": "./assets/team/igorcmvaz.png",
         "orcid": "https://orcid.org/0000-0003-2433-223X",
         "lattes": "http://lattes.cnpq.br/3846201039408286",

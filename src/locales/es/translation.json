@@ -514,6 +514,7 @@
     "Pesquisador Doutorando": "Estudiante de Doctorado",
     "Pesquisadora Doutoranda": "Estudiante de Doctorado",
     "Doutorando": "Estudiante de Doctorado",
+    "Doutor": "Doctor",
     "Doutoranda": "Estudiante de Doctorado",
     "Pesquisador Mestrando": "Estudiante de Maestría",
     "Pesquisadora Mestranda": "Estudiante de Maestría",
@@ -867,7 +868,7 @@
     "tariff_item5": "Enlace o PDF del decreto tarifario oficial",
     "db_update_note": "¡Nuestro equipo actualizará la base de datos oficial SQLite para el próximo lanzamiento!",
     "team_title": "Desarrolladores & Coordinación",
-    "dev_role": "Desarrollador Principal • Doctorando en Ingeniería Civil",
+    "dev_role": "Desarrollador Principal • Doctor en Ingeniería Civil",
     "prof_role": "Coordinador del Grupo de Investigación Espacio Sostenible"
   }
 }

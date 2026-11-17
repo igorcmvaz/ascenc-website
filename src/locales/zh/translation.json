@@ -514,6 +514,7 @@
     "Pesquisador Doutorando": "博士研究生",
     "Pesquisadora Doutoranda": "博士研究生",
     "Doutorando": "博士研究生",
+    "Doutor": "博士",
     "Doutoranda": "博士研究生",
     "Pesquisador Mestrando": "硕士研究生",
     "Pesquisadora Mestranda": "硕士研究生",
@@ -868,7 +869,7 @@
     "tariff_item5": "官方调价文件链接或 PDF 文件",
     "db_update_note": "课题组将在下一版本中将经核实的数据纳入官方 SQLite 数据库！",
     "team_title": "研发人员与团队领导",
-    "dev_role": "核心开发者 • 土木工程博士候选人",
+    "dev_role": "核心开发者 • 土木工程博士",
     "prof_role": "可持续环境研究组负责人 • 教授"
   }
 }

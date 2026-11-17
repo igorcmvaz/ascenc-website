@@ -276,7 +276,7 @@ ${formData.message}`;
               <div className="space-y-2 text-xs text-slate-600 dark:text-zinc-300">
                 <div>
                   <p className="font-bold text-slate-900 dark:text-white">Igor Catão Martins Vaz</p>
-                  <p className="text-slate-500 dark:text-zinc-400">{t("triton_contact.dev_role", "Desenvolvedor Principal • Doutorando em Engenharia Civil")}</p>
+                  <p className="text-slate-500 dark:text-zinc-400">{t("triton_contact.dev_role", "Desenvolvedor Principal • Doutor em Engenharia Civil")}</p>
                   <a href="mailto:igorcmvaz@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">
                     igorcmvaz@gmail.com
                   </a>

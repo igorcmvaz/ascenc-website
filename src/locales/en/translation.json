@@ -520,6 +520,7 @@
     "Pesquisador Doutorando": "PhD Student",
     "Pesquisadora Doutoranda": "PhD Student",
     "Doutorando": "PhD Student",
+    "Doutor": "PhD",
     "Doutoranda": "PhD Student",
     "Pesquisador Mestrando": "Master's Student",
     "Pesquisadora Mestranda": "Master's Student",
@@ -873,7 +874,7 @@
     "tariff_item5": "Link or PDF of the official tariff decree",
     "db_update_note": "Our team will update the official SQLite database for the upcoming release!",
     "team_title": "Developers & Coordination",
-    "dev_role": "Lead Developer • Ph.D. Candidate in Civil Engineering",
+    "dev_role": "Lead Developer • PhD in Civil Engineering",
     "prof_role": "Head of the Sustainable Environments Research Group"
   }
 }
