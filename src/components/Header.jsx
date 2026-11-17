@@ -302,7 +302,7 @@ export default function Header() {
                 >
                   <span className="flex items-center gap-2">
                     <img src="./assets/triton/triton-brl.png" alt="Triton" className="w-5 h-5 object-contain" />
-                    <span>Triton (Início)</span>
+                    <span>{t("ges_header.triton_home", "Triton (Início)")}</span>
                   </span>
                   <span className="text-[9px] font-black bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 rounded px-1.5 py-0.5 uppercase tracking-wide mr-4">
                     v0.2.0 Beta

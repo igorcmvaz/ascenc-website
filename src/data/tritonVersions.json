@@ -1,0 +1,131 @@
+[
+  {
+    "version": "0.2.0",
+    "isLatest": true,
+    "date": {
+      "pt-BR": "11 de novembro de 2026",
+      "en": "11 November 2026",
+      "es": "11 de noviembre de 2026",
+      "zh": "2026年11月11日"
+    },
+    "githubUrl": "https://github.com/igorcmvaz/triton/releases/tag/v0.2.0-beta",
+    "summary": {
+      "pt-BR": "A decisão multicritério foi refeita: oito critérios em quatro eixos, uma faixa de volumes de resultado semelhante e pesos objetivos pelo CRITIC.",
+      "en": "The multi-criteria decision was rebuilt: eight criteria in four dimensions, a band of volumes with similar results and objective CRITIC weights.",
+      "es": "La decisión multicriterio se rehizo: ocho criterios en cuatro ejes, una franja de volúmenes con resultados similares y pesos objetivos por CRITIC.",
+      "zh": "多准则决策全面重构：四个维度共八项准则、结果相近的容积区间，以及基于 CRITIC 的客观权重。"
+    },
+    "added": [
+      {
+        "pt-BR": "Oito critérios em quatro eixos: técnico, econômico, ambiental e estrutural",
+        "en": "Eight criteria in four dimensions: technical, economic, environmental and structural",
+        "es": "Ocho criterios en cuatro ejes: técnico, económico, ambiental y estructural",
+        "zh": "四个维度八项准则：技术、经济、环境与结构"
+      },
+      {
+        "pt-BR": "Faixa de escolha: os volumes com escore a até 5% da amplitude do melhor, em vez de um volume só",
+        "en": "Choice band: the volumes scoring within 5% of the range from the best, instead of a single volume",
+        "es": "Franja de elección: los volúmenes con puntuación a menos del 5% de la amplitud respecto al mejor, en lugar de un solo volumen",
+        "zh": "选择区间：给出得分与最优相差不超过分值幅度 5% 的全部容积，而不是单一容积"
+      },
+      {
+        "pt-BR": "Pesos objetivos pelo método CRITIC, calculados dos próprios resultados",
+        "en": "Objective weights by the CRITIC method, computed from the results themselves",
+        "es": "Pesos objetivos por el método CRITIC, calculados a partir de los propios resultados",
+        "zh": "基于结果本身计算的 CRITIC 客观权重"
+      },
+      {
+        "pt-BR": "Peso do sistema: massa a seco e carga em operação, por nível da edificação",
+        "en": "System weight: dry mass and operating load, by building level",
+        "es": "Peso del sistema: masa en seco y carga en operación, por nivel del edificio",
+        "zh": "系统重量：按建筑楼层给出干重与运行荷载"
+      },
+      {
+        "pt-BR": "Custo nivelado da água (LCOW) na análise econômica",
+        "en": "Levelised cost of water (LCOW) in the economic analysis",
+        "es": "Costo nivelado del agua (LCOW) en el análisis económico",
+        "zh": "经济分析新增平准化用水成本（LCOW）"
+      }
+    ],
+    "changed": [
+      {
+        "pt-BR": "O volume indicado pelo multicritério muda. No tutorial, o TOPSIS passa de 4.000 L para 2.000 L; para reproduzir um estudo da 0.1.0, use a 0.1.0",
+        "en": "The volume indicated by the multi-criteria decision changes. In the tutorial, TOPSIS moves from 4,000 L to 2,000 L; to reproduce a study made with 0.1.0, use 0.1.0",
+        "es": "El volumen indicado por el análisis multicriterio cambia. En el tutorial, TOPSIS pasa de 4.000 L a 2.000 L; para reproducir un estudio hecho con la 0.1.0, use la 0.1.0",
+        "zh": "多准则决策推荐的容积会改变。教程中 TOPSIS 由 4000 L 变为 2000 L；如需复现 0.1.0 的研究，请使用 0.1.0"
+      }
+    ],
+    "fixed": [
+      {
+        "pt-BR": "Faixa com um só volume, ou com lacunas, descrita corretamente na interface, no HTML e na linha de comando",
+        "en": "A band with a single volume, or with gaps, is now described correctly in the interface, the HTML report and the command line",
+        "es": "Una franja con un solo volumen, o con huecos, se describe ahora correctamente en la interfaz, el informe HTML y la línea de comandos",
+        "zh": "仅含一个容积或不连续的区间，在界面、HTML 报告和命令行中均能正确描述"
+      },
+      {
+        "pt-BR": "O relatório da linha de comando diz o critério da melhor alternativa econômica e dá o payback em anos",
+        "en": "The command-line report states the criterion of the best economic alternative and gives the payback in years",
+        "es": "El informe de la línea de comandos indica el criterio de la mejor alternativa económica y da el retorno en años",
+        "zh": "命令行报告说明最佳经济方案的判定准则，并以年为单位给出回收期"
+      }
+    ]
+  },
+  {
+    "version": "0.1.0",
+    "isLatest": false,
+    "date": {
+      "pt-BR": "5 de novembro de 2026",
+      "en": "5 November 2026",
+      "es": "5 de noviembre de 2026",
+      "zh": "2026年11月5日"
+    },
+    "githubUrl": "https://github.com/igorcmvaz/triton/releases/tag/v0.1.0-beta",
+    "summary": {
+      "pt-BR": "Primeira versão beta do Triton, derivada do Netuno 5.0.1, em três edições: Brasil, Ibérica e Internacional.",
+      "en": "First beta of Triton, derived from Netuno 5.0.1, in three editions: Brasil, Ibérica and International.",
+      "es": "Primera versión beta de Triton, derivada de Netuno 5.0.1, en tres ediciones: Brasil, Ibérica e Internacional.",
+      "zh": "Triton 首个测试版，源自 Netuno 5.0.1，分为巴西版、伊比利亚版和国际版三个版本。"
+    },
+    "added": [
+      {
+        "pt-BR": "Três programas com nome próprio, um por edição, no mesmo repositório e com a mesma numeração",
+        "en": "Three programs with their own names, one per edition, in one repository and with one version number",
+        "es": "Tres programas con nombre propio, uno por edición, en el mismo repositorio y con la misma numeración",
+        "zh": "每个版本各自独立命名的三个程序，共用一个代码库和同一版本号"
+      },
+      {
+        "pt-BR": "Edição Brasil: base de chuva CLIMBra para 652 municípios, com 19 modelos do CMIP6 (histórico, SSP2-4.5 e SSP5-8.5)",
+        "en": "Brasil edition: CLIMBra rainfall database for 652 municipalities, with 19 CMIP6 models (historical, SSP2-4.5 and SSP5-8.5)",
+        "es": "Edición Brasil: base de lluvia CLIMBra para 652 municipios, con 19 modelos CMIP6 (histórico, SSP2-4.5 y SSP5-8.5)",
+        "zh": "巴西版：覆盖 652 个城市的 CLIMBra 降雨数据库，含 19 个 CMIP6 模型（历史期、SSP2-4.5 与 SSP5-8.5）"
+      },
+      {
+        "pt-BR": "Edição Brasil: tarifas de água e esgoto de 652 municípios, conferidas por prestador",
+        "en": "Brasil edition: water and sewage tariffs for 652 municipalities, checked provider by provider",
+        "es": "Edición Brasil: tarifas de agua y alcantarillado de 652 municipios, verificadas por prestador",
+        "zh": "巴西版：652 个城市的供水与污水费率，逐一核对供水企业"
+      },
+      {
+        "pt-BR": "CAPEX e OPEX calculados a partir de um catálogo de referência, que o usuário pode substituir",
+        "en": "CAPEX and OPEX computed from a reference catalogue, which the user can override",
+        "es": "CAPEX y OPEX calculados a partir de un catálogo de referencia, que el usuario puede sustituir",
+        "zh": "根据参考目录计算 CAPEX 与 OPEX，用户可自行替换"
+      },
+      {
+        "pt-BR": "Estudos em lote com o comando triton estudo",
+        "en": "Batch studies with the triton estudo command",
+        "es": "Estudios por lotes con el comando triton estudo",
+        "zh": "通过 triton estudo 命令进行批量研究"
+      }
+    ],
+    "changed": [],
+    "fixed": [
+      {
+        "pt-BR": "Nome, logo, pacote e extensão dos arquivos de projeto (.triton) mudaram; o cálculo é o do Netuno 5.0.1",
+        "en": "The name, logo, package and project-file extension (.triton) changed; the calculation is that of Netuno 5.0.1",
+        "es": "Cambiaron el nombre, el logotipo, el paquete y la extensión de los archivos de proyecto (.triton); el cálculo es el de Netuno 5.0.1",
+        "zh": "名称、标志、程序包和项目文件扩展名（.triton）均已更改；计算方法与 Netuno 5.0.1 相同"
+      }
+    ]
+  }
+]

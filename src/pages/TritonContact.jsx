@@ -294,7 +294,7 @@ ${formData.message}`;
                   <MapPin className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
                   <span>
                     Universidade Federal de Santa Catarina (UFSC)<br />
-                    Departamento de Engenharia Civil • Campus Trindade<br />
+                    {t("triton_contact.department", "Departamento de Engenharia Civil • Campus Trindade")}<br />
                     Florianópolis - SC, Brasil • CEP 88040-900
                   </span>
                 </div>

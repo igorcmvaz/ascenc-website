@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PageLayout from "../components/PageLayout";
 import TritonSubNav from "../components/TritonSubNav";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import {
   BookOpen,
   FileText,
@@ -207,19 +207,16 @@ export default function TritonDocs() {
             })}
           </div>
 
-          {/* 1. Balanço Hídrico Diário */}
+          {/* 1. Balanço hídrico diário */}
           {activeSection === "balanco" && (
             <div className="space-y-5 animate-in fade-in duration-200">
               <div className="space-y-1">
                 <span className="text-[11px] font-black uppercase text-blue-600 dark:text-blue-400 tracking-wider">
-                  Algoritmo Fundamental
+                  {t("triton_docs.bal_kicker")}
                 </span>
-                <h3 className="text-xl font-black text-slate-900 dark:text-white">
-                  Balanço Hídrico Contínuo Diário (entre YAS e YBS)
-                </h3>
+                <h3 className="text-xl font-black text-slate-900 dark:text-white">{t("triton_docs.bal_title")}</h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-300 leading-relaxed">
-                  O Triton realiza a simulação diária com passo de tempo de 24 horas ao longo de toda a série histórica ou projetada de precipitação pluviométrica.
-                  O extravasamento é calculado antes da retirada da demanda, como na regra <strong>Yield-After-Spillage (YAS)</strong>, mas a chuva do próprio dia, até a capacidade do reservatório, já atende a demanda do dia, como na <strong>Yield-Before-Spillage (YBS)</strong>. Por isso o volume consumido fica sempre entre o das duas regras estritas (Fewkes e Butler, 2000).
+                  <Trans i18nKey="triton_docs.bal_intro" components={{ b: <strong /> }} />
                 </p>
               </div>
 
@@ -227,275 +224,213 @@ export default function TritonDocs() {
                 <div className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-2">
                   <h4 className="text-xs font-black uppercase tracking-wider text-slate-800 dark:text-zinc-200 flex items-center gap-1.5">
                     <Droplet className="w-3.5 h-3.5 text-blue-500" />
-                    Balanço de Massa no Dia t
+                    {t("triton_docs.bal_mass_title")}
                   </h4>
                   <div className="font-mono text-xs p-3 rounded-xl bg-slate-100 text-slate-900 dark:bg-zinc-950 dark:text-emerald-400 border border-slate-200 dark:border-zinc-800 overflow-x-auto">
                     V_t = min(V_max, V_{"{t-1}"} + Q_in,t) - Y_t
                   </div>
                   <ul className="text-xs text-slate-600 dark:text-zinc-300 space-y-1 pt-1 list-disc list-inside">
-                    <li><strong>V_t:</strong> Volume armazenado no final do dia t (litros ou m³)</li>
-                    <li><strong>Q_in,t:</strong> Volume captado após desconto de first-flush e escoamento superficial (runoff)</li>
-                    <li><strong>Y_t:</strong> Volume fornecido para atender as demandas não potáveis</li>
-                    <li><strong>V_max:</strong> Capacidade útil do reservatório de armazenamento</li>
+                    <li><strong>V_t:</strong> {t("triton_docs.bal_vt")}</li>
+                    <li><strong>Q_in,t:</strong> {t("triton_docs.bal_qin")}</li>
+                    <li><strong>Y_t:</strong> {t("triton_docs.bal_yt")}</li>
+                    <li><strong>V_max:</strong> {t("triton_docs.bal_vmax")}</li>
                   </ul>
                 </div>
 
                 <div className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-2">
                   <h4 className="text-xs font-black uppercase tracking-wider text-slate-800 dark:text-zinc-200 flex items-center gap-1.5">
                     <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
-                    Descarte de Primeiras Águas (First-Flush)
+                    {t("triton_docs.ff_title")}
                   </h4>
                   <p className="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
-                    O Triton permite configurar o dispositivo de descarte inicial tanto por <strong>volume absoluto fixo</strong> (litros) quanto por <strong>lâmina precipitada inicial</strong> (milímetros sobre a área de captação).
+                    <Trans i18nKey="triton_docs.ff_desc" components={{ b: <strong /> }} />
                   </p>
                   <div className="font-mono text-xs p-3 rounded-xl bg-slate-100 text-slate-900 dark:bg-zinc-950 dark:text-emerald-400 border border-slate-200 dark:border-zinc-800 overflow-x-auto">
-                    Q_in,t = max(0, (P_t - FF) × A_cobertura × C_runoff × η_filtro)
+                    Q_in,t = max(0, P_t - FF) × A × C
                   </div>
-                  <p className="text-[11px] text-slate-500 dark:text-zinc-400">
-                    Onde FF é a lâmina de descarte (tipicamente 1 a 2 mm, conforme ABNT NBR 15527 e EN 16941-1).
-                  </p>
+                  <p className="text-[11px] text-slate-500 dark:text-zinc-400">{t("triton_docs.ff_note")}</p>
                 </div>
               </div>
 
               <div className="p-4 rounded-2xl bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900/60 space-y-2">
                 <h4 className="text-xs font-black uppercase tracking-wider text-blue-900 dark:text-blue-300">
-                  Tanque Único vs. Dois Tanques (Cisterna + Reservatório Superior)
+                  {t("triton_docs.tanks_title")}
                 </h4>
                 <p className="text-xs text-slate-700 dark:text-zinc-300 leading-relaxed">
-                  Para edificações com alimentação por gravidade, o Triton modela a dinâmica de <strong>tanques duplos</strong>: uma cisterna inferior (armazenamento principal) e um reservatório superior com boia de nível e bomba de recalque. O cálculo computa com precisão o consumo de energia elétrica de bombeamento (kWh/ano) e o volume de água de chuva disponibilizado na rede predial.
+                  <Trans i18nKey="triton_docs.tanks_desc" components={{ b: <strong /> }} />
                 </p>
               </div>
             </div>
           )}
 
-          {/* 2. Engenharia Econômica */}
+          {/* 2. Engenharia econômica */}
           {activeSection === "economia" && (
             <div className="space-y-5 animate-in fade-in duration-200">
               <div className="space-y-1">
                 <span className="text-[11px] font-black uppercase text-emerald-600 dark:text-emerald-400 tracking-wider">
-                  Avaliação Financeira Realista
+                  {t("triton_docs.eco_kicker")}
                 </span>
-                <h3 className="text-xl font-black text-slate-900 dark:text-white">
-                  Engenharia Econômica & Estrutura Tarifária
-                </h3>
+                <h3 className="text-xl font-black text-slate-900 dark:text-white">{t("triton_docs.eco_title")}</h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-300 leading-relaxed">
-                  Diferente de cálculos simplistas baseados em tarifa média fixa, o Triton implementa a <strong>fórmula exata de cobrança progressiva por blocos de consumo</strong> das concessionárias de saneamento.
+                  <Trans i18nKey="triton_docs.eco_intro" components={{ b: <strong /> }} />
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-1.5">
-                  <span className="text-xs font-black text-slate-900 dark:text-white">VPL (Valor Presente Líquido)</span>
-                  <div className="font-mono text-xs p-2 rounded-xl bg-slate-100 text-slate-900 dark:bg-zinc-950 dark:text-emerald-400 border border-slate-200 dark:border-zinc-800">
-                    VPL = ∑ [FC_t / (1 + i)^t] - I_0
+                {[
+                  ["npv", "VPL = Σ FC_t / (1 + i)^t − I_0"],
+                  ["irr", "VPL(TIR) = 0"],
+                  ["lcow", "LCOW = (I_0 + Σ C_t/(1+i)^t) / Σ W_t/(1+i)^t"],
+                ].map(([chave, formula]) => (
+                  <div key={chave} className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-1.5">
+                    <span className="text-xs font-black text-slate-900 dark:text-white">{t(`triton_docs.${chave}_title`)}</span>
+                    <div className="font-mono text-xs p-2 rounded-xl bg-slate-100 text-slate-900 dark:bg-zinc-950 dark:text-emerald-400 border border-slate-200 dark:border-zinc-800 overflow-x-auto">
+                      {formula}
+                    </div>
+                    <p className="text-xs text-slate-600 dark:text-zinc-400 pt-1">{t(`triton_docs.${chave}_desc`)}</p>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-zinc-400 pt-1">
-                    Fluxo de caixa descontado considerando inflação da tarifa de água, custos de energia e manutenção periódica.
-                  </p>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-1.5">
-                  <span className="text-xs font-black text-slate-900 dark:text-white">TIR & Payback Descontado</span>
-                  <div className="font-mono text-xs p-2 rounded-xl bg-slate-100 text-slate-900 dark:bg-zinc-950 dark:text-emerald-400 border border-slate-200 dark:border-zinc-800">
-                    VPL(TIR) = 0
-                  </div>
-                  <p className="text-xs text-slate-600 dark:text-zinc-400 pt-1">
-                    Determinação do tempo exato de retorno do investimento frente a uma taxa mínima de atratividade (TMA).
-                  </p>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-1.5">
-                  <span className="text-xs font-black text-slate-900 dark:text-white">LCOW (Custo Nivelado)</span>
-                  <div className="font-mono text-xs p-2 rounded-xl bg-slate-100 text-slate-900 dark:bg-zinc-950 dark:text-emerald-400 border border-slate-200 dark:border-zinc-800">
-                    LCOW = CAPEX + OPEX_VP / ∑ Água_t
-                  </div>
-                  <p className="text-xs text-slate-600 dark:text-zinc-400 pt-1">
-                    Custo nivelado por m³ de água pluvial produzida ao longo de 20 a 50 anos de vida útil do sistema.
-                  </p>
-                </div>
+                ))}
               </div>
 
               <div className="p-4 rounded-2xl bg-emerald-50/60 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/60 space-y-2">
                 <h4 className="text-xs font-black uppercase tracking-wider text-emerald-900 dark:text-emerald-300">
-                  Tarifas Progressivas em Cascata (652 Municípios Cadastrados)
+                  {t("triton_docs.tariff_title")}
                 </h4>
                 <p className="text-xs text-slate-700 dark:text-zinc-300 leading-relaxed">
-                  A economia financeira gerada por um sistema de água de chuva reduz o volume consumido da concessionária nas <strong>faixas marginais mais caras</strong>. O Triton calcula a conta mensal de água e esgoto antes e depois do sistema, aplicando os decretos tarifários vigentes, tarifas mínimas e percentuais de esgotamento sanitário específicos da localidade.
+                  <Trans i18nKey="triton_docs.tariff_desc" components={{ b: <strong /> }} />
                 </p>
               </div>
             </div>
           )}
 
-          {/* 3. Avaliação de Ciclo de Vida (ACV) */}
+          {/* 3. Avaliação do ciclo de vida */}
           {activeSection === "acv" && (
             <div className="space-y-5 animate-in fade-in duration-200">
               <div className="space-y-1">
                 <span className="text-[11px] font-black uppercase text-teal-600 dark:text-teal-400 tracking-wider">
-                  Sustentabilidade & Carbono
+                  {t("triton_docs.lca_kicker")}
                 </span>
-                <h3 className="text-xl font-black text-slate-900 dark:text-white">
-                  Avaliação do Ciclo de Vida (ACV) Cradle-to-Grave
-                </h3>
+                <h3 className="text-xl font-black text-slate-900 dark:text-white">{t("triton_docs.lca_title")}</h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-300 leading-relaxed">
-                  O Triton é a primeira ferramenta de simulação contínua brasileira a integrar a <strong>pegada de carbono incorporada e operacional</strong> diretamente na tomada de decisão de dimensionamento.
+                  <Trans i18nKey="triton_docs.lca_intro" components={{ b: <strong /> }} />
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-2">
-                  <h4 className="text-xs font-black uppercase text-slate-800 dark:text-zinc-200">
-                    Emissões Incorporadas da Infraestrutura
-                  </h4>
-                  <p className="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
-                    Contabiliza as emissões de gases de efeito estufa (kg CO₂eq) associadas à extração de matéria-prima, fabricação e transporte de:
-                  </p>
+                  <h4 className="text-xs font-black uppercase text-slate-800 dark:text-zinc-200">{t("triton_docs.lca_emb_title")}</h4>
+                  <p className="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">{t("triton_docs.lca_emb_desc")}</p>
                   <ul className="text-xs text-slate-600 dark:text-zinc-300 space-y-1 list-disc list-inside">
-                    <li>Reservatórios (Polietileno de alta densidade, concreto armado ou fibra)</li>
-                    <li>Conjunto motobomba e pressurizador predial</li>
-                    <li>Tubulações em PVC rígido e conexões hidráulicas</li>
-                    <li>Filtros autolimpantes de primeiras águas</li>
+                    {["lca_item1", "lca_item2", "lca_item3", "lca_item4"].map((chave) => (
+                      <li key={chave}>{t(`triton_docs.${chave}`)}</li>
+                    ))}
                   </ul>
                 </div>
 
                 <div className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-2">
-                  <h4 className="text-xs font-black uppercase text-slate-800 dark:text-zinc-200">
-                    Créditos Ambientais da Água Evitada
-                  </h4>
-                  <p className="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
-                    A cada metro cúbico de água potável poupada da rede pública, evita-se a captação, tratamento químico intensivo e bombeamento das adutoras da concessionária:
-                  </p>
-                  <div className="font-mono text-xs p-3 rounded-xl bg-slate-100 text-slate-900 dark:bg-zinc-950 dark:text-teal-300 border border-slate-200 dark:border-zinc-800">
-                    Balanço_CO2 = ∑ (Água_poupada × Fator_rede) - (Emissões_materiais + Emissões_bombeamento)
+                  <h4 className="text-xs font-black uppercase text-slate-800 dark:text-zinc-200">{t("triton_docs.lca_avoid_title")}</h4>
+                  <p className="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">{t("triton_docs.lca_avoid_desc")}</p>
+                  <div className="font-mono text-xs p-3 rounded-xl bg-slate-100 text-slate-900 dark:bg-zinc-950 dark:text-teal-300 border border-slate-200 dark:border-zinc-800 overflow-x-auto">
+                    CO2_net = Σ (W_saved × EF_supply) − (E_materials + E_pumping)
                   </div>
                 </div>
               </div>
             </div>
           )}
 
-          {/* 4. Decisão Multicritério (MCDA) */}
+          {/* 4. Decisão multicritério */}
           {activeSection === "mcda" && (
             <div className="space-y-5 animate-in fade-in duration-200">
               <div className="space-y-1">
                 <span className="text-[11px] font-black uppercase text-purple-600 dark:text-purple-400 tracking-wider">
-                  Otimização de Projeto
+                  {t("triton_docs.mcda_kicker")}
                 </span>
-                <h3 className="text-xl font-black text-slate-900 dark:text-white">
-                  Tomada de Decisão Multicritério (4 Métodos)
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-300 leading-relaxed">
-                  Qual é o volume ideal de reservatório quando o maior retorno financeiro não coincide com a maior economia de água ou menor pegada de carbono?
-                  O Triton resolve esse dilema com 4 métodos consagrados de Pesquisa Operacional e MCDA:
-                </p>
+                <h3 className="text-xl font-black text-slate-900 dark:text-white">{t("triton_docs.mcda_title")}</h3>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-300 leading-relaxed">{t("triton_docs.mcda_intro")}</p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-1.5">
-                  <span className="text-xs font-black text-purple-700 dark:text-purple-300">1. TOPSIS</span>
-                  <p className="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
-                    Classifica as alternativas pela proximidade geométrica da Solução Ideal Positiva e distância da Solução Ideal Negativa.
-                  </p>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-1.5">
-                  <span className="text-xs font-black text-purple-700 dark:text-purple-300">2. VIKOR</span>
-                  <p className="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
-                    Focado na determinação de uma solução de compromisso, ponderando a utilidade da maioria e o pesar do opositor.
-                  </p>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-1.5">
-                  <span className="text-xs font-black text-purple-700 dark:text-purple-300">3. SMAA-VIKOR</span>
-                  <p className="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
-                    Análise Estocástica de Aceitabilidade Multicritério acoplada ao VIKOR para cenários de pesos incertos ou preferências desconhecidas.
-                  </p>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-1.5">
-                  <span className="text-xs font-black text-purple-700 dark:text-purple-300">4. PROMETHEE II</span>
-                  <p className="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
-                    Método de sobreclassificação com fluxos de preferências líquidos positivos e negativos para ordenação completa de capacidades.
-                  </p>
-                </div>
+                {[
+                  ["1. TOPSIS", "topsis_desc"],
+                  ["2. VIKOR", "vikor_desc"],
+                  ["3. SMAA-VIKOR", "smaa_desc"],
+                  ["4. PROMETHEE II", "promethee_desc"],
+                ].map(([nome, chave]) => (
+                  <div key={chave} className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-1.5">
+                    <span className="text-xs font-black text-purple-700 dark:text-purple-300">{nome}</span>
+                    <p className="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">{t(`triton_docs.${chave}`)}</p>
+                  </div>
+                ))}
               </div>
             </div>
           )}
 
-          {/* 5. Instalação & Guia de Uso */}
+          {/* 5. Instalação e uso */}
           {activeSection === "instalacao" && (
             <div className="space-y-5 animate-in fade-in duration-200">
               <div className="space-y-1">
                 <span className="text-[11px] font-black uppercase text-blue-600 dark:text-blue-400 tracking-wider">
-                  Guia Rápido
+                  {t("triton_docs.inst_kicker")}
                 </span>
-                <h3 className="text-xl font-black text-slate-900 dark:text-white">
-                  Instalação e Execução
-                </h3>
+                <h3 className="text-xl font-black text-slate-900 dark:text-white">{t("triton_docs.inst_title")}</h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-300 leading-relaxed">
-                  O Triton está disponível tanto na forma de <strong>instalador compilado autônomo para Microsoft Windows (.exe)</strong> quanto em <strong>código-fonte aberto em Python 3.12+</strong>.
+                  <Trans i18nKey="triton_docs.inst_intro" components={{ b: <strong /> }} />
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Instalador Windows */}
                 <div className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-3">
                   <h4 className="text-xs font-black uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-1.5">
                     <Download className="w-4 h-4 text-emerald-600" />
-                    Instalador Desktop (.exe)
+                    {t("triton_docs.inst_exe_title")}
                   </h4>
                   <ol className="text-xs text-slate-600 dark:text-zinc-300 space-y-2 list-decimal list-inside">
-                    <li>Solicite o acesso gratuito através da página oficial do portal UFSC.</li>
-                    <li>Execute o instalador <code className="font-mono text-slate-800 dark:text-zinc-200 bg-slate-200 dark:bg-zinc-700 px-1 py-0.5 rounded">Triton_Brasil_Setup_v0.1.0.exe</code>.</li>
-                    <li>Siga o assistente de instalação (compatível com Windows 10 e Windows 11).</li>
-                    <li>O programa cria um atalho na Área de Trabalho e traz embutido o banco de dados de tarifas e chuvas.</li>
+                    {["inst_step1", "inst_step2", "inst_step3", "inst_step4"].map((chave) => (
+                      <li key={chave}>{t(`triton_docs.${chave}`)}</li>
+                    ))}
                   </ol>
                 </div>
 
-                {/* Executar a partir do código-fonte */}
                 <div className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-3">
                   <h4 className="text-xs font-black uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-1.5">
                     <Code2 className="w-4 h-4 text-blue-600" />
-                    Executar via Python 3.12+
+                    {t("triton_docs.inst_py_title")}
                   </h4>
-                  <div className="font-mono text-[11px] p-3 rounded-xl bg-slate-100 text-slate-900 dark:bg-zinc-950 dark:text-emerald-400 border border-slate-200 dark:border-zinc-800 space-y-1">
-                    <p className="text-slate-500 dark:text-zinc-500"># Clonar repositório e acessar edição</p>
+                  <div className="font-mono text-[11px] p-3 rounded-xl bg-slate-100 text-slate-900 dark:bg-zinc-950 dark:text-emerald-400 border border-slate-200 dark:border-zinc-800 space-y-1 overflow-x-auto">
+                    <p className="text-slate-500 dark:text-zinc-500">{t("triton_docs.inst_py_c1")}</p>
                     <p>git clone https://github.com/igorcmvaz/triton.git</p>
                     <p>cd triton/triton_brl</p>
-                    <p className="text-slate-500 dark:text-zinc-500 pt-1"># Instalar dependências e executar</p>
+                    <p className="text-slate-500 dark:text-zinc-500 pt-1">{t("triton_docs.inst_py_c2")}</p>
                     <p>pip install -r requirements.txt</p>
                     <p>python main.py</p>
                   </div>
                 </div>
               </div>
 
-              {/* Formatação CSV de chuva */}
               <div className="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700/80 space-y-2">
                 <h4 className="text-xs font-black uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-1.5">
                   <Database className="w-4 h-4 text-indigo-500" />
-                  Como importar séries de chuva personalizadas (.CSV)
+                  {t("triton_docs.csv_title")}
                 </h4>
                 <p className="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
-                  Para importar medições pluviométricas locais ou dados de pluviômetros próprios, estruture o arquivo CSV com codificação UTF-8 e duas colunas:
+                  <Trans i18nKey="triton_docs.csv_desc" components={{ b: <strong /> }} />
                 </p>
                 <div className="font-mono text-xs p-3 rounded-xl bg-slate-100 text-slate-900 dark:bg-zinc-950 dark:text-emerald-400 border border-slate-200 dark:border-zinc-800 overflow-x-auto">
-                  data,precipitacao_mm<br />
-                  2020-01-01,14.2<br />
-                  2020-01-02,0.0<br />
-                  2020-01-03,32.6
+                  {t("triton_docs.csv_header")}<br />
+                  14,2<br />
+                  0<br />
+                  32,6
                 </div>
               </div>
             </div>
           )}
         </section>
 
-        {/* ── CARD DE CHAMADA PARA DOWNLOAD OU SUPORTE ── */}
+        {/* ── CHAMADA PARA DOWNLOAD OU SUPORTE ── */}
         <div className="p-6 rounded-3xl bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="space-y-1 text-center sm:text-left">
-            <h3 className="font-black text-slate-900 dark:text-white text-base">
-              Precisa do instalador ou tem dúvidas técnicas?
-            </h3>
-            <p className="text-xs text-slate-600 dark:text-zinc-400">
-              Solicite o acesso oficial ou entre em contato direto com a equipe de desenvolvimento da UFSC.
-            </p>
+            <h3 className="font-black text-slate-900 dark:text-white text-base">{t("triton_docs.cta_title")}</h3>
+            <p className="text-xs text-slate-600 dark:text-zinc-400">{t("triton_docs.cta_desc")}</p>
           </div>
           <div className="flex items-center gap-2 shrink-0">
             <Link
@@ -503,13 +438,13 @@ export default function TritonDocs() {
               className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-all"
             >
               <Download className="w-3.5 h-3.5" />
-              <span>Solicitar Download</span>
+              <span>{t("triton_docs.cta_download")}</span>
             </Link>
             <Link
               to="/triton/contato"
               className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white hover:bg-slate-100 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-slate-800 dark:text-zinc-100 font-bold text-xs border border-slate-200 dark:border-zinc-700 transition-colors"
             >
-              <span>Contato & Sugestões</span>
+              <span>{t("triton_docs.cta_contact")}</span>
             </Link>
           </div>
         </div>
