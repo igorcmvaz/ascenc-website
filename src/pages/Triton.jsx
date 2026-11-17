@@ -34,25 +34,25 @@ import {
 } from "lucide-react";
 
 export const TRITON_CONFIG = {
-  version: "0.1.0",
+  version: "0.2.0",
   authorEmail: "igorcmvaz@gmail.com",
   releases: {
     brl: {
       id: "Triton Brasil (BRL)",
-      installer: "Triton_Brasil_Setup_v0.1.0.exe",
-      manual: "Manual_Triton_Brasil_v0.1.0.pdf",
+      installer: "Triton_Brasil_Setup_v0.2.0.exe",
+      manual: "Manual_Triton_Brasil_v0.2.0.pdf",
       icon: "./assets/triton/triton-brl.png",
     },
     ibe: {
       id: "Triton Ibérica (IBE)",
-      installer: "Triton_Iberica_Setup_v0.1.0.exe",
-      manual: "Manual_Triton_Iberica_v0.1.0_PT.pdf",
+      installer: "Triton_Iberica_Setup_v0.2.0.exe",
+      manual: "Manual_Triton_Iberica_v0.2.0_PT.pdf",
       icon: "./assets/triton/triton-prt.png",
     },
     int: {
       id: "Triton Internacional (INT)",
-      installer: "Triton_Internacional_Setup_v0.1.0.exe",
-      manual: "Manual_Triton_Internacional_v0.1.0_EN.pdf",
+      installer: "Triton_Internacional_Setup_v0.2.0.exe",
+      manual: "Manual_Triton_Internacional_v0.2.0_EN.pdf",
       icon: "./assets/triton/triton-int.png",
     },
   },
@@ -64,21 +64,21 @@ export function buildReplyEmailTemplate(name, edition) {
   if (edition === "Triton Brasil (BRL)") {
     return `Olá, ${recipientName}!
 
-Obrigado pelo seu interesse no Triton (v0.1.0 Beta), o sucessor oficial do software Netuno desenvolvido na UFSC.
+Obrigado pelo seu interesse no Triton (v0.2.0 Beta), o sucessor oficial do software Netuno desenvolvido na UFSC.
 
 Segue o link de acesso ao repositório oficial no Zenodo:
 [INSERIR LINK DO ZENODO AQUI]
 
 📦 QUAL ARQUIVO BAIXAR NO ZENODO:
 No link do Zenodo estão reunidas as três edições da plataforma (Brasil, Ibérica e Internacional). Para a sua solicitação, baixe especificamente os arquivos correspondentes à Edição Brasil:
-• Instalador: Triton_Brasil_Setup_v0.1.0.exe
-• Manual Técnico: Manual_Triton_Brasil_v0.1.0.pdf
+• Instalador: Triton_Brasil_Setup_v0.2.0.exe
+• Manual Técnico: Manual_Triton_Brasil_v0.2.0.pdf
 
 🔍 COLABORAÇÃO E REVISÃO DO DETALHAMENTO (VERSÃO BETA):
 A calibração das tarifas de água e esgoto (652 municípios), as séries de precipitação (CLIMBra / CMIP6) e os detalhes normativos (ABNT NBR 15527, NBR 5626 e Portaria GM/MS 888/2021) são específicos do modelo da Edição Brasil. Portanto, caso você identifique qualquer erro, tarifa desatualizada ou ponto de melhoria no detalhamento da sua cidade ou simulação, sua contribuição apontando esses ajustes por e-mail (igorcmvaz@gmail.com) será muito bem-vinda!
 
  COMO CITAR:
-Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Version 0.1.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brasil.
+Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Version 0.2.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brasil.
 
 Atenciosamente,
 Igor Catão Martins Vaz & Prof. Enedir Ghisi
@@ -88,21 +88,21 @@ Grupo de Pesquisa Espaço Sustentável — UFSC`;
   if (edition === "Triton Ibérica (IBE)") {
     return `Olá, ${recipientName}!
 
-Obrigado pelo seu interesse no Triton (v0.1.0 Beta), o sucessor oficial do software Netuno desenvolvido na UFSC.
+Obrigado pelo seu interesse no Triton (v0.2.0 Beta), o sucessor oficial do software Netuno desenvolvido na UFSC.
 
 Segue o link de acesso ao repositório oficial no Zenodo:
 [INSERIR LINK DO ZENODO AQUI]
 
 📦 QUAL FICHEIRO TRANSFERIR (BAIXAR) NO ZENODO:
 No link do Zenodo encontram-se reunidas as três edições da plataforma (Brasil, Ibérica e Internacional). Para o seu pedido, transfira especificamente os ficheiros correspondentes à Edição Ibérica:
-• Instalador: Triton_Iberica_Setup_v0.1.0.exe
-• Manual Técnico: Manual_Triton_Iberica_v0.1.0_PT.pdf
+• Instalador: Triton_Iberica_Setup_v0.2.0.exe
+• Manual Técnico: Manual_Triton_Iberica_v0.2.0_PT.pdf
 
 🔍 COLABORAÇÃO E REVISÃO DO DETALHAMENTO (VERSÃO BETA):
 A estruturação e correção de tarifários de água e saneamento (ERSAR em Portugal e municípios espanhóis em Euros), as séries de precipitação diária por concelho/município (Iberia01, ERA5 e E-OBS) e os detalhes normativos (EN 16941-1) são específicos do modelo da Edição Ibérica. Portanto, a sua colaboração é muito importante: caso identifique algum erro ou necessidade de ajuste nos tarifários, na precipitação ou no detalhamento técnico, por favor avise-nos respondendo a este e-mail (igorcmvaz@gmail.com).
 
 📖 COMO CITAR:
-Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Version 0.1.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brasil.
+Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Version 0.2.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brasil.
 
 Com os melhores cumprimentos,
 Igor Catão Martins Vaz & Prof. Enedir Ghisi
@@ -112,21 +112,21 @@ Grupo de Pesquisa Espaço Sustentável — UFSC`;
   if (edition === "Triton Internacional (INT)") {
     return `Olá, ${recipientName}! / Hello, ${recipientName}!
 
-Obrigado pelo seu interesse no Triton (v0.1.0 Beta) / Thank you for your interest in Triton (v0.1.0 Beta), the official successor to Netuno developed at UFSC.
+Obrigado pelo seu interesse no Triton (v0.2.0 Beta) / Thank you for your interest in Triton (v0.2.0 Beta), the official successor to Netuno developed at UFSC.
 
 Segue o link de acesso ao repositório oficial no Zenodo / Here is the official Zenodo repository link:
 [INSERIR LINK DO ZENODO AQUI / INSERT ZENODO LINK HERE]
 
 📦 QUAL ARQUIVO BAIXAR / WHICH FILE TO DOWNLOAD ON ZENODO:
 As três edições (Brasil, Ibérica e Internacional) estão hospedadas juntas na mesma página do Zenodo. Baixe especificamente os arquivos correspondentes à Edição Internacional:
-• Installer: Triton_Internacional_Setup_v0.1.0.exe
-• User Manual: Manual_Triton_Internacional_v0.1.0_EN.pdf
+• Installer: Triton_Internacional_Setup_v0.2.0.exe
+• User Manual: Manual_Triton_Internacional_v0.2.0_EN.pdf
 
 🔍 COLABORAÇÃO NO DETALHAMENTO / MODEL FEEDBACK (BETA):
 A parametrização de tarifas, precipitação (CSV) e detalhes operacionais são específicos de cada modelo e dos estudos de caso incluídos. Portanto, você pode ajudar no aprimoramento da ferramenta apontando eventuais erros ou sugestões no detalhamento diretamente para este e-mail (igorcmvaz@gmail.com).
 
 📖 COMO CITAR / HOW TO CITE:
-Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Version 0.1.0) [Computer software]. Federal University of Santa Catarina (UFSC), Florianópolis, SC, Brazil.
+Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Version 0.2.0) [Computer software]. Federal University of Santa Catarina (UFSC), Florianópolis, SC, Brazil.
 
 Atenciosamente / Best regards,
 Igor Catão Martins Vaz & Prof. Enedir Ghisi
@@ -135,22 +135,22 @@ Universidade Federal de Santa Catarina (UFSC)`;
 
   return `Olá, ${recipientName}!
 
-Obrigado pelo seu interesse no Triton (v0.1.0 Beta), o sucessor oficial do software Netuno desenvolvido na UFSC.
+Obrigado pelo seu interesse no Triton (v0.2.0 Beta), o sucessor oficial do software Netuno desenvolvido na UFSC.
 
 Segue o link de acesso ao repositório oficial no Zenodo:
 [INSERIR LINK DO ZENODO AQUI]
 
 📦 QUAIS ARQUIVOS BAIXAR NO ZENODO:
 As três edições do Triton estão reunidas nessa mesma página do Zenodo. Ao acessar, baixe o instalador (.exe) e o manual (.pdf) respectivos da edição que você for utilizar:
-1. Edição Brasil (BRL): Triton_Brasil_Setup_v0.1.0.exe + Manual_Triton_Brasil_v0.1.0.pdf
-2. Edição Ibérica (IBE): Triton_Iberica_Setup_v0.1.0.exe + Manual_Triton_Iberica_v0.1.0_PT.pdf
-3. Edição Internacional (INT): Triton_Internacional_Setup_v0.1.0.exe + Manual_Triton_Internacional_v0.1.0_EN.pdf
+1. Edição Brasil (BRL): Triton_Brasil_Setup_v0.2.0.exe + Manual_Triton_Brasil_v0.2.0.pdf
+2. Edição Ibérica (IBE): Triton_Iberica_Setup_v0.2.0.exe + Manual_Triton_Iberica_v0.2.0_PT.pdf
+3. Edição Internacional (INT): Triton_Internacional_Setup_v0.2.0.exe + Manual_Triton_Internacional_v0.2.0_EN.pdf
 
 🔍 COLABORAÇÃO E REVISÃO DO DETALHAMENTO (VERSÃO BETA):
 A correção e calibração de tarifas de água/esgoto, séries de precipitação e detalhes técnicos/normativos são específicas de cada modelo regional (Brasil com CLIMBra e 652 municípios; Ibérica com Iberia01/E-OBS e tarifários ERSAR; Internacional com séries abertas). Portanto, caso você encontre algum erro ou ponto de melhoria nas tarifas, dados de chuva ou no detalhamento do modelo, sua ajuda apontando essas correções por e-mail (igorcmvaz@gmail.com) será muito bem-vinda!
 
 📖 COMO CITAR:
-Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Version 0.1.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brasil.
+Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Version 0.2.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brasil.
 
 Atenciosamente,
 Igor Catão Martins Vaz & Prof. Enedir Ghisi
@@ -224,13 +224,13 @@ export default function Triton() {
     }
   };
 
-  const textCitation = `Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica) (Version 0.1.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brazil.`;
+  const textCitation = `Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica) (Version 0.2.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brazil.`;
 
   const bibtexCitation = `@software{vaz_ghisi_triton_2026,
   author       = {Vaz, Igor Catão Martins and Ghisi, Enedir},
   title        = {Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica)},
   year         = {2026},
-  version      = {0.1.0},
+  version      = {0.2.0},
   organization = {Universidade Federal de Santa Catarina (UFSC)},
   address      = {Florianópolis, SC, Brazil}
 }`;
@@ -341,7 +341,7 @@ export default function Triton() {
       `Pedido de Download do Triton (${formData.edition}) - ${formData.name}`
     );
     const body = encodeURIComponent(
-      `Olá, Igor!\n\nGostaria de solicitar o link de download do instalador (.exe) e manual (.pdf) do Triton v0.1.0 Beta.\n\n• Nome: ${formData.name}\n• E-mail: ${formData.email}\n• Instituição / Empresa: ${formData.institution}\n• Edição Desejada: ${formData.edition}\n• Finalidade: ${formData.purpose}\n\nObrigado(a)!`
+      `Olá, Igor!\n\nGostaria de solicitar o link de download do instalador (.exe) e manual (.pdf) do Triton v0.2.0 Beta.\n\n• Nome: ${formData.name}\n• E-mail: ${formData.email}\n• Instituição / Empresa: ${formData.institution}\n• Edição Desejada: ${formData.edition}\n• Finalidade: ${formData.purpose}\n\nObrigado(a)!`
     );
     window.location.href = `mailto:${TRITON_CONFIG.authorEmail}?subject=${subject}&body=${body}`;
 
@@ -382,7 +382,7 @@ export default function Triton() {
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-800 dark:bg-blue-500/20 dark:text-blue-300 border border-amber-200 dark:border-blue-400/30 text-xs font-bold uppercase tracking-wider">
                   <Sparkles className="w-3.5 h-3.5" />
-                  {t("triton.badge", "v0.1.0 Beta • Gratuito")}
+                  {t("triton.badge", "v0.2.0 Beta • Gratuito")}
                 </span>
               </div>
 
@@ -692,7 +692,7 @@ export default function Triton() {
             <div className="text-center space-y-1.5">
               <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-xs font-black uppercase tracking-wider">
                 <Mail className="w-3.5 h-3.5" />
-                {t("triton.form_badge", "Acesso Gratuito • v0.1.0 Beta")}
+                {t("triton.form_badge", "Acesso Gratuito • v0.2.0 Beta")}
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
                 {t("triton.form_title", "Solicitar Download do Instalador")}
@@ -895,7 +895,7 @@ export default function Triton() {
             </div>
 
             <p className="text-xs text-slate-700 dark:text-zinc-300 font-medium leading-relaxed border-l-2 border-emerald-500 dark:border-blue-500 pl-3 py-0.5">
-              Vaz, I. C. M., & Ghisi, E. (2026). <em>Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica)</em> (Version 0.1.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brazil.
+              Vaz, I. C. M., & Ghisi, E. (2026). <em>Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica)</em> (Version 0.2.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brazil.
             </p>
 
             <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 font-mono text-[10px] overflow-x-auto border border-slate-200 dark:border-slate-800 leading-relaxed">

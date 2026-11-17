@@ -130,7 +130,7 @@ export default function Header() {
                       <span>Triton</span>
                     </span>
                     <span className="text-[9px] font-black bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 rounded px-1.5 py-0.5 uppercase tracking-wide">
-                      v0.1.0 Beta
+                      v0.2.0 Beta
                     </span>
                   </div>
 
@@ -305,7 +305,7 @@ export default function Header() {
                     <span>Triton (Início)</span>
                   </span>
                   <span className="text-[9px] font-black bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 rounded px-1.5 py-0.5 uppercase tracking-wide mr-4">
-                    v0.1.0 Beta
+                    v0.2.0 Beta
                   </span>
                 </Link>
                 <Link

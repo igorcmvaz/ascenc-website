@@ -24,9 +24,9 @@ export default function TritonVersions() {
   const { t } = useTranslation();
 
   // Controla quais versões estão abertas no Changelog.
-  // A versão atual (0.1.0) inicia aberta; as versões anteriores iniciam colapsadas.
+  // A versão atual (0.2.0) inicia aberta; as versões anteriores iniciam colapsadas.
   const [openVersions, setOpenVersions] = useState({
-    "0.1.0": true,
+    "0.2.0": true,
   });
 
   const toggleVersion = (verKey) => {
@@ -53,11 +53,11 @@ export default function TritonVersions() {
       name: "Triton Brasil",
       editionCode: "BRL",
       flag: "🇧🇷",
-      version: "0.1.0-BRL",
+      version: "0.2.0-BRL",
       status: t("triton_versions.v010_status", "Lançamento Oficial"),
       statusColor: "bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
-      date: t("triton_versions.v010_date", "Março de 2026"),
-      installerName: "Triton-Brasil-Setup-v0.1.0.exe",
+      date: "11 de novembro de 2026",
+      installerName: "Triton-Brasil-Setup-v0.2.0.exe",
       currency: t("triton_versions.currency_brl_val", "Real Brasileiro (R$)"),
       standards: t("triton_versions.standards_brl_val", "ABNT NBR 15527:2019 e NBR 5626"),
       databaseInfo: t("triton_versions.app_brl_db", "652 municípios brasileiros com séries pluviométricas auditadas e projeções climáticas CLIMBra até 2100 (SSP2-4.5 e SSP5-8.5)."),
@@ -69,11 +69,11 @@ export default function TritonVersions() {
       name: "Triton Ibérica",
       editionCode: "IBE",
       flag: "🇵🇹",
-      version: "0.1.0-IBE",
+      version: "0.2.0-IBE",
       status: t("triton_versions.v010_status", "Lançamento Oficial"),
       statusColor: "bg-rose-50 text-rose-800 dark:bg-rose-950/60 dark:text-rose-300 border-rose-200 dark:border-rose-800",
-      date: t("triton_versions.v010_date", "Março de 2026"),
-      installerName: "Triton-Iberica-Setup-v0.1.0.exe",
+      date: "11 de novembro de 2026",
+      installerName: "Triton-Iberica-Setup-v0.2.0.exe",
       currency: t("triton_versions.currency_ibe_val", "Euro (€)"),
       standards: t("triton_versions.standards_ibe_val", "Norma Europeia EN 16941-1"),
       databaseInfo: t("triton_versions.app_ibe_db", "Séries meteorológicas oficiais E-OBS, Iberia01 e reanálise ERA5 mapeadas por concelho (Portugal) e província/município (Espanha)."),
@@ -85,11 +85,11 @@ export default function TritonVersions() {
       name: "Triton Internacional",
       editionCode: "INT",
       flag: "🌐",
-      version: "0.1.0-INT",
+      version: "0.2.0-INT",
       status: t("triton_versions.v010_status", "Lançamento Oficial"),
       statusColor: "bg-blue-50 text-blue-800 dark:bg-blue-950/60 dark:text-blue-300 border-blue-200 dark:border-blue-800",
-      date: t("triton_versions.v010_date", "Março de 2026"),
-      installerName: "Triton-International-Setup-v0.1.0.exe",
+      date: "11 de novembro de 2026",
+      installerName: "Triton-International-Setup-v0.2.0.exe",
       currency: t("triton_versions.currency_int_val", "Moeda Livre ($, €, £, R$, ¥...)"),
       standards: t("triton_versions.standards_int_val", "ISO 14040/14044 (ACV) e Padrões Internacionais"),
       databaseInfo: t("triton_versions.app_int_db", "Módulo aberto e universal para importação de qualquer série histórica diária de chuva em formato tabular CSV padronizado."),
@@ -102,74 +102,58 @@ export default function TritonVersions() {
   const versionsChangelog = [
     {
       version: "0.2.0",
-      displayTitle: "Triton v0.2.0",
-      status: t("triton_versions.v020_status", "Em desenvolvimento"),
-      statusColor: "bg-amber-50 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 border-amber-200 dark:border-amber-800",
-      badge: t("triton_versions.v020_badge", "Planejada"),
-      date: t("triton_versions.v020_date", "Previsto para 2026/2027"),
-      githubUrl: "https://github.com/igorcmvaz/triton",
-      isLatest: false,
-      summary: t("triton_versions.v020_summary", "Expansão da cobertura de municípios brasileiros, suporte a simulação horária e novos pacotes instaladores nativos."),
+      displayTitle: "Triton v0.2.0 Beta",
+      status: "Lançamento",
+      statusColor: "bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
+      badge: "Versão Atual (Beta)",
+      date: "11 de novembro de 2026",
+      githubUrl: "https://github.com/igorcmvaz/triton/releases/tag/v0.2.0-beta",
+      isLatest: true,
+      summary: "O multicritério passa de sete critérios em três eixos a oito critérios em quatro eixos (técnico, econômico, ambiental e estrutural), com o custo nivelado da água e a massa a seco do sistema, relata uma faixa de volumes de resultado semelhante em vez de um volume só e aceita pesos objetivos pelo CRITIC; a linha de comando passa a calcular o peso do sistema.",
       changes: {
         added: [
-          "Exportação direta de relatórios técnicos completos e gráficos em alta resolução (vetorial SVG e PNG 300 DPI).",
-          "Suporte a séries de precipitação em passo de tempo sub-diário (horário e 15 minutos).",
-          "Pacotes instaladores pré-compilados para distribuições Linux (Debian/Ubuntu) e macOS (Apple Silicon)."
+          "Oito critérios em quatro eixos: técnico: confiabilidade volumétrica e eficiência de armazenamento.",
+          "Pesos: quatro pesos de eixo, 25% cada por padrão, repartidos dentro de cada eixo pelas partes no eixo (padrão: partes iguais), ou oito pesos diretos, um por critério.",
+          "Pesos objetivos pelo CRITIC: em vez de declarar pesos, pode-se pedir os do método CRITIC (Diakoulaki, D.; Mavrotas, G.; Papayannakis, L., 1995, Computers & Operations…",
+          "Faixa de escolha: o multicritério deixa de apontar «o melhor volume» e relata os volumes de resultado semelhante: os de escore a até 5% da amplitude, contados do maior…",
+          "Peso do sistema: triton analyze com --analysis system_weight (ou all) informa a massa a seco, a carga de água e a carga em operação, em kg e em kN, separadas em subsolo…",
+          "Custo nivelado da água: a análise econômica informa o LCOW: investimento mais o custeio anual descontado, sobre a água de chuva entregue descontada, à mesma taxa e no…"
         ],
         changed: [
-          "Expansão do banco de dados tarifário para mais de 1.000 municípios brasileiros auditados.",
-          "Novo painel comparativo lado a lado de múltiplos cenários de demanda de água não potável."
+          "Os sete critérios em três eixos (potencial de economia e extravasamento; VPL, payback descontado e TIR; CO₂e e consumo de água potável) dão lugar a oito critérios em quatro eixos, e todos os métodos de ordenação passam a usar a regra de pesos do TOPSIS…"
         ],
         fixed: [
-          "Otimização na carga de séries pluviométricas diárias muito longas (50+ anos) no banco SQLite local.",
-          "Correção de arredondamento em faixas tarifárias progressivas de alta granularidade."
+          "A faixa de escolha com um volume só não sai mais como «volumes de 1000 a 1000 L»: a linha de comando, o HTML e a interface dizem que só aquele volume fica a até 5% da amplitude; faixa com lacunas lista os volumes, em vez de sugerir que os do meio também estão…",
+          "A linha do SMAA-VIKOR na linha de comando traz a faixa quando ela tem mais de um volume.",
+          "Com --weights critic, o JSON traz em topsis.weights os pesos calculados, somados por eixo.",
+          "A frase de decisão da interface compara com a menor cisterna a diferença de CO2e evitado (antes, o valor absoluto da alternativa), com sinal, e mantém a vírgula decimal no escore e na aceitabilidade.",
+          "A aba Documentação descreve os quatro eixos, os perfis 70/10, o CRITIC, a faixa de escolha e a Dirichlet por eixo do SMAA.",
+          "O relatório de texto da linha de comando diz o critério da melhor alternativa econômica (menor payback ou, sem nenhuma que se pague, maior VPL), escreve o payback em anos na língua da edição, avisa quando os custos de obra não foram informados (CAPEX zero) e…"
         ]
       }
     },
     {
       version: "0.1.0",
       displayTitle: "Triton v0.1.0 Beta",
-      status: t("triton_versions.v010_status", "Lançamento Oficial"),
-      statusColor: "bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
-      badge: t("triton_versions.v010_badge", "Versão Atual (Beta)"),
-      date: t("triton_versions.v010_date", "Março de 2026"),
-      githubUrl: "https://github.com/igorcmvaz/triton",
-      isLatest: true,
-      summary: t("triton_versions.v010_summary", "Primeira versão pública e lançamento oficial da plataforma computacional Triton na UFSC, marcando a transição do Netuno para uma arquitetura moderna, integrada e multiplataforma."),
-      launchHighlights: [
-        {
-          title: "Balanço Hídrico Diário YAS",
-          desc: "Implementação completa do algoritmo contínuo Yield-After-Spillage com suporte a reservatório inferior e superior e first-flush configurável."
-        },
-        {
-          title: "Engenharia Econômica Integrada",
-          desc: "Cálculo automatizado de VPL, TIR, Payback Descontado e LCOW considerando estruturas tarifárias escalonadas de concessionárias."
-        },
-        {
-          title: "Módulo de Avaliação do Ciclo de Vida (ACV)",
-          desc: "Quantificação cradle-to-grave de pegada de carbono (kg CO₂eq) e energia embutida dos reservatórios e componentes do sistema."
-        },
-        {
-          title: "Tomada de Decisão Multicritério (MCDA)",
-          desc: "Integração nativa de 4 métodos consagrados de decisão: TOPSIS, VIKOR, SMAA-VIKOR e PROMETHEE II para ranqueamento ótimo de capacidades."
-        }
-      ],
+      status: "Lançamento",
+      statusColor: "bg-slate-100 text-slate-700 dark:bg-zinc-800 dark:text-zinc-300 border-slate-200 dark:border-zinc-700",
+      badge: "Versão anterior (Beta)",
+      date: "5 de novembro de 2026",
+      githubUrl: "https://github.com/igorcmvaz/triton/releases/tag/v0.1.0-beta",
+      isLatest: false,
+      summary: "Primeira versão beta do Triton, programa derivado do Netuno 5.0.1, com nome próprio para cada edição, com o mesmo repositório e a mesma numeração; a 1.0.0, a primeira oficial, virá depois.",
       changes: {
         added: [
-          "Lançamento das 3 edições independentes: Triton Brasil, Triton Ibérica e Triton Internacional.",
-          "Banco de dados SQLite embutido com séries históricas e projeções climáticas CLIMBra até 2100 para o Brasil.",
-          "Tarifários auditados de 652 municípios brasileiros (água, esgoto e taxa de disponibilidade).",
-          "Séries pluviométricas e estruturas tarifárias reguladas de Portugal (ERSAR) e Espanha.",
-          "Módulo de importação aberta de arquivos CSV de precipitação para qualquer localidade global.",
-          "Interface gráfica nativa em PySide6/Qt com suporte a temas Claro e Escuro.",
-          "Sistema de internacionalização multilíngue (Português do Brasil, Português Europeu, Inglês, Espanhol e Chinês)."
+          "Chuva: a base CLIMBra para 652 municípios, 19 modelos do CMIP6 e três simulações (histórica, SSP2-4.5 e SSP5-8.5): 37.164 séries diárias, em 19 bancos, um por modelo…",
+          "Tarifas: água e esgoto de 652 municípios, por prestador, com 617 conferências de conta, das quais 241 corrigidas, e grau de confiança por município: 584 de grau A, 63 de…",
+          "Custos: o CAPEX e o OPEX de um projeto novo são calculados automaticamente a partir do catálogo de referência, em reais (seção 4.7); o usuário pode digitar os seus…",
+          "Normas: a ABNT NBR 15527:2019 no que ela fixa (seção 4.6), e a comparação com a EN 16941-1:2024 em docs/normas_nbr_x_en16941.md.",
+          "Estudos em lote por JSON: o subcomando triton estudo organiza um estudo num estudo.json (projeto base, casos por tipologia, substituições de parâmetros por apelidos…",
+          "Documentação: o manual completo em português do Brasil, o site de documentação, volumes curtos e docs/DADOS.md, que descreve cada conjunto de dados com fonte, licença e…"
         ],
-        changed: [
-          "Migração integral da base legada em Delphi (Netuno 4) para arquitetura modular orientada a objetos em Python 3.12+.",
-          "Unificação dos cálculos de balanço hídrico, viabilidade financeira e sustentabilidade ambiental em um único fluxo de trabalho."
-        ],
+        changed: [],
         fixed: [
-          "Eliminação de restrições de memória de versões de 32 bits, permitindo simular séries pluviométricas de 100+ anos instantaneamente."
+          "O nome, o logo, o pacote (triton) e a extensão dos arquivos de projeto (.triton) mudaram; o cálculo não."
         ]
       }
     },
@@ -263,7 +247,7 @@ export default function TritonVersions() {
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-xs transition-all cursor-pointer"
             >
               <Download className="w-4 h-4" />
-              <span>{t("triton_versions.btn_download", "Download (v0.1.0 Beta)")}</span>
+              <span>{t("triton_versions.btn_download", "Download (v0.2.0 Beta)")}</span>
             </Link>
           </div>
         </section>
@@ -575,7 +559,7 @@ export default function TritonVersions() {
           <div className="space-y-1">
             <h2 className="text-xl font-black text-slate-900 dark:text-white flex items-center gap-2">
               <Globe className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-              <span>{t("triton_versions.matrix_title", "Matriz Comparativa das 3 Edições (v0.1.0)")}</span>
+              <span>{t("triton_versions.matrix_title", "Matriz Comparativa das 3 Edições (v0.2.0)")}</span>
             </h2>
             <p className="text-xs text-slate-500 dark:text-zinc-400">
               {t("triton_versions.matrix_desc", "Todas as três edições rodam sobre o mesmo motor computacional validado e são fornecidas com instalador e documentação técnica específicos.")}

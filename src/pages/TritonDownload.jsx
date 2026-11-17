@@ -44,7 +44,7 @@ export default function TritonDownload() {
   const requestEmailSubject = `Pedido de Download do Triton (${selectedEdition}) - ${userName || "Solicitante"}`;
   const requestEmailBody = `Olá, Igor!
 
-Gostaria de solicitar o link de download do instalador (.exe) e manual (.pdf) do Triton v0.1.0 Beta.
+Gostaria de solicitar o link de download do instalador (.exe) e manual (.pdf) do Triton v0.2.0 Beta.
 
 • Nome: ${userName || "-"}
 • E-mail: ${userEmail || "-"}
@@ -71,8 +71,8 @@ Obrigado(a)!`;
       id: "Triton Brasil (BRL)",
       label: t("triton.dl_ed_brl_label", "Edição Brasil (BRL)"),
       badge: t("triton.dl_ed_brl_badge", "R$ • ABNT NBR 15527"),
-      installer: "Triton_Brasil_Setup_v0.1.0.exe",
-      manual: "Manual_Triton_Brasil_v0.1.0.pdf",
+      installer: "Triton_Brasil_Setup_v0.2.0.exe",
+      manual: "Manual_Triton_Brasil_v0.2.0.pdf",
       icon: "./assets/triton/triton-brl.png",
       details: t(
         "triton.dl_ed_brl_details",
@@ -83,8 +83,8 @@ Obrigado(a)!`;
       id: "Triton Ibérica (IBE)",
       label: t("triton.dl_ed_ibe_label", "Edição Ibérica (IBE)"),
       badge: t("triton.dl_ed_ibe_badge", "€ • EN 16941-1 (PT & ES)"),
-      installer: "Triton_Iberica_Setup_v0.1.0.exe",
-      manual: "Manual_Triton_Iberica_v0.1.0_PT.pdf",
+      installer: "Triton_Iberica_Setup_v0.2.0.exe",
+      manual: "Manual_Triton_Iberica_v0.2.0_PT.pdf",
       icon: "./assets/triton/triton-prt.png",
       details: t(
         "triton.dl_ed_ibe_details",
@@ -95,8 +95,8 @@ Obrigado(a)!`;
       id: "Triton Internacional (INT)",
       label: t("triton.dl_ed_int_label", "Edição Internacional (INT)"),
       badge: t("triton.dl_ed_int_badge", "Global • ISO 14040/14044"),
-      installer: "Triton_Internacional_Setup_v0.1.0.exe",
-      manual: "Manual_Triton_Internacional_v0.1.0_EN.pdf",
+      installer: "Triton_Internacional_Setup_v0.2.0.exe",
+      manual: "Manual_Triton_Internacional_v0.2.0_EN.pdf",
       icon: "./assets/triton/triton-int.png",
       details: t(
         "triton.dl_ed_int_details",
@@ -105,13 +105,13 @@ Obrigado(a)!`;
     },
   ];
 
-  const textCitation = `Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica) (Version 0.1.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brazil.`;
+  const textCitation = `Vaz, I. C. M., & Ghisi, E. (2026). Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica) (Version 0.2.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brazil.`;
 
   const bibtexCitation = `@software{vaz_ghisi_triton_2026,
   author       = {Vaz, Igor Catão Martins and Ghisi, Enedir},
   title        = {Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica)},
   year         = {2026},
-  version      = {0.1.0},
+  version      = {0.2.0},
   organization = {Universidade Federal de Santa Catarina (UFSC)},
   address      = {Florianópolis, SC, Brazil},
   url          = {https://sustainability.ufsc.br/#/triton}
@@ -142,7 +142,7 @@ Obrigado(a)!`;
               </div>
               <div>
                 <span className="inline-block text-[11px] font-black uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
-                  {t("triton.access_unlocked_badge", "Pedido Registrado • v0.1.0 Beta")}
+                  {t("triton.access_unlocked_badge", "Pedido Registrado • v0.2.0 Beta")}
                 </span>
                 <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
                   {userName
@@ -331,7 +331,7 @@ Obrigado(a)!`;
               </p>
               <div className="pt-1 flex flex-wrap items-center gap-3">
                 <a
-                  href={`mailto:${AUTHOR_EMAIL}?subject=Feedback%20Detalhamento%20Triton%20v0.1.0`}
+                  href={`mailto:${AUTHOR_EMAIL}?subject=Feedback%20Detalhamento%20Triton%20v0.2.0`}
                   className="inline-flex items-center gap-1.5 font-black text-amber-900 dark:text-amber-300 underline"
                 >
                   <Mail className="w-3.5 h-3.5" />
@@ -401,7 +401,7 @@ Obrigado(a)!`;
             <em>
               Triton: Computational Platform for Rainwater Harvesting Simulation in Buildings (Editions: Brasil, International, and Ibérica)
             </em>{" "}
-            (Version 0.1.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brazil.
+            (Version 0.2.0) [Computer software]. Universidade Federal de Santa Catarina (UFSC), Florianópolis, SC, Brazil.
           </div>
 
           <pre className="p-3 rounded-xl bg-slate-900 text-slate-100 font-mono text-[11px] overflow-x-auto leading-relaxed select-all">
