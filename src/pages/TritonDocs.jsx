@@ -215,11 +215,11 @@ export default function TritonDocs() {
                   Algoritmo Fundamental
                 </span>
                 <h3 className="text-xl font-black text-slate-900 dark:text-white">
-                  Balanço Hídrico Contínuo Diário (Yield-After-Spillage)
+                  Balanço Hídrico Contínuo Diário (entre YAS e YBS)
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-300 leading-relaxed">
                   O Triton realiza a simulação diária com passo de tempo de 24 horas ao longo de toda a série histórica ou projetada de precipitação pluviométrica.
-                  A regra operacional padrão adotada é o modelo <strong>Yield-After-Spillage (YAS)</strong>, comprovadamente mais conservador e realista para edificações brasileiras e internacionais.
+                  O extravasamento é calculado antes da retirada da demanda, como na regra <strong>Yield-After-Spillage (YAS)</strong>, mas a chuva do próprio dia, até a capacidade do reservatório, já atende a demanda do dia, como na <strong>Yield-Before-Spillage (YBS)</strong>. Por isso o volume consumido fica sempre entre o das duas regras estritas (Fewkes e Butler, 2000).
                 </p>
               </div>
 

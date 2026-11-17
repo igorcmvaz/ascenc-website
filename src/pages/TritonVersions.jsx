@@ -625,9 +625,9 @@ export default function TritonVersions() {
                 </tr>
                 <tr>
                   <td className="p-3.5 font-bold text-slate-900 dark:text-white">{t("triton_versions.row_modules", "Módulos Inclusos")}</td>
-                  <td className="p-3.5">{t("triton_versions.modules_all_val", "YAS, 2 tanques, VPL, TIR, ACV, 4 MCDA")}</td>
-                  <td className="p-3.5">{t("triton_versions.modules_all_val", "YAS, 2 tanques, VPL, TIR, ACV, 4 MCDA")}</td>
-                  <td className="p-3.5">{t("triton_versions.modules_all_val", "YAS, 2 tanques, VPL, TIR, ACV, 4 MCDA")}</td>
+                  <td className="p-3.5">{t("triton_versions.modules_all_val", "Balanço entre YAS e YBS, 2 tanques, VPL, TIR, ACV, 4 MCDA")}</td>
+                  <td className="p-3.5">{t("triton_versions.modules_all_val", "Balanço entre YAS e YBS, 2 tanques, VPL, TIR, ACV, 4 MCDA")}</td>
+                  <td className="p-3.5">{t("triton_versions.modules_all_val", "Balanço entre YAS e YBS, 2 tanques, VPL, TIR, ACV, 4 MCDA")}</td>
                 </tr>
               </tbody>
             </table>
@@ -661,7 +661,7 @@ export default function TritonVersions() {
                 {t("triton_versions.timeline_t1_title", "Plataforma Triton")}
               </h3>
               <p className="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
-                {t("triton_versions.timeline_t1_desc", "Refatoração em Python 3.12+ (PySide6, SQLite). Edições Brasil, Ibérica e Internacional integradas com balanço diário YAS, engenharia econômica completa, ACV e 4 métodos MCDA.")}
+                {t("triton_versions.timeline_t1_desc", "Refatoração em Python 3.12+ (PySide6, SQLite). Edições Brasil, Ibérica e Internacional integradas com balanço diário entre YAS e YBS, engenharia econômica completa, ACV e 4 métodos MCDA.")}
               </p>
             </div>
 
